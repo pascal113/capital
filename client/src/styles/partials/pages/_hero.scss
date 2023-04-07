@@ -1,23 +1,18 @@
 #hero {
-    min-height: 100vh;
+    min-height: 850px;
     @include centered;
 
     .swiper {
-        @include dimension(100%, 100%);
-        @include padding-x(0.75rem, 0.75rem);
-        @include padding-y(5rem, 5rem);
+        
+        @include margin-x(0.0rem, 0.0rem);
+        @include margin-y(0.0rem, 0.0rem);
+        @include padding-x(0.0rem, 0.0rem);
+        @include padding-y(0rem, 0rem);
     }
 
     .swiper-pagination {
-        bottom: 30px;
+        bottom: 228px;
     }
-}
-
-.mytest {
-	position: absolute;
-	top: 300px;
-	left: 100px;
-	z-index: 10000;
 }
 
 .hero_wrapper {
@@ -40,18 +35,6 @@
         }
     }
 
-    &.hero_slide-0::before {
-        content: "Over Ear";
-    }
-
-    &.hero_slide-1::before {
-        content: "In Ear";
-    }
-
-    &.hero_slide-2::before {
-        content: "Over Ear";
-    }
-
     @include devices(lg) {
         grid-template-columns: 0.7fr;
         gap: 4rem;
@@ -68,30 +51,34 @@
 }
 
 .hero_over_item {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    left: 0;
+    right: 0;
 	z-index: 10000;
     color: #ffffff;
+    background:linear-gradient(180deg, #585858 0%, rgba(67, 99, 126, 0) 100%);
+    justify-content: center;
 
     .hero_item_mark {
-        top: 220px;
+        
+        margin-top: 0px;
     }
 
     .hero_item_line {
-        top: 420px;
+        margin-top: 20px;
         width: 615px;
         height: 4px;
         background-color: #ffffff;
     }
 
     .hero_item_company_text {
-        top:    300px;
-        font-size: 2rem;
+        left: 0;
+        right: 0;
+        margin-top: 20px;
+        font-size: 1.5rem;
     }
 
     .hero_item_slug_text {
-        top:    300px;
+        margin-top: 20px;
         font-size: 1rem;
     }
 }

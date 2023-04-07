@@ -5,7 +5,7 @@ const Home = () => {
 
     return (
         <main>
-            <section id="featured" className="section">
+            <section id="hero" className="section">
                 <div className="container">
                     <HeroSlider />
                 </div>

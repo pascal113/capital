@@ -38,14 +38,10 @@ const Header = () => {
                     <div className='header_tilte_bar'>
                         <img src="./images/header/titlebar.png" alt="" />
                     </div>
-                    <div>
-                </div>
                     <div className="navbar">
                         <Link to="/">
                             <img src="/images/header/mark_dark.png" alt="Nature"></img>
                         </Link>
-
-                        
                         <nav className="nav_actions">
                             <div className="country_action">
                                 <img src="/images/header/germany.png"  width="22"  height="22" alt="Nature"></img>

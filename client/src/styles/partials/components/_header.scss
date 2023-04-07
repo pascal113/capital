@@ -4,30 +4,29 @@
     left: 0;
     z-index: 99;
     width: 100%;
+    height: 108px;
     background-color: var(--header-color);
     color: var(--text-color-header);
     @include transition(background-color, 0.2s, linear);
 
     &.sticky {
-        background-color: var(--black-color);
+        background-color: var(--header-color);
     }
 }
 
 
 .header_tilte_bar {
+    top: 0px;
     margin: 0;
     padding: 0;
-    height: 18px;
 }
 
 .navbar {
     @include flexbox(space-between, center);
-    height: 87px;
-
+   
     img {
         margin-top: 0.8rem;
-    margin-left: 1.375rem;
-    padding: 0;
+        margin-left: 1.375rem;
     }
 }
 
