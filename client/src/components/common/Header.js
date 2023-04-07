@@ -6,6 +6,7 @@ import commonContext from '../../contexts/common/commonContext';
 import cartContext from '../../contexts/cart/cartContext';
 import AccountForm from '../form/AccountForm';
 import SearchBar from './SearchBar';
+import UserAvatar from 'react-user-avatar';
 
 
 const Header = () => {
@@ -34,16 +35,21 @@ const Header = () => {
         <>
             <header id="header" className={isSticky ? 'sticky' : ''}>
                 <div className="container">
+                    <div className='header_tilte_bar'>
+                        <img src="./images/header/titlebar.png" alt="" />
+                    </div>
+                    <div>
+                </div>
                     <div className="navbar">
-                        <h2 className="nav_logo">
-                            <Link to="/">X-Beat</Link>
-                        </h2>
+                        <Link to="/">
+                            <img src="/images/header/mark_dark.png" alt="Nature"></img>
+                        </Link>
+
+                        
                         <nav className="nav_actions">
-                            <div className="search_action">
-                                <span onClick={() => toggleSearch(true)}>
-                                    <AiOutlineSearch />
-                                </span>
-                                <div className="tooltip">Search</div>
+                            <div className="country_action">
+                                <img src="/images/header/germany.png"  width="22"  height="22" alt="Nature"></img>
+                                <span>Deguo</span>
                             </div>
 
                             <div className="cart_action">

@@ -1,43 +1,17 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { footMenu, footSocial } from '../../data/footerData';
+import { footMenu } from '../../data/footerData';
+
 
 
 const Footer = () => {
-
-    const [subValue, setSubValue] = useState('');
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setSubValue('');
-        alert('Thankyou, you are subscribed to receive our daily newsletter');
-    };
-
-    const currYear = new Date().getFullYear();
-
 
     return (
         <footer id="footer">
             <div className="container">
                 <div className="wrapper footer_wrapper">
-                    <div className="foot_about">
-                        <h2>
-                            <Link to="/">X-Beat</Link>
-                        </h2>
-                        <div className="foot_subs">
-                            <p>Subscribe to our Email alerts to receive early discount offers, and new products info.</p>
-                            <form onSubmit={handleSubmit}>
-                                <input
-                                    type="email"
-                                    className="input_field"
-                                    placeholder="Email Address*"
-                                    required
-                                    value={subValue}
-                                    onChange={(e) => setSubValue(e.target.value)}
-                                />
-                                <button type="submit" className="btn">Subscribe</button>
-                            </form>
-                        </div>
+                    <div className="foot_mark">
+                        <img src="./images/mark/mark_light.png" alt="product-img" />
                     </div>
 
                     {

@@ -4,7 +4,8 @@
     left: 0;
     z-index: 99;
     width: 100%;
-    @include padding-y(0.8rem, 0.8rem);
+    background-color: var(--header-color);
+    color: var(--text-color-header);
     @include transition(background-color, 0.2s, linear);
 
     &.sticky {
@@ -12,8 +13,22 @@
     }
 }
 
+
+.header_tilte_bar {
+    margin: 0;
+    padding: 0;
+    height: 18px;
+}
+
 .navbar {
     @include flexbox(space-between, center);
+    height: 87px;
+
+    img {
+        margin-top: 0.8rem;
+    margin-left: 1.375rem;
+    padding: 0;
+    }
 }
 
 .nav_logo {
@@ -33,10 +48,12 @@
     }
 }
 
+.country_action,
 .search_action,
 .cart_action,
 .user_action {
     position: relative;
+    display: flex;
 }
 
 .search_action,

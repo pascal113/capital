@@ -11,8 +11,7 @@
 }
 
 .footer_wrapper {
-    grid-template-columns: 1.8fr repeat(3, 1fr);
-    justify-items: center;
+    grid-template-columns: 2.5fr repeat(3, 1fr);
     gap: 2rem;
 
     @include devices(md) {
@@ -25,6 +24,12 @@
         grid-template-columns: 1fr;
         gap: 3rem;
     }
+}
+
+.foot_mark {
+    top: 2.75rem;
+    gap: 2rem;
+    margin-left: 2.75rem;
 }
 
 .foot_subs {
@@ -78,11 +83,4 @@
             opacity: 1;
         }
     }
-}
-
-.foot_social {
-    @include flexbox();
-    gap: 2rem;
-    font-size: 1.2rem;
-    margin-right: 4rem;
 }

@@ -9,14 +9,19 @@ import 'swiper/scss';
 import 'swiper/scss/autoplay';
 import 'swiper/scss/pagination';
 
-
 const HeroSlider = () => {
 
     const heroProducts = productsData.filter(item => item.tag === 'hero-product');
 
 
     return (
-        <Swiper
+        <Swiper style={{
+            "--swiper-pagination-color": "#FFFFFF",
+            "--swiper-pagination-bullet-inactive-color": "#999999",
+            "--swiper-pagination-bullet-inactive-opacity": "0.5",
+            "--swiper-pagination-bullet-size": "10px",
+            "--swiper-pagination-bullet-horizontal-gap": "10px"
+            }}
             modules={[Pagination, A11y, Autoplay]}
             loop={true}
             speed={400}
@@ -39,7 +44,19 @@ const HeroSlider = () => {
                             key={id}
                             className={`wrapper hero_wrapper hero_slide-${i}`}
                         >
-                            
+                            <div className='hero_over_item'>
+                                <div className="hero_item_mark">
+                                    <img src="/images/mark/mark_center.png" alt="Nature"></img>
+                                </div>
+                                <div className="hero_item_company_text">
+                                    <h1>GERMAN CAPITAL PHARMA GmbH</h1>
+                                </div>
+                                <div className="hero_item_line" />
+                                <div className="hero_item_slug_text">
+                                    <h2>Gesundheit für das Leben</h2>
+                                </div>
+                                
+                            </div>
                             <figure className="hero_item_img">
                                 <img src={heroImage} alt="product-img" />
                             </figure>
@@ -47,6 +64,8 @@ const HeroSlider = () => {
                     );
                 })
             }
+            <div>
+        </div>
         </Swiper>
     );
 };
