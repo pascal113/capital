@@ -182,7 +182,8 @@ const productsData = [
     },
     {
         id: 9,
-        tag: "featured-product",
+        tag: "hero-product",
+        heroImage: "/images/products/home-slider-6.png",
         images: [
             "/images/products/boat255r-1.png",
             "/images/products/boat255r-2.png",
@@ -204,6 +205,8 @@ const productsData = [
     },
     {
         id: 10,
+        tag: "hero-product",
+        heroImage: "/images/products/home-slider-7.png",
         images: [
             "/images/products/jbl100-1.png",
             "/images/products/jbl100-2.png",

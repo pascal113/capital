@@ -13,14 +13,10 @@ const HeroSlider = () => {
 
     const heroProducts = productsData.filter(item => item.tag === 'hero-product');
 
-
     return (
         <Swiper style={{
-            "--swiper-pagination-color": "#FFFFFF",
-            "--swiper-pagination-bullet-inactive-color": "#999999",
-            "--swiper-pagination-bullet-inactive-opacity": "0.5",
             "--swiper-pagination-bullet-size": "10px",
-            "--swiper-pagination-bullet-horizontal-gap": "10px"
+            "--swiper-pagination-bullet-horizontal-gap": "5px"
             }}
             modules={[Pagination, A11y, Autoplay]}
             loop={true}
@@ -42,7 +38,7 @@ const HeroSlider = () => {
                     return (
                         <SwiperSlide
                             key={id}
-                            className={`wrapper hero_wrapper hero_slide-${i}`}
+                            className={`wrapper hero_wrapper`}
                         >
                             <div className='hero_over_item'>
                                 <div className="hero_item_mark">
@@ -51,7 +47,8 @@ const HeroSlider = () => {
                                 <div className="hero_item_company_text">
                                     <h1>GERMAN CAPITAL PHARMA GmbH</h1>
                                 </div>
-                                <div className="hero_item_line" />
+                                <div className="hero_item_line">
+                                </div>
                                 <div className="hero_item_slug_text">
                                     <h2>Gesundheit für das Leben</h2>
                                 </div>

@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { CommonProvider } from './contexts/common/commonContext';
 import { CartProvider } from './contexts/cart/cartContext';
 import Header from './components/common/Header';
@@ -8,12 +9,13 @@ import { FiltersProvider } from './contexts/filters/filtersContext';
 
 
 const App = () => {
+  const [menuOpen,setMenuOpen] = useState(false)
   return (
     <>
       <CommonProvider>
         <FiltersProvider>
           <CartProvider>
-            <Header />
+            <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
             <RouterRoutes />
             <Footer />
             <BackTop />
