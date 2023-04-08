@@ -28,6 +28,18 @@ const commonReducer = (state, action) => {
                 searchResults: action.payload.results
             };
 
+        case 'SET_MENU_OPEN':
+            return {
+                ...state,
+                menuOpen: action.payload.results
+            };   
+            
+        case 'SET_LANGUAGE':
+            return {
+                ...state,
+                curLanguage: action.payload.results
+            }; 
+
 
         default:
             return state;

@@ -3,6 +3,7 @@
     @include margin-y(0.0rem, 0.0rem);
     @include mx-auto;
     @include padding-x(0.0rem, 0.0rem);
+    @include padding-y(0.0rem, 0.0rem);
 
     @include devices(xl) {
         max-width: 1280px;

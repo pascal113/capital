@@ -16,10 +16,10 @@
     }
 
     .wrapper {
-        padding-right: 50px;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        margin-top: 15px;
 
         .left {
         display: flex;
@@ -27,7 +27,6 @@
 
         .logo {
             margin-left: 22px;
-            margin-top: 15px;
         }
 
         .itemContainer {
@@ -50,11 +49,34 @@
         .right {
             display: flex;
             align-items: center;
+            
+
+            .arrow {
+                display: block;
+                float: right;
+                margin-left: 1em;
+                margin-top: .25em;
+                border-color: transparent;
+                border-top-color: var(--text-color-header);
+                border-style: solid;
+                border-width: .5em .4em 0;
+                width: 0;
+                height: 0;
+                position: relative;
+                line-height: 0;
+            }
+        
+            .arrow-up {
+                border-width: 0 .4em .5em;
+                border-top-color: transparent;
+                border-bottom-color: #FA0;
+            }
 
             .itemContainer {
                 display: flex;
                 align-items: center;
                 margin-left: 30px;
+                margin-right: 50px;
     
                 .icon {
                     font-size: 18px;
@@ -98,14 +120,14 @@
             span {
                 &:first-child {
                 background-color: var(--text-color-header);
-                transform: rotate(35deg);
+                transform: rotate(34deg);
                 }
                 &:nth-child(2) {
                 opacity: 0;
                 }
                 &:last-child {
                 background-color: var(--text-color-header);
-                transform: rotate(-35deg);
+                transform: rotate(-34deg);
                 }
             }
         }

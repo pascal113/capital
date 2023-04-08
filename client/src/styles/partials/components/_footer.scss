@@ -50,6 +50,12 @@
         display: grid;
         gap: 0.5rem;
         font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+
+        li {
+            font-weight: 400;
+        }
 
         a {
             font-size: 0.9rem;

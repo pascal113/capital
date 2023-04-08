@@ -9,7 +9,9 @@ const initialState = {
     isFormOpen: false,
     formUserInfo: '',
     isSearchOpen: false,
-    searchResults: []
+    searchResults: [],
+    menuOpen: false,
+    curLanguage: 'DE'
 };
 
 // Common-Provider Component
@@ -47,13 +49,31 @@ const CommonProvider = ({ children }) => {
         });
     };
 
+    const setMenuOpen = (results) => {
+        return dispatch({
+            type: 'SET_MENU_OPEN',
+            payload: { results }
+        });
+    };
+
+    const setLanguage = (results) => {
+        return dispatch({
+            type: 'SET_LANGUAGE',
+            payload: { results }
+        });
+    };
+
+    
+
     // Context values
     const values = {
         ...state,
         toggleForm,
         setFormUserInfo,
         toggleSearch,
-        setSearchResults
+        setSearchResults,
+        setMenuOpen,
+        setLanguage
     };
 
     return (
