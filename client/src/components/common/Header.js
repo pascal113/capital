@@ -24,17 +24,19 @@ const Header = () => {
                         <div className="right">
                             <div className="itemContainer">
                                 <div className="icon">
-                                    <img src="/images/header/germany.png"  width="22"  height="22" alt="mark"></img>
+                                    <img src={`/images/header/${curLanguage}.png`} width="22"  height="22" alt="mark"></img>
                                 </div>
-                                <span>Deutsch</span>
-                                <i class="arrow" onClick={()=>{setLanguage((curLanguage==='DE')?'GB':'DE'); console.log(curLanguage);}}></i>
+                                <span>{(curLanguage==='DE')?'Deutsch':'English'}</span>
+                                <i className={(curLanguage==='DE')?'arrow':'arrow arrow-up'} onClick={()=>{setLanguage((curLanguage==='DE')?'GB':'DE')}}></i>
                             </div>
                             <div className="itemContainer">
-                                <div className="hamburger" onClick={()=>{setMenuOpen(!menuOpen); console.log(!menuOpen);}}>
-                                    <span className="line1"></span>
-                                    <span className="line2"></span>
-                                    <span className="line3"></span>
-                                </div>
+                                <Link to={menuOpen?"/":"/menu"}>
+                                    <div className="hamburger" onClick={()=>{setMenuOpen(!menuOpen); console.log('click', !menuOpen); }}>
+                                        <span className="line1"></span>
+                                        <span className="line2"></span>
+                                        <span className="line3"></span>
+                                    </div>
+                                </Link>
                                 <span>Menü</span>
                             </div>
                         </div>

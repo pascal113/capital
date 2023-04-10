@@ -6,6 +6,7 @@ import Cart from '../pages/Cart';
 import Home from '../pages/Home';
 import ProductDetails from '../pages/ProductDetails';
 import ErrorPage from '../pages/ErrorPage';
+import MenuPage from '../pages/MenuPage';
 
 const RouterRoutes = () => {
 
@@ -15,6 +16,7 @@ const RouterRoutes = () => {
         <>
             <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/menu" element={<MenuPage />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/all-products" element={<AllProducts />} />
                 <Route path="/product-details/:productId" element={<ProductDetails />} />
