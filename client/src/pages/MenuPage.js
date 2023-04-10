@@ -15,6 +15,7 @@ const MenuPage = () => {
                         <div className='menu_page_img'>
                             <img src="./images/menu/menu-page-1.png" alt=""></img>
                         </div>
+                        <div className='menu_page_text'>Home</div>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,12 @@
 #menu_page {
     padding-top: 0rem;
+    -webkit-animation: moveFromTop 1s ease both;
+	animation: moveFromTop 1s ease both;
     
+}
+
+@keyframes moveFromTop {
+    from { -webkit-transform: translateY(-100%); transform: translateY(-100%); }
 }
 
 .menu_page_wrapper {
@@ -10,9 +16,8 @@
     box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.1);
     
     display: grid;
-    grid-template-columns: 450px auto;
-    place-items: center;
-    gap: 1rem;
+    grid-template-columns: 481px auto;
+    gap: 0rem;
 
     @include devices(lg) {
         grid-template-columns: 1fr;
@@ -25,10 +30,9 @@
 }
 
 .menu_page_right_col {
-    margin-left: 0px;
     
     .menu_page_img {
-
+        margin: 75px 86px 36px 104px;
         img {
             @include img-fit;
         }
@@ -36,6 +40,15 @@
         @include devices(sm) {
             grid-row: 1;
         }
+    }
+
+    .menu_page_text {
+        margin-left: 104px;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 26px;
+        color: #000000;
     }
     
 }
