@@ -1,14 +1,16 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import commonContext from '../../contexts/common/commonContext';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
     const { menuOpen, setMenuOpen } = useContext(commonContext);
     const { curLanguage, setLanguage } = useContext(commonContext);
+    const location  = useLocation();
+    const isMenuPage = (location.pathname === '/menu')?true:false;
 
     return (
         <>
-            <div className={"topbar " + (menuOpen && "active")}>
+            <div className={"topbar " + (isMenuPage && "active")}>
                 <div className="container">
                     <div className='band'>
                         <img src="./images/header/titlebar.png" alt="" />
@@ -30,8 +32,8 @@ const Header = () => {
                                 <i className={(curLanguage==='DE')?'arrow':'arrow arrow-up'} onClick={()=>{setLanguage((curLanguage==='DE')?'GB':'DE')}}></i>
                             </div>
                             <div className="itemContainer">
-                                <Link to={menuOpen?"/":"/menu"}>
-                                    <div className="hamburger" onClick={()=>{setMenuOpen(!menuOpen); console.log('click', !menuOpen); }}>
+                                <Link to={isMenuPage?"/":"/menu"}>
+                                    <div className="hamburger" onClick={()=>{setMenuOpen(!menuOpen); }}>
                                         <span className="line1"></span>
                                         <span className="line2"></span>
                                         <span className="line3"></span>

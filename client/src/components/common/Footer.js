@@ -1,16 +1,18 @@
-import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
-import commonContext from '../../contexts/common/commonContext';
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
+
 import { footMenu } from '../../data/footerData';
 
 const Footer = () => {
-    const { menuOpen, setMenuOpen } = useContext(commonContext);
+
+    const location  = useLocation();
+    const isMenuPage = (location.pathname === '/menu')?true:false;
 
     return (
         <>
         {
-            !menuOpen && (
-                <footer id="footer" hidden={menuOpen?'hidden':null}>
+            !isMenuPage && (
+                <footer id="footer">
                     <div className="container">
                         <div className="wrapper footer_wrapper">
                             <div className="foot_mark">

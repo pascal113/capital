@@ -1,11 +1,9 @@
-import { useState, useEffect, useRef, useContext } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Dropdown from './Dropdown';
-import commonContext from '../../contexts/common/commonContext';
 import { Link, useLocation } from 'react-router-dom';
 
 const MenuItems = ({ items, depthLevel, setIntroduceItem }) => {
   const [dropdown, setDropdown] = useState(false);
-  const { menuOpen, setMenuOpen } = useContext(commonContext);
 
   let ref = useRef();
 
@@ -68,7 +66,7 @@ const MenuItems = ({ items, depthLevel, setIntroduceItem }) => {
             type="button"
             aria-haspopup="menu"
             aria-expanded={dropdown ? 'true' : 'false'}
-            onClick={() => setDropdown((prev) => !prev)}
+            onClick={(prev) => setDropdown(!prev)}
           >
             {window.innerWidth < 960 && depthLevel === 0 ? (
               items.title
@@ -90,7 +88,7 @@ const MenuItems = ({ items, depthLevel, setIntroduceItem }) => {
             type="button"
             aria-haspopup="menu"
             aria-expanded={dropdown ? 'true' : 'false'}
-            onClick={() => setDropdown((prev) => !prev)}
+            onClick={(prev) => setDropdown(!prev)}
           >
             {items.title}
           </button>
