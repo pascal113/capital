@@ -1,21 +1,23 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, {useState} from 'react';
 import SideMenubar from '../components/sidebar/SideMenubar';
-import PageIntroduce from './PageIntroduce'
 
 const MenuPage = () => {
+    const [introduceItem, setIntroduceItem] = useState({imgUrl:'./images/menu/menu-page-1.png', descText:'home'});
+    
     return (
         <div id="menu_page" className="section">
             <div className="container">
                 <div className="menu_page_wrapper">
                     <div className="menu_page_left_col">
-                        <img src="./images/menu/menu_bkg.png" alt="" />
+                        <SideMenubar setIntroduceItem={setIntroduceItem}/>
                     </div>
                     <div className="menu_page_right_col">
                         <div className='menu_page_img'>
-                            <img src="./images/menu/menu-page-1.png" alt=""></img>
+                            <img src={introduceItem.imgUrl} alt="introduce"></img>
                         </div>
-                        <div className='menu_page_text'>Home</div>
+                        <h2 className='menu_page_text'>
+                            {introduceItem.descText}
+                        </h2>
                     </div>
                 </div>
             </div>

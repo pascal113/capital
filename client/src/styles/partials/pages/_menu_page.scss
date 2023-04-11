@@ -26,7 +26,96 @@
 }
 
 .menu_page_left_col {
+    
+    .menus {
+        display: flex;
+        align-items: left;
+        flex-wrap: wrap;
+        list-style: none;
+        flex-direction: column;
+        background: url(../../../../public/images/menu/menu_bkg.png);
+        width: 480px;
+        height: 737px;
+        padding-top: 73px;
+    }
 
+    .menu-items {
+        position: relative;
+        font-style: normal;
+        font-weight: 700;
+        font-size:   14px;
+        line-height: 18px;
+        width: 242px;
+        height: 38px;
+        color: #FFFFFF;
+    }
+
+    .menu-items a {
+        display: block;
+        font-style: normal;
+        font-weight: 700;
+        font-size:   14px;
+        line-height: 18px;
+        height: 100%;
+        text-decoration: none;
+        
+    }
+
+    .menu-items button {
+        display: flex;
+        color: inherit;
+        font-style: normal;
+        font-weight: 700;
+        font-size:   14px;
+        line-height: 18px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .menu-items > a, .menu-items button {
+        text-align: left;
+        height: inherit;
+        padding: 0.7rem 1rem;
+        
+    }
+
+    .menu-items a:hover,
+    .menu-items button:hover {
+        background-color: #ffffff;
+        color: #585858;
+    }
+
+    .menu-items .submenu {
+        width: 221px;
+        height: 42px;
+        margin-left: 5px;
+    }
+
+    .menu-items .submenu a:hover,
+    .menu-items .submenu button:hover {
+        background-color: transparent;
+        color: #FFFFFF;
+        border: 1px solid #FFFFFF;
+        border-radius: 6px;
+    }
+
+    .dropdown {
+        position: absolute;
+        left: 242px;
+        top: 0px;
+        font-size: 0.875rem;
+        z-index: 9999;
+        min-width: 10rem;
+        list-style: none;
+        display: none;
+    }
+
+    .dropdown.show {
+        display: block;
+    }
 }
 
 .menu_page_right_col {
@@ -35,6 +124,8 @@
         margin: 75px 86px 36px 104px;
         img {
             @include img-fit;
+            width: 771px;
+            height: 423px;
         }
     
         @include devices(sm) {
@@ -50,5 +141,4 @@
         line-height: 26px;
         color: #000000;
     }
-    
 }
