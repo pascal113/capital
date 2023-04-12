@@ -1,5 +1,5 @@
 /**
- * images 表结构
+ * images tables
  **/
 
 import mongoose from 'mongoose'

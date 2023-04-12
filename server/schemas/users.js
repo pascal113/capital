@@ -1,5 +1,5 @@
 /**
- * 用户的表结构
+ * user table
  */
 import mongoose from 'mongoose'
 

@@ -1,5 +1,5 @@
 /**
- * article 表结构
+ * article
  **/
 
 import mongoose from 'mongoose'

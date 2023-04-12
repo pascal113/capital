@@ -1,7 +1,7 @@
 import Express from 'express'
 
 const router = Express.Router();
-import Images from '../../models/images'
+import Images from '../models/images'
 import {responseClient} from '../util'
 
 console.log('import images');

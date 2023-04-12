@@ -1,5 +1,5 @@
 /**
- * tags 表结构
+ * tags tables
  * */
 import mongoose from 'mongoose'
 

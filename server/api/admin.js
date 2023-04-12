@@ -1,6 +1,6 @@
 import Express from 'express'
 const router = Express.Router();
-import User from '../../models/user'
+import User from '../models/user'
 import {responseClient} from '../util'
 
 //admin request to backend

@@ -12,8 +12,17 @@ import bodyParser from 'body-parser'
 import mongoose from 'mongoose'
 import cookieParser from 'cookie-parser'
 import session from 'express-session'
-import User from '../../models/user'
+import User from '../models/user'
 import {MD5_SUFFIX,md5} from '../util'
+
+// const Express = require("express");
+// const config = require("../../config/config");
+// const bodyParser = require("body-parser");
+// const mongoose = require("mongoose");
+// const cookieParser = require("cookie-parser");
+// const session = require("express-session");
+// const User = require("../models/user");
+// const {MD5_SUFFIX,md5} = require("../util");
 
 const port = config.apiPort;
 

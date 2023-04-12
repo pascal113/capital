@@ -1,7 +1,7 @@
 import Express from 'express'
 
 const router = Express.Router();
-import Tags from '../../models/tags'
+import Tags from '../models/tags'
 import {responseClient} from '../util'
 
 //Delete tag
