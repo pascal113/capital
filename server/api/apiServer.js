@@ -14,6 +14,8 @@ import cookieParser from 'cookie-parser'
 import session from 'express-session'
 import User from '../models/user'
 import {MD5_SUFFIX,md5} from '../util'
+import multer from 'multer';
+import SibApiV3Sdk from 'sib-api-v3-sdk';
 
 // const Express = require("express");
 // const config = require("../../config/config");
@@ -36,8 +38,6 @@ app.use(session({
     cookie: {maxAge: 60 * 1000 * 30}//expire time
 }));
 
-
-const multer = require('multer');
 
 // const fs = require('fs');
 
@@ -78,7 +78,7 @@ app.post('/upload', upload.single('image'), (req, res) => {
     res.send('ok');
 });
 
-const SibApiV3Sdk = require('sib-api-v3-sdk');
+// const SibApiV3Sdk = require('sib-api-v3-sdk');
 
 const defaultClient = SibApiV3Sdk.ApiClient.instance;
 
@@ -136,7 +136,6 @@ app.post('/sendEmail', async (req, res) => {
     console.log(req.body);
     let {
         subject,
-        sender_email,
         to_email
     } = req.body;
 
