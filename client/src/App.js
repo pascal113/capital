@@ -1,6 +1,6 @@
 import React from 'react';
 import { CommonProvider } from './contexts/common/commonContext';
-
+import { MenuProvider } from './contexts/menu/menuContext';
 import Header from './components/common/Header';
 import RouterRoutes from './routes/RouterRoutes';
 import Footer from './components/common/Footer';
@@ -14,7 +14,9 @@ const App = () => {
     <>
       <CommonProvider>
         <Header />
-        <RouterRoutes />
+        <MenuProvider>
+          <RouterRoutes />
+        </MenuProvider>
         <Footer />
         <BackTop />
       </CommonProvider>

@@ -13,7 +13,7 @@ export const menuItems = [
       },
       {
         title: 'Unsere Unternehmensziele',
-        url: '',
+        url: '/corporate-goals',
         imgUrl: './images/menu/menu-page-1-2.png',
         descText: 'Unsere Unternehmensziele'
       }
@@ -27,39 +27,55 @@ export const menuItems = [
     submenu: [
       {
         title: 'Produktion',
-        url: '',
+        url: '/production',
+        imgUrl: './images/menu/menu-page-2-1.png',
+        descText: 'Produktion'
       },
       {
         title: 'Logistik',
-        url: '',
+        url: '/logistics',
+        imgUrl: './images/menu/menu-page-2-2.png',
+        descText: 'Logistik'
       },
       {
         title: 'Nahrungsergänzungsmittel',
-        url: '',
+        url: '/dietary',
+        imgUrl: './images/menu/menu-page-2-3.png',
+        descText: 'Nahrungsergänzungsmittel'
       },
       {
         title: 'Beratung',
-        url: '',
+        url: '/advice',
+        imgUrl: './images/menu/menu-page-2-4.png',
+        descText: 'Beratung'
       }
     ],
   },
   {
     title: 'Karriere',
     url: '',
+    imgUrl: './images/menu/menu-page-3.png',
+    descText: 'Karriere',
     submenu: [
       {
         title: 'Stellenausschreibungen',
-        url: '',
+        url: '/job-postings',
+        imgUrl: './images/menu/menu-page-3-1.png',
+        descText: 'Stellenausschreibungen'
       }
     ],
   },
   {
     title: 'Kontakt',
     url: '',
+    imgUrl: './images/menu/menu-page-4.png',
+    descText: 'Kontakt',
     submenu: [
       {
         title: 'Haben Sie Rückfragen?',
-        url: '',
+        url: '/contacts',
+        imgUrl: './images/menu/menu-page-4-1.png',
+        descText: 'Haben Sie Rückfragen?'
       }
     ],
   },

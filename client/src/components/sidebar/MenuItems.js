@@ -1,9 +1,11 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef,useContext } from 'react';
 import Dropdown from './Dropdown';
 import { Link, useLocation } from 'react-router-dom';
+import menuContext from '../../contexts/menu/menuContext';
 
-const MenuItems = ({ items, depthLevel, setIntroduceItem }) => {
+const MenuItems = ({ items, depthLevel}) => {
   const [dropdown, setDropdown] = useState(false);
+  const { hoverItem } = useContext(menuContext);
 
   let ref = useRef();
 
@@ -27,20 +29,14 @@ const MenuItems = ({ items, depthLevel, setIntroduceItem }) => {
   }, [dropdown]);
 
   const changeIntroduceItem = (item) => {
-    
-    if(items.imgUrl || items.descText) {
-      //setIntroduceItem({'imgUrl': items.imgUrl,  'descText':items.descText});
+
+    if(item.imgUrl || item.descText) {
+      hoverItem({'imgUrl': item.imgUrl,  'descText':item.descText});
     }
   };
 
   const onMouseEnter = () => {
-    
-    if(!items.submenu) {
-      changeIntroduceItem(items);
-    } else if(items.submenu) {
-      changeIntroduceItem(items.submenu[0]);
-    }
-    
+    changeIntroduceItem(items);
     window.innerWidth > 960 && setDropdown(true);    
   };
 
