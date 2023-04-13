@@ -3,11 +3,13 @@ import Express from 'express'
 const router = Express.Router();
 import Images from '../models/images'
 import {responseClient} from '../util'
+import multer from 'multer';
+import path from 'path';
 
 console.log('import images');
 
-const multer = require('multer');
-const path = require('path');
+// const multer = require('multer');
+// const path = require('path');
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
