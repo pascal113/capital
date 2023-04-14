@@ -12,9 +12,7 @@ const Header = () => {
         <>
             <div className={"topbar " + (isMenuPage && "active")}>
                 <div className="container">
-                    <div className='band'>
-                        <img src="./images/header/titlebar.png" alt="" />
-                    </div>
+                    <img src="./images/header/titlebar.png" alt="" className='band'/>
                     <div className="wrapper">
                         <div className="left">
                             <div className='logo'>

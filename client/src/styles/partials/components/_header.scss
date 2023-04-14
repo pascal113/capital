@@ -1,5 +1,5 @@
 .topbar {
-    position: fixed;
+    position: relative;
     left: 0;
     top: 0;
     width: 100%;
@@ -10,9 +10,11 @@
     transition: all 1s ease;
 
     .band {
+        background-color: red;
         top: 0px;
         margin: 0px;
         padding: 0px;
+        height: 18px;
     }
 
     .wrapper {
