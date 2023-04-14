@@ -8,6 +8,7 @@ import ProductDetails from '../pages/ProductDetails';
 import ErrorPage from '../pages/ErrorPage';
 import MenuPage from '../pages/MenuPage';
 import CompanyProfile from '../pages/CompanyProfile';
+import CorporateGoals from '../pages/CorporateGoals';
 
 const RouterRoutes = () => {
 
@@ -19,6 +20,7 @@ const RouterRoutes = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/menu" element={<MenuPage />} />
                 <Route path="/company-profile" element={<CompanyProfile />} />
+                <Route path="/corporate-goals" element={<CorporateGoals />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/all-products" element={<AllProducts />} />
                 <Route path="/product-details/:productId" element={<ProductDetails />} />

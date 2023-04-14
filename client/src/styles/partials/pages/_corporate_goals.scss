@@ -1,4 +1,4 @@
-#company_profile {
+#corporate_goals {
     padding-top: 0rem;
     @include centered;
     
@@ -20,14 +20,14 @@
     }
 }
 
-.company_profile_title{
+.corporate_goals_title{
     width: 464px;
     height: 52px;
     margin: auto;
     font-family: 'DIN Pro Bold', sans-serif;
 }
 
-.company_profile_rectangle {
+.corporate_goals_rectangle {
     margin-left: auto;
     margin-right: auto;
     margin-top: 17px;
@@ -36,7 +36,7 @@
     background-color: #585858;
 }
 
-.company_profile_description{
+.corporate_goals_description{
     width: 765px;
     margin: auto;
     margin-top: 37px;
@@ -51,8 +51,8 @@
     text-align: justify;
 }
 
-.company_profile_wrapper {
-    padding-top: 224px;
+.corporate_goals_wrapper {
+    padding-top: 39px;
     padding-bottom: 318px;
     display: grid;
     grid-template-columns: 50% 50%;
@@ -62,11 +62,43 @@
         grid-template-columns: 1fr;
         gap: 0rem;
     }
+
+    
 }
 
-.company_profile_left_col {
+.corporate_goals_img {
+    float:right;
+}
+
+.corporate_goals_left_col {
+
     .paragraph {
-        width: 576px;
+        width: 390px;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 32px;
+        
+        color: #D30000;
+        
+    }
+    
+    .border-box{
+        position: absolute;
+        left: -31px;
+        top: 740px;
+        width: 518px;
+        height: 368px;
+        right: -12px;
+        box-sizing: border-box;
+        border: 8px solid #D30000;
+    }
+}
+
+.corporate_goals_right_col {
+    
+    .paragraph {
+        width: 565px;
         margin-left: 98px;
         font-family: 'DIN Pro Regular', sans-serif;
         font-style: normal;
@@ -79,22 +111,6 @@
         text-align: justify;
         
     }
-}
 
-.company_profile_right_col {
     
-    img {
-        float:right;
-    }
-
-    .border-box{
-        position: absolute;
-        left: 936px;
-        top: 714px;
-        width: 537px;
-        height: 433px;
-        right: -12px;
-        box-sizing: border-box;
-        border: 6px solid #777978;
-    }
 }
