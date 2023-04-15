@@ -38,24 +38,28 @@
 
 .corporate_goals_description{
     width: 765px;
+    height: 249px;
     margin: auto;
     margin-top: 37px;
-    font-family: 'DIN Pro Bold', sans-serif;
+    font-family: 'DIN Pro Regular', sans-serif;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 400;
     font-size: 14px;
-    line-height: 25px;
+    line-height: 25.1px;
     color: #585858;
-    display: flex;
     align-items: center;
     text-align: justify;
+
+    strong {
+        font-weight: 700;
+    }
 }
 
 .corporate_goals_wrapper {
-    padding-top: 39px;
-    padding-bottom: 318px;
+    padding-top: 44px;
+    padding-bottom: 164px;
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 487px auto;
     gap: 0rem;
 
     @include devices(lg) {
@@ -68,19 +72,32 @@
 
 .corporate_goals_img {
     float:right;
+    width: 632px;
+    height: 420px;
+    margin-bottom: 173px;
 }
 
 .corporate_goals_left_col {
 
     .paragraph {
+        margin-left: 49px;
+        margin-top: 56px;
         width: 390px;
+        font-family: 'DIN Pro Bold';
         font-style: normal;
         font-weight: 700;
         font-size: 25px;
         line-height: 32px;
-        
+        text-align: left;
         color: #D30000;
-        
+    }
+
+    .paragraph:nth-child(2) {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 26px;
+        color: #585858;
     }
     
     .border-box{
@@ -98,8 +115,8 @@
 .corporate_goals_right_col {
     
     .paragraph {
-        width: 565px;
-        margin-left: 98px;
+        width: 568px;
+        margin-left: 56px;
         font-family: 'DIN Pro Regular', sans-serif;
         font-style: normal;
         font-weight: 400;
@@ -112,5 +129,8 @@
         
     }
 
-    
+    .paragraph:first-child {
+        margin-bottom: 3rem;
+    }
+
 }
