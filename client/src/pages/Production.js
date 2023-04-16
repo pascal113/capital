@@ -38,7 +38,68 @@ const Production = () => {
                     </div>
                     <div className='production_dosage_draw'>
                         <img src="./images/pages/product_curve_line.png" alt="" className='production_dosage_curve_lines'/>
-                    </div>              
+                        <div className='production_dosage_container'>
+                            <div className='production_dosage_column'>
+                                <div className='subtitle'>Feste Formen</div>
+                                <ul>
+                                    <li><span>Brauseprodukte (Granulate, Brausetabletten)</span></li>
+                                    <li><span>Globuli</span></li>
+                                    <li><span>Granulate, Pellets</span></li>
+                                    <li><span>Hartkapseln (pflanzlich oder mit Schweine- /Rindergelatine)</span></li>
+                                    <li><span>Kautabletten</span></li>
+                                    <li><span>Pastillen</span></li>
+                                    <li><span>Pulver</span></li>
+                                    <li><span>Suppositorien</span></li>
+                                    <li><span>Tabletten (Filmtabletten, Dragees)</span></li>
+                                    <li><span>Weichkapseln (mit Gelatine oder pflanzlich)</span></li>
+                                    <li><span>Zytotoxica</span></li>
+                                </ul>
+                            </div>
+                            <div className='production_dosage_column'>
+                                <div className='subtitle'>Halbfeste Formen</div>
+                                <ul>
+                                    <li><span>Cremes</span></li>
+                                    <li><span>Emulsionen und Suspensionen</span></li>
+                                    <li><span>Gele</span></li>
+                                    <li><span>Lotionen</span></li>
+                                    <li><span>Pasten</span></li>
+                                    <li><span>Salben</span></li>
+                                    <li><span>Zäpfchen</span></li>
+                                </ul>
+                            </div>
+                            <div className='production_dosage_column'>
+                                <div className='subtitle'>Flüssige Formen</div>
+                                <ul>
+                                    <li><span>Ampullen</span></li>
+                                    <li><span>Destillate</span></li>
+                                    <li><span>Infusionen</span></li>
+                                    <li><span>Injectabilia</span></li>
+                                    <li><span>(Lyophilisierung, aseptische<br />Herstellung, terminale Sterilisation)</span></li>
+                                    <li><span>Karpulen und Zylinderampullen</span></li>
+                                    <li><span>orale Flüssigkeiten</span></li>
+                                    <li><span>(reine Flüssigkeiten, kolloidale Flüssigkeiten)</span></li>
+                                    <li><span>Säfte</span></li>
+                                    <li><span>Sirupe</span></li>
+                                    <li><span>Sprays</span></li>
+                                    <li><span>Tinkturen</span></li>
+                                    <li><span>Trinkampullen</span></li>
+                                    <li><span>Tropfen</span></li>
+                                    <li><span>Vials / Flaschen</span></li>
+                                </ul>
+                            </div>
+                            <div className='production_dosage_column'>
+                                <div className='subtitle'>Spezielle Formen</div>
+                                <ul>
+                                    <li><span>Aerosole</span></li>
+                                    <li><span>Inhalatoren</span></li>
+                                    <li><span>Suppositorien</span></li>
+                                    <li><span>Systeme mit veränderter Wirkstofffreisetzung</span></li>
+                                    <li><span>Transdermale therapeutische Systeme</span></li>
+                                    <li><span>Vorgefüllte Injektionsspritzen</span></li>
+                                </ul>
+                            </div>
+                        </div>   
+                    </div>
                 </div>
             </section>
         </>
