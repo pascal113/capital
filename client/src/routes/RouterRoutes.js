@@ -9,6 +9,7 @@ import ErrorPage from '../pages/ErrorPage';
 import MenuPage from '../pages/MenuPage';
 import CompanyProfile from '../pages/CompanyProfile';
 import CorporateGoals from '../pages/CorporateGoals';
+import Production from '../pages/Production';
 
 const RouterRoutes = () => {
 
@@ -21,6 +22,7 @@ const RouterRoutes = () => {
                 <Route path="/menu" element={<MenuPage />} />
                 <Route path="/company-profile" element={<CompanyProfile />} />
                 <Route path="/corporate-goals" element={<CorporateGoals />} />
+                <Route path="/production" element={<Production />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/all-products" element={<AllProducts />} />
                 <Route path="/product-details/:productId" element={<ProductDetails />} />

@@ -3,7 +3,7 @@ const productsData = [
         id: 1,
         tag: "hero-product",
         tagline: "Keep the noise out, or in. You choose.",
-        heroImage: "/images/products/home-slider-1.png",
+        heroImage: "/images/home/home-slider-1.png",
         images: [
             "/images/products/jbl660nc-1.png",
             "/images/products/jbl660nc-2.png",
@@ -26,7 +26,7 @@ const productsData = [
     {
         id: 2,
         tag: "hero-product",
-        heroImage: "/images/products/home-slider-2.png",
+        heroImage: "/images/home/home-slider-2.png",
         images: [
             "/images/products/boat518-1.png",
             "/images/products/boat518-2.png",
@@ -50,7 +50,7 @@ const productsData = [
         id: 3,
         tag: "hero-product",
         tagline: "Featherweight for comfort all-day.",
-        heroImage: "/images/products/home-slider-3.png",
+        heroImage: "/images/home/home-slider-3.png",
         images: [
             "/images/products/boat131-1.png",
             "/images/products/boat131-2.png",
@@ -137,7 +137,7 @@ const productsData = [
         id: 7,
         tag: "hero-product",
         tagline: "Give your favourite music a boost.",
-        heroImage: "/images/products/home-slider-4.png",
+        heroImage: "/images/home/home-slider-4.png",
         images: [
             "/images/products/sonyxb910n-1.png",
             "/images/products/sonyxb910n-2.png",
@@ -160,7 +160,7 @@ const productsData = [
     {
         id: 8,
         tag: "hero-product",
-        heroImage: "/images/products/home-slider-5.png",
+        heroImage: "/images/home/home-slider-5.png",
         images: [
             "/images/products/jbl760nc-1.png",
             "/images/products/jbl760nc-2.png",
@@ -183,7 +183,7 @@ const productsData = [
     {
         id: 9,
         tag: "hero-product",
-        heroImage: "/images/products/home-slider-6.png",
+        heroImage: "/images/home/home-slider-6.png",
         images: [
             "/images/products/boat255r-1.png",
             "/images/products/boat255r-2.png",
@@ -206,7 +206,7 @@ const productsData = [
     {
         id: 10,
         tag: "hero-product",
-        heroImage: "/images/products/home-slider-7.png",
+        heroImage: "/images/home/home-slider-7.png",
         images: [
             "/images/products/jbl100-1.png",
             "/images/products/jbl100-2.png",

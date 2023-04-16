@@ -1,0 +1,166 @@
+#production {
+    padding-top: 0rem;
+    @include centered;
+    
+    .container {
+        background-color: white;
+        text-align:center;
+        position: relative;
+        overflow: hidden;
+
+        h1 {
+            margin-top: 95px;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 25px;
+            line-height: 32px;
+            text-align: center;
+            color: #585858;
+        }
+    }
+}
+
+.production_title{
+    width: 464px;
+    height: 52px;
+    margin: auto;
+    font-family: 'DIN Pro Bold', sans-serif;
+}
+
+.production_rectangle {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 17px;
+    width: 68px;
+    height: 9px;
+    background-color: #585858;
+}
+
+.production_description{
+    width: 823px;
+    height: 462px;
+    margin: auto;
+    margin-top: 77px;
+}
+
+.production_wrapper {
+    padding-top: 106px;
+    padding-bottom: 87px;
+    display: grid;
+    grid-template-columns: 50% auto;
+    gap: 0rem;
+
+    @include devices(lg) {
+        grid-template-columns: 1fr;
+        gap: 0rem;
+    }
+
+    .production_left_col {
+
+        height: 479px;
+        background-color: #777978;
+    
+        .paragraph {
+            margin-left: 79px;
+            font-style: normal;
+            font-size: 14px;
+            color: #FFFFFF;
+        }
+    
+        .paragraph:nth-child(1){
+            margin-top: 64px;
+            width: 595px;
+            font-weight: 700;
+            font-family: 'DIN Pro Bold';
+            line-height: 21px;
+            text-align: left;
+            padding-bottom: 2rem;
+            
+        }
+    
+        .paragraph:nth-child(2){
+            width: 570px;
+            font-family: 'DIN Pro Regular';
+            font-weight: 400;
+            text-align: justify;
+            line-height: 24px;
+        }
+    }
+    
+    .production_right_col {
+        height: 481px;
+    }
+}
+
+
+.production_slogan{
+    width: 885px;
+    height: 126px;
+    margin: auto;
+    font-family: 'DIN Pro Bold';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    text-align: center;
+
+    color: #D30000;
+}
+
+.production_slogan_content{
+    margin-left: 191px;
+    margin-right: 200px;
+    display: flex;
+    justify-content: center;
+    gap: 37px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 25px;
+    color: #000000;
+    text-align: justify;
+
+    p:nth-child(1) {
+        font-family: 'DIN Pro Regular';
+        width: 100%;
+        justify-content: right;
+    }
+    p:nth-child(2) {
+        font-family: 'DIN Pro Regular';
+        width: 100%;
+        justify-content: left;
+    }
+    
+}
+
+
+.production_dosage{
+    
+    margin-left: 191px;
+    margin-top: 6rem;
+    font-family: 'DIN Pro Bold';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    color: #585858;
+    text-align: left;
+    
+}
+
+
+.production_dosage_draw{
+    position: relative;
+    min-height: 697px;
+    
+    .production_dosage_curve_lines{
+        position: absolute;
+        left: 262px;
+        margin-top: 143px;
+    }
+
+    .production_dosage_wrapper{
+        
+    }
+}
+
