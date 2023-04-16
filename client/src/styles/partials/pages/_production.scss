@@ -159,8 +159,66 @@
         margin-top: 143px;
     }
 
-    .production_dosage_wrapper{
+    .production_dosage_container{
+        display: flex;
+        justify-content: center;
+        padding-left:103px;
+        padding-right: 162px;
         
+        .production_dosage_column{
+            flex: 1;
+
+            .subtitle{
+                margin-bottom: 35px;
+                font-family: 'DIN Pro Bold';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 26px;
+                color: #D30000;
+            }
+        }
+
+        .production_dosage_column:nth-child(1){
+            width: 347px;
+            margin-top: 63px;
+            flex: 0.75;
+        }
+
+        .production_dosage_column:nth-child(2){
+            margin-left: 40px;
+            margin-top: 20px;
+            flex: 0.6;
+        }
+        .production_dosage_column:nth-child(3){
+            margin-left: 40px;
+            margin-top: 55px;
+            flex: 0.55;
+        }
+        .production_dosage_column:nth-child(4){
+            margin-left: 40px;
+            margin-top: 25px;
+            flex: 0.5;
+        }
+
+        ul li {
+            
+            text-align: left;
+            list-style: disc outside none;
+            color: #000000;
+            
+            span{
+                line-height: 1.5rem !important;
+                word-wrap:  break-word;
+                font-family: 'DIN Pro Regular';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 19px;
+                word-wrap: break-word;
+                color: #000000;
+            }
+        }
     }
 }
 
