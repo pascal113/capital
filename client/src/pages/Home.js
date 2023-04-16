@@ -1,5 +1,5 @@
 import React from 'react';
-import HeroSlider from '../components/sliders/HeroSlider';
+import HomeSlider from '../components/sliders/HomeSlider';
 
 const Home = () => {
 
@@ -7,7 +7,7 @@ const Home = () => {
         <main>
             <section id="hero" className="section">
                 <div className="container">
-                    <HeroSlider />
+                    <HomeSlider />
                 </div>
             </section>
         </main>
