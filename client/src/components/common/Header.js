@@ -8,6 +8,16 @@ const Header = () => {
     const location  = useLocation();
     const isMenuPage = (location.pathname === '/menu')?true:false;
 
+    const changeLanguage = () => {
+        let value = curLanguage;
+    
+        if (value === 'DE') {
+            setLanguage('GB');
+        } else {
+            setLanguage('DE');
+        }
+    };
+
     return (
         <>
             <div className={"topbar " + (isMenuPage && "active")}>
@@ -22,12 +32,17 @@ const Header = () => {
                             </div>
                         </div>
                         <div className="right">
-                            <div className="itemContainer">
-                                <div className="icon">
+                            <div id="languageBar">
+                                <div className="flag">
                                     <img src={`/images/header/${curLanguage}.png`} width="22"  height="22" alt="mark"></img>
                                 </div>
-                                <span>{(curLanguage==='DE')?'Deutsch':'English'}</span>
-                                <i className={(curLanguage==='DE')?'arrow':'arrow arrow-up'} onClick={()=>{setLanguage((curLanguage==='DE')?'GB':'DE')}}></i>
+                                <div className='textLabel'>
+                                    <span>{(curLanguage==='DE')?'Deutsch':'English'}</span>
+                                </div>
+                                <div className='arrow'>
+                                    <img src={`/images/header/${(curLanguage==='DE')?'arrow-down':'arrow-up'}.png`} width="11"  height="7" alt="arrow" 
+                                    onClick={changeLanguage}></img>
+                                </div>                                
                             </div>
                             <div className="itemContainer">
                                 <Link to={isMenuPage?"/":"/menu"}>

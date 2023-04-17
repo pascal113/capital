@@ -6,8 +6,6 @@ const Dosage = ({data}) => {
     const { id, imgSrcHover, imgSrc } = data;
     const itemData = dosageData.filter(item => (item.id === id));
 
-    console.log('dosage loading', id);
-
     return (
         <div className='production_dosage_column'>
             <div className='dosage_image'

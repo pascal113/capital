@@ -23,54 +23,38 @@
         margin-top: 15px;
 
         .left {
-        display: flex;
-        align-items: center;
-
-        .logo {
-            margin-left: 22px;
-        }
-
-        .itemContainer {
             display: flex;
             align-items: center;
-            margin-left: 30px;
 
-            .icon {
-            font-size: 18px;
-            margin-right: 5px;
+            .logo {
+                margin-left: 22px;
             }
-
-            span {
-            font-size: 15px;
-            font-weight: 500;
-            }
-        }
         }
 
         .right {
             display: flex;
             align-items: center;
-            .arrow {
-                display: block;
-                float: right;
-                margin-left: 1em;
-                margin-top: .25em;
-                border-color: transparent;
-                border-top-color: var(--text-color-header);
-                border-style: solid;
-                border-width: .5em .4em 0;
-                width: 0;
-                height: 0;
-                position: relative;
-                line-height: 0;
-                cursor: pointer;
-            }
-        
-            .arrow-up {
-                border-width: 0 .4em .5em;
-                border-top-color: transparent;
-                border-bottom-color: #D30000;
-                cursor: pointer;
+
+            #languageBar{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .flag {
+                    margin-right: 20px;
+                    width: 22px;
+                    height: 22px;
+                }
+    
+                .textLabel{
+                    margin-right: 25px;
+                    width: 50px;
+                }
+
+                .arrow {
+                    margin-right: 25px;
+                    cursor: pointer;
+                }
             }
 
             .itemContainer {
@@ -78,17 +62,12 @@
                 align-items: center;
                 margin-left: 30px;
                 margin-right: 50px;
-                justify-content: start;
-    
-                .icon {
-                    font-size: 18px;
-                    margin-right: 5px;
-                }
-    
+                justify-content: center;
+
                 span {
-                padding-left: 15px;
-                font-size: 16px;
-                font-weight: 400;
+                    padding-left: 15px;
+                    font-size: 16px;
+                    font-weight: 400;
                 }
 
                 .hamburger {
