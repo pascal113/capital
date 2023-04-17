@@ -7,7 +7,7 @@ const CompanyProfile = () => {
             <section id="company_profile" className="section">
                 <div className="container">
                     <img src="./images/pages/company-profile-top.png" alt="" />
-                    <Link to="/" className="link">
+                    <Link to={-1} className="link">
                         <span className='breadcrumb'>zurück</span>
                     </Link>
                     <div className='company_profile_info_wrapper'>

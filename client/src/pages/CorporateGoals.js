@@ -7,7 +7,7 @@ const CorporateGols = () => {
             <section id="corporate_goals" className="section">
                 <div className="container">
                     <img src="./images/pages/corporate-goals-top.png" alt="" />
-                    <Link to="/" className="link">
+                    <Link to={-1} className="link">
                         <span className='breadcrumb'>zurück</span>
                     </Link>
                     <div className='corporate_goals_info_wrapper'>
