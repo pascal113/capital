@@ -5,7 +5,6 @@ const menuReducer = (state, action) => {
             return state;
 
         case 'HOVER_MENU_ITEM':
-            console.log('Reducer : HOVER_MENU_ITEM payload:');
             return action.payload;
 
         default:

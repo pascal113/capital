@@ -45,8 +45,8 @@ html {
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
 
 section {
@@ -91,9 +91,10 @@ a {
 img {
     max-width: 100%;
     height: auto;
+    border: 0;
+    padding: 0;
 }
 
-img,
 svg {
     vertical-align: middle;
     user-select: none;
