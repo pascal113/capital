@@ -135,7 +135,7 @@
 
 
 .production_dosage{
-    
+    height: 45px;
     margin-left: 191px;
     margin-top: 6rem;
     font-family: 'DIN Pro Bold';
@@ -151,58 +151,99 @@
 
 .production_dosage_draw{
     position: relative;
-    min-height: 697px;
-    
+    min-height: 770px;
+
     .production_dosage_curve_lines{
         position: absolute;
         left: 262px;
-        margin-top: 143px;
+        margin-top: 133px;
     }
 
     .production_dosage_container{
-        display: flex;
-        justify-content: center;
-        padding-left:103px;
-        padding-right: 162px;
+        display: grid;
+        margin-left: 80px;
+        grid-template-columns: 317px 298px 316px 215px;
         
         .production_dosage_column{
-            flex: 1;
-
+            position: relative;
+            
             .subtitle{
-                margin-bottom: 35px;
+                text-align: left;
                 font-family: 'DIN Pro Bold';
                 font-style: normal;
                 font-weight: 700;
                 font-size: 20px;
                 line-height: 26px;
                 color: #D30000;
+                margin-bottom: 35px;
+            }
+
+            .dosage_image {
+                text-align: left;
+                background: transparent;
             }
         }
 
         .production_dosage_column:nth-child(1){
-            width: 347px;
-            margin-top: 63px;
-            flex: 0.75;
+            .dosage_image {
+                width: 159px;
+                height:150px;
+                margin-left: 40px;
+                margin-top: 87px;
+                margin-bottom: 63px;
+            }
+            
+            .subtitle{
+                margin-left: 65px;
+            }
         }
 
         .production_dosage_column:nth-child(2){
-            margin-left: 40px;
-            margin-top: 20px;
-            flex: 0.6;
+            margin-left: 60px;
+            .dosage_image {
+                width: 173px;
+                height: 152px;
+                margin-left: 0px;
+                margin-top: 238px;
+                margin-bottom: 55px;
+                
+            }
+            .subtitle{
+                margin-left: 24px;
+            }
         }
         .production_dosage_column:nth-child(3){
-            margin-left: 40px;
-            margin-top: 55px;
-            flex: 0.55;
+            margin-left: 60px;
+            .dosage_image {
+                width: 159px;
+                height: 149px;
+                margin-left: 0px;
+                margin-top: 125px;
+                margin-bottom: 20px;
+            }
+            .subtitle{
+                margin-left: 32px;
+            }
         }
         .production_dosage_column:nth-child(4){
-            margin-left: 40px;
-            margin-top: 25px;
-            flex: 0.5;
+            margin-left: 25px;
+            .dosage_image {
+                width: 176px;
+                height: 168px;
+                margin-left: 0px;
+                margin-top: 225px;
+                margin-bottom: 20px;
+            }
+            .subtitle{
+                margin-left: 10px;
+            }
+        }
+
+        .production_dosage_column_box {
+            border-right: 1px solid #D30000;
         }
 
         ul li {
-            
             text-align: left;
             list-style: disc outside none;
             color: #000000;
@@ -219,6 +260,7 @@
                 color: #000000;
             }
         }
+        
     }
 }
 
