@@ -38,229 +38,135 @@
 }
 
 .logistics_description{
-    width: 823px;
-    height: 462px;
+    font-family: 'DIN Pro Bold';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 23px;
+    text-align: center;
+    color: #585858;
+    width: 613px;
+    height: 127px;
     margin: auto;
     margin-top: 64px;
 }
 
 .logistics_wrapper {
-    padding-top: 106px;
-    padding-bottom: 87px;
-    display: grid;
-    grid-template-columns: 50% auto;
-    gap: 0rem;
-
-    @include devices(lg) {
-        grid-template-columns: 1fr;
-        gap: 0rem;
-    }
-
-    .production_left_col {
-
-        height: 479px;
-        background-color: #777978;
-    
-        .paragraph {
-            margin-left: 79px;
-            font-style: normal;
-            font-size: 14px;
-            color: #FFFFFF;
-        }
-    
-        .paragraph:nth-child(1){
-            margin-top: 64px;
-            width: 595px;
-            font-weight: 700;
-            font-family: 'DIN Pro Bold';
-            line-height: 21px;
-            text-align: left;
-            padding-bottom: 2rem;
-            
-        }
-    
-        .paragraph:nth-child(2){
-            width: 570px;
-            font-family: 'DIN Pro Regular';
-            font-weight: 400;
-            text-align: justify;
-            line-height: 24px;
-        }
-    }
-    
-    .production_right_col {
-        height: 481px;
-    }
-}
-
-
-.production_slogan{
-    width: 885px;
-    height: 126px;
-    margin: auto;
-    font-family: 'DIN Pro Bold';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 26px;
-    text-align: center;
-
-    color: #D30000;
-}
-
-.production_slogan_content{
-    margin-left: 191px;
-    margin-right: 200px;
     display: flex;
     justify-content: center;
-    gap: 37px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 25px;
-    color: #000000;
-    text-align: justify;
-
-    p:nth-child(1) {
-        font-family: 'DIN Pro Regular';
-        width: 100%;
-        justify-content: right;
-    }
-    p:nth-child(2) {
-        font-family: 'DIN Pro Regular';
-        width: 100%;
-        justify-content: left;
-    }
+    flex-wrap: wrap;
+    gap: 65px;
+    width: 100%;
     
-}
+    .logistics_card {
+        width: 326px;
 
-
-.production_dosage{
-    height: 45px;
-    margin-left: 191px;
-    margin-top: 6rem;
-    font-family: 'DIN Pro Bold';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 26px;
-    color: #585858;
-    text-align: left;
+        img {
+            width: 327px;
+            height: 200px;
+        }
     
-}
-
-
-.production_dosage_draw{
-    position: relative;
-    min-height: 770px;
-
-    .production_dosage_curve_lines{
-        position: absolute;
-        left: 262px;
-        margin-top: 133px;
-    }
-
-    .production_dosage_container{
-        display: grid;
-        margin-left: 80px;
-        grid-template-columns: 317px 298px 316px 215px;
-        
-        .production_dosage_column{
-            position: relative;
-            
-            .subtitle{
-                text-align: left;
-                font-family: 'DIN Pro Bold';
-                font-style: normal;
-                font-weight: 700;
-                font-size: 20px;
-                line-height: 26px;
-                color: #D30000;
-                margin-bottom: 35px;
-            }
-
-            .dosage_image {
-                text-align: left;
-                background: transparent;
-            }
-        }
-
-        .production_dosage_column:nth-child(1){
-            .dosage_image {
-                width: 159px;
-                height:150px;
-                margin-left: 40px;
-                margin-top: 87px;
-                margin-bottom: 63px;
-            }
-            
-            .subtitle{
-                margin-left: 65px;
-            }
-        }
-
-        .production_dosage_column:nth-child(2){
-            margin-left: 60px;
-            .dosage_image {
-                width: 173px;
-                height: 152px;
-                margin-left: 0px;
-                margin-top: 238px;
-                margin-bottom: 55px;
-                
-            }
-            .subtitle{
-                margin-left: 24px;
-            }
-        }
-        .production_dosage_column:nth-child(3){
-            margin-left: 60px;
-            .dosage_image {
-                width: 159px;
-                height: 149px;
-                margin-left: 0px;
-                margin-top: 125px;
-                margin-bottom: 20px;
-            }
-            .subtitle{
-                margin-left: 32px;
-            }
-        }
-        .production_dosage_column:nth-child(4){
-            margin-left: 25px;
-            .dosage_image {
-                width: 176px;
-                height: 168px;
-                margin-left: 0px;
-                margin-top: 225px;
-                margin-bottom: 20px;
-            }
-            .subtitle{
-                margin-left: 10px;
-            }
-        }
-
-        .production_dosage_column_box {
-            border-right: 1px solid #D30000;
-        }
-
-        ul li {
-            text-align: left;
-            list-style: disc outside none;
+        .logistics_card_text{
+            width: 100%;
+            height: 181px;
+            font-family: 'DIN Pro Regular', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 22px;
+            text-align: justify;
             color: #000000;
-            
-            span{
-                line-height: 1.5rem !important;
-                word-wrap:  break-word;
-                font-family: 'DIN Pro Regular';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 15px;
-                line-height: 19px;
-                word-wrap: break-word;
-                color: #000000;
-            }
+            margin-top: 37px;
+            margin-bottom: 54px;
         }
+
+        .card_button{
+            width: 143px;
+            height: 48px;
+            font-family: inherit;
+            display:block; 
+            margin: 0 auto;
+        }
+    }
+}
+
+.logistics_slogan{
+    position: relative;
+    width: 100%px;
+    height: 337px;
+    margin: 171px 0 205px 0;
+    text-align: center;
+
+    .logistics_slogan_content{
+        position: absolute;
+        width: 700px;
+        font-family: 'DIN Pro Bold';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 40px;
+        text-align: center;
+        color: #FFFFFF;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+.logistics_contact_wrapper{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-bottom: 280px;
+    
+    .contact_left_column{
+        padding-left: 164px;
+
+        .contact_title{
+            width: 616px;
+            margin-top: 36px;
+            font-family: 'DIN Pro Bold';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 25px;
+            line-height: 36px;
+            color: #585858;
+
+            text-align: left;
+        }
+
+        .contact_content{
+            width: 419px;
+            height: 127px;
+            margin-top: 80px;
+            margin-bottom: 40px;
+            font-family: 'DIN Pro Bold';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 29px;
+            color: #585858;
+
+            text-align: left;
+        }
+
+        .contact_button{
+            float: left;
+            width: 290px;
+            height: 66px;
+            margin-left: 0px;
+            font-family: inherit;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 26px;
+        }
+    }
+
+    .contact_right_column{
+        img{
+            float: right;
+        }
+        
         
     }
 }

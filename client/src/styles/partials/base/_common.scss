@@ -46,6 +46,20 @@
     overflow: hidden;
 }
 
+.base_button{
+    background: #D30000;
+    font-family: 'DIN Pro Regular', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;
+    
+    &:hover{
+        background: #FB5151;
+    }
+}
+
 .btn {
     display: inline-block;
     background-color: rgba($color: #FF0000, $alpha: 0.8);
