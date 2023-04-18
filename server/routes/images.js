@@ -29,7 +29,7 @@ const upload = multer({ storage: storage });
 //     limits: { fileSize: 5 * 1024 * 1024 }
 // });
 
-router.post('/addImage', upload.single('image'), (req, res)  => {
+router.post('/add', upload.single('image'), (req, res)  => {
     
     console.log('post addImage');
     console.log(req.file);
@@ -54,7 +54,7 @@ router.post('/addImage', upload.single('image'), (req, res)  => {
     });
 });
 
-router.post('/updateImage',(req,res)=>{
+router.post('/update',(req,res)=>{
     const path =  `/${Math.round(Math.random() * 9 + 1)}.jpg`;
     const {
         type,
@@ -70,7 +70,7 @@ router.post('/updateImage',(req,res)=>{
     });
 });
 
-router.get('/getAllImages', (req, res) => {
+router.get('/getall', (req, res) => {
     console.log('getAllImages');
     Images.find(null, 'name').then(data => {
         responseClient(res, 200, 0, 'Request success!', data);
@@ -79,7 +79,7 @@ router.get('/getAllImages', (req, res) => {
     })
 });
 
-router.delete('/delImage',(req,res)=>{
+router.delete('/del',(req,res)=>{
     let id = req.query.id;
     Images.remove({_id:id})
         .then(result=>{

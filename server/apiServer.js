@@ -7,24 +7,15 @@
  * 3：backend wrong
  */
 import Express from 'express'
-import config from '../../config/config'
+import config from '../config/config'
 import bodyParser from 'body-parser'
 import mongoose from 'mongoose'
 import cookieParser from 'cookie-parser'
 import session from 'express-session'
-import User from '../models/user'
-import {MD5_SUFFIX,md5} from '../util'
+import User from './models/user'
+import {MD5_SUFFIX,md5} from './util'
 import multer from 'multer';
 import SibApiV3Sdk from 'sib-api-v3-sdk';
-
-// const Express = require("express");
-// const config = require("../../config/config");
-// const bodyParser = require("body-parser");
-// const mongoose = require("mongoose");
-// const cookieParser = require("cookie-parser");
-// const session = require("express-session");
-// const User = require("../models/user");
-// const {MD5_SUFFIX,md5} = require("../util");
 
 const port = config.apiPort;
 
@@ -168,10 +159,10 @@ app.post('/sendEmail', async (req, res) => {
     res.send('ok');
 });
 
-//blog rounter
-app.use('/', require('./main'));
-//admin router
-app.use('/admin', require('./admin'));
+
+app.use('api/users', require('./routes/user'));
+app.use('api/jobs', require('./routes/article'));
+app.use('api/images', require('./routes/images'));
 
 mongoose.Promise = require('bluebird');
 mongoose.connect(`mongodb://${config.dbHost}:${config.dbPort}/blog`, function (err) {

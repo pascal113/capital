@@ -81,7 +81,7 @@ router.post('/register', (req, res) => {
     });
 });
 
-router.get('/userInfo',function (req,res) {
+router.get('/info',function (req,res) {
     if(req.session.userInfo){
         responseClient(res,200,0,'',req.session.userInfo)
     }else{

@@ -4,7 +4,7 @@ const router = Express.Router();
 import Article from '../models/article'
 import {responseClient} from '../util'
 
-router.post('/addArticle', function (req, res) {
+router.post('/add', function (req, res) {
     const {
         title,
         content,
@@ -35,7 +35,7 @@ router.post('/addArticle', function (req, res) {
     });
 });
 
-router.post('/updateArticle',(req,res)=>{
+router.post('/update',(req,res)=>{
     const {
         title,
         content,
@@ -54,7 +54,7 @@ router.post('/updateArticle',(req,res)=>{
     });
 });
 
-router.get('/delArticle',(req,res)=>{
+router.delete('/del',(req,res)=>{
     let id = req.query.id;
     Article.remove({_id:id})
         .then(result=>{
