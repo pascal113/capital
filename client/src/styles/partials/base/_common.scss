@@ -62,7 +62,7 @@
 
 .btn {
     display: inline-block;
-    background-color: rgba($color: #FF0000, $alpha: 0.8);
+    background-color: rgba($color: #a61c00, $alpha: 1.0);
     color: #fff;
     padding: 0.8rem 1.5rem;
     border-radius: 3px;
@@ -204,11 +204,11 @@
 }
 
 .swiper-pagination-bullet {
-    background: var(--text-color) !important;
+    background: var(--slider-bullet-inactive-color) !important;
 }
 
 .swiper-pagination-bullet-active {
-    background: var(--main-color) !important;
+    background: var(--slider-bullet-active-color) !important;
 }
 
 .breadcrumb {
