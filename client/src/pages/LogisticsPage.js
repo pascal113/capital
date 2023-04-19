@@ -25,9 +25,7 @@ const LogisticsPage = () => {
                     </div>
                     <div className='logistics_slogan'>
                         <img src="./images/pages/logistics/logistics-slogan.png" alt="" />
-                        <p className='logistics_slogan_content'>
-                            <blockquote >Mit unserem europaweiten Netzwerk an Herstellern und Lieferanten sind wir in der Lage, innerhalb kürzester Zeit den Bedarf an vielen Humanarzneimitteln zu decken. </blockquote>
-                        </p>
+                        <blockquote className='logistics_slogan_content'>Mit unserem europaweiten Netzwerk an Herstellern und Lieferanten sind wir in der Lage, innerhalb kürzester Zeit den Bedarf an vielen Humanarzneimitteln zu decken. </blockquote>
                     </div>
                     <div className='logistics_contact_wrapper'>
                         <div className='contact_left_column'>

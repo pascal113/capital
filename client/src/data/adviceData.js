@@ -29,6 +29,8 @@ const adviceData = {
 
     slider: {
         delay: 2000,
+        imgWidth: '572px',
+        imgHeight: '471px',
         images: [
             "./images/pages/advice/advice-slider-1.png",
             "./images/pages/advice/advice-slider-2.png",

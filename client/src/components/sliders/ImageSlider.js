@@ -10,6 +10,7 @@ import "swiper/css/effect-fade";
 const ImageSlider = ( props ) => {
 
     const slider = props.data;
+    const imgStyle = {width: slider.imgWidth,  height: slider.imgHeight};
 
     return (
         <Swiper 
@@ -28,7 +29,9 @@ const ImageSlider = ( props ) => {
                 slider.images.map((item, index) => {
                     return (
                         <SwiperSlide key={index}>
-                            <img src={item} alt="slider-img" />
+                            <div className='imgContainer' style={imgStyle} >
+                                <img src={item} alt="slider-img" />
+                            </div>
                         </SwiperSlide>
                     );
                 })
