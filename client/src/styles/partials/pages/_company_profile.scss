@@ -52,7 +52,7 @@
 }
 
 .company_profile_wrapper {
-    padding-top: 224px;
+    padding-top: 170px;
     padding-bottom: 318px;
     display: grid;
     grid-template-columns: 50% 50%;
@@ -67,6 +67,7 @@
 .company_profile_left_col {
     .paragraph {
         width: 576px;
+        margin-top: 54px;
         margin-left: 98px;
         font-family: 'DIN Pro Regular', sans-serif;
         font-style: normal;
@@ -84,16 +85,17 @@
 .company_profile_right_col {
     
     img {
+        position: relative;
+        margin-top: 54px;
+        display: inline;
         float:right;
     }
 
     .border-box{
         position: absolute;
-        left: 936px;
-        top: 714px;
         width: 537px;
         height: 433px;
-        right: -12px;
+        right: -23px;
         box-sizing: border-box;
         border: 6px solid #777978;
     }

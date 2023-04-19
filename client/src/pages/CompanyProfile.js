@@ -22,9 +22,9 @@ const CompanyProfile = () => {
                             </p>
                         </div>
                         <div className="company_profile_right_col">
-                            <img src="./images/pages/company-profile-1.png" alt="" />
                             <div className='border-box'>
                             </div>
+                            <img src="./images/pages/company-profile-1.png" alt="" />
                         </div>
                     </div>
                 </div>
