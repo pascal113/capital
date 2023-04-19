@@ -3,6 +3,7 @@
     @include centered;
     
     .container {
+        width: 100%;
         background-color: white;
         text-align:center;
         position: relative;
@@ -181,6 +182,7 @@
             .dosage_image {
                 text-align: left;
                 background: transparent;
+                cursor: pointer;
             }
         }
 

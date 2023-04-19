@@ -12,6 +12,7 @@ import CorporateGoals from '../pages/CorporateGoals';
 import Production from '../pages/Production';
 import LogisticsPage from '../pages/LogisticsPage';
 import Advice from '../pages/Advice';
+import JobPostings from '../pages/JobPostings';
 
 const RouterRoutes = () => {
 
@@ -27,6 +28,7 @@ const RouterRoutes = () => {
                 <Route path="/production" element={<Production />} />
                 <Route path="/logistics" element={<LogisticsPage />} />
                 <Route path="/advice" element={<Advice />} />
+                <Route path="/job-postings" element={<JobPostings />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/all-products" element={<AllProducts />} />
                 <Route path="/product-details/:productId" element={<ProductDetails />} />
