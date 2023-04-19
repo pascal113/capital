@@ -1,10 +1,11 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, A11y, Autoplay } from 'swiper';
+import { Pagination, A11y, Autoplay, EffectFade } from 'swiper';
 
 import 'swiper/scss';
 import 'swiper/scss/autoplay';
 import 'swiper/scss/pagination';
+import "swiper/css/effect-fade";
 
 const ImageSlider = ( props ) => {
 
@@ -12,7 +13,8 @@ const ImageSlider = ( props ) => {
 
     return (
         <Swiper 
-            modules={[Pagination, A11y, Autoplay]}
+            modules={[Pagination, A11y, Autoplay, EffectFade]}
+            effect={"fade"}
             loop={true}
             speed={400}
             spaceBetween={0}
