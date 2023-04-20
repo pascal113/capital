@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import BreadCrumb from '../components/common/BreadCrumb'
 import logisticsData from '../data/logisticsData';
 
@@ -14,17 +14,22 @@ const LogisticsShipmentDetails = () => {
             <section id="logistics_shipment_details" className="section">
                 <div className="container">
                     <div className='img_top'>
-                        <img src="/./images/pages/logistics/logistics-top.png" alt="" />
+                        <img src="/images/pages/logistics/logistics-top.png" alt="" />
                     </div>
                     <BreadCrumb detail_info="LOGISTIK &gt; VERSAND" />
                     <div className='logistics_shipment_details_wrapper'>
-                        <div className='logistics_shipment_dash_box' />
-                        <div className={`logistics_shipment_digit_box box${id}`}>
-                            <span className='digit'>{id}</span>
-                        </div>
+                        <Link to={-1} className="link">
+                            <div className={`logistics_shipment_digit_box box${id}`}>
+                                <span className='digit'>{shipmentData[0].id}</span>
+                            </div>
+                        </Link>
                         <div className={`logistics_shipment_detail_description desc${id}`}>
                             <span>{shipmentData[0].description}</span>
                         </div>
+                        <div className={`logistics_shipment_detail_image img${id}`}>
+                            <img src={shipmentData[0].image} alt="" />
+                        </div>
+                        <div className={`logistics_shipment_dash_box dash${id}`}></div>
                     </div>
                     
                 </div>

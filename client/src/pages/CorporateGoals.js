@@ -7,7 +7,7 @@ const CorporateGols = () => {
         <>
             <section id="corporate_goals" className="section">
                 <div className="container">
-                    <img src="./images/pages/corporate-goals-top.png" alt="" />
+                    <img src="/images/pages/corporate-goals-top.png" alt="" />
                     <BreadCrumb />
                     <div className='corporate_goals_info_wrapper'>
                         <h1 className='corporate_goals_title'>Unser Ziel: Gesundheit für das Leben.</h1>
@@ -32,7 +32,7 @@ const CorporateGols = () => {
                             
                         </div>
                     </div>
-                    <img src="./images/pages/corporate-goals-1.png" alt="" className='corporate_goals_img'/>
+                    <img src="/images/pages/corporate-goals-1.png" alt="" className='corporate_goals_img'/>
                     
                 </div>
             </section>

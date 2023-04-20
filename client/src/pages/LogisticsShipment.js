@@ -12,7 +12,7 @@ const LogisticsShipment = () => {
             <section id="logistics_shipment" className="section">
                 <div className="container">
                     <div className='img_top'>
-                        <img src="./images/pages/logistics/logistics-top.png" alt="" />
+                        <img src="/images/pages/logistics/logistics-top.png" alt="" />
                     </div>
                     <BreadCrumb detail_info="LOGISTIK &gt; VERSAND" />
                     

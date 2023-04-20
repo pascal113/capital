@@ -7,7 +7,7 @@ const CompanyProfile = () => {
         <>
             <section id="company_profile" className="section">
                 <div className="container">
-                    <img src="./images/pages/company-profile-top.png" alt="" />
+                    <img src="/images/pages/company-profile-top.png" alt="" />
                     <BreadCrumb />
                     <div className='company_profile_info_wrapper'>
                         <h1 className='company_profile_title'>GC Pharma GmbH</h1>
@@ -23,7 +23,7 @@ const CompanyProfile = () => {
                         <div className="company_profile_right_col">
                             <div className='border-box'>
                             </div>
-                            <img src="./images/pages/company-profile-1.png" alt="" />
+                            <img src="/images/pages/company-profile-1.png" alt="" />
                         </div>
                     </div>
                 </div>

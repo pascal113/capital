@@ -16,7 +16,7 @@ const Footer = () => {
                     <div className="container">
                         <div className="wrapper footer_wrapper">
                             <div className="foot_mark">
-                                <img src="./images/mark/mark_light.png" alt="product-img" />
+                                <img src="/images/mark/mark_light.png" alt="product-img" />
                             </div>
 
                             {

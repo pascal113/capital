@@ -6,7 +6,7 @@ const menuContext = createContext();
 
 // Initial State
 const initialState = {
-    imgUrl: './images/menu/menu-page-1.png',
+    imgUrl: '/images/menu/menu-page-1.png',
     descText: 'Home'
 };
 
