@@ -13,6 +13,8 @@ import Production from '../pages/Production';
 import LogisticsPage from '../pages/LogisticsPage';
 import Advice from '../pages/Advice';
 import JobPostings from '../pages/JobPostings';
+import LogisticsStorage from '../pages/LogisticsStorage';
+import LogisticsShipment from '../pages/LogisticsShipment';
 import LogisticsPurchasing from '../pages/LogisticsPurchasing';
 
 const RouterRoutes = () => {
@@ -28,6 +30,8 @@ const RouterRoutes = () => {
                 <Route path="/corporate-goals" element={<CorporateGoals />} />
                 <Route path="/production" element={<Production />} />
                 <Route path="/logistics" element={<LogisticsPage />} />
+                <Route path="/logistics-storage" element={<LogisticsStorage />} />
+                <Route path="/logistics-shipment" element={<LogisticsShipment />} />
                 <Route path="/logistics-purchasing" element={<LogisticsPurchasing />} />
                 <Route path="/advice" element={<Advice />} />
                 <Route path="/job-postings" element={<JobPostings />} />
