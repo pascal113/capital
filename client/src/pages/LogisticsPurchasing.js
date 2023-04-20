@@ -6,6 +6,8 @@ import logisticsData from '../data/logisticsData';
 
 const LogisticsPurchasing = () => {
 
+    const purchasingData = logisticsData.purchasing;
+
     return (
         <>
             <section id="logistics_purchasing" className="section">
@@ -21,7 +23,7 @@ const LogisticsPurchasing = () => {
                     <p className='logistics_description'>Mit unserem europaweiten Netzwerk an Herstellern und Lieferanten sind wir in der Lage, innerhalb kürzester Zeit den Bedarf an vielen Humanarzneimitteln zu decken.Sprechen Sie uns an! Unsere Spezialisten in Einkauf und Vertrieb können Ihnen schnell, kompetent und zuverlässig weiterhelfen. Durch unser europaweites Netzwerk an Herstellern, Lieferanten und Großhandlungen sind wir von GC Pharma in der Lage, innerhalb kürzester Zeit den Bedarf an nahezu allen in Europa zugelassenen Humanarzneimitteln zu decken.
                     </p>
                     <div className='slider'>
-                        <ImageSlider data={logisticsData.purchasing_silder} />
+                        <ImageSlider data={purchasingData.slider} />
                     </div>
                 </div>
             </section>
