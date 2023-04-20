@@ -79,7 +79,30 @@ const logisticsData = {
                 "./images/pages/logistics/logistics-purchasing-5.png",
             ]
         },
-    }   
+    }   ,
+
+    shipment: [
+        {
+            id: 1,
+            description: "Neben der Lagerung bieten wir unseren Kunden auch umfassend Dienstleistungen in den Bereichen Versand und Kommissionierung an.",
+            image: "./images/pages/logistics/logistics-shipment-1"
+        },
+        {
+            id: 2,
+            description: "Wir verpacken die Produkte unsere Kunden in geeignete und zuvor umfassend qualifizierte Verpackungen und stellen diese dann dem gewünschten Logistikpartner zur Abholung bereit.",
+            image: "./images/pages/logistics/logistics-shipment-2"
+        },
+        {
+            id: 3,
+            description: "Durch die speziellen Versandverpackungen unserer Partner können wir dabei die gewünschten Laufzeiten (von 24h bis 92 h oder länger) im gewünschten Temperaturbereich (ambient, 2 bis 8°C oder -25 bis -20°C) gewährleisten. ",
+            image: "./images/pages/logistics/logistics-shipment-3"
+        },
+        {
+            id: 4,
+            description: "Durch unser europaweites Netzwerk an Herstellern, Lieferanten und Großhandlungen sind wir von GC Pharma in der Lage, innerhalb kürzester Zeit den Bedarf an nahezu allen in Europa zugelassenen Humanarzneimitteln zu decken. Benötigen Sie Fertigarzneimittel aus dem Europäischen Wirtschaftsraum? ",
+            image: "./images/pages/logistics/logistics-shipment-4"
+        },
+    ]
 };
 
 
