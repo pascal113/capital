@@ -7,6 +7,7 @@
  * 3：backend wrong
  */
 import Express from 'express'
+import dotenv from 'dotenv';
 import config from '../config/config'
 import bodyParser from 'body-parser'
 import mongoose from 'mongoose'
@@ -16,6 +17,11 @@ import User from './models/user'
 import {MD5_SUFFIX,md5} from './util'
 import multer from 'multer';
 import SibApiV3Sdk from 'sib-api-v3-sdk';
+
+dotenv.config();
+const env = process.env;
+
+console.log(env);
 
 const port = config.apiPort;
 
@@ -163,6 +169,17 @@ app.post('/sendEmail', async (req, res) => {
 app.use('api/users', require('./routes/user'));
 app.use('api/jobs', require('./routes/article'));
 app.use('api/images', require('./routes/images'));
+
+
+if (env['ENV'] === 'production') {
+    console.log('production mode');
+    app.use(express.static(path.join(__dirname, '/client/build')));
+    app.use('/admin', express.static(path.join(__dirname, '/admin/build')));
+    app.get('/admin/*', (req, res) => res.sendFile(path.resolve(__dirname, 'admin', 'build', 'index.html')));
+    app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')));
+} 
+  
+
 
 mongoose.Promise = require('bluebird');
 mongoose.connect(`mongodb://${config.dbHost}:${config.dbPort}/blog`, function (err) {
