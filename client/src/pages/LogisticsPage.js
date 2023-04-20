@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import BreadCrumb from '../components/common/BreadCrumb';
 import LogisticsCard from '../components/logistics/LogisticsCard';
 import logisticsData from '../data/logisticsData';
 
@@ -10,9 +11,7 @@ const LogisticsPage = () => {
             <section id="logistics" className="section">
                 <div className="container">
                     <img src="./images/pages/logistics/logistics-top.png" alt="" />
-                    <Link to={-1} className="link">
-                        <span className='breadcrumb'>zurück</span>
-                    </Link>
+                    <BreadCrumb />
                     <h1 className='logistics_title'>Unsere Spezialisten in Einkauf und Vertrieb können Ihnen schnell, <br />
                     kompetent und zuverlässig weiterhelfen.</h1>
                     <div className='logistics_rectangle'></div>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import BreadCrumb from '../components/common/BreadCrumb';
 import AdviceCard from '../components/advice/AdviceCard';
 import ImageSlider from '../components/sliders/ImageSlider';
 import adviceData from '../data/adviceData';
@@ -10,9 +11,7 @@ const Advice = () => {
             <section id="advice" className="section">
                 <div className="container">
                     <img src="./images/pages/advice/advice-top.png" alt="" />
-                    <Link to={-1} className="link">
-                        <span className='breadcrumb'>zurück</span>
-                    </Link>
+                    <BreadCrumb />
                     <div className='advice_title'>
                         <h1>Von der Herstellung oder dem Einkauf von Arzneimitteln bis hin zur zielgruppengerechten Vermarktung unterstützen und beraten wir von GC Pharma gerne.</h1>
                         <div className='advice_rectangle'></div>

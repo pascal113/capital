@@ -212,27 +212,31 @@
 }
 
 .breadcrumb {
-    margin: 11px 11px;
-    float:left;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 22px;
-    line-height: 28px;
-    color: #585858;
+    position: absolute;
+    margin-left: 1rem;
+    margin-top: 12px;
 
-    &:hover {
-        color: #D92020;
-        cursor: pointer;
+    .breadcrumb_return{
+        font-style: normal;
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 28px;
+        color: #585858;
+
+        &:hover {
+            color: #D92020;
+            cursor: pointer;
+        }
     }
-}
 
-.breadcrumb_detail{
-    display: inline-block;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 26px;
-    color: #585858;
+    .breadcrumb_detail{
+        margin-left: 1rem;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 26px;
+        color: #585858;
+    }
 }
 
 .imgContainer {

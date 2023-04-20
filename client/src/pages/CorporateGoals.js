@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import BreadCrumb from '../components/common/BreadCrumb';
 
 const CorporateGols = () => {
     return (
@@ -7,9 +8,7 @@ const CorporateGols = () => {
             <section id="corporate_goals" className="section">
                 <div className="container">
                     <img src="./images/pages/corporate-goals-top.png" alt="" />
-                    <Link to={-1} className="link">
-                        <span className='breadcrumb'>zurück</span>
-                    </Link>
+                    <BreadCrumb />
                     <div className='corporate_goals_info_wrapper'>
                         <h1 className='corporate_goals_title'>Unser Ziel: Gesundheit für das Leben.</h1>
                         <div className='corporate_goals_rectangle'></div>

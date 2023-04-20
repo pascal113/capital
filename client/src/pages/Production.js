@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import BreadCrumb from '../components/common/BreadCrumb';
 import Dosage from '../components/product/Dosage';
 
 const Production = () => {
@@ -14,9 +15,7 @@ const Production = () => {
             <section id="production" className="section">
                 <div className="container">
                     <img src="./images/pages/production/production-top.png" alt="" />
-                    <Link to={-1} className="link">
-                        <span className='breadcrumb'>zurück</span>
-                    </Link>
+                    <BreadCrumb />
                     <h1 className='production_title'>Unsere Leistungen im Überblick</h1>
                     <div className='production_rectangle'></div>
                     <div className='production_description'>
