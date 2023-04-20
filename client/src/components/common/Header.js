@@ -22,7 +22,7 @@ const Header = () => {
         <>
             <div className={"topbar " + (isMenuPage && "active")}>
                 <div className="container">
-                    <img src="./images/header/titlebar.png" alt="" className='band'/>
+                    <img src="/images/header/titlebar.png" alt="" className='band'/>
                     <div className="wrapper">
                         <div className="left">
                             <div className='logo'>

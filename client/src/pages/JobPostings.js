@@ -7,7 +7,7 @@ const JobPostings = () => {
         <>
             <section id="job_postings" className="section">
                 <div className="container">
-                    <img src="./images/pages/job-postings/job-postings-top.png" alt="" />
+                    <img src="/images/pages/job-postings/job-postings-top.png" alt="" />
                     <BreadCrumb />
                     <h1 className='job_postings_title'>GC Pharma GmbH als Arbeitgeber</h1>
                     <div className='job_postings_rectangle'></div>

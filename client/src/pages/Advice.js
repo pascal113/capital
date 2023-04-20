@@ -10,7 +10,7 @@ const Advice = () => {
         <>
             <section id="advice" className="section">
                 <div className="container">
-                    <img src="./images/pages/advice/advice-top.png" alt="" />
+                    <img src="/images/pages/advice/advice-top.png" alt="" />
                     <BreadCrumb />
                     <div className='advice_title'>
                         <h1>Von der Herstellung oder dem Einkauf von Arzneimitteln bis hin zur zielgruppengerechten Vermarktung unterstützen und beraten wir von GC Pharma gerne.</h1>

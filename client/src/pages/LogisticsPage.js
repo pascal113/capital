@@ -10,7 +10,7 @@ const LogisticsPage = () => {
         <>
             <section id="logistics" className="section">
                 <div className="container">
-                    <img src="./images/pages/logistics/logistics-top.png" alt="" />
+                    <img src="/images/pages/logistics/logistics-top.png" alt="" />
                     <BreadCrumb />
                     <h1 className='logistics_title'>Unsere Spezialisten in Einkauf und Vertrieb können Ihnen schnell, <br />
                     kompetent und zuverlässig weiterhelfen.</h1>
@@ -23,7 +23,7 @@ const LogisticsPage = () => {
                         <LogisticsCard props={logisticsData.cards[2]}></LogisticsCard>
                     </div>
                     <div className='logistics_slogan'>
-                        <img src="./images/pages/logistics/logistics-slogan.png" alt="" />
+                        <img src="/images/pages/logistics/logistics-slogan.png" alt="" />
                         <blockquote className='logistics_slogan_content'>Mit unserem europaweiten Netzwerk an Herstellern und Lieferanten sind wir in der Lage, innerhalb kürzester Zeit den Bedarf an vielen Humanarzneimitteln zu decken. </blockquote>
                     </div>
                     <div className='logistics_contact_wrapper'>
@@ -39,7 +39,7 @@ const LogisticsPage = () => {
                             </Link>
                         </div>
                         <div className='contact_right_column'>
-                            <img src="./images/pages/logistics/logistics_map.png" alt="" />
+                            <img src="/images/pages/logistics/logistics_map.png" alt="" />
                         </div>
                         
                     </div>
