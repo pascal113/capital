@@ -17,21 +17,24 @@ const LogisticsShipmentDetails = () => {
                         <img src="/images/pages/logistics/logistics-top.png" alt="" />
                     </div>
                     <BreadCrumb detail_info="LOGISTIK &gt; VERSAND" />
-                    <div className='logistics_shipment_details_wrapper'>
-                        <Link to={-1} className="link">
-                            <div className={`logistics_shipment_digit_box box${id}`}>
-                                <span className='digit'>{shipmentData[0].id}</span>
+                    {
+                        shipmentData.length > 0 && (
+                            <div className='logistics_shipment_details_wrapper'>
+                                <Link to={-1} className="link">
+                                    <div className={`logistics_shipment_digit_box box${id}`}>
+                                        <span className='digit'>{shipmentData[0].id}</span>
+                                    </div>
+                                </Link>
+                                <div className={`logistics_shipment_detail_description desc${id}`}>
+                                    <span>{shipmentData[0].description}</span>
+                                </div>
+                                <div className={`logistics_shipment_detail_image img${id}`}>
+                                    <img src={shipmentData[0].image} alt="" />
+                                </div>
+                                <div className={`logistics_shipment_dash_box dash${id}`}></div>
                             </div>
-                        </Link>
-                        <div className={`logistics_shipment_detail_description desc${id}`}>
-                            <span>{shipmentData[0].description}</span>
-                        </div>
-                        <div className={`logistics_shipment_detail_image img${id}`}>
-                            <img src={shipmentData[0].image} alt="" />
-                        </div>
-                        <div className={`logistics_shipment_dash_box dash${id}`}></div>
-                    </div>
-                    
+                        )
+                    }
                 </div>
             </section>
         </>
