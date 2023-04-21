@@ -17,6 +17,7 @@ import LogisticsStorage from '../pages/LogisticsStorage';
 import LogisticsShipment from '../pages/LogisticsShipment';
 import LogisticsPurchasing from '../pages/LogisticsPurchasing';
 import LogisticsShipmentDetails from '../pages/LogisticsShipmentDetails';
+import Contact from '../pages/Contact';
 
 const RouterRoutes = () => {
 
@@ -36,6 +37,7 @@ const RouterRoutes = () => {
                 <Route path="/logistics-shipment-details/:id" element={<LogisticsShipmentDetails />} />
                 <Route path="/logistics-purchasing" element={<LogisticsPurchasing />} />
                 <Route path="/advice" element={<Advice />} />
+                <Route path="/contacts" element={<Contact />} />
                 <Route path="/job-postings" element={<JobPostings />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/all-products" element={<AllProducts />} />
