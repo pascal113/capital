@@ -25,7 +25,7 @@
             outline: none;
             box-shadow: 0 0 0 2px #ed6f1e;
         }
-        /*&::before {
+        &::before {
             content: "";
             position: absolute;
             z-index: 10;
@@ -50,41 +50,8 @@
             transform: translate(-90%, -50%);
             transition: clip-path 330ms ease;
             clip-path: polygon(0 0, 100% 0, 50% 100%, 50% 100%);
-        }*/
+        }
         
-    .select-box--arrow {
-        width: 30px;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        display: inline-block;
-        background: #585858;
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-    
-    .select-box--arrow-down {
-        position: absolute;
-        left: 10px;
-        width: 0;
-        height: 0;
-        border-left: 8px solid transparent;
-        border-right: 8px solid transparent;
-        border-top: 10px solid white;
-    }
-    
-    .select-box--arrow-up {
-        
-        position: absolute;
-        left: 10px;
-        width: 0;
-        height: 0;
-        border-left: 8px solid transparent;
-        border-right: 8px solid transparent;
-        border-bottom: 10px solid white;
-    }
-
         .optList {
             position: absolute;
             top: 100%;
@@ -128,6 +95,9 @@
         &.active {
             &::after {
             clip-path: polygon(50% 0, 50% 0, 100% 100%, 0 100%);
+            }
+            &::before {
+                background-color: red;
             }
             .option {
             animation: drop 220ms ease forwards;

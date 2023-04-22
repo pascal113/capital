@@ -126,15 +126,6 @@ const CustomDropdown = ({name, options, style, ...props}) => {
             role="listbox" tabIndex={0} data-value={getSelectedOptionValue()}
             style={style}>
             <span className="value">{getSelectedOptionText()}</span>
-            <div className="select-box--arrow" >
-            <span
-              className={`${
-                isActive
-                  ? "select-box--arrow-up"
-                  : "select-box--arrow-down"
-              }`}
-            />
-          </div>
             <ul ref={optList} className={'optList' + (isActive ? '' : ' hidden')} role="presentation">
                 <DropdownOptions options={options}
                                 selectedIndex={selectedIndex}
