@@ -53,27 +53,212 @@
     text-align: justify;
 }
 
-.services_card {
+.contact_position {
+    font-family: 'DIN Pro Bold', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1.2rem;
+    margin-top: 68px;
+    
 
-    .services_icon {
+    .position_icon {
+        width: 33px;
+        height: 39px;
+        
+    }
+
+    .headquarters{
+        width: 149px;
+        height: 26px;
+        
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 26px;
         color: #585858;
-        opacity: 0.9;
-        font-size: 39px;
-        line-height: 1;
     }
     
-    .services_details {
+    .position_address {
         text-align: left;
-        p {
-            font-size: 0.875rem;
-            margin-top: 0.4rem;
-            opacity: 0.8;
+        
+        margin-left: 32px;        
+        
+        h4, p {
+            color: #585858;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 21px;
             
         }
     }
+}
+
+.contact_form_wrapper{
+    margin-top: 153px;
+    margin-bottom: 297px;
+    height: 579px;
+    display: flex;
+    justify-content: center;
+
+    .contact_form{
+        display: inline-block;
+        width: 468px;
+        height: 100%;
+        padding-left: 33px;
+        padding-right: 33px;
+        text-align: left;
+        background: rgba(217, 217, 217, 0.26);
+
+
+        @mixin input {
+            display: block;
+            width: 100%;
+            border: 2px solid #eee;
+            padding: 1ch;
+            border-radius: 3px;
+            transition: 150ms ease;
+            outline: none;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        
+        @mixin input-focus {
+            border-color: #e14;
+        }
+        
+        @mixin label {
+            position: absolute;
+            top: 1ch;
+            left: 1ch;
+            padding: 0 .5ch;
+            pointer-events: none;
+            transition: 150ms ease;
+            color: #888;
+        }
+        
+        @mixin label-focus {
+            position: absolute;
+            top: 0;
+            font-size: 0.9em;
+            color: #e14;
+            font-weight: bold;
+            transform: translateY(-50%);
+            background-color: #fff;
+            font-weight: 600;
+        }
+        
+        
+        
+        .text-input {
+            position: relative;
+            margin-bottom: 1rem;
+            label {
+                @include label;
+            }
+            label.label-focus {
+                @include label-focus;
+            }
+            input {
+                @include input;
+            }
+            input.input-focus {
+                @include input-focus;
+            }
+        }
+        
+        .text-area {
+            position: relative;
+            margin-bottom: 1rem;
+            label {
+                @include label;
+            }
+            label.label-focus {
+                @include label-focus;
+            }
+            textarea {
+                @include input;
+                height: 8em;
+            }
+            textarea.input-focus {
+                @include input-focus;
+            }
+        }
+
+        .form_title{
+            margin-top: 31px;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 23px;
+            letter-spacing: 0.03em;
+            color: #585858;
+        }
+
+        .form_comment{
+            margin-top: 21px;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 15px;
+
+            color: #585858;
+        }
+
+        .form_department{
+            margin-top: 13px;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            gap: 0rem;
+
+            .label{
+                font-style: normal;
+                font-weight: 700;
+                font-size: 12px;
+                line-height: 18px;
+                letter-spacing: 0.03em;
+                color: #585858;
+            }
+
+            .dropdown{
+                padding-left: 12px;
+                width: 191px;
+                height: 32px;
+            }
+        }
+
+        .form_company{
+            margin-top: 32px;
+            height: 35px;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            gap: 14px;
+
+            .name{
+                border: 1px solid #777978;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 12px;
+                line-height: 18px;
+                letter-spacing: 0.03em;
+                color: #585858;
+            }
+
+            .telephone{
+
+                border: 1px solid #777978;
+            }
+        }
+
+        .form_message{
+            
+        }
+        
+    }
+    .contact_map{
+        width: 463px;
+        height: 100%;
+    }
+    
 }
 
