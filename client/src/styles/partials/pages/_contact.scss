@@ -53,4 +53,27 @@
     text-align: justify;
 }
 
+.services_card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+
+    .services_icon {
+        color: #585858;
+        opacity: 0.9;
+        font-size: 39px;
+        line-height: 1;
+    }
+    
+    .services_details {
+        text-align: left;
+        p {
+            font-size: 0.875rem;
+            margin-top: 0.4rem;
+            opacity: 0.8;
+            
+        }
+    }
+}
 
