@@ -11,15 +11,33 @@ const theme = createTheme({
         fontFamily: ["DIN Pro Regular", "DIN Pro Bold"].join(","),
         fontSize: 12,
     },
+    components: {
+        MuiInputLabel: {
+            defaultProps: {
+                sx: {
+                    fontSize: "12px",
+                },
+            },
+        },
+        MuiOutlinedInput: {
+            defaultProps: {
+                sx: {
+                    fontSize: "12px",
+                }
+            },
+        }
+    },
 });
 
 
 const ValidationTextField = styled(TextField)({
     '& label.Mui-focused': {
         color: '#777978',
+        borderWidth: 1,
     },
     '& label.Mui-valid': {
         color: '#009220',
+        borderWidth: 1,
     },
 
     '& input:valid + fieldset': {
@@ -31,15 +49,37 @@ const ValidationTextField = styled(TextField)({
         color: '#B3B3B3',
     },
     '& input:invalid + fieldset': {
-    borderColor: '#D30000',
-    borderWidth: 1,
+        borderColor: '#D30000',
+        borderWidth: 1,
     },
     '& input:valid:focus + fieldset': {
-    //padding: '4px !important', // override inline-style
-    padding: '9px 12px 7px 9px',
-    borderColor: '#777978',
+        //padding: '4px !important', // override inline-style
+        padding: '9px 12px 7px 9px',
+        borderColor: '#777978',
     },
 });
+
+
+const InputTextField = styled(TextField)({
+   
+        "& .MuiFilledInput-root": {
+        backgroundColor: "rgb(232, 241, 250)"
+        },
+        "& .MuiFilledInput-root:hover": {
+        backgroundColor: "rgb(250, 232, 241)",
+        // Reset on touch devices, it doesn't add specificity
+        "@media (hover: none)": {
+            backgroundColor: "rgb(232, 241, 250)"
+        }
+        },
+        "& .MuiFilledInput-root.Mui-focused": {
+        backgroundColor: "rgb(250, 241, 232)"
+        },
+   
+});
+
+
+;
 
 const Contact = () => {
     const [status, setStatus] = useState("Submit");
@@ -64,6 +104,8 @@ const Contact = () => {
         alert(result.status);
     };
 
+   
+
     return (
         <>
             <section id="contact" className="section">
@@ -85,9 +127,9 @@ const Contact = () => {
                         <ThemeProvider theme={theme}>
                             <form className='contact_form'onSubmit={handleSubmit} method="POST">
                                 
-                                <div className='form_title'><span>Nehmen Sie Kontakt mit uns auf</span></div>
-                                <div className='form_comment'><span>Mit * markierte Felder sind Pflichtfelder.</span></div>
-                                <div className='form_department'>
+                                <div className='form_item_title'><span>Nehmen Sie Kontakt mit uns auf</span></div>
+                                <div className='form_item_comment'><span>Mit * markierte Felder sind Pflichtfelder.</span></div>
+                                <div className='form_item_department'>
                                     <span className="label">An welche Abteilung möchten Sie sich wenden?</span>
                                     <CustomDropdown name='custom_select' options={[
                                     {name: 'Arzneimittelsicherheit', value: 'Arzneimittelsicherheit', defaultValue: true},
@@ -96,26 +138,83 @@ const Contact = () => {
                                     {name: 'Beratung', value: 'Beratung'}
                                     ]} onChange={(e) => {console.log(e.target.value)}} style={{width: '192px', padding: '7px 0px 7px 9px'}} />
                                 </div>
-                                <div className='form_company'>
+                                <div className='form_item_company'>
                                     <ValidationTextField
                                         label="Firmenname"
                                         variant="outlined"
-                                        defaultValue="Berlin"
+                                        placeholder="Firmenname"
                                         id="validation-outlined-input"
                                         size="small"
+                                        sx={{
+                                            width: { sm: 192, md: 300 },
+                                            
+                                        }}
                                     />
                                     <ValidationTextField
-                                        label="Firmenname"
+                                        label="Firmenrufnummer"
                                         variant="outlined"
-                                        defaultValue="Berlin"
+                                        placeholder="Rufnummer"
                                         id="validation-outlined-input"
                                         size="small"
+                                        sx={{
+                                            width: { sm: 192, md: 300 },
+                                        }}
                                     />
                                 </div>
+                                <div className='form_item_plz'>
+                                <ValidationTextField
+                                        label="Firmenanschrift"
+                                        variant="outlined"
+                                        placeholder="Firmenanschrift"
+                                        id="validation-outlined-input"
+                                        size="small"
+                                        sx={{
+                                            width: { sm: 192, md: 398 },
+                                        }}
+                                    />
+                                    <ValidationTextField
+                                        label="PLZ"
+                                        variant="outlined"
+                                        placeholder="PLZ*"
+                                        id="validation-outlined-input"
+                                        size="small"
+                                        sx={{
+                                            width: { sm: 192, md: 398 },
+                                        }}
+                                    />
+                                </div>
+                                <div className='form_item_email'>
+                                    <ValidationTextField
+                                        label="E-Mail Adresse"
+                                        variant="outlined"
+                                        placeholder="E-Mail Adresse*"
+                                        id="validation-outlined-input"
+                                        size="small"
+                                        sx={{
+                                            width: { sm: 192, md: 398 },
+                                        }}
+                                    />
+                                </div>
+                                <div className='form_item_message'>
+                                    <div className='label'>Ihre Nachricht:</div>
+                                    <div className='message'>
+                                        <InputTextField
+                                            id="validation-outlined-input"
+                                            rows={8}
+                                            multiline
+                                            size="small"
+                                            sx={{
+                                                width: { sm: 402, md: 402 },
+                                            }}
+                                            
+                                        />
+                                    </div>
+                                </div>
+                                <button type="button" className="base_button form_item_button">Absenden</button>
                                 
                             </form>
                         </ThemeProvider>                        
-                        <div className='contact_map'>
+                        <div className='contact_map message'>
                             <img src="/images/pages/contact/map.png" alt="" />
                         </div>   
                     </div>
