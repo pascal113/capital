@@ -2,6 +2,44 @@ import React, {useState} from 'react'
 import { Link } from "react-router-dom";
 import BreadCrumb from '../components/common/BreadCrumb';
 import CustomDropdown from '../components/dropdown/CustomDropdown';
+import styled, { css } from 'styled-components';
+import { TextField } from "@mui/material";
+import { createTheme, ThemeProvider, Typography } from "@material-ui/core";
+
+const theme = createTheme({
+    typography: {
+        fontFamily: ["DIN Pro Regular", "DIN Pro Bold"].join(","),
+        fontSize: 12,
+    },
+});
+
+
+const ValidationTextField = styled(TextField)({
+    '& label.Mui-focused': {
+        color: '#777978',
+    },
+    '& label.Mui-valid': {
+        color: '#009220',
+    },
+
+    '& input:valid + fieldset': {
+        borderColor: '#777978',
+        borderRadius: 0,
+        borderWidth: 1,
+        padding: '9px 12px 7px 9px',
+        fontFamily: 'Din Pro Regular',
+        color: '#B3B3B3',
+    },
+    '& input:invalid + fieldset': {
+    borderColor: '#D30000',
+    borderWidth: 1,
+    },
+    '& input:valid:focus + fieldset': {
+    //padding: '4px !important', // override inline-style
+    padding: '9px 12px 7px 9px',
+    borderColor: '#777978',
+    },
+});
 
 const Contact = () => {
     const [status, setStatus] = useState("Submit");
@@ -44,47 +82,44 @@ const Contact = () => {
                         
                     </div>
                     <div className='contact_form_wrapper'>
-                        <form className='contact_form'onSubmit={handleSubmit} method="POST">
-                            <div className='form_title'><span>Nehmen Sie Kontakt mit uns auf</span></div>
-                            <div className='form_comment'><span>Mit * markierte Felder sind Pflichtfelder.</span></div>
-                            <div className='form_department'>
-                                <span className="label">An welche Abteilung möchten Sie sich wenden?</span>
-                                <div className='dropdown'>
-                                    <CustomDropdown name='fruit' options={[
-                                    {name: 'Arzneimittelsicherheit', value: 'Arzneimittelsicherheit'},
-                                    {name: 'Biometrie', value: 'Biometrie', defaultValue: true},
+                        <ThemeProvider theme={theme}>
+                            <form className='contact_form'onSubmit={handleSubmit} method="POST">
+                                
+                                <div className='form_title'><span>Nehmen Sie Kontakt mit uns auf</span></div>
+                                <div className='form_comment'><span>Mit * markierte Felder sind Pflichtfelder.</span></div>
+                                <div className='form_department'>
+                                    <span className="label">An welche Abteilung möchten Sie sich wenden?</span>
+                                    <CustomDropdown name='custom_select' options={[
+                                    {name: 'Arzneimittelsicherheit', value: 'Arzneimittelsicherheit', defaultValue: true},
+                                    {name: 'Biometrie', value: 'Biometrie'},
                                     {name: 'Info-Center', value: 'Info-Center'},
                                     {name: 'Beratung', value: 'Beratung'}
-                                    ]} onChange={(e) => {console.log(e.target.value)}} style={{width: '191px'}} />
+                                    ]} onChange={(e) => {console.log(e.target.value)}} style={{width: '192px', padding: '7px 0px 7px 9px'}} />
                                 </div>
-                            </div>
-                            <div className='form_company'>
-                                <div className='name'>
-                                    
+                                <div className='form_company'>
+                                    <ValidationTextField
+                                        label="Firmenname"
+                                        variant="outlined"
+                                        defaultValue="Berlin"
+                                        id="validation-outlined-input"
+                                        size="small"
+                                    />
+                                    <ValidationTextField
+                                        label="Firmenname"
+                                        variant="outlined"
+                                        defaultValue="Berlin"
+                                        id="validation-outlined-input"
+                                        size="small"
+                                    />
                                 </div>
-                                <div className='telephone'>
-                                    
-                                </div>
-                            </div>
-                            <div className='form_message'>
-                                <label htmlFor="message">Message:</label>
-                                <textarea id="message" required />
-                            </div>
-                            <button type="submit">asdf</button>
-                        </form>
-                            
-                            
-                            
-                            
-                        
+                                
+                            </form>
+                        </ThemeProvider>                        
                         <div className='contact_map'>
                             <img src="/images/pages/contact/map.png" alt="" />
                         </div>   
                     </div>
 
-                    
-
-                    
                 </div>
             </section>
         </>

@@ -14,7 +14,7 @@ const DropdownOptions = ({options, highlightedIndex, selectedIndex, eventListene
                         onClick={(e) => {
                             onOptionClick(e);
                         }}
-                        style={{'--index': i}}
+                        style={{'--index': i, padding: '7px 0px 7px 9px'}}
                         className={'option' + (i === highlightedIndex ? ' highlight' : '')}
                         role="option">{el.name}</li>)
         })}
@@ -122,7 +122,7 @@ const CustomDropdown = ({name, options, style, ...props}) => {
             onBlur={onDropdownBlur}
             onClick={onDropdownClick}
             onMouseDown={onDropdownMouseDown}
-            className={'react-dropdown' + (isActive ? ' active' : '')}
+            className={'custom-dropdown' + (isActive ? ' active' : '')}
             role="listbox" tabIndex={0} data-value={getSelectedOptionValue()}
             style={style}>
             <span className="value">{getSelectedOptionText()}</span>

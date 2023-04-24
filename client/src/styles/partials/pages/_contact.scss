@@ -110,81 +110,6 @@
         text-align: left;
         background: rgba(217, 217, 217, 0.26);
 
-
-        @mixin input {
-            display: block;
-            width: 100%;
-            border: 2px solid #eee;
-            padding: 1ch;
-            border-radius: 3px;
-            transition: 150ms ease;
-            outline: none;
-            font-size: 1rem;
-            font-family: inherit;
-        }
-        
-        @mixin input-focus {
-            border-color: #e14;
-        }
-        
-        @mixin label {
-            position: absolute;
-            top: 1ch;
-            left: 1ch;
-            padding: 0 .5ch;
-            pointer-events: none;
-            transition: 150ms ease;
-            color: #888;
-        }
-        
-        @mixin label-focus {
-            position: absolute;
-            top: 0;
-            font-size: 0.9em;
-            color: #e14;
-            font-weight: bold;
-            transform: translateY(-50%);
-            background-color: #fff;
-            font-weight: 600;
-        }
-        
-        
-        
-        .text-input {
-            position: relative;
-            margin-bottom: 1rem;
-            label {
-                @include label;
-            }
-            label.label-focus {
-                @include label-focus;
-            }
-            input {
-                @include input;
-            }
-            input.input-focus {
-                @include input-focus;
-            }
-        }
-        
-        .text-area {
-            position: relative;
-            margin-bottom: 1rem;
-            label {
-                @include label;
-            }
-            label.label-focus {
-                @include label-focus;
-            }
-            textarea {
-                @include input;
-                height: 8em;
-            }
-            textarea.input-focus {
-                @include input-focus;
-            }
-        }
-
         .form_title{
             margin-top: 31px;
             font-style: normal;
@@ -209,7 +134,7 @@
             margin-top: 13px;
             display: grid;
             grid-template-columns: 50% 50%;
-            gap: 0rem;
+            gap: 14px;
 
             .label{
                 font-style: normal;
@@ -218,12 +143,6 @@
                 line-height: 18px;
                 letter-spacing: 0.03em;
                 color: #585858;
-            }
-
-            .dropdown{
-                padding-left: 12px;
-                width: 191px;
-                height: 32px;
             }
         }
 
@@ -235,6 +154,7 @@
             gap: 14px;
 
             .name{
+                width: 192px;
                 border: 1px solid #777978;
                 font-style: normal;
                 font-weight: 700;
@@ -245,7 +165,7 @@
             }
 
             .telephone{
-
+                width: 192px;
                 border: 1px solid #777978;
             }
         }
