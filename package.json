@@ -1,7 +1,7 @@
 {
-  "name": "react_express_blog",
+  "name": "MERN Project",
   "version": "1.0.0",
-  "description": "react-express-mongo demo",
+  "description": "react-express-mongo",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,6 +10,7 @@
     "start-dev-api": "nodemon --watch server/api server/api/index.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js",
     "start": "npm run watch-client",
+    "dev": "nodemon server/index.js",
     "start-prod": "npm run build & npm run watch-client-prod & npm run start-dev-api"
   },
   "repository": {

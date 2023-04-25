@@ -8,6 +8,7 @@
  */
 import Express from 'express'
 import dotenv from 'dotenv';
+import path from 'path';
 import config from '../config/config'
 import bodyParser from 'body-parser'
 import mongoose from 'mongoose'
@@ -18,11 +19,12 @@ import {MD5_SUFFIX,md5} from './util'
 import multer from 'multer';
 import SibApiV3Sdk from 'sib-api-v3-sdk';
 
+import userRoutes from './routes/user';
+import jobRoutes from './routes/article';
+import imagesRoutes from './routes/images';
+
 dotenv.config();
 const env = process.env;
-
-console.log(env);
-
 const port = config.apiPort;
 
 const app = new Express();
@@ -34,7 +36,6 @@ app.use(session({
     saveUninitialized:true,
     cookie: {maxAge: 60 * 1000 * 30}//expire time
 }));
-
 
 // const fs = require('fs');
 
@@ -166,20 +167,56 @@ app.post('/sendEmail', async (req, res) => {
 });
 
 
-app.use('api/users', require('./routes/user'));
-app.use('api/jobs', require('./routes/article'));
-app.use('api/images', require('./routes/images'));
+// app.use('api/users', require('./routes/user'));
+// app.use('api/jobs', require('./routes/article'));
+// app.use('api/images', require('./routes/images'));
 
+app.use('api/users', userRoutes);
+app.use('api/jobs', jobRoutes);
+app.use('api/images', imagesRoutes);
+
+
+
+const __dirname = path.resolve();
+console.log(__dirname);
+app.use('/static', Express.static(path.join(__dirname, '/static')));
+
+const adminProcess = (req, res, next) => {
+    console.log(`adminProcess`);
+    console.log(`>>>>>>> ${req.method} ${req.url}`);
+    Express.static(path.join(__dirname, '/admin/build'));
+    // res.sendFile(path.resolve(__dirname, 'admin', 'build', 'index.html'))
+    next();
+};
 
 if (env['ENV'] === 'production') {
     console.log('production mode');
-    app.use(express.static(path.join(__dirname, '/client/build')));
-    app.use('/admin', express.static(path.join(__dirname, '/admin/build')));
-    app.get('/admin/*', (req, res) => res.sendFile(path.resolve(__dirname, 'admin', 'build', 'index.html')));
-    app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')));
-} 
-  
+    
+    // admin route 
+    // app.use('/admin', Express.static(path.join(__dirname, '/admin/build')));
+    // app.get('/admin/*', (req, res) => 
+    //     res.sendFile(path.resolve(__dirname, 'admin', 'build', 'index.html'))
+    // );
 
+    // app.use('/admin', Express.static(path.join(__dirname, '/admin/build')));
+    // app.get('/admin/*', (req, res) => {
+    //     console.log('admin request');
+    //     res.sendFile(path.resolve(__dirname, 'admin', 'build', 'index.html'))
+    // });  
+
+    // app.get('/admin/*', (req, res) =>
+    //     // res.sendFile(path.resolve(__dirname, 'admin', 'build', 'index.html'))
+    //     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+    // );
+    // app.use('/admin', adminProcess);    
+    
+    // client route ok
+    // app.use(Express.static(path.join(__dirname, '/client/build')));
+    // app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')));
+
+    app.use(Express.static(path.join(__dirname, '/admin/build')));
+    app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'admin', 'build', 'index.html')));
+} 
 
 mongoose.Promise = require('bluebird');
 mongoose.connect(`mongodb://${config.dbHost}:${config.dbPort}/blog`, function (err) {
