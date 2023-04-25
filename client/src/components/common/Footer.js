@@ -31,7 +31,7 @@ const Footer = () => {
                                                         const { id, link, path } = item;
                                                         return (
                                                             <li key={id}>
-                                                                <Link to={path}>{link}</Link>
+                                                                {link}
                                                             </li>
                                                         );
                                                     })

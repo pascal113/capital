@@ -13,7 +13,7 @@ const JobPostings = () => {
                     <div className='job_postings_rectangle'></div>
                     <p className='job_postings_description'>Unser Mindset, Veränderungsprozessen unvoreingenommen und mutig zu begegnen, hat sich ebenso wenig verändert, wie die zentrale Verankerung des Erfolgsfaktors „Mensch“ in unserem unternehmerischen Bewusstsein. Unsere Mitarbeiter:innen sind nicht nur wegen ihrer Cleverness stets das Wichtigste unseres Unternehmens. Was die Menschen in der GC Pharma GmbH auszeichnet, ist eine unnachahmliche Mischung aus Intuition, Freude und Begeisterung.
                     </p>
-                    <Link to="/">
+                    <Link to="/about-us">
                         <button type="button" className="base_button posting_button">58 STELLEN ERKUNDEN</button>
                     </Link>
                 </div>

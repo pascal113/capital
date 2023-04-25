@@ -49,16 +49,20 @@
         margin-top: 1.8rem;
         display: grid;
         gap: 0.5rem;
-        font-size: 12px;
+        font-family: 'DIN Pro Bold', sans-serif;
         font-style: normal;
         font-weight: 700;
+        font-size: 12px;
+        line-height: 15px;
 
         li {
+            font-family: 'DIN Pro Regular', sans-serif;
             font-weight: 400;
         }
 
         a {
-            font-size: 0.9rem;
+            font-size: 12px;
+            
             opacity: 1;
 
             &:hover {
