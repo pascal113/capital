@@ -18,6 +18,7 @@ import LogisticsShipment from '../pages/LogisticsShipment';
 import LogisticsPurchasing from '../pages/LogisticsPurchasing';
 import LogisticsShipmentDetails from '../pages/LogisticsShipmentDetails';
 import Contact from '../pages/Contact';
+import AboutPage from '../pages/AboutPage';
 
 const RouterRoutes = () => {
 
@@ -39,8 +40,7 @@ const RouterRoutes = () => {
                 <Route path="/advice" element={<Advice />} />
                 <Route path="/contacts" element={<Contact />} />
                 <Route path="/job-postings" element={<JobPostings />} />
-                <Route path="/cart" element={<Cart />} />
-                <Route path="/all-products" element={<AllProducts />} />
+                <Route path="/about-us" element={<AboutPage />} />
                 <Route path="*" element={<ErrorPage />} />
             </Routes>
         </>
