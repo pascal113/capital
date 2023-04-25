@@ -61,21 +61,21 @@ const ValidationTextField = styled(TextField)({
 
 
 const InputTextField = styled(TextField)({
-   
-        "& .MuiFilledInput-root": {
-        backgroundColor: "rgb(232, 241, 250)"
+    "& .MuiOutlinedInput-root": {
+        backgroundColor: "#FDFDFD",
+
+        '& fieldset': {
+            border: '1px solid #959595',
         },
-        "& .MuiFilledInput-root:hover": {
-        backgroundColor: "rgb(250, 232, 241)",
-        // Reset on touch devices, it doesn't add specificity
-        "@media (hover: none)": {
-            backgroundColor: "rgb(232, 241, 250)"
-        }
+
+        "&:hover fieldset": {
+            border: '1px solid #959595',
         },
-        "& .MuiFilledInput-root.Mui-focused": {
-        backgroundColor: "rgb(250, 241, 232)"
+
+        '&.Mui-focused fieldset': {
+            border: '2px solid rgba(72, 128, 255, 0.4)',
         },
-   
+    },
 });
 
 
@@ -86,25 +86,33 @@ const Contact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setStatus("Sending...");
-        const { name, email, message } = e.target.elements;
+        
+        const { department_select, company_name, phone_number, company_address, plz, email, message } = e.target.elements;
         let details = {
-        name: name.value,
-        email: email.value,
-        message: message.value,
+            department: department_select.value,
+            company_name: company_name.value,
+            phone_number: phone_number.value,
+            company_address: company_address.value,
+            plz: plz.value,
+            email: email.value,
+            message: message.value,
         };
-        let response = await fetch("http://localhost:5000/contact", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json;charset=utf-8",
-        },
-        body: JSON.stringify(details),
-        });
-        setStatus("Submit");
-        let result = await response.json();
-        alert(result.status);
+        console.log('value', details);
+        try {
+            let response = await fetch("http://localhost:5000/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json;charset=utf-8",
+                },
+                body: JSON.stringify(details),
+            });
+            setStatus("Submit");
+            let result = await response.json();
+            alert(result.status);
+        } catch (error) {
+            console.log('Fetch error: ', error);
+        }
     };
-
-   
 
     return (
         <>
@@ -125,13 +133,12 @@ const Contact = () => {
                     </div>
                     <div className='contact_form_wrapper'>
                         <ThemeProvider theme={theme}>
-                            <form className='contact_form'onSubmit={handleSubmit} method="POST">
-                                
+                            <form className='contact_form' onSubmit={handleSubmit} method="POST">
                                 <div className='form_item_title'><span>Nehmen Sie Kontakt mit uns auf</span></div>
                                 <div className='form_item_comment'><span>Mit * markierte Felder sind Pflichtfelder.</span></div>
                                 <div className='form_item_department'>
                                     <span className="label">An welche Abteilung möchten Sie sich wenden?</span>
-                                    <CustomDropdown name='custom_select' options={[
+                                    <CustomDropdown name='department_select' options={[
                                     {name: 'Arzneimittelsicherheit', value: 'Arzneimittelsicherheit', defaultValue: true},
                                     {name: 'Biometrie', value: 'Biometrie'},
                                     {name: 'Info-Center', value: 'Info-Center'},
@@ -143,7 +150,7 @@ const Contact = () => {
                                         label="Firmenname"
                                         variant="outlined"
                                         placeholder="Firmenname"
-                                        id="validation-outlined-input"
+                                        name="company_name"
                                         size="small"
                                         sx={{
                                             width: { sm: 192, md: 300 },
@@ -154,7 +161,7 @@ const Contact = () => {
                                         label="Firmenrufnummer"
                                         variant="outlined"
                                         placeholder="Rufnummer"
-                                        id="validation-outlined-input"
+                                        name="phone_number"
                                         size="small"
                                         sx={{
                                             width: { sm: 192, md: 300 },
@@ -166,7 +173,7 @@ const Contact = () => {
                                         label="Firmenanschrift"
                                         variant="outlined"
                                         placeholder="Firmenanschrift"
-                                        id="validation-outlined-input"
+                                        name="company_address"
                                         size="small"
                                         sx={{
                                             width: { sm: 192, md: 398 },
@@ -176,7 +183,7 @@ const Contact = () => {
                                         label="PLZ"
                                         variant="outlined"
                                         placeholder="PLZ*"
-                                        id="validation-outlined-input"
+                                        name="plz"
                                         size="small"
                                         sx={{
                                             width: { sm: 192, md: 398 },
@@ -188,7 +195,7 @@ const Contact = () => {
                                         label="E-Mail Adresse"
                                         variant="outlined"
                                         placeholder="E-Mail Adresse*"
-                                        id="validation-outlined-input"
+                                        name="email"
                                         size="small"
                                         sx={{
                                             width: { sm: 192, md: 398 },
@@ -199,19 +206,17 @@ const Contact = () => {
                                     <div className='label'>Ihre Nachricht:</div>
                                     <div className='message'>
                                         <InputTextField
-                                            id="validation-outlined-input"
+                                            name="message"
                                             rows={8}
                                             multiline
                                             size="small"
                                             sx={{
                                                 width: { sm: 402, md: 402 },
                                             }}
-                                            
                                         />
                                     </div>
                                 </div>
-                                <button type="button" className="base_button form_item_button">Absenden</button>
-                                
+                                <button type="submit" className="base_button form_item_button">Absenden</button>
                             </form>
                         </ThemeProvider>                        
                         <div className='contact_map message'>
