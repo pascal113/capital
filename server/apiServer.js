@@ -15,7 +15,7 @@ import mongoose from 'mongoose'
 import cookieParser from 'cookie-parser'
 import session from 'express-session'
 import User from './models/user'
-import {MD5_SUFFIX,md5} from './util'
+import {MD5_SUFFIX,md5} from './utils/util'
 import multer from 'multer';
 import SibApiV3Sdk from 'sib-api-v3-sdk';
 
