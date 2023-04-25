@@ -1,17 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, A11y, Autoplay } from 'swiper';
-import { displayMoney } from '../../helpers/utils';
-import productsData from '../../data/productsData';
 
 import 'swiper/scss';
 import 'swiper/scss/autoplay';
 import 'swiper/scss/pagination';
 
-const HomeSlider = () => {
-
-    const heroProducts = productsData.filter(item => item.tag === 'hero-product');
+const HomeSlider = (props) => {
+    const { homeData } = props;
+    const sliderData = homeData.filter(item => item.id > 0);
 
     return (
         <Swiper style={{
@@ -30,32 +27,31 @@ const HomeSlider = () => {
             }}
         >
             {
-                heroProducts.map((item, i) => {
-                    const { id, title, tagline, heroImage, finalPrice, originalPrice, path } = item;
-                    const newPrice = displayMoney(finalPrice);
-                    const oldPrice = displayMoney(originalPrice);
+                sliderData.map((item, i) => {
+                    const { id, image} = item;
 
                     return (
                         <SwiperSlide
                             key={id}
-                            className={`wrapper hero_wrapper`}
+                            className={`wrapper home_wrapper`}
                         >
-                            <div className='hero_over_item'>
-                                <div className="hero_item_mark">
-                                    <img src="/images/mark/mark_center.png" alt="Nature"></img>
+                            <div className='slider_hover_caption'>
+                                <div className='hover_caption'>
+                                    <div >
+                                        <img src="/images/mark/mark_center.png" className="hover_mark" alt="Nature"></img>
+                                    </div>
+                                    <div className="hover_company_text">
+                                        <h1>GERMAN CAPITAL PHARMA GmbH</h1>
+                                    </div>
+                                    <div className="hover_line">
+                                    </div>
+                                    <div className="hover_slug_text">
+                                        <h2>Gesundheit für das Leben</h2>
+                                    </div>
                                 </div>
-                                <div className="hero_item_company_text">
-                                    <h1>GERMAN CAPITAL PHARMA GmbH</h1>
-                                </div>
-                                <div className="hero_item_line">
-                                </div>
-                                <div className="hero_item_slug_text">
-                                    <h2>Gesundheit für das Leben</h2>
-                                </div>
-                                
                             </div>
-                            <figure className="hero_item_img">
-                                <img src={heroImage} alt="product-img" />
+                            <figure className="slider_container">
+                                <img src={image} alt="sliders" />
                             </figure>
                         </SwiperSlide>
                     );
