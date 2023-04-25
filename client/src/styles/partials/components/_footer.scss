@@ -2,6 +2,7 @@
     background-color: var(--footer-color);
     color: var(--text-color-footer);
     height: 300px;
+    position: relative;
     @include padding-y(3rem, 2rem);
 
     .separator {

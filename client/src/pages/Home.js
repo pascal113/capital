@@ -1,13 +1,14 @@
 import React from 'react';
 import HomeSlider from '../components/sliders/HomeSlider';
+import homeData from '../data/homeData';
 
 const Home = () => {
 
     return (
         <main>
-            <section id="hero" className="section">
+            <section id="home" className="section">
                 <div className="container">
-                    <HomeSlider />
+                    <HomeSlider homeData={homeData}/>
                 </div>
             </section>
         </main>
