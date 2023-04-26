@@ -1,26 +1,25 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import colors from 'colors';
-import connectDB from './config/db';
-import users from './seed/users';
-import images from './seed/images';
-import jobs from './seed/jobs';
-import User from './models/user';
-import Job from './models/job';
-import Image from './models/image';
+import connectDB from './config/db.js'
+import users from './seed/users.js';
+import images from './seed/images.js';
+import jobs from './seed/jobs.js';
+import User from './models/user.js';
+import Job from './models/job.js';
+import Image from './models/image.js';
 dotenv.config();
 await connectDB();
 
-const importData = async () => {
+const createBaseData = async () => {
   try {
     await User.deleteMany();
-    await Product.deleteMany();
-    await Order.deleteMany();
-    await Invoice.deleteMany();
-    await Notification.deleteMany();
+    await Job.deleteMany();
+    await Image.deleteMany();
     const createdUser = await User.insertMany(users);
-    const adminUser = createdUser[0];
-    await Product.insertMany(products);
+    console.log(createdUser);
+    await Job.insertMany(jobs);
+    await Image.insertMany(images);    
     console.log('Data Imported'.green.inverse);
     process.exit();
   } catch (error) {
@@ -29,13 +28,11 @@ const importData = async () => {
   }
 };
 
-const destroyData = async () => {
+const destroyAllData = async () => {
   try {
     await User.deleteMany();
-    await Product.deleteMany();
-    await Order.deleteMany();
-    await Invoice.deleteMany();
-    await Notification.deleteMany();
+    await Job.deleteMany();
+    await Image.deleteMany();
     console.log('Data Destroy'.red.inverse);
     process.exit();
   } catch (error) {
@@ -45,7 +42,7 @@ const destroyData = async () => {
 };
 
 if (process.argv[2] === '-d') {
-  destroyData();
+  destroyAllData();
 } else {
-  importData();
+  createBaseData();
 }

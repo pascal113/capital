@@ -1,8 +1,8 @@
 import Express from 'express'
 
 const router = Express.Router();
-import Job from '../models/job'
-import {responseClient} from '../utils/util'
+import Job from '../models/job.js'
+import {responseClient} from '../utils/util.js'
 
 router.post('/add', function (req, res) {
     const {
@@ -68,4 +68,4 @@ router.delete('/del',(req,res)=>{
     })
 });
 
-module.exports = router;
+export default router;

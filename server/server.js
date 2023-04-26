@@ -1,28 +1,22 @@
-/**
- * api request server
- *
- * 0：success
- * 1：data type wrong
- * 2：client data wrong
- * 3：backend wrong
- */
+import mongoose from 'mongoose';
+import colors from 'colors';
 import Express from 'express'
 import dotenv from 'dotenv';
 import path from 'path';
 import bodyParser from 'body-parser'
-import mongoose from 'mongoose'
 import cookieParser from 'cookie-parser'
 import session from 'express-session'
-import User from './models/user'
-import {MD5_SUFFIX,md5} from './utils/util'
 import multer from 'multer';
 import SibApiV3Sdk from 'sib-api-v3-sdk';
+import connectDB from './config/db.js'
 
-import userRoutes from './routes/user';
-import jobRoutes from './routes/jobs';
-import imagesRoutes from './routes/images';
+import userRoutes from './routes/user.js';
+import jobRoutes from './routes/jobs.js';
+import imagesRoutes from './routes/images.js';
 
 dotenv.config();
+await connectDB();
+
 const env = process.env;
 const port = env['API_PORT'];
 
@@ -185,51 +179,20 @@ if (env['ENV'] === 'production') {
     app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'admin', 'build', 'index.html')));
 } 
 
-mongoose.Promise = require('bluebird');
-mongoose.connect(`mongodb://${env['MONGO_DB_HOST']}:${env['MONGO_DB_PORT']}/blog`, function (err) {
+app.listen(port, function (err) {
     if (err) {
-        console.log(err, 'Connect database error');
-        return;
-    }
-    console.log('Connect database success');
-
-    User.findOne({username: 'admin'}).then(data => {
-        if (data) {
-            console.log('admin user is already!')
-            return;
-        }
+        console.error('err:', err);
+    } else { 
+        let defaultClient = SibApiV3Sdk.ApiClient.instance;
         
-        let user = new User({
-            username: 'admin',
-            password: md5('admin' + MD5_SUFFIX),
-            type: 'admin'
+        let api = new SibApiV3Sdk.AccountApi();
+        api.getAccount().then(function(data) {
+            console.log('API called successfully. Returned data: ' + data);
+            // console.log(data);
+        }, function(error) {
+            console.error(error);
         });
-
-        user.save().then(function () {
-            console.log('Admin user register successs ');  
-        }).cancel(err=>{
-            console.log('Admin user register fail ', err);                
-        });
-    }).catch(err => {
-        console.log('Get admin info error!');
-        return;
-    });
-
-    app.listen(port, function (err) {
-        if (err) {
-            console.error('err:', err);
-        } else { 
-            let defaultClient = SibApiV3Sdk.ApiClient.instance;
-            
-            let api = new SibApiV3Sdk.AccountApi();
-            api.getAccount().then(function(data) {
-                console.log('API called successfully. Returned data: ' + data);
-                // console.log(data);
-            }, function(error) {
-                console.error(error);
-            });
-            
-            console.info('===> api server is running at ' + port);
-        }
-    });
+        
+        console.info('===> api server is running at ' + port);
+    }
 });

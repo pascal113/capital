@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
-import imageSchema from '../schemas/image'
+import imageSchema from '../schemas/image.js'
 
-module.exports = mongoose.model('Image',imageSchema);
+const Image = mongoose.model('Image', imageSchema);
+export default Image;
