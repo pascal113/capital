@@ -4,31 +4,6 @@ import BreadCrumb from '../components/common/BreadCrumb';
 import CustomDropdown from '../components/dropdown/CustomDropdown';
 import styled, { css } from 'styled-components';
 import { TextField } from "@mui/material";
-import { createTheme, ThemeProvider, Typography } from "@material-ui/core";
-
-const theme = createTheme({
-    typography: {
-        fontFamily: ["DIN Pro Regular", "DIN Pro Bold"].join(","),
-        fontSize: 12,
-    },
-    components: {
-        MuiInputLabel: {
-            defaultProps: {
-                sx: {
-                    fontSize: "12px",
-                },
-            },
-        },
-        MuiOutlinedInput: {
-            defaultProps: {
-                sx: {
-                    fontSize: "12px",
-                }
-            },
-        }
-    },
-});
-
 
 const ValidationTextField = styled(TextField)({
     '& label.Mui-focused': {
@@ -132,94 +107,92 @@ const Contact = () => {
                         
                     </div>
                     <div className='contact_form_wrapper'>
-                        <ThemeProvider theme={theme}>
-                            <form className='contact_form' onSubmit={handleSubmit} method="POST">
-                                <div className='form_item_title'><span>Nehmen Sie Kontakt mit uns auf</span></div>
-                                <div className='form_item_comment'><span>Mit * markierte Felder sind Pflichtfelder.</span></div>
-                                <div className='form_item_department'>
-                                    <span className="label">An welche Abteilung möchten Sie sich wenden?</span>
-                                    <CustomDropdown name='department_select' options={[
-                                    {name: 'Arzneimittelsicherheit', value: 'Arzneimittelsicherheit', defaultValue: true},
-                                    {name: 'Biometrie', value: 'Biometrie'},
-                                    {name: 'Info-Center', value: 'Info-Center'},
-                                    {name: 'Beratung', value: 'Beratung'}
-                                    ]} onChange={(e) => {console.log(e.target.value)}} style={{width: '192px', padding: '7px 0px 7px 9px'}} />
-                                </div>
-                                <div className='form_item_company'>
-                                    <ValidationTextField
-                                        label="Firmenname"
-                                        variant="outlined"
-                                        placeholder="Firmenname"
-                                        name="company_name"
-                                        size="small"
-                                        sx={{
-                                            width: { sm: 192, md: 300 },
-                                            
-                                        }}
-                                    />
-                                    <ValidationTextField
-                                        label="Firmenrufnummer"
-                                        variant="outlined"
-                                        placeholder="Rufnummer"
-                                        name="phone_number"
-                                        size="small"
-                                        sx={{
-                                            width: { sm: 192, md: 300 },
-                                        }}
-                                    />
-                                </div>
-                                <div className='form_item_plz'>
+                        <form className='contact_form' onSubmit={handleSubmit} method="POST">
+                            <div className='form_item_title'><span>Nehmen Sie Kontakt mit uns auf</span></div>
+                            <div className='form_item_comment'><span>Mit * markierte Felder sind Pflichtfelder.</span></div>
+                            <div className='form_item_department'>
+                                <span className="label">An welche Abteilung möchten Sie sich wenden?</span>
+                                <CustomDropdown name='department_select' options={[
+                                {name: 'Arzneimittelsicherheit', value: 'Arzneimittelsicherheit', defaultValue: true},
+                                {name: 'Biometrie', value: 'Biometrie'},
+                                {name: 'Info-Center', value: 'Info-Center'},
+                                {name: 'Beratung', value: 'Beratung'}
+                                ]} onChange={(e) => {console.log(e.target.value)}} style={{width: '192px', padding: '7px 0px 7px 9px', fontSize: 12}} />
+                            </div>
+                            <div className='form_item_company'>
                                 <ValidationTextField
-                                        label="Firmenanschrift"
-                                        variant="outlined"
-                                        placeholder="Firmenanschrift"
-                                        name="company_address"
+                                    label="Firmenname"
+                                    variant="outlined"
+                                    placeholder="Firmenname"
+                                    name="company_name"
+                                    size="small"
+                                    sx={{
+                                        width: { sm: 192, md: 300 },
+                                        
+                                    }}
+                                />
+                                <ValidationTextField
+                                    label="Firmenrufnummer"
+                                    variant="outlined"
+                                    placeholder="Rufnummer"
+                                    name="phone_number"
+                                    size="small"
+                                    sx={{
+                                        width: { sm: 192, md: 300 },
+                                    }}
+                                />
+                            </div>
+                            <div className='form_item_plz'>
+                            <ValidationTextField
+                                    label="Firmenanschrift"
+                                    variant="outlined"
+                                    placeholder="Firmenanschrift"
+                                    name="company_address"
+                                    size="small"
+                                    sx={{
+                                        width: { sm: 192, md: 398 },
+                                    }}
+                                />
+                                <ValidationTextField
+                                    label="PLZ"
+                                    variant="outlined"
+                                    placeholder="PLZ*"
+                                    name="plz"
+                                    size="small"
+                                    sx={{
+                                        width: { sm: 192, md: 398 },
+                                    }}
+                                />
+                            </div>
+                            <div className='form_item_email'>
+                                <ValidationTextField
+                                    label="E-Mail Adresse"
+                                    variant="outlined"
+                                    placeholder="E-Mail Adresse*"
+                                    name="email"
+                                    size="small"
+                                    sx={{
+                                        width: { sm: 192, md: 398 },
+                                    }}
+                                />
+                            </div>
+                            <div className='form_item_message'>
+                                <div className='label'>Ihre Nachricht:</div>
+                                <div className='message'>
+                                    <InputTextField
+                                        name="message"
+                                        rows={8}
+                                        multiline
                                         size="small"
                                         sx={{
-                                            width: { sm: 192, md: 398 },
-                                        }}
-                                    />
-                                    <ValidationTextField
-                                        label="PLZ"
-                                        variant="outlined"
-                                        placeholder="PLZ*"
-                                        name="plz"
-                                        size="small"
-                                        sx={{
-                                            width: { sm: 192, md: 398 },
+                                            width: { sm: 402, md: 402 },
                                         }}
                                     />
                                 </div>
-                                <div className='form_item_email'>
-                                    <ValidationTextField
-                                        label="E-Mail Adresse"
-                                        variant="outlined"
-                                        placeholder="E-Mail Adresse*"
-                                        name="email"
-                                        size="small"
-                                        sx={{
-                                            width: { sm: 192, md: 398 },
-                                        }}
-                                    />
-                                </div>
-                                <div className='form_item_message'>
-                                    <div className='label'>Ihre Nachricht:</div>
-                                    <div className='message'>
-                                        <InputTextField
-                                            name="message"
-                                            rows={8}
-                                            multiline
-                                            size="small"
-                                            sx={{
-                                                width: { sm: 402, md: 402 },
-                                            }}
-                                        />
-                                    </div>
-                                </div>
-                                <button type="submit" className="base_button form_item_button">Absenden</button>
-                            </form>
-                        </ThemeProvider>                        
-                        <div className='contact_map message'>
+                            </div>
+                            <button type="submit" className="base_button form_item_button">Absenden</button>
+                        </form>
+                        <div className='contact_map'>
                             <img src="/images/pages/contact/map.png" alt="" />
                         </div>   
                     </div>

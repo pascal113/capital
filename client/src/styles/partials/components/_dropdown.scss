@@ -17,7 +17,7 @@
         box-sizing: border-box;
         border: 1px solid #777978;
         outline: none;
-        z-index: 10;
+        //z-index: 10;
         &:focus-visible {
             outline: none;
             box-shadow: 0 0 0 2px #ed6f1e;
@@ -25,7 +25,7 @@
         &::before {
             content: "";
             position: absolute;
-            z-index: 10;
+            //z-index: 10;
             top: 0;
             right: 0;
             box-sizing: border-box;
@@ -37,7 +37,7 @@
         &::after {
             content: ""; // If not empty make sure to set a charset meta tag 
             position: absolute;
-            z-index: 10;
+            //z-index: 10;
             box-sizing: border-box;
             width: 10px;
             height: 6px;

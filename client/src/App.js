@@ -5,8 +5,8 @@ import Header from './components/common/Header';
 import RouterRoutes from './routes/RouterRoutes';
 import Footer from './components/common/Footer';
 import BackTop from './components/common/BackTop';
-
-
+import muiTheme from './components/theme/MuiTheme';
+import { ThemeProvider} from "@material-ui/core";
 
 const App = () => {
 
@@ -15,7 +15,9 @@ const App = () => {
       <CommonProvider>
         <Header />
         <MenuProvider>
-          <RouterRoutes />
+          <ThemeProvider theme={muiTheme}>
+            <RouterRoutes />
+          </ThemeProvider>
         </MenuProvider>
         <Footer />
         <BackTop />
