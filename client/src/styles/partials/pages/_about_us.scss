@@ -8,6 +8,111 @@
         text-align:center;
         position: relative;
         overflow: hidden;
-
     }
+}
+
+.about_wrapper{
+    width: 100%;
+    height: 100%;
+    margin-left: 25px;
+    margin-top: 92px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: start;
+    gap: 11px;
+
+    .search_form{
+        display: inline-block;
+        width: 394px;
+        height: 761px;
+        padding-left: 38px;
+        padding-right: 38px;
+        text-align: left;
+        background: #F1F1F1;
+        position: relative;
+
+        font-family: 'DIN Pro Regular', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 26px;
+        color: #585858;
+
+        .form_search_label{
+            margin-top: 35px;
+        }
+
+        .form_job_type{
+            margin-top: 27px;
+            font-size: 16px;
+            line-height: 23px;
+
+            .job_type_select{
+                position: relative;
+                margin-top: 8px;
+                width: 100%;
+                height: 34px;
+            }
+        }
+
+        .form_location{
+            margin-top: 32px;
+            font-size: 16px;
+            line-height: 23px;
+
+            .location_select{
+                position: relative;
+                margin-top: 8px;
+                width: 100%;
+                height: 34px;
+            }
+        }
+
+        .form_activity{
+            margin-top: 32px;
+            font-size: 16px;
+            line-height: 23px;
+
+            .multi_select{
+                position: relative;
+                margin-top: 8px;
+                width: 100%;
+            }
+        }
+
+        .form_search_button{
+            margin-top: 52px;
+            background: #585858;
+            border: 0.5px solid #585858;
+            width: 203px;
+            height: 53px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &:hover{
+                background: #686868;
+            }
+
+            span {
+                margin-left: 15px;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 23px;
+                color: #FFFFFF;
+            }
+
+            i {
+                margin-right: 17px;
+            }
+            
+        }
+        
+    }
+    .company_list{
+        width: 982px;
+        height: 100%;
+    }
+    
 }

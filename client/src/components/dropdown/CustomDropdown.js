@@ -1,8 +1,9 @@
 import React, {useEffect, useRef, useState, useMemo} from 'react';
 
 
-const DropdownOptions = ({options, highlightedIndex, selectedIndex, eventListeners}) => {
+const DropdownOptions = ({options, highlightedIndex, selectedIndex, eventListeners, style}) => {
     const {onOptionHover, onOptionClick} = eventListeners;
+    const customStyle = { padding: style.padding, fontSize: style.fontSize};
     return (<>
         {options.map((el, i) => {
             return (<li key={i}
@@ -14,7 +15,7 @@ const DropdownOptions = ({options, highlightedIndex, selectedIndex, eventListene
                         onClick={(e) => {
                             onOptionClick(e);
                         }}
-                        style={{'--index': i, padding: '7px 0px 7px 9px'}}
+                        style={{...customStyle, '--index': i}}
                         className={'option' + (i === highlightedIndex ? ' highlight' : '')}
                         role="option">{el.name}</li>)
         })}
@@ -26,7 +27,9 @@ const CustomDropdown = ({name, options, style, ...props}) => {
     const selectElement = useRef();
     const [isActive, setIsActive] = useState(false);
 
-    const defaultIndex = (options.findIndex(option => option.defaultValue)) ?? 0;
+    let defaultIndex = (options.findIndex(option => option.defaultValue)) ?? 0;
+    if(defaultIndex < 0)
+        defaultIndex = 0;
     const [highlightedIndex, setHighlightedIndex] = useState(0);
     const [selectedIndex, setSelectedIndex] = useState(defaultIndex);
 
@@ -125,12 +128,13 @@ const CustomDropdown = ({name, options, style, ...props}) => {
             className={'custom-dropdown' + (isActive ? ' active' : '')}
             role="listbox" tabIndex={0} data-value={getSelectedOptionValue()}
             style={style}>
-            <span className="value">{getSelectedOptionText()}</span>
+            <span className="value" style={{fontSize: style.fontSize}}>{getSelectedOptionText()}</span>
             <ul ref={optList} className={'optList' + (isActive ? '' : ' hidden')} role="presentation">
                 <DropdownOptions options={options}
                                 selectedIndex={selectedIndex}
                                 highlightedIndex={highlightedIndex}
-                                eventListeners={{onOptionHover, onOptionClick}}/>
+                                eventListeners={{onOptionHover, onOptionClick}}
+                                style={style}/>
             </ul>
             {select}
         </div>
