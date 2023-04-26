@@ -1,14 +1,13 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import colors from 'colors';
-import connectDB from './config/db.js';
-import users from './seed/users.js';
-import products from './seed/products.js';
-import User from './models/user.model.js';
-import Product from './models/product.model.js';
-import Order from './models/order.model.js';
-import Invoice from './models/invoice.model.js';
-import Notification from './models/notification.model.js';
+import connectDB from './config/db';
+import users from './seed/users';
+import images from './seed/images';
+import jobs from './seed/jobs';
+import User from './models/user';
+import Job from './models/job';
+import Image from './models/image';
 dotenv.config();
 await connectDB();
 

@@ -1,7 +1,7 @@
 import Express from 'express'
 const router = Express.Router();
 import User from '../models/user'
-import {MD5_SUFFIX,responseClient,md5} from '../util'
+import {MD5_SUFFIX,responseClient,md5} from '../utils/util'
 
 router.post('/login', (req, res) => {
     let {username, password} = req.body;
