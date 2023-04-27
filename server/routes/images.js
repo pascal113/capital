@@ -1,8 +1,8 @@
 import Express from 'express'
 
 const router = Express.Router();
-import Images from '../models/images'
-import {responseClient} from '../util'
+import Images from '../models/image.js'
+import {responseClient} from '../utils/util.js'
 import multer from 'multer';
 import path from 'path';
 
@@ -93,4 +93,4 @@ router.delete('/del',(req,res)=>{
     })
 });
 
-module.exports = router;
+export default router;

@@ -18,4 +18,5 @@ const jobs = [
     field: `Industry`
   }
 ];
-export default products;
+
+export default jobs;

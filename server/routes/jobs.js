@@ -1,8 +1,8 @@
 import Express from 'express'
 
 const router = Express.Router();
-import Article from '../models/article'
-import {responseClient} from '../util'
+import Job from '../models/job.js'
+import {responseClient} from '../utils/util.js'
 
 router.post('/add', function (req, res) {
     const {
@@ -16,7 +16,7 @@ router.post('/add', function (req, res) {
     const coverImg =  `/${Math.round(Math.random() * 9 + 1)}.jpg`;
     const viewCount = 0;
     const commentCount = 0;
-    let tempArticle = new Article({
+    let tempJob = new Job({
         title,
         content,
         isPublish,
@@ -27,7 +27,7 @@ router.post('/add', function (req, res) {
         coverImg,
         tags:tags.split(',')
     });
-    tempArticle.save().then(data=>{
+    tempJob.save().then(data=>{
         responseClient(res,200,0,'Save success',data)
     }).cancel(err=>{
         console.log(err);
@@ -44,7 +44,7 @@ router.post('/update',(req,res)=>{
         isPublish,
         id
     } = req.body;
-    Article.update({_id:id},{title,content,time,tags:tags.split(','),isPublish})
+    Job.update({_id:id},{title,content,time,tags:tags.split(','),isPublish})
         .then(result=>{
             console.log(result);
             responseClient(res,200,0,'Update success',result)
@@ -56,7 +56,7 @@ router.post('/update',(req,res)=>{
 
 router.delete('/del',(req,res)=>{
     let id = req.query.id;
-    Article.remove({_id:id})
+    Job.remove({_id:id})
         .then(result=>{
             if(result.result.n === 1){
                 responseClient(res,200,0,'Delete success!')
@@ -68,4 +68,4 @@ router.delete('/del',(req,res)=>{
     })
 });
 
-module.exports = router;
+export default router;

@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
-import jobSchema from '../schemas/job'
+import jobSchema from '../schemas/job.js'
 
-module.exports = mongoose.model('Job',jobSchema);
+const Job = mongoose.model('Job', jobSchema);
+export default Job;

@@ -105,4 +105,5 @@ const images = [
     description: `hamburgermenu image`
   }
 ];
-export default products;
+
+export default images;

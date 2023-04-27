@@ -1,7 +1,7 @@
 import Express from 'express'
 const router = Express.Router();
-import User from '../models/user'
-import {MD5_SUFFIX,responseClient,md5} from '../util'
+import User from '../models/user.js'
+import {MD5_SUFFIX,responseClient,md5} from '../utils/util.js'
 
 router.post('/login', (req, res) => {
     let {username, password} = req.body;
@@ -94,4 +94,4 @@ router.get('/logout',function (req,res) {
     res.redirect('/');
 });
 
-module.exports = router;
+export default router;
