@@ -6,7 +6,7 @@ import RouterRoutes from './routes/RouterRoutes';
 import Footer from './components/common/Footer';
 import BackTop from './components/common/BackTop';
 import muiTheme from './components/theme/MuiTheme';
-import { ThemeProvider} from "@material-ui/core";
+import { ThemeProvider} from "@mui/material";
 
 const App = () => {
 
