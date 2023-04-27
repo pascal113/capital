@@ -8,7 +8,9 @@ import cookieParser from 'cookie-parser'
 import session from 'express-session'
 import multer from 'multer';
 import SibApiV3Sdk from 'sib-api-v3-sdk';
+
 import connectDB from './config/db.js'
+import {responseClient} from './utils/util.js'
 
 import userRoutes from './routes/user.js';
 import jobRoutes from './routes/jobs.js';
@@ -134,49 +136,72 @@ app.post('/sendEmail', async (req, res) => {
     res.send('ok');
 });
 
-app.use('api/users', userRoutes);
-app.use('api/jobs', jobRoutes);
-app.use('api/images', imagesRoutes);
+const apiLogger = (req, res, next) => {
+    console.log(`api called`);
+    console.log(`>>>>>>> ${req.method} ${req.url}`); // console.log(`>> query: `, req.query);
+    // console.log(`>> params: `, req.params);
+    // console.log(`>> body: `, req.body);
+    // console.log(`>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>`);
+  
+    next();
+}; // Middleware
+
+app.use('/api', apiLogger); // Routes
+
+app.use('/api/users', userRoutes);
+app.use('/api/jobs', jobRoutes);
+app.use('/api/images', imagesRoutes);
 
 const __dirname = path.resolve();
 console.log(__dirname);
 app.use('/static', Express.static(path.join(__dirname, '/static')));
 
-const adminProcess = (req, res, next) => {
+const beforeAdminProcess = (req, res, next) => {
     console.log(`adminProcess`);
     console.log(`>>>>>>> ${req.method} ${req.url}`);
-    Express.static(path.join(__dirname, '/admin/build'));
-    // res.sendFile(path.resolve(__dirname, 'admin', 'build', 'index.html'))
+    if(req.session.userInfo) {
+        console.log('login state');
+        next();
+    }
+    else {
+        console.log('login error');
+        // res.send(responseClient(res,200,1,'Information is out. Please retry input.'));
+        // res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+        res.redirect('/');
+        // next();
+    }
+};
+
+const indexProcess = (req, res, next) => {
+    console.log(`indexProcess`);
     next();
 };
 
 if (env['ENV'] === 'production') {
     console.log('production mode');
     
-    // admin route 
-    // app.use('/admin', Express.static(path.join(__dirname, '/admin/build')));
+    // admin route
+    app.use('/admin', beforeAdminProcess); 
+    app.use('/admin', Express.static(path.join(__dirname, '/admin/build')));
     // app.get('/admin/*', (req, res) => 
     //     res.sendFile(path.resolve(__dirname, 'admin', 'build', 'index.html'))
     // );
 
-    // app.use('/admin', Express.static(path.join(__dirname, '/admin/build')));
-    // app.get('/admin/*', (req, res) => {
-    //     console.log('admin request');
-    //     res.sendFile(path.resolve(__dirname, 'admin', 'build', 'index.html'))
-    // });  
-
-    // app.get('/admin/*', (req, res) =>
-    //     // res.sendFile(path.resolve(__dirname, 'admin', 'build', 'index.html'))
-    //     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
-    // );
-    // app.use('/admin', adminProcess);    
-    
+    app.get('/admin', (req, res) => {
+        console.log('admin clinet');
+        res.sendFile(path.resolve(__dirname, 'admin', 'build', 'index.html'));   
+    });
+ 
     // client route ok
-    // app.use(Express.static(path.join(__dirname, '/client/build')));
+    // app.use(Express.static(path.join(__dirname, '/client/build')));    
     // app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')));
 
-    app.use(Express.static(path.join(__dirname, '/admin/build')));
-    app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'admin', 'build', 'index.html')));
+    // app.use(indexProcess);
+    app.use(Express.static(path.join(__dirname, '/client/build')));
+    // app.get('*', (req, res) => {
+    //     console.log('index clinet');
+    //     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    // });
 } 
 
 app.listen(port, function (err) {
