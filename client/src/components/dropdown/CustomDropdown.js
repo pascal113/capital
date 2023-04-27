@@ -28,9 +28,7 @@ const CustomDropdown = ({name, options, style, ...props}) => {
     const [isActive, setIsActive] = useState(false);
 
     let defaultIndex = (options.findIndex(option => option.defaultValue)) ?? 0;
-    if(defaultIndex < 0)
-        defaultIndex = 0;
-    const [highlightedIndex, setHighlightedIndex] = useState(0);
+    const [highlightedIndex, setHighlightedIndex] = useState(defaultIndex);
     const [selectedIndex, setSelectedIndex] = useState(defaultIndex);
 
     const onOptionHover = (e) => {
