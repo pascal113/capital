@@ -136,9 +136,21 @@ app.post('/sendEmail', async (req, res) => {
     res.send('ok');
 });
 
-app.use('api/users', userRoutes);
-app.use('api/jobs', jobRoutes);
-app.use('api/images', imagesRoutes);
+const apiLogger = (req, res, next) => {
+    console.log(`api called`);
+    console.log(`>>>>>>> ${req.method} ${req.url}`); // console.log(`>> query: `, req.query);
+    // console.log(`>> params: `, req.params);
+    // console.log(`>> body: `, req.body);
+    // console.log(`>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>`);
+  
+    next();
+}; // Middleware
+
+app.use('/api', apiLogger); // Routes
+
+app.use('/api/users', userRoutes);
+app.use('/api/jobs', jobRoutes);
+app.use('/api/images', imagesRoutes);
 
 const __dirname = path.resolve();
 console.log(__dirname);
@@ -153,16 +165,15 @@ const beforeAdminProcess = (req, res, next) => {
     }
     else {
         console.log('login error');
-        res.send(responseClient(res,200,1,'Information is out. Please retry input.'));
+        // res.send(responseClient(res,200,1,'Information is out. Please retry input.'));
+        // res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+        res.redirect('/');
+        // next();
     }
 };
 
 const indexProcess = (req, res, next) => {
     console.log(`indexProcess`);
-    // console.log(req);
-    // console.log(res);
-    // Express.static(path.join(__dirname, '/client/build'))
-    // res.sendFile(path.resolve(__dirname, 'admin', 'build', 'index.html'))    
     next();
 };
 
@@ -170,22 +181,22 @@ if (env['ENV'] === 'production') {
     console.log('production mode');
     
     // admin route
-    app.use(beforeAdminProcess); 
+    app.use('/admin', beforeAdminProcess); 
     app.use('/admin', Express.static(path.join(__dirname, '/admin/build')));
     // app.get('/admin/*', (req, res) => 
     //     res.sendFile(path.resolve(__dirname, 'admin', 'build', 'index.html'))
     // );
 
-    // app.get('/admin/*', (req, res) => {
-    //     console.log('admin clinet');
-    //     res.sendFile(path.resolve(__dirname, 'admin', 'build', 'index.html'));
-    // });
+    app.get('/admin', (req, res) => {
+        console.log('admin clinet');
+        res.sendFile(path.resolve(__dirname, 'admin', 'build', 'index.html'));   
+    });
  
     // client route ok
     // app.use(Express.static(path.join(__dirname, '/client/build')));    
     // app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')));
 
-    app.use(indexProcess);
+    // app.use(indexProcess);
     app.use(Express.static(path.join(__dirname, '/client/build')));
     // app.get('*', (req, res) => {
     //     console.log('index clinet');
