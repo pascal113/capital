@@ -17,6 +17,7 @@ import LogisticsShipmentDetails from '../pages/LogisticsShipmentDetails';
 import Contact from '../pages/Contact';
 import AboutPage from '../pages/AboutPage';
 import AboutCompany from '../pages/AboutCompany';
+import ApplyPage from '../pages/ApplyPage';
 
 const RouterRoutes = () => {
 
@@ -40,6 +41,7 @@ const RouterRoutes = () => {
                 <Route path="/job-postings" element={<JobPostings />} />
                 <Route path="/about-us" element={<AboutPage />} />
                 <Route path="/about-company/:id" element={<AboutCompany />} />
+                <Route path="/apply" element={<ApplyPage />} />
                 <Route path="*" element={<ErrorPage />} />
             </Routes>
         </>

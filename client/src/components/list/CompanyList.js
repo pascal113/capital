@@ -90,7 +90,6 @@ const CompanyList = props => {
                 labelRowsPerPage={"Zeilen pro Seite"}
                 onPageChange={handleChange}
                 onRowsPerPageChange={handleChangeRowsPerPage}
-                defaultPage={1}
                 showFirstButton
                 showLastButton
                 classes={{ ul: classes.paginator }}

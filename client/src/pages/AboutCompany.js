@@ -24,47 +24,42 @@ const AboutCompany = () => {
                     <ImageViewer data={imgViwerData} />
                     <BreadCrumb />
                     <div className='about_company_wrapper'>
-                        <p className='paragraph'><h1 className='paragraph_text'>{aboutCompanyData.introduction}</h1></p>
+                        <h1 className='paragraph paragraph_text'>{aboutCompanyData.introduction}</h1>
                         {
-                            aboutCompanyData.content.map((contents) => {
+                            aboutCompanyData.content.map((contents, index) => {
                                 return (
-                                    <p className='paragraph'>
+                                    <div key={index} className='paragraph'>
                                         <h2 className='paragraph_text'>{contents.title}</h2>
                                         <h3 className='subtitle paragraph_text'>{contents.subtitle}</h3>
                                         <ul className='detail'>
                                         {
                                             contents.detail.map((item, index) => {
                                                 return (
-                                                <li  key={index}><h4>{item}</h4></li>
+                                                <li key={index}><h4>{item}</h4></li>
                                                 );
                                             })
                                         }
                                         </ul>
-                                    </p>
+                                    </div>
                                 );
                             })
                         }
 
                         <div className='info'>
-                            <p>
                             {
                                 aboutCompanyData.info.contact.map((item, index) => {
                                     return (
-                                        <h2 className='contact paragraph_text'>{item}</h2>
+                                        <h2 key={index} className='contact paragraph_text'>{item}</h2>
                                     );
                                 })
                             }
-                            </p>
-
-                            <p>
                             {
                                 aboutCompanyData.info.comment.map((item, index) => {
                                     return (
-                                        <h2 className='comment paragraph_text'>{item}</h2>
+                                        <h2 key={index} className='comment paragraph_text'>{item}</h2>
                                     );
                                 })
                             }
-                            </p>
                         </div>
                         <Link to="/apply">
                             <button type="button" className="base_button apply_button">JETZT BEWERBEN</button>
