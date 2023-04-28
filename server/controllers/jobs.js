@@ -3,14 +3,15 @@ import asyncHandler from 'express-async-handler';
 import {responseClient} from '../utils/util.js'
 
 const add_job = asyncHandler( async (req, res) => {
-    const {
-        title,
-        type,
-        location,
-        field
-    } = req.body;
 
     try {
+        const {
+            title,
+            type,
+            location,
+            field
+        } = req.body;
+
         const job = await Job.findOne({
             title: title,
             type: type,
@@ -41,11 +42,10 @@ const add_job = asyncHandler( async (req, res) => {
 });
 
 // Update a job
-const update_job = asyncHandler(async (req, res) => {
-    const jobId = req.params.id;
-    console.log('update_job'.jobId);
+const update_job = asyncHandler(async (req, res) => {    
   
     try {
+      const jobId = req.params.id;
       const job = await Job.findById(jobId);
       if (!job) {
         responseClient(res, 404, 1, 'Job not found');
@@ -67,9 +67,9 @@ const update_job = asyncHandler(async (req, res) => {
 });
   
 // Delete a job
-const delete_job = asyncHandler(async (req, res) => {
-    const jobId = req.params.id;  
+const delete_job = asyncHandler(async (req, res) => {    
     try {
+      const jobId = req.params.id;  
       const job = await Job.findById(jobId);
       if (!job) {
         responseClient(res, 404, 1, 'Job not found');
@@ -102,18 +102,36 @@ const get_job = asyncHandler(async (req, res) => {
 });
   
 // Get a list of jobs
-const get_job_list = asyncHandler(async (req, res) => {
-    const { type, location, field } = req.body;    
-    const jobs = await Job.find({
-        type: type,
-        location: location,
-        field: field
-    });
+const get_job_list = asyncHandler(async (req, res) => {    
+    
+    try {
+        const { type, location, field } = req.body;
+        const filter = {};
 
-    if (jobs) {
-        responseClient(res, 200, 0, jobs);
-    } else {
-        responseClient(res, 404, 0, 'No jobs found');
+        if (type) {
+            filter.type = type;
+        }
+    
+        if (location) {
+            filter.location = location;
+        }
+    
+        if (field) {
+            const fieldArray = field ? field.split(',') : [];
+            filter.field = {$in: fieldArray};
+        }
+    
+        const jobs = await Job.find(filter);
+    
+        if (jobs && jobs.length) {
+            responseClient(res, 200, 0, 'Success', jobs);
+        } else {
+            responseClient(res, 404, 0, 'No jobs found');
+        }
+    }
+    catch (error) {
+        console.log(err);
+        responseClient(res);
     }
 });
 

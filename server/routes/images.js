@@ -1,96 +1,54 @@
 import Express from 'express'
+import { add_image, update_image, delete_image, get_image, get_image_list } from '../controllers/images.js';
 
 const router = Express.Router();
-import Images from '../models/image.js'
-import {responseClient} from '../utils/util.js'
-import multer from 'multer';
-import path from 'path';
 
-console.log('import images');
+// import Images from '../models/image.js'
+// import {responseClient} from '../utils/util.js'
+// import multer from 'multer';
+// import path from 'path';
 
-// const multer = require('multer');
-// const path = require('path');
-
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    console.log('destination');
-    cb(null, 'static/uploads/');
-  },
-  filename: function (req, file, cb) {
-    console.log('filename');
-    const ext = path.extname(file.originalname);
-    cb(null, file.fieldname + '-' + Date.now() + ext);
-  }
-});
-
-const upload = multer({ storage: storage });
-// const upload = multer({ 
-//     dest: 'static/uploads/',
-//     limits: { fileSize: 5 * 1024 * 1024 }
+// const storage = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//     console.log('destination');
+//     cb(null, 'static/uploads/');
+//   },
+//   filename: function (req, file, cb) {
+//     console.log('filename');
+//     const ext = path.extname(file.originalname);
+//     cb(null, file.fieldname + '-' + Date.now() + ext);
+//   }
 // });
 
-router.post('/add', upload.single('image'), (req, res)  => {
+// const upload = multer({ storage: storage });
+
+// router.post('/add', upload.single('image'), (req, res)  => {
     
-    console.log('post addImage');
-    console.log(req.file);
+//     console.log('post addImage');
+//     console.log(req.file);
 
-    const {
-        type,
-        description
-    } = req.body;
-    let path =  req.file.filename;
+//     const {
+//         type,
+//         description
+//     } = req.body;
+//     let path =  req.file.filename;
 
-    let tempImages = new Images({
-        path,
-        type,
-        description
-    });
+//     let tempImages = new Images({
+//         path,
+//         type,
+//         description
+//     });
 
-    tempImages.save().then(data=>{
-        responseClient(res,200,0,'Save success',data)
-    }).cancel(err=>{
-        console.log(err);
-        responseClient(res);
-    });
-});
+//     tempImages.save().then(data=>{
+//         responseClient(res,200,0,'Save success',data)
+//     }).cancel(err=>{
+//         console.log(err);
+//         responseClient(res);
+//     });
+// });
 
-router.post('/update',(req,res)=>{
-    const path =  `/${Math.round(Math.random() * 9 + 1)}.jpg`;
-    const {
-        type,
-        description
-    } = req.body;
-    Images.update({_id:id},{path, type,description})
-        .then(result=>{
-            console.log(result);
-            responseClient(res,200,0,'Update success',result)
-        }).cancel(err=>{
-        console.log(err);
-        responseClient(res);
-    });
-});
-
-router.get('/getall', (req, res) => {
-    console.log('getAllImages');
-    Images.find(null, 'name').then(data => {
-        responseClient(res, 200, 0, 'Request success!', data);
-    }).catch(err => {
-        responseClient(res);
-    })
-});
-
-router.delete('/del',(req,res)=>{
-    let id = req.query.id;
-    Images.remove({_id:id})
-        .then(result=>{
-            if(result.result.n === 1){
-                responseClient(res,200,0,'Delete success!')
-            }else{
-                responseClient(res,200,1,'Content not exist');
-            }
-        }).cancel(err=>{
-            responseClient(res);
-    })
-});
+router.route('/add').post(add_image);
+router.route('/list').get(get_image_list);
+router.route('/:id').get(get_image).post(update_image).delete(delete_image);
 
 export default router;
