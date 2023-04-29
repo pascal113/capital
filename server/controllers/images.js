@@ -6,16 +6,20 @@ import {responseClient} from '../utils/util.js'
 const add_image = asyncHandler(async (req, res) => {
 
   try {
+
+    let path = req.file.path;
+
     const {
-      path,
       type,
       index,
       title,
       description
     } = req.body;
 
+    console.log(req.body);
+
     const image = await Image.findOne({
-      path: path,
+      index: index,
       type: type
     });
 
@@ -33,7 +37,7 @@ const add_image = asyncHandler(async (req, res) => {
       responseClient(res,200,0,'Save success',resData);
     }
     else {
-      console.log(job);
+      console.log(image);
       responseClient(res,200,0,'Image already exist');
     }
   }
@@ -56,15 +60,17 @@ const update_image = asyncHandler(async (req, res) => {
       return;
     }
 
-    const { path, type, index, title, description } = req.body;
-    image.path = path || image.path;
+    let path = req.file.path;
+    
+    const { type, index, title, description } = req.body;
+    image.path = path;
     image.type = type || image.type;
     image.index = index || image.index;
     image.title = title || image.title;
     image.description = description || image.description;
 
     await image.save();
-    responseClient(res, 200, 0, 'Image updated successfully', job);
+    responseClient(res, 200, 0, 'Image updated successfully', image);
   }
   catch (error) {
       console.log(error);

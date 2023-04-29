@@ -3,7 +3,8 @@
     
     "NotFoundURL": "Not Found - ",
 
-    "CheckEmailLinkSubject": "Your registration with %s",
+    "ContactEmailSubject": "Contack OK %s",
+    "JobEmailSubject": "Job OK %s",
     "CheckEmailTitle": "Please confirm your e-mail address.",
     "ThankRegistering": "Thank you for your registration!",
     "WelcomeToTeam": "Welcome to %s.",

@@ -15,6 +15,7 @@ import {responseClient} from './utils/util.js'
 import userRoutes from './routes/user.js';
 import jobRoutes from './routes/jobs.js';
 import imagesRoutes from './routes/images.js';
+import mailRoutes from './routes/mail.js';
 
 dotenv.config();
 await connectDB();
@@ -151,6 +152,7 @@ app.use('/api', apiLogger); // Routes
 app.use('/api/users', userRoutes);
 app.use('/api/jobs', jobRoutes);
 app.use('/api/images', imagesRoutes);
+app.use('/api/mail', mailRoutes);
 
 const __dirname = path.resolve();
 console.log(__dirname);
