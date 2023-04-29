@@ -73,17 +73,17 @@ const ApplyPage = () => {
                             </div>
                             <div className='form_control'>
                                 <span className='label'>WEITERGABE DEINER BEWERBUNG*:</span>
-                                <div className='chk_section'>
-                                    <input type="radio" name="styles" id="yes" class="custom-radio"/>
-                                    <small className='label_comment'>Ja</small>
-                                    <small className='label_comment'>Ich bin damit einverstanden, dass meine Bewerbung zur Prüfung für weitere Stellenangebote an andere Fachbereiche bzw. Haufe-Gesellschaften übermittelt wird (dies gilt ausschl. für die vier Monate nach Abschluss meines Bewerbungsverfahrens). Diese Einwilligung kann ich jederzeit ohne Angabe von Gründen mit Wirkung für die Zukunft widerrufen. 
-                                    </small>
+                                <div className='checkbox_section'>
+                                    <input type="radio" name="radio-box" id="box-shadow" className="custom-radio"/>
+                                    <span className='check-label'>Ja</span>
+                                    <span className='check-comment'>Ich bin damit einverstanden, dass meine Bewerbung zur Prüfung für weitere Stellenangebote an andere Fachbereiche bzw. Haufe-Gesellschaften übermittelt wird (dies gilt ausschl. für die vier Monate nach Abschluss meines Bewerbungsverfahrens). Diese Einwilligung kann ich jederzeit ohne Angabe von Gründen mit Wirkung für die Zukunft widerrufen.
+                                    </span>
                                 </div>
-                                <div className='chk_section'>
-                                    <input type="radio" name="styles" id="no" class="custom-radio"/>
-                                    <small className='label_comment'>Nein</small>
-                                    <small className='label_comment'>Ich bin damit einverstanden, dass meine Bewerbung zur Prüfung für weitere Stellenangebote an andere Fachbereiche bzw. Haufe-Gesellschaften übermittelt wird (dies gilt ausschl. für die vier Monate nach Abschluss meines Bewerbungsverfahrens). Diese Einwilligung kann ich jederzeit ohne Angabe von Gründen mit Wirkung für die Zukunft widerrufen. 
-                                    </small>
+                                <div className='checkbox_section'>
+                                    <input type="radio" name="radio-box" id="box-shadow" className="custom-radio"/>
+                                    <span className='check-label'>Nein</span>
+                                    <span className='check-comment'>Ich bin nicht damit einverstanden, dass meine Bewerbung zur Prüfung für weitere Stellenangebote an andere Fachbereiche bzw. Haufe-Gesellschaften übermittelt wird. Das bedeutet, dass meine Bewerbung nur von dem Fachbereich bzw. der Haufe-Gesellschaft berücksichtigt wird, die für dieses Stellenangebot zuständig ist.
+                                    </span>
                                 </div>
                             </div>
                         </form>

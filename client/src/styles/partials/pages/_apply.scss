@@ -16,7 +16,7 @@
 .apply_wrapper{
     width: 100%;
     height: 100%;
-    padding: 154px 180px 309px 180px;
+    padding: 154px 170px 309px 170px;
     color: #585858;
     text-align: left;
     font-family: 'Din Pro Bold';
@@ -95,19 +95,39 @@
         }
 
         input[type="radio"] {
-            height: 26px;
-            width: 26px;
-            margin-right: 14px;
+            margin-top: 0;
+            width: 24px; 
+            height: 24px;
+            padding: 0;
         }
 
-        .chk_section{
+        .checkbox_section{
             display: grid;
-            grid-template-columns: 48px 48px auto;
+            grid-template-columns: 40px 48px auto;
             align-items: top;
+            margin-top: 25px;
             
+            #box-shadow:checked {
+                background-color: #D01C1C;
+            }
 
-            #accent {
-                accent-color: #ff5722ed;
+            .check-label{
+                font-family: 'Din Pro Bold';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 18px;
+                color: #646464;
+            }
+
+            .check-comment{
+                font-family: 'Din Pro Regular';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 18px;
+                color: #646464;
+                opacity: 56%;
             }
 
             .custom-radio {
@@ -115,9 +135,8 @@
                 appearance: none;
                 /* Safari support */
                 -webkit-appearance: none;
-                border: 0.2rem solid #ff5722ed;
-                background-color: #e8e8e8;
-                
+                border: 6px solid #D9D9D9;
+                background-color: #D9D9D9;
             }
 
             /* keyboard navigation focus appearance */
