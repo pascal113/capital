@@ -38,7 +38,7 @@ const add_image = asyncHandler(async (req, res) => {
     }
   }
   catch (error) {
-    console.log(err);
+    console.log(error);
     responseClient(res);
   }
 
@@ -67,7 +67,7 @@ const update_image = asyncHandler(async (req, res) => {
     responseClient(res, 200, 0, 'Image updated successfully', job);
   }
   catch (error) {
-      console.log(err);
+      console.log(error);
       responseClient(res);
   }
 
@@ -88,7 +88,7 @@ const delete_image = asyncHandler(async (req, res) => {
     responseClient(res, 200, 0, 'Image deleted successfully');
   }
   catch (error) {
-      console.log(err);
+      console.log(error);
       responseClient(res);
   }
 });
@@ -114,7 +114,15 @@ const get_image = asyncHandler(async (req, res) => {
 const get_image_list = asyncHandler(async (req, res) => {
 
   try {
-    const images = await Image.find();
+
+    const { type } = req.body;
+    const filter = {};
+
+    if (type) {
+        filter.type = type;
+    }
+
+    const images = await Image.find(filter);
 
     if (images) {
       responseClient(res, 200, 0, images);
@@ -123,7 +131,7 @@ const get_image_list = asyncHandler(async (req, res) => {
     }
   }
   catch (error) {
-      console.log(err);
+      console.log(error);
       responseClient(res);
   } 
 
