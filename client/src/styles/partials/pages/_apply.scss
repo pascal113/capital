@@ -41,6 +41,7 @@
     }
 
     .apply_form{
+        width: 100%;
         font-family: 'Din Pro Regular';
         margin-top: 82px;
 
@@ -67,6 +68,7 @@
             margin-top: 14px;
             width: 100%;
             padding: 12px 12px 12px 12px;
+            font-family: 'Din Pro Regular';
             border: 0.33px solid #CFCFCF;
             transition: border-color 0.5s ease-out;
         }
@@ -101,17 +103,60 @@
             padding: 0;
         }
 
-        .checkbox_section{
+        input[type="checkbox"] {
+            margin-top: 0;
+            width: 24px; 
+            height: 24px;
+            padding: 0;
+        }
+
+        input[type="file"] {
+            border: none;
+            outline: none;
+            border-bottom: 1px solid #ccc; /* You can adjust the color and thickness of the outline */
+        }
+
+        .apply-upload-section{
+            display: grid;
+            grid-template-columns: 20% auto;
+            gap: 10px;
+            
+            .apply-upload-label{
+                display: flex;
+                flex-direction: column;
+                
+            }
+
+            .label-small{
+                display: block;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 18px;
+            }
+
+            &:nth-child(1){
+                margin-top: 48px;
+            }
+            &:nth-child(2){
+                margin-top: 20px;
+            }
+            &:nth-child(3){
+                margin-top: 34px;
+                margin-bottom: 40px;
+            }
+            
+        }
+        .radio-box-section{
             display: grid;
             grid-template-columns: 40px 48px auto;
             align-items: top;
             margin-top: 25px;
             
-            #box-shadow:checked {
+            #radio-box:checked {
                 background-color: #D01C1C;
             }
 
-            .check-label{
+            .radio-label{
                 font-family: 'Din Pro Bold';
                 font-style: normal;
                 font-weight: 400;
@@ -120,7 +165,7 @@
                 color: #646464;
             }
 
-            .check-comment{
+            .radio-comment{
                 font-family: 'Din Pro Regular';
                 font-style: normal;
                 font-weight: 400;
@@ -144,11 +189,83 @@
                 outline-offset: 0;
             }
         }
-    }
 
-    .apply_button{
-        margin-top: 81px;
-        width: 202px;
-        height: 52px;
+        .agree-policy{
+            margin-top: 50px;
+
+            .link-apply{
+                display: block;
+                margin-top: 10px;
+                font-family: 'DIN Pro Regular';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 21px;
+                text-decoration-line: underline;
+                color: #4870FF;
+            }
+        }
+
+        .check-box-section{
+            display: flex;
+            justify-content: start;
+            gap: 20px;
+            align-items: top;
+            margin-top: 25px;
+            
+            
+            #check-box:checked {
+                background-color: #4870FF;
+            }
+
+            .check-label{
+                font-family: 'Din Pro Bold';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 21px;
+                color: #646464;
+                color: #4870FF;
+            }
+
+            .custom-check {
+                /* hiding browser el */
+                appearance: none;
+                /* Safari support */
+                -webkit-appearance: none;
+                border: 6px solid #D9D9D9;
+                background-color: #D9D9D9;
+            }
+
+            /* keyboard navigation focus appearance */
+            .custom-check:focus-visible {
+                outline-offset: 0;
+            }          
+        }
+
+        .apply-button-range{
+            margin-top: 113px;
+            display: flex;
+            gap: 12px;
+            justify-content: end;
+    
+            .apply_interrupt_button{
+                background-color: white;
+                color: #585858;
+                width: 219px;
+                height: 52px;
+                border: 3px solid #646464;
+                transform: matrix(1, 0.01, -0.01, 1, 0, 0);
+    
+                &:hover{
+                    background-color: #f0f0f0;
+                }
+            }
+    
+            .apply_submit_button{
+                width: 220px;
+                height: 52px;
+            }
+        }
     }
 }

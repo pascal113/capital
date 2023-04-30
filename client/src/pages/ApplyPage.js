@@ -2,11 +2,14 @@ import React from 'react'
 import BreadCrumb from '../components/common/BreadCrumb';
 import { Link, useParams } from "react-router-dom";
 import ImageViewer from '../components/image/ImageViewer';
+import SelectUploadFile from '../components/upload/SelectUploadFile';
 import aboutCompanyData from '../data/aboutCompanyData';
 
 const ApplyPage = () => {
     const { id } = useParams();
     const id_num = parseInt(id);
+    let clearChildState = null;
+    const cur_sel_files = ["Keine Datei ausgewählt", "Keine Datei ausgewählt", "Keine Datei ausgewählt"];
     
     const imgViwerData = {
         img: "/images/pages/about-us/about-company-top.png",
@@ -15,6 +18,19 @@ const ApplyPage = () => {
         fontSize: '30px',
         fontFamily: 'Din Pro Bold',
         textColor: 'white',
+    };
+
+    const assignClearChildState = (childClearStateFunc) =>{
+        clearChildState = childClearStateFunc;
+    };
+
+    const getStateCallback = (fileName) => {
+        //do something to use the child state
+    };
+
+    const handleRest = e => {
+        //clearChildState(); 
+        alert('asdfasdf');
     };
 
     const handleSubmit = async (e) => {
@@ -59,6 +75,28 @@ const ApplyPage = () => {
                             </div>
 
                             <div className='form_control'>
+                                <div className='apply-upload-section'>
+                                    <div className='apply-upload-label'>
+                                        <span className='label'>DEIN ANSCHREIBEN/</span>
+                                        <span className='label'>LEBENSLAUF*:</span>
+                                    </div>
+                                    <SelectUploadFile getState={getStateCallback} passClearStateFunc={handleRest}/>
+                                </div>
+                                <div className='apply-upload-section'>
+                                    <div className='apply-upload-label'>
+                                        <span className='label'>DEINE ZEUGNISSE*:</span>
+                                        <span className='label-small'>ZERTIFIKATE/ SCHULZEUGNISSE</span>
+                                    </div>
+                                    <SelectUploadFile />
+                                </div>
+                                <div className='apply-upload-section'>
+                                    <span className='label'>WEITERE DOKUMENTE*:</span>
+                                    <SelectUploadFile />
+                                </div>
+                                
+                            </div>
+
+                            <div className='form_control'>
                                 <span className='label'>DEIN FRÜHSTMÖGLICHER EINTRITTSTERMIN*:</span>
                                 <input name="entry_date" type="text" placeholder="Pflichtangabe" required pattern="^(1[0-2]|0?[1-9])/(3[01]|[12][0-9]|0?[1-9])/(?:(?:19|20)[0-9]{2})$"/>
                                 <span className='label_comment'>Bitte hinterlege deine eintrittstermin in folgendem Format, z.B. 1/25/2023</span>
@@ -73,19 +111,32 @@ const ApplyPage = () => {
                             </div>
                             <div className='form_control'>
                                 <span className='label'>WEITERGABE DEINER BEWERBUNG*:</span>
-                                <div className='checkbox_section'>
-                                    <input type="radio" name="radio-box" id="box-shadow" className="custom-radio"/>
-                                    <span className='check-label'>Ja</span>
-                                    <span className='check-comment'>Ich bin damit einverstanden, dass meine Bewerbung zur Prüfung für weitere Stellenangebote an andere Fachbereiche bzw. Haufe-Gesellschaften übermittelt wird (dies gilt ausschl. für die vier Monate nach Abschluss meines Bewerbungsverfahrens). Diese Einwilligung kann ich jederzeit ohne Angabe von Gründen mit Wirkung für die Zukunft widerrufen.
+                                <div className='radio-box-section'>
+                                    <input type="radio" name="radio-box" id="radio-box" className="custom-radio"/>
+                                    <span className='radio-label'>Ja</span>
+                                    <span className='radio-comment'>Ich bin damit einverstanden, dass meine Bewerbung zur Prüfung für weitere Stellenangebote an andere Fachbereiche bzw. Haufe-Gesellschaften übermittelt wird (dies gilt ausschl. für die vier Monate nach Abschluss meines Bewerbungsverfahrens). Diese Einwilligung kann ich jederzeit ohne Angabe von Gründen mit Wirkung für die Zukunft widerrufen.
                                     </span>
                                 </div>
-                                <div className='checkbox_section'>
-                                    <input type="radio" name="radio-box" id="box-shadow" className="custom-radio"/>
-                                    <span className='check-label'>Nein</span>
-                                    <span className='check-comment'>Ich bin nicht damit einverstanden, dass meine Bewerbung zur Prüfung für weitere Stellenangebote an andere Fachbereiche bzw. Haufe-Gesellschaften übermittelt wird. Das bedeutet, dass meine Bewerbung nur von dem Fachbereich bzw. der Haufe-Gesellschaft berücksichtigt wird, die für dieses Stellenangebot zuständig ist.
+                                <div className='radio-box-section'>
+                                    <input type="radio" name="radio-box" id="radio-box" className="custom-radio"/>
+                                    <span className='radio-label'>Nein</span>
+                                    <span className='radio-comment'>Ich bin nicht damit einverstanden, dass meine Bewerbung zur Prüfung für weitere Stellenangebote an andere Fachbereiche bzw. Haufe-Gesellschaften übermittelt wird. Das bedeutet, dass meine Bewerbung nur von dem Fachbereich bzw. der Haufe-Gesellschaft berücksichtigt wird, die für dieses Stellenangebot zuständig ist.
                                     </span>
                                 </div>
                             </div>
+                            <div className='form_control agree-policy'>
+                                <span className='label'>Bitte bestätigen*:</span>
+                                <a target="_blank" href="https://www.gc-pharma.de/de/datenschutzerklaerung.html" className='link-apply'>Zur Datenschutzerklärung</a>
+                                <div className='check-box-section'>
+                                    <input type="checkbox" name="check-box" id="check-box" className="custom-check" />
+                                    <span className='check-label'>Ich bin mit der Datenschutzerklärung einverstanden</span>
+                                </div>        
+                            </div>
+                            <div className='apply-button-range'>
+                                <button type="reset" className="apply_interrupt_button" onClick={handleRest}>Abbrechen</button>
+                                <button type="submit" className="base_button apply_submit_button">Bewerbung einreichen</button>
+                            </div>
+                            
                         </form>
                     </div>
                 </div>
