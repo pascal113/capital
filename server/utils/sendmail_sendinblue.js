@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 import e from "express";
 dotenv.config();
 
-const sendContactMail = ({
+const sendContactMail = async ({
     param
   }) => {
     console.log(param);
@@ -25,7 +25,7 @@ const sendContactMail = ({
                       <p>${i18n.__('CheckEmailSection3', SERVICE_MAIL)}</p>
                       <br />
                       <p>${i18n.__('FromTeam', TEAM_NAME)}</p>`;
-    sendinblue({
+    return await sendinblue({
       to: [{
         email
       }],
@@ -38,7 +38,7 @@ const sendContactMail = ({
     });
 };
 
-const sendJobMail = ({
+const sendJobMail = async ({
   param,
   files
 }) => {
@@ -101,7 +101,7 @@ const sendJobMail = ({
 
   mail_data.attachment = attachments;
 
-  sendinblue(mail_data);
+  return await sendinblue(mail_data);
 };
 
 export { sendContactMail, sendJobMail };

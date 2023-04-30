@@ -1,6 +1,6 @@
 import Image from '../models/image.js'
 import asyncHandler from 'express-async-handler';
-import {responseClient} from '../utils/util.js'
+import {responseClient} from '../utils/libs.js'
 import { sendContactMail, sendJobMail } from "../utils/sendmail_sendinblue.js";
 
 const send_contact = asyncHandler(async (req, res) => {
@@ -18,11 +18,13 @@ const send_contact = asyncHandler(async (req, res) => {
     
         console.log(req.body);
 
-        let res = await sendContactMail({
+        let send_res = await sendContactMail({
             param: req.body
         });
 
-        if (res) {
+        console.log(send_res);
+
+        if (send_res) {
           responseClient(res,200,0,'Send success');
         }
         else {
@@ -54,12 +56,14 @@ const send_job = asyncHandler(async (req, res) => {
 
       console.log(req.files);
   
-      let res = await sendJobMail({
+      let send_res = await sendJobMail({
         param: req.body,
         files: req.files
       });
 
-      if (res) {
+      console.log(send_res);
+
+      if (send_res) {
         responseClient(res,200,0,'Send success');
       }
       else {

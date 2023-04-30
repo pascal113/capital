@@ -10,7 +10,7 @@ import multer from 'multer';
 import SibApiV3Sdk from 'sib-api-v3-sdk';
 
 import connectDB from './config/db.js'
-import {responseClient} from './utils/util.js'
+import {responseClient} from './utils/libs.js'
 
 import userRoutes from './routes/user.js';
 import jobRoutes from './routes/jobs.js';

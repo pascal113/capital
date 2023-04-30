@@ -1,6 +1,6 @@
 import Job from '../models/job.js'
 import asyncHandler from 'express-async-handler';
-import {responseClient} from '../utils/util.js'
+import {responseClient} from '../utils/libs.js'
 
 const add_job = asyncHandler( async (req, res) => {
 
