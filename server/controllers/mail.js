@@ -18,12 +18,17 @@ const send_contact = asyncHandler(async (req, res) => {
     
         console.log(req.body);
 
-        sendContactMail({
+        let res = await sendContactMail({
             param: req.body
         });
-      
-        responseClient(res,200,0,'Send success');
 
+        if (res) {
+          responseClient(res,200,0,'Send success');
+        }
+        else {
+          responseClient(res);
+        }
+      
     }
     catch (error) {
         console.log(error);
@@ -33,41 +38,34 @@ const send_contact = asyncHandler(async (req, res) => {
 
 const send_job = asyncHandler(async (req, res) => {
 
-    try {
-  
-      let path = req.file.path;
-  
+    try {     
       const {
-        type,
-        index,
-        title,
-        description
+        first_name,
+        last_name,
+        email,
+        phone_number,
+        statement_duty,
+        payment,
+        attented,
+        application_process // true, false
       } = req.body;
   
       console.log(req.body);
+
+      console.log(req.files);
   
-      const image = await Image.findOne({
-        index: index,
-        type: type
+      let res = await sendJobMail({
+        param: req.body,
+        files: req.files
       });
-  
-      if (image === null || image.length === 0) {
-        const addImage = await Image.create({
-          path,
-          type,
-          index,
-          title,
-          description
-        });
-      
-        const resData = await addImage.save();
-        console.log('ok');
-        responseClient(res,200,0,'Save success',resData);
+
+      if (res) {
+        responseClient(res,200,0,'Send success');
       }
       else {
-        console.log(image);
-        responseClient(res,200,0,'Image already exist');
+        responseClient(res);
       }
+      
     }
     catch (error) {
       console.log(error);
