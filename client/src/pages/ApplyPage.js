@@ -1,13 +1,13 @@
 import React from 'react'
 import BreadCrumb from '../components/common/BreadCrumb';
-import { Link, useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import ImageViewer from '../components/image/ImageViewer';
 import SelectUploadFile from '../components/upload/SelectUploadFile';
-import aboutCompanyData from '../data/aboutCompanyData';
 
 const ApplyPage = () => {
     const { id } = useParams();
     const id_num = parseInt(id);
+    const navigate = useNavigate();
     let clearChildState = null;
     const cur_sel_files = ["Keine Datei ausgewählt", "Keine Datei ausgewählt", "Keine Datei ausgewählt"];
     
@@ -43,6 +43,7 @@ const ApplyPage = () => {
             activity: activity_select.value,
         };
         console.log('value', details);*/
+        navigate('/apply-success');
     };
 
     return (
