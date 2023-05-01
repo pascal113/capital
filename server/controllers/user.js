@@ -82,6 +82,15 @@ const login = asyncHandler(async (req, res) => {
     }
 });
 
+const logout = asyncHandler(async (req, res) => {
+    if (!req.user_id) {
+        responseClient(res, 400, 3, errorMessageGenerator(ERROR_TOKEN_NOT_AUTH));
+    }
+
+    res.clearCookie("token");
+    res.status(301).redirect('/');
+});
+
 const check_auth = asyncHandler(async (req, res) => {
     if (!req.user_id) {
         responseClient(res, 400, 3, errorMessageGenerator(ERROR_TOKEN_NOT_AUTH));
@@ -93,4 +102,4 @@ const check_auth = asyncHandler(async (req, res) => {
     });
 });
 
-export { login, check_auth };
+export { login, logout, check_auth };

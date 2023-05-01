@@ -1,10 +1,11 @@
 
 import express from 'express';
-import { login, check_auth } from '../controllers/user.js';
+import { login, logout, check_auth } from '../controllers/user.js';
 
 const router = express.Router();
 
 router.post('/login', login);
+router.post('/logout', logout);
 router.post('/check-auth', check_auth);
 
 // router.post('/login', (req, res) => {
