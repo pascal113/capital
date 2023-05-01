@@ -23,7 +23,7 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/login">
+        <Route path="/admin/login">
           <Login />
         </Route>
         {admin && (

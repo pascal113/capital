@@ -67,7 +67,9 @@ const beforeAdminProcess = (req, res, next) => {
     // }
     // else {
     //     console.log('login error');
-    //     res.redirect('/');
+    //     // res.redirect('/');
+    //     // res.redirect('/login');
+    //     res.redirect('/admin/login');
     // }
 };
 
