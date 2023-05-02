@@ -16,7 +16,7 @@ const protect = asyncHandler(async (req, res, next) => {
   }
 
   try {
-    const _id = jwt.verify(token, env['JWT_SECRET'], (err, decoded) => {
+    const _id = jwt.verify(token, env.JWT_SECRET, (err, decoded) => {
       // Token Verification Error
       if (err) {
         res.clearCookie("token");
@@ -52,6 +52,22 @@ const protect = asyncHandler(async (req, res, next) => {
   }
 });
 
+const auth = (req, res, next) => {
+  const token = req.header("x-auth-token");
+  console.log('auth ', token);
+  if (!token)
+    return res.status(401).send("Access denied. Not authenticated...");
+  try {
+    const jwtSecretKey = env.JWT_SECRET;
+    const decoded = jwt.verify(token, jwtSecretKey);
+
+    req.user = decoded;
+    next();
+  } catch (ex) {
+    res.status(400).send("Invalid auth token...");
+  }
+};
+
 const checkAdmin = asyncHandler(async (req, res, next) => {
   const user = await User.findOne({
     _id: req.user_id
@@ -70,4 +86,4 @@ const checkAdmin = asyncHandler(async (req, res, next) => {
   next();
 });
 
-export { checkAdmin, protect };
+export { checkAdmin, auth, protect };

@@ -15,6 +15,20 @@ const generateAuthToken = ({
   
     });
 };
+
+const generateAuthTokenByUser = (user) => {
+    const token = jwt.sign(
+      {
+        _id: user._id,
+        name: user.firstName + user.lastName,
+        email: user.email,
+        isAdmin: user.isAdmin,
+      },
+      jwtSecret
+    );
+  
+    return token;
+  };
   
 const checkToken = token => {
     const {
@@ -36,4 +50,4 @@ const checkToken = token => {
     };
 };
   
-export { generateAuthToken, checkToken };
+export { generateAuthToken, generateAuthTokenByUser, checkToken };

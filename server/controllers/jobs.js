@@ -105,6 +105,7 @@ const get_job = asyncHandler(async (req, res) => {
 const get_job_list = asyncHandler(async (req, res) => {    
     
     try {
+        console.log('get_job_list');
         const { type, location, field } = req.body;
         const filter = {};
 
