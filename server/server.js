@@ -12,7 +12,7 @@ import SibApiV3Sdk from 'sib-api-v3-sdk';
 import connectDB from './config/db.js'
 import {responseClient} from './utils/libs.js'
 
-import userRoutes from './routes/user.js';
+import authRoutes from './routes/auth.js';
 import jobRoutes from './routes/jobs.js';
 import imagesRoutes from './routes/images.js';
 import mailRoutes from './routes/mail.js';
@@ -24,6 +24,7 @@ const env = process.env;
 const port = env['API_PORT'];
 
 const app = new Express();
+app.use(Express.json());        // json data
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser('express_react_cookie'));
 app.use(session({
@@ -45,10 +46,10 @@ const apiLogger = (req, res, next) => {
 
 app.use('/api', apiLogger); // Routes
 
-app.use('/api/users', userRoutes);
 app.use('/api/jobs', jobRoutes);
 app.use('/api/images', imagesRoutes);
 app.use('/api/mail', mailRoutes);
+app.use('/api/auth', authRoutes);
 
 const __dirname = path.resolve();
 console.log(__dirname);
@@ -58,19 +59,23 @@ app.use('/uploads', Express.static(path.join(__dirname, '/uploads')));
 const beforeAdminProcess = (req, res, next) => {
     console.log(`adminProcess`);
     console.log(`>>>>>>> ${req.method} ${req.url}`);
-    
-    next();
-    
-    // if(req.session.userInfo) {
-    //     console.log('login state');
-    //     next();
-    // }
-    // else {
-    //     console.log('login error');
-    //     // res.redirect('/');
-    //     // res.redirect('/login');
-    //     res.redirect('/admin/login');
-    // }
+
+    console.log('req user', req.user);
+    console.log(req.session.userInfo);
+
+    const token = req.cookies.token;
+    console.log(token);
+        
+    if(req.session.userInfo) {
+    // if(req.user) {
+        console.log('login state');
+        next();
+    }
+    else {
+        console.log('login error');
+        // res.redirect('/');
+        res.redirect('/login');        
+    }
 };
 
 const indexProcess = (req, res, next) => {
@@ -84,6 +89,7 @@ if (env['ENV'] === 'production') {
     // admin route
     app.use('/admin', beforeAdminProcess); 
     app.use('/admin', Express.static(path.join(__dirname, '/admin/build')));
+    app.use('/login', Express.static(path.join(__dirname, '/admin/build')));
     // app.get('/admin/*', (req, res) => 
     //     res.sendFile(path.resolve(__dirname, 'admin', 'build', 'index.html'))
     // );
