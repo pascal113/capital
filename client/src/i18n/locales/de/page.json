@@ -1,0 +1,39 @@
+{
+    "header": {
+        "menu_label": "Menü"
+    },
+    "footer": [
+        {
+            "title": "Anschrift",
+            "sub_title": [
+                "German Capital Pharma GmbH",
+                "Badstr. 20",
+                "13357 Berlin",
+                "Deutschland"
+            ]
+        },
+        {
+            "title": "Rechtliches",
+            "sub_title": [
+                "Datenschutzrichtlinien",
+                "Impressum"
+            ]
+        },
+        {
+            "title": "Dienstleistungen ",
+            "sub_title": [
+                "Produktion",
+                "Einkauf",
+                "Nahrungsergänzungsmittel",
+                "Lagerung",
+                "Beratung"
+            ]
+        }
+    ],
+
+    "menu": {
+        "menu_1": "Über GC Pharma GmbH",
+        "menu_1_1": "Unser Unternehmensprofil",
+        "menu_1_2": "Unsere Unternehmensziele"
+    }
+}

@@ -1,8 +1,11 @@
 import React, { useContext, useState } from 'react';
 import commonContext from '../../contexts/common/commonContext';
 import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next'
+import i18n from "i18next";
 
 const Header = () => {
+    const { t }  = useTranslation(['page']);
     const { menuOpen, setMenuOpen } = useContext(commonContext);
     const { curLanguage, setLanguage } = useContext(commonContext);
     const location  = useLocation();
@@ -13,8 +16,10 @@ const Header = () => {
     
         if (value === 'DE') {
             setLanguage('GB');
+            i18n.changeLanguage('gb');
         } else {
             setLanguage('DE');
+            i18n.changeLanguage('de');
         }
     };
 
@@ -52,7 +57,7 @@ const Header = () => {
                                         <span className="line3"></span>
                                     </div>
                                 </Link>
-                                <span>Menü</span>
+                                <span>{t('header.menu_label')}</span>
                             </div>
                         </div>
                         
