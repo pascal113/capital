@@ -13,6 +13,7 @@ const SideMenubar = () => {
             <MenuItems
               items={menu}
               key={index}
+              menu_index={index}
               depthLevel={depthLevel}
             />
           );

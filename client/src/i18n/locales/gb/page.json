@@ -30,10 +30,38 @@
             ]
         }
     ],
-
-    "menu": {
-        "menu_1": "Über GC Pharma GmbH",
-        "menu_1_1": "Unser Unternehmensprofil",
-        "menu_1_2": "Unsere Unternehmensziele"
-    }
+    "home": {
+        "company": "GERMAN CAPITAL PHARMA GmbH",
+        "slogan": "Health For Life"
+    },
+    "menu": [
+        {
+            "title": "About GC Pharma GmbH",
+            "subtitle": [
+                "Our company profile",
+                "Our corporate goals"
+            ]
+        },
+        {
+            "title": "Services",
+            "subtitle": [
+                "Production",
+                "Logistics",
+                "Dietary supplements",
+                "Advice"
+            ]
+        },
+        {
+            "title": "Career",
+            "subtitle": [
+                "Job postings"
+            ]
+        },
+        {
+            "title": "Contact",
+            "subtitle": [
+                "Do you have any questions?"
+            ]
+        }
+    ]
 }

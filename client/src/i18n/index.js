@@ -11,8 +11,8 @@ import gb from './locales/gb';
 
 
 i18n
-// .use(Backend)  //백엔드에서 리소스 가져올시
-.use(detector)  //사용자 언어 감지 : https://github.com/i18next/i18next-browser-languageDetect
+// .use(Backend)
+.use(detector)  // https://github.com/i18next/i18next-browser-languageDetect
 .use(initReactI18next) // passes i18n down to react-i18next
 .init({
     // the translations
@@ -23,17 +23,17 @@ i18n
         de:de,
         gb:gb
     },
-    // lng: "ko", //언어 감지기를 상요하는 경우 옵션 정의 X
+    // lng: "de", 
     fallbackLng: "de",
     detection: { // languagedetector option
-      order: ['querystring', 'htmlTag', 'cookie'], // detect 우선순위 
-      lookupQueryString: 'lang', // ?lang=
-      lookupCookie: 'i18n_lang' // cookie name
+        order: ['querystring', 'htmlTag', 'cookie'],
+        lookupQueryString: 'lang', // ?lang=
+        lookupCookie: 'i18n_lang' // cookie name
     },
     debug: true,
-    saveMissing: true, //변환되지않는 키를 엔드포인트로 보fofej.
-    // keySeparator: false, //메세지 형식에서 키를 사용하지 않는다.
-    // ns:['pageKo','pageEn','pageCn'],    //ns는 namespace로 label, button, menu 등 구분해서 관리할 경우 필요
+    saveMissing: true, 
+    // keySeparator: false,
+    // ns:['pageKo','pageEn','pageCn'],
     interpolation: {
         escapeValue: false  
     }
