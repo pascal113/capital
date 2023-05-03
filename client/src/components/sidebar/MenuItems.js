@@ -2,8 +2,11 @@ import { useState, useEffect, useRef,useContext } from 'react';
 import Dropdown from './Dropdown';
 import { Link, useLocation } from 'react-router-dom';
 import menuContext from '../../contexts/menu/menuContext';
+import { useTranslation } from 'react-i18next'
+import i18n from "i18next";
 
-const MenuItems = ({ items, depthLevel}) => {
+const MenuItems = ({ menu_index, submenu_index, items, depthLevel}) => {
+  const { t }  = useTranslation(['page']);
   const [dropdown, setDropdown] = useState(false);
   const { hoverItem } = useContext(menuContext);
 
@@ -86,16 +89,17 @@ const MenuItems = ({ items, depthLevel}) => {
             aria-expanded={dropdown ? 'true' : 'false'}
             onClick={(prev) => setDropdown(!prev)}
           >
-            {items.title}
+            {t(`menu.${menu_index}.title`)}
           </button>
           <Dropdown
             depthLevel={depthLevel}
             submenus={items.submenu}
             dropdown={dropdown}
+            menu_index={menu_index}
           />
         </>
       ) : (
-        <Link to={items.url}>{items.title}</Link>
+          <Link to={items.url}>{t(`menu.${menu_index}.subtitle.${submenu_index}`)}</Link>
       )}
     </li>
   );
