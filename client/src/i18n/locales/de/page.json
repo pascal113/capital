@@ -267,6 +267,150 @@
                 }
             ]
         }
+    },
+    "advice": {
+        "title": "Von der Herstellung oder dem Einkauf von Arzneimitteln bis hin zur zielgruppengerechten Vermarktung unterstützen und beraten wir von GC Pharma gerne.",
+        "p1_strong": "Ganz gleich, an welcher Stelle der Entstehung eines Arzneimittels Sie einsteigen möchten, wir bieten Ihnen das passende Angebot!",
+        "p1_normal": "Die Gesundheit des Patienten steht im Mittelpunkt jeglicher pharmazeutischen Arbeit, um diese sicherzustellen, müssen Arzneimittel den unterschiedlichsten Regularien und Vorschriften gerecht werden. Wir von GC Pharma setzen uns aktiv dafür ein, dass auch Menschen im EU Ausland in den Genuss der hohen Standards unserer Medikamente kommen. Deswegen haben wir Experten für die verschiedenen Einfuhrbestimmungen einzelner Länder, vor allem der Staaten des mittleren Ostens und Nordafrikas, in unser Team aufgenommen. Sprechen Sie uns an, wir freuen uns, Sie zu beraten! Die pharmazeutische und unternehmerische Erfahrung unserer Experten von GC Pharma stellt sicher, dass wir stets passgenaue Konzepte entwickeln, die Sie als Unternehmen aktiv voranbringen und ihren Patienten die bestmögliche Qualität und Versorgung bieten. Hierfür steht uns ein Team aus IT-Management-Spezialisten, Rechtsexperten mit den Schwerpunkten Arzneimittel- und Unternehmensrecht sowie Marketingberatern jederzeit zur Seite.",
+        "service": "Unser Leistungsspektrum umfasst hierbei:",
+        "cards": [
+            {
+                "id": 1,
+                "btnText" : "Erstellung von Projektentwicklungsplänen", 
+                "infoList" : [
+                    "Analytische Entwicklung",
+                    "Technischer Transfer und Produktion",
+                    "Produktion von Testmedikation durch unsere Partner",
+                    "Erstellung von Prüfplänen und Studiendesigns für die klinische Wirksamkeits- und Verträglichkeitsprüfung",
+                    "Beratung zu und Durchführung von klinischen Studien",
+                    "Zulassungsstrategien"
+                ]
+            },
+            {
+                "id": 2,
+                "btnText" : "Aufbau von Vermarktungsstrategien", 
+                "infoList" : [
+                    "Marktpositionierung",
+                    "Vermittlung von qualifiziertem Schlüsselpersonal",
+                    "Einholung von Genehmigungen, Hersteller- und Großhandelserlaubnis",
+                    "Rechts- und Unternehmensberatung",
+                    "IT-Beratung",
+                    "Überprüfung der Marktfähigkeit unter Berücksichtigung einzelstaatlicher Sonderregelungen"
+                ]
+            }
+        ]
+    },
+    "job_posting": {
+        "title": "GC Pharma GmbH als Arbeitgeber",
+        "description": "Unser Mindset, Veränderungsprozessen unvoreingenommen und mutig zu begegnen, hat sich ebenso wenig verändert, wie die zentrale Verankerung des Erfolgsfaktors „Mensch“ in unserem unternehmerischen Bewusstsein. Unsere Mitarbeiter:innen sind nicht nur wegen ihrer Cleverness stets das Wichtigste unseres Unternehmens. Was die Menschen in der GC Pharma GmbH auszeichnet, ist eine unnachahmliche Mischung aus Intuition, Freude und Begeisterung.",
+        "button_label": "58 STELLEN ERKUNDEN"
+    },
+    "about_us": {
+        "form_search_label": "SUCHE",
+        "form_type_label": "ART:",
+        "form_location_label": "STANDORT:",
+        "form_activity_label": "TÄTIGKEITSBEREICH:",
+        "row_per_page": "Zeilen pro Seite",
+        "page_until": " bis ",
+        "page_of": " von ",
+        "type": [
+            {
+                "name" : "Full-Time",
+                "value" : "Full-Time",
+                "defaultValue": true
+            },
+            {
+                "name" : "Part-Time",
+                "value" : "Part-Time",
+                "defaultValue": false
+            }
+        ],
+    
+        "location": [
+            {
+                "name" : "Berlin",
+                "value" : "Berlin",
+                "defaultValue": true
+            },
+            {
+                "name" : "Hamburg",
+                "value" : "Hamburg",
+                "defaultValue": false
+            },
+            {
+                "name" : "München",
+                "value" : "München",
+                "defaultValue": false
+            },
+            {
+                "name" : "Köln",
+                "value" : "Köln",
+                "defaultValue": false
+            }
+        ],
+    
+        "activity": [
+            {
+                "id": 1,
+                "name" : "Adminstration",
+                "value" : "Adminstration"
+            },
+            {
+                "id": 2,
+                "name" : "Finance/Controlling",
+                "value" : "Finance/Controlling"
+            },
+            {
+                "id": 3,
+                "name" : "Product Management",
+                "value" : "Product Management"
+            },
+            {
+                "id": 4,
+                "name" : "Technology Developement",
+                "value" : "Technology Developement"
+            }
+        ]
+    },
+    "contact": {
+        "title": "Sie haben Fragen?",
+        "headquarters": "ZENTRALE",
+        "company_name": "German Capital Pharma GmbH",
+        "company_address": "Badstr. 20 13357 Berlin, Deutschland",
+        "form_title": "Nehmen Sie Kontakt mit uns auf",
+        "form_comment": "Mit * markierte Felder sind Pflichtfelder.",
+        "form_department_label": "An welche Abteilung möchten Sie sich wenden?",
+        "form_department_options": [
+            {
+                "name": "Arzneimittelsicherheit",
+                "value": "Drug Safety",
+                "defaultValue": true
+            },
+            {
+                "name": "Biometrie",
+                "value": "Biometrics"
+            },
+            {
+                "name": "Info-Center",
+                "value": "Info Center"
+            },
+            {
+                "name": "Beratung",
+                "value": "Advice"
+            }
+        ],
+        "form_company_name_label": "Firmenname",
+        "form_company_name_placeholder": "Firmenname",
+        "form_company_phone_label": "Firmenrufnummer",
+        "form_company_phone_placeholder": "Rufnummer",
+        "form_company_address_label": "Firmenanschrift",
+        "form_company_address_placeholder": "Firmenanschrift",
+        "form_company_postcode_label": "PLZ",
+        "form_company_postcode_placeholder": "PLZ*",
+        "form_company_email_label": "E-Mail Adresse",
+        "form_company_email_placeholder": "E-Mail Adresse*",
+        "form_message_label": "Ihre Nachricht:",
+        "form_button_label": "Absenden"
     }
 
 }

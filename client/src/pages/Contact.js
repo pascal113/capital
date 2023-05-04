@@ -4,6 +4,7 @@ import BreadCrumb from '../components/common/BreadCrumb';
 import CustomDropdown from '../components/dropdown/CustomDropdown';
 import styled, { css } from 'styled-components';
 import { TextField } from "@mui/material";
+import { useTranslation } from 'react-i18next';
 
 const ValidationTextField = styled(TextField)({
     '& label.Mui-focused': {
@@ -57,7 +58,9 @@ const InputTextField = styled(TextField)({
 ;
 
 const Contact = () => {
+    const { t }  = useTranslation(['page']);
     const [status, setStatus] = useState("Submit");
+    const department_options = t('contact.form_department_options', { returnObjects: true });
     const handleSubmit = async (e) => {
         e.preventDefault();
         setStatus("Sending...");
@@ -95,35 +98,30 @@ const Contact = () => {
                 <div className="container">
                     <img src="/images/pages/contact/contact-top.png" alt="" />
                     <BreadCrumb />
-                    <h1 className='contact_title'>Sie haben Fragen?</h1>
+                    <h1 className='contact_title'>{t('contact.title')}</h1>
                     <div className='contact_rectangle'></div>
                     <div className="contact_position">
                         <div className="position_icon"><img src="/images/pages/contact/position.png" alt="" /></div>
-                        <div className='headquarters'>ZENTRALE</div>
+                        <div className='headquarters'>{t('contact.headquarters')}</div>
                         <div className="position_address">
-                            <h4>German Capital Pharma GmbH</h4>
-                            <p>Badstr. 20 13357 Berlin, Deutschland</p>
+                            <h4>{t('contact.company_name')}</h4>
+                            <p>{t('contact.company_address')}</p>
                         </div>
                         
                     </div>
                     <div className='contact_form_wrapper'>
                         <form className='contact_form' onSubmit={handleSubmit} method="POST">
-                            <div className='form_item_title'><span>Nehmen Sie Kontakt mit uns auf</span></div>
-                            <div className='form_item_comment'><span>Mit * markierte Felder sind Pflichtfelder.</span></div>
+                            <div className='form_item_title'><span>{t('contact.form_title')}</span></div>
+                            <div className='form_item_comment'><span>{t('contact.form_comment')}</span></div>
                             <div className='form_item_department'>
-                                <span className="label">An welche Abteilung möchten Sie sich wenden?</span>
-                                <CustomDropdown name='department_select' options={[
-                                {name: 'Arzneimittelsicherheit', value: 'Arzneimittelsicherheit', defaultValue: true},
-                                {name: 'Biometrie', value: 'Biometrie'},
-                                {name: 'Info-Center', value: 'Info-Center'},
-                                {name: 'Beratung', value: 'Beratung'}
-                                ]} onChange={(e) => {console.log(e.target.value)}} style={{width: '192px', padding: '7px 0px 7px 9px', fontSize: 12}} />
+                                <span className="label">{t('contact.form_department_label')}</span>
+                                <CustomDropdown name='department_select' options={department_options} onChange={(e) => {console.log(e.target.value)}} style={{width: '192px', padding: '7px 0px 7px 9px', fontSize: 12}} />
                             </div>
                             <div className='form_item_company'>
                                 <ValidationTextField
-                                    label="Firmenname"
+                                    label={t('contact.form_company_name_label')}
                                     variant="outlined"
-                                    placeholder="Firmenname"
+                                    placeholder={t('contact.form_company_name_placeholder')}
                                     name="company_name"
                                     size="small"
                                     sx={{
@@ -132,9 +130,9 @@ const Contact = () => {
                                     }}
                                 />
                                 <ValidationTextField
-                                    label="Firmenrufnummer"
+                                    label={t('contact.form_company_phone_label')}
                                     variant="outlined"
-                                    placeholder="Rufnummer"
+                                    placeholder={t('contact.form_company_phone_placeholder')}
                                     name="phone_number"
                                     size="small"
                                     sx={{
@@ -144,9 +142,9 @@ const Contact = () => {
                             </div>
                             <div className='form_item_plz'>
                             <ValidationTextField
-                                    label="Firmenanschrift"
+                                    label={t('contact.form_company_address_label')}
                                     variant="outlined"
-                                    placeholder="Firmenanschrift"
+                                    placeholder={t('contact.form_company_address_placeholder')}
                                     name="company_address"
                                     size="small"
                                     sx={{
@@ -154,9 +152,9 @@ const Contact = () => {
                                     }}
                                 />
                                 <ValidationTextField
-                                    label="PLZ"
+                                    label={t('contact.form_company_postcode_label')}
                                     variant="outlined"
-                                    placeholder="PLZ*"
+                                    placeholder={t('contact.form_company_postcode_placeholder')}
                                     name="plz"
                                     size="small"
                                     sx={{
@@ -166,9 +164,9 @@ const Contact = () => {
                             </div>
                             <div className='form_item_email'>
                                 <ValidationTextField
-                                    label="E-Mail Adresse"
+                                    label={t('contact.form_company_email_label')}
                                     variant="outlined"
-                                    placeholder="E-Mail Adresse*"
+                                    placeholder={t('contact.form_company_email_placeholder')}
                                     name="email"
                                     size="small"
                                     sx={{
@@ -177,7 +175,7 @@ const Contact = () => {
                                 />
                             </div>
                             <div className='form_item_message'>
-                                <div className='label'>Ihre Nachricht:</div>
+                                <div className='label'>{t('contact.form_message_label')}</div>
                                 <div className='message'>
                                     <InputTextField
                                         name="message"
@@ -190,7 +188,7 @@ const Contact = () => {
                                     />
                                 </div>
                             </div>
-                            <button type="submit" className="base_button form_item_button">Absenden</button>
+                            <button type="submit" className="base_button form_item_button">{t('contact.form_button_label')}</button>
                         </form>
                         <div className='contact_map'>
                             <img src="/images/pages/contact/map.png" alt="" />

@@ -266,5 +266,149 @@
                 }
             ]
         }
+    },
+    "advice": {
+        "title": "We at GC Pharma are happy to support and advise you on everything from the manufacture or purchase of medicines to marketing tailored to the target group.",
+        "p1_strong": "No matter at which point in the development of a drug you want to get started, we have the right offer for you!",
+        "p1_normal": "The health of the patient is the focus of all pharmaceutical work, in order to ensure this, drugs must meet a wide variety of rules and regulations. We at GC Pharma are actively committed to ensuring that people in other EU countries can also enjoy the high standards of our medicines. That is why we have included experts for the various import regulations of individual countries, especially those in the Middle East and North Africa, in our team. Talk to us, we look forward to advising you! The pharmaceutical and entrepreneurial experience of our experts at GC Pharma ensures that we always develop tailor-made concepts that actively advance you as a company and offer your patients the best possible quality and care. A team of IT management specialists, legal experts specializing in drug and corporate law, and marketing consultants is always at our side for this purpose.",
+        "service": "Our range of services includes:",
+        "cards": [
+            {
+                "id": 1,
+                "btnText" : "Creation of project development plans", 
+                "infoList" : [
+                    "Analytical Development",
+                    "Technical transfer and production",
+                    "Production of test medication by our partners",
+                    "Preparation of test plans and study designs for the clinical efficacy and tolerability testing",
+                    "Advice on and implementation of clinical studies",
+                    "Admission Strategies"
+                ]
+            },
+            {
+                "id": 2,
+                "btnText" : "Development of marketing strategies", 
+                "infoList" : [
+                    "market positioning",
+                    "Placement of qualified key personnel",
+                    "Obtaining permits, manufacturing and wholesale permits",
+                    "Legal and business advice",
+                    "IT consulting",
+                    "Verification of marketability, taking into account special national regulations"
+                ]
+            }
+        ]
+    },
+    "job_posting": {
+        "title": "GC Pharma GmbH as an employer",
+        "description": "Our mindset of facing change processes unbiasedly and courageously has changed just as little as the central anchoring of the success factor “people“ in our entrepreneurial consciousness. Our employees are always the most important thing in our company, and not just because of their cleverness. What distinguishes the people at GC Pharma GmbH is an inimitable mixture of intuition, joy and enthusiasm.",
+        "button_label": "EXPLORE 58 PLACES"
+    },
+    "about_us": {
+        "form_search_label": "SEARCH",
+        "form_type_label": "TYPE:",
+        "form_location_label": "LOCATION:",
+        "form_activity_label": "FIELD OF ACTIVITY:",
+        "row_per_page": "Rows per page",
+        "page_until": " - ",
+        "page_of": " of ",
+        "type": [
+            {
+                "name" : "Full-Time",
+                "value" : "Full-Time",
+                "defaultValue": true
+            },
+            {
+                "name" : "Part-Time",
+                "value" : "Part-Time",
+                "defaultValue": false
+            }
+        ],
+    
+        "location": [
+            {
+                "name" : "Berlin",
+                "value" : "Berlin",
+                "defaultValue": true
+            },
+            {
+                "name" : "Hamburg",
+                "value" : "Hamburg",
+                "defaultValue": false
+            },
+            {
+                "name" : "München",
+                "value" : "München",
+                "defaultValue": false
+            },
+            {
+                "name" : "Köln",
+                "value" : "Köln",
+                "defaultValue": false
+            }
+        ],
+    
+        "activity": [
+            {
+                "id": 1,
+                "name" : "Adminstration",
+                "value" : "Adminstration"
+            },
+            {
+                "id": 2,
+                "name" : "Finance/Controlling",
+                "value" : "Finance/Controlling"
+            },
+            {
+                "id": 3,
+                "name" : "Product Management",
+                "value" : "Product Management"
+            },
+            {
+                "id": 4,
+                "name" : "Technology Developement",
+                "value" : "Technology Developement"
+            }
+        ]
+    },
+    "contact": {
+        "title": "Any questions?",
+        "headquarters": "HEADQUARTERS",
+        "company_name": "German Capital Pharma GmbH",
+        "company_address": "Badstr. 20 13357 Berlin, Germany",
+        "form_title": "Feel free to contact us",
+        "form_comment": "Fields marked with * are mandatory.",
+        "form_department_label": "Which department would you like to contact?",
+        "form_department_options": [
+            {
+                "name": "Drug Safety",
+                "value": "Drug Safety",
+                "defaultValue": true
+            },
+            {
+                "name": "Biometrics",
+                "value": "Biometrics"
+            },
+            {
+                "name": "Info Center",
+                "value": "Info Center"
+            },
+            {
+                "name": "Advice",
+                "value": "Advice"
+            }
+        ],
+        "form_company_name_label": "company name",
+        "form_company_name_placeholder": "company name",
+        "form_company_phone_label": "company phone number",
+        "form_company_phone_placeholder": "phone number",
+        "form_company_address_label": "company address",
+        "form_company_address_placeholder": "company address",
+        "form_company_postcode_label": "Postcode",
+        "form_company_postcode_placeholder": "Postcode*",
+        "form_company_email_label": "e-mail address",
+        "form_company_email_placeholder": "e-mail address*",
+        "form_message_label": "Your message:",
+        "form_button_label": "Submit"
     }
 }
