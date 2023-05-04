@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { makeStyles, withStyles } from '@mui/styles';
 import { ListItem, List, Divider, Box, ListItemText, TablePagination } from "@mui/material";
-
+import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -41,6 +41,7 @@ const CustomListItem = ({ linkTo, primary, secondary }) => (
 
 
 const CompanyList = props => {
+    const { t }  = useTranslation(['page']);
     const classes = useStyles();
     const { companyList } = props;
 
@@ -84,10 +85,11 @@ const CompanyList = props => {
                 component="div"
                 count={companyList.length}
                 page={page}
-                labelDisplayedRows={({from, to, count}) => <>{`${from} bis ${to} von ${count}`}</>}
+                /*labelDisplayedRows={({from, to, count}) => <>{`${from} bis ${to} bon ${count}`}</>}*/
+                labelDisplayedRows={({ from, to, count }) => { return from + `${t('about_us.page_until')}` + to + `${t('about_us.page_of')}` + count}}
                 rowsPerPage={rowsPerPage}
                 rowsPerPageOptions={[10, 20, 50]}
-                labelRowsPerPage={"Zeilen pro Seite"}
+                labelRowsPerPage={t('about_us.row_per_page')}
                 onPageChange={handleChange}
                 onRowsPerPageChange={handleChangeRowsPerPage}
                 showFirstButton
