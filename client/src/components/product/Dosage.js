@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react'
-import dosageData from '../../data/dosageData';
+import { useTranslation } from 'react-i18next'
 
 const Dosage = ({data}) => {
+    const { t }  = useTranslation(['page']);
     const [over, setOver] = useState(false);
     const { id, imgSrcHover, imgSrc } = data;
-    const itemData = dosageData.filter(item => (item.id === id));
-
+    const itemData = t('production.dosageData', { returnObjects: true }).filter(item => (item.id === id));
     return (
         <div className='production_dosage_column'>
             <div className='dosage_image'

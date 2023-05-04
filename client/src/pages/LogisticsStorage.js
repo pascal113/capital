@@ -2,11 +2,11 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import BreadCrumb from '../components/common/BreadCrumb'
 import ImageSlider from '../components/sliders/ImageSlider';
-import logisticsData from '../data/logisticsData';
+import { useTranslation } from 'react-i18next';
 
 const LogisticsStorage = () => {
-
-    const storageData = logisticsData.storage;
+    const { t }  = useTranslation(['page']);
+    const storageData = t('logistics.storage.boxes', { returnObjects: true });
 
     return (
         <>
@@ -15,11 +15,8 @@ const LogisticsStorage = () => {
                     <div className='img_top'>
                         <img src="/images/pages/logistics/logistics-top.png" alt="" />
                     </div>
-                    
-                    <BreadCrumb detail_info="LOGISTIK &gt; LAGERUNG" />
-                    
-                    <h1 className='logistics_storage_title'>Das sind die drei wichtigen Lagerung-Fakten <br/>der GC Pharma GmbH</h1>
-                    
+                    <BreadCrumb detail_info={t('logistics.storage.breadcrumb')} />
+                    <h1 className='logistics_storage_title'>{t('logistics.storage.title')}</h1>
                     <div className='storage_01'>
                         <div className='logistics_storage_dash_box' />
                         <div className='logistics_storage_digit_box'>
