@@ -2,12 +2,14 @@ import React from 'react'
 import BreadCrumb from '../components/common/BreadCrumb';
 import { Link, useParams } from "react-router-dom";
 import ImageViewer from '../components/image/ImageViewer';
-import aboutCompanyData from '../data/aboutCompanyData';
+//import aboutCompanyData from '../data/aboutCompanyData';
+import { useTranslation } from 'react-i18next';
 
 const AboutCompany = () => {
     const { id } = useParams();
     const id_num = parseInt(id);
-    
+    const { t }  = useTranslation(['page']);
+
     const imgViwerData = {
         img: "/images/pages/about-us/about-company-top.png",
         label: "HUMAN RECOURCES MANAGER",
@@ -16,6 +18,8 @@ const AboutCompany = () => {
         fontFamily: 'Din Pro Bold',
         textColor: 'white',
     };
+
+    const aboutCompanyData = t('about_company', {returnObjects: true});
 
     return (
         <>
@@ -62,7 +66,7 @@ const AboutCompany = () => {
                             }
                         </div>
                         <Link to="/apply">
-                            <button type="button" className="base_button apply_button">JETZT BEWERBEN</button>
+                            <button type="button" className="base_button apply_button">{t('about_company.button_label')}</button>
                         </Link>
                     </div>
                 </div>
