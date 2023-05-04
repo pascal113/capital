@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { footMenu } from '../../data/footerData';
 import { useTranslation } from 'react-i18next'
 import i18n from "i18next";
 

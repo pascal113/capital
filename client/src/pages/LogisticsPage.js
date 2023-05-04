@@ -2,40 +2,40 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import BreadCrumb from '../components/common/BreadCrumb';
 import LogisticsCard from '../components/logistics/LogisticsCard';
-import logisticsData from '../data/logisticsData';
+import { useTranslation } from 'react-i18next';
 
 const LogisticsPage = () => {
-
+    const { t }  = useTranslation(['page']);
+    const cardData = t('logistics.cards', { returnObjects: true });
+    console.log('')
     return (
         <>
             <section id="logistics" className="section">
                 <div className="container">
                     <img src="/images/pages/logistics/logistics-top.png" alt="" />
                     <BreadCrumb />
-                    <h1 className='logistics_title'>Unsere Spezialisten in Einkauf und Vertrieb können Ihnen schnell, <br />
-                    kompetent und zuverlässig weiterhelfen.</h1>
+                    <h1 className='logistics_title'>{t("logistics.title")}</h1>
                     <div className='logistics_rectangle'></div>
-                    <p className='logistics_description'>Durch unser europaweites Netzwerk an Herstellern, Lieferanten und Großhandlungen sind wir von GC Pharma in der Lage, innerhalb kürzester Zeit den Bedarf an nahezu allen in Europa zugelassenen Humanarzneimitteln zu decken.
-                    </p>
+                    <p className='logistics_description'>{t("logistics.description")}</p>
                     <div className='logistics_wrapper'>
-                        <LogisticsCard props={logisticsData.cards[0]}></LogisticsCard>
-                        <LogisticsCard props={logisticsData.cards[1]}></LogisticsCard>
-                        <LogisticsCard props={logisticsData.cards[2]}></LogisticsCard>
+                        <LogisticsCard props={cardData[0]}></LogisticsCard>
+                        <LogisticsCard props={cardData[1]}></LogisticsCard>
+                        <LogisticsCard props={cardData[2]}></LogisticsCard>
                     </div>
                     <div className='logistics_slogan'>
                         <img src="/images/pages/logistics/logistics-slogan.png" alt="" />
-                        <blockquote className='logistics_slogan_content'>Mit unserem europaweiten Netzwerk an Herstellern und Lieferanten sind wir in der Lage, innerhalb kürzester Zeit den Bedarf an vielen Humanarzneimitteln zu decken. </blockquote>
+                        <blockquote className='logistics_slogan_content'>{t("logistics.slogan")}</blockquote>
                     </div>
                     <div className='logistics_contact_wrapper'>
                         <div className='contact_left_column'>
                             <p className='contact_title'>
-                                <span>Benötigen Sie  Fertigarzneimittel aus dem Europäischen Wirtschaftsraum? </span>
+                                <span>{t("logistics.contact_title")}</span>
                             </p>
                             <p className='contact_content'>
-                                <span>Sprechen Sie uns an! Unsere Spezialisten in Einkauf und Vertrieb können Ihnen schnell, kompetent und zuverlässig weiterhelfen</span>
+                                <span>{t("logistics.contact_content")}</span>
                             </p>
                             <Link to="/contacts">
-                                <button type="button" className="base_button contact_button">Sprechen Sie uns an!</button>
+                                <button type="button" className="base_button contact_button">{t("logistics.contact_button")}</button>
                             </Link>
                         </div>
                         <div className='contact_right_column'>

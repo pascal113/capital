@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import BreadCrumb from '../components/common/BreadCrumb'
-import logisticsData from '../data/logisticsData';
+import { useTranslation } from 'react-i18next';
 
 const LogisticsShipment = () => {
-
-    const shipmentData = logisticsData.shipment;
+    const { t }  = useTranslation(['page']);
+    const shipmentData = t('logistics.shipment.boxes', { returnObjects: true });
 
     return (
         <>
@@ -14,9 +14,8 @@ const LogisticsShipment = () => {
                     <div className='img_top'>
                         <img src="/images/pages/logistics/logistics-top.png" alt="" />
                     </div>
-                    <BreadCrumb detail_info="LOGISTIK &gt; VERSAND" />
-                    
-                    <h1 className='logistics_shipment_title'>Das sind die vier wichtigen Versand-Fakten <br />der GC Pharma GmbH</h1>
+                    <BreadCrumb detail_info={t('logistics.shipment.breadcrumb')} />
+                    <h1 className='logistics_shipment_title'>{t('logistics.shipment.title')}</h1>
                     <div className='logistics_shipment_button_range'>
                         { shipmentData.map((item) => {
                             return (

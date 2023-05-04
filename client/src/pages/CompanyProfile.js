@@ -1,8 +1,11 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import BreadCrumb from '../components/common/BreadCrumb';
+import { useTranslation } from 'react-i18next'
+import i18n from "i18next";
 
 const CompanyProfile = () => {
+    const { t }  = useTranslation(['page']);
     return (
         <>
             <section id="company_profile" className="section">
@@ -10,15 +13,13 @@ const CompanyProfile = () => {
                     <img src="/images/pages/company-profile-top.png" alt="" />
                     <BreadCrumb />
                     <div className='company_profile_info_wrapper'>
-                        <h1 className='company_profile_title'>GC Pharma GmbH</h1>
+                        <h1 className='company_profile_title'>{t("company_profile.title")}</h1>
                         <div className='company_profile_rectangle'></div>
-                        <p className='company_profile_description'>GC Pharma ist eine international führende Dienstleistungs-und Beratungsgesellschaft im pharmazeutischen Bereich, die maßgeschneiderte Service-Pakete für ihre Outsourcing Partner bereitstellt. Unsere Kunden und Partner können aus einer breiten Angebotspalette von der Entwicklung von Wirksubstanzen über Entwicklungsdienstleistungen für fertig formulierte Medikamente, deren Zulassung und Produktion bis hin zur Verpackung und Logistik profitieren.
-                        </p>
+                        <p className='company_profile_description'>{t("company_profile.p1")}</p>
                     </div>
                     <div className="wrapper company_profile_wrapper">
                         <div className="company_profile_left_col">
-                            <p className='paragraph'>Unseren Schwerpunkt setzen wir dabei auf dem Angebot zertifizierter Dienstleistungen und Produkte entlang einer mit dem Kunden abgestimmten Prozess-Schnittstelle aus einer Hand. Somit können wir in jedem Bereich herausragende Qualität garantieren. Mit unseren Partnern, Lieferanten und Herstellern bilden wir ein leistungsstarkes Netzwerk, das Medikamente höchster europäischer Qualität exportiert, damit wir unserem Traum von umfassender Gesundheit für alle Menschen ein Stück näher kommen. Mit unseren Partnern, Lieferanten und Herstellern bilden wir ein leistungsstarkes Netzwerk, das Medikamente höchster europäischer Qualität exportiert, damit wir unserem Traum von umfassender Gesundheit für alle ein Stück näher kommen.
-                            </p>
+                            <p className='paragraph'>{t("company_profile.p2")}</p>
                         </div>
                         <div className="company_profile_right_col">
                             <div className='border-box'>

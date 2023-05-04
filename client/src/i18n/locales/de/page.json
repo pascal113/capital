@@ -64,5 +64,209 @@
                 "Haben Sie Rückfragen?"
             ]
         }
-    ]
+    ],
+    "breadcrumb": "zurück",
+    "company_profile": {
+        "title": "GC Pharma GmbH",
+        "p1": "GC Pharma ist eine international führende Dienstleistungs-und Beratungsgesellschaft im pharmazeutischen Bereich, die maßgeschneiderte Service-Pakete für ihre Outsourcing Partner bereitstellt. Unsere Kunden und Partner können aus einer breiten Angebotspalette von der Entwicklung von Wirksubstanzen über Entwicklungsdienstleistungen für fertig formulierte Medikamente, deren Zulassung und Produktion bis hin zur Verpackung und Logistik profitieren.",
+        
+        "p2": "Unseren Schwerpunkt setzen wir dabei auf dem Angebot zertifizierter Dienstleistungen und Produkte entlang einer mit dem Kunden abgestimmten Prozess-Schnittstelle aus einer Hand. Somit können wir in jedem Bereich herausragende Qualität garantieren. Mit unseren Partnern, Lieferanten und Herstellern bilden wir ein leistungsstarkes Netzwerk, das Medikamente höchster europäischer Qualität exportiert, damit wir unserem Traum von umfassender Gesundheit für alle Menschen ein Stück näher kommen. Mit unseren Partnern, Lieferanten und Herstellern bilden wir ein leistungsstarkes Netzwerk, das Medikamente höchster europäischer Qualität exportiert, damit wir unserem Traum von umfassender Gesundheit für alle ein Stück näher kommen."
+    },
+    "corporate_goals": {
+        "title": "Unser Ziel: Gesundheit für das Leben.",
+        "p1_strong": "Wir bei GC Pharma haben es uns zur Aufgabe gemacht, den Menschen, seine Gesundheit und sein Wohlbefinden, in den Mittelpunkt unseres Handelns zu stellen. Während dieser Zustand der Gesundheit in Europa ein leicht zu erreichendes Ziel ist, mangelt es in vielen anderen Ländern an adäquater medizinischer Versorgung, um Gesundheit zu genießen.",
+        
+        "p1_normal": " Die meisten Krankheiten der Welt sind inzwischen medikamentös behandelbar, dennoch hat ein Großteil der Menschen weltweit keinen Zugang zu diesen lebensnotwendigen Medikamenten. Diese traurige Wahrheit widerspricht dem Menschenrecht auf Gesundheitsfürsorge. Gemeinsam mit unseren Partnern und Ihnen, unseren Kunden, möchten wir dazu beitragen, an Lösungen dieses globalen Problems zu arbeiten.",
+
+        "left_p1": "“Gesundheit ist ein Zustand vollkommenen körperlichen, geistigen und sozialen Wohlbefindens und nicht allein das Fehlen von Krankheit und Gebrechen.“",
+        
+        "left_p2": "Weltgesundheitsorganisation (WHO)",
+
+        "right_p1": "Unsere vornehmste Aufgabe sehen wir daher zum einen darin mit unseren europäischen Partnern und Kunden den Status Quo der Pharmazie zu hinterfragen. So können wir neue und bessere Wege in der Herstellung und Distribution von Arzneimitteln aufzeigen und beschreiten. Mit unseren hochwertigen Produkten und Dienstleistungen möchten wir so unseren aktiven Beitrag zu einer besseren, gesünderen Gesellschaft leisten.",
+        
+        "right_p2": "Mit ihnen möchten wir die Lebensqualität aller Menschen durch Vorbeugung, Heilung und Linderung erhöhen. Zum Anderen aber möchten wir es ermöglichen unsere hohen Qualitätsstandards im pharmazeutischen Bereich auch in andere Länder weiterzugeben. Unsere Berufung ist es, dazu beizutragen, dass Gesundheit kein Privileg bleibt, sondern für jeden Menschen erreichbar wird. Mit unserem Versprechen „Made in Germany“ garantieren wir, dass Forschung, Produktion und Qualitätssicherung in Deutschland stattfinden und unseren hohen, deutschen Wertvorstellungen entsprechen. Dieses Versprechen höchster Qualität gilt auch für unsere gesamten Handelswaren."
+    },
+    "production" : {
+        "title": "Unsere Leistungen im Überblick",
+        "left_p1": "Gemeinsam mit unseren qualifizierten Partnern aus Forschung und Produktion können wir Ihnen einen kompletten Full-Service für Ihre Produkte bieten. ",
+        "left_p2": "Gerne unterstützen wir Sie bei der Formulierung eigener Wirkstoffe oder Generika, beraten Sie bei der Auswahl der geeigneten Applikationsformen für Ihre Patienten. Selbstverständlich übernehmen unsere Partner auch gerne die gesamte Produktion für Sie. Da der gesamte Herstellungsprozess bei unseren Partnern je nach Arzneiform in Räumen der Reinheitsklasse B (unter  Laminar Airflow A in B), mit abschließender Sterilisation mittels Autoklav im Endbehältnis stattfinden kann, können Sie sich in jeder Hinsicht auf höchste pharmazeutische Qualitäts- und Hygienestandards verlassen. Neben den Richtlinien des Europäischen Arzneibuches und des EU-GMP-Leitfadens (Good Manufacturing Practices), entsprechen die Labore den zahlreichen nationalen und internationalen Normen und Richtlichen, die sich mit der Herstellung und den hierfür notwendigen Räumlichkeiten befassen.",
+        "slogan_title": "Unsere erfahrenen Experten beraten Sie gerne bei der Wahl\n der richtigen Applikationsform für Ihren Zielmarkt und Zielgruppe.",
+        "slogan_left": "Die Wahl der herzustellenden Arzneiform bleibt dabei jedoch ganz Ihnen überlassen. Die modernen Produktionsanlagen befinden sich auf dem neuesten technischen Stand und erlauben so die qualitativ hochwertige und effiziente Herstellung vielfältigster Arzneiformen: von festen, oral zu applizierenden Medikamenten, wie Tabletten und Kapseln, bis hin zu halbfesten oder flüssigen Formen, wie Cremes oder Infusionen, können wir alle gängigen Arzneiformen auch in großen Chargen für Sie herstellen.",
+        "slogan_right": "Sollte es uns und unseren Partnern nicht möglich sein, eine von Ihnen benötigte Darreichungsform zu produzieren, stellen wir Ihnen gerne den Kontakt zu führenden Herstellern her. Dies ermöglicht es Ihnen, verschiedene Produkte binnen kürzester Zeit aus einer Hand zu empfangen, flexibel auf die Wünsche Ihrer Kunden zu reagieren und sich der optimalen Qualität Ihrer Medikamente jederzeit sicher sein zu können.",
+        "dosage_title": "Folgende Darreichungsformen können wir Ihnen anbieten:",
+        "dosageData": [
+            {
+                "id": "1",
+                "title": "Feste Formen",
+                "items": [
+                    "Brauseprodukte (Granulate, Brausetabletten)",
+                    "Globuli",
+                    "Granulate, Pellets",
+                    "Hartkapseln (pflanzlich oder mit Schweine- /Rindergelatine)",
+                    "Kautabletten",
+                    "Pastillen",
+                    "Pulver",
+                    "Suppositorien",
+                    "Tabletten (Filmtabletten, Dragees)",
+                    "Weichkapseln (mit Gelatine oder pflanzlich)",
+                    "Zytotoxica"
+                ]
+            },
+            {
+                "id": "2",
+                "title": "Halbfeste Formen",
+                "items": [
+                    "Cremes",
+                    "Emulsionen und Suspensionen",
+                    "Gele",
+                    "Lotionen",
+                    "Pasten",
+                    "Salben",
+                    "Zäpfchen"
+                ]
+            },
+            {
+                "id": "3",
+                "title": "Flüssige Formen",
+                "items": [
+                    "Ampullen",
+                    "Destillate",
+                    "Infusionen",
+                    "Injectabilia",
+                    "(Lyophilisierung, aseptische Herstellung, terminale Sterilisation)",
+                    "Karpulen und Zylinderampullen",
+                    "orale Flüssigkeiten",
+                    "(reine Flüssigkeiten, kolloidale Flüssigkeiten)",
+                    "Säfte",
+                    "Sirupe",
+                    "Sprays",
+                    "Tinkturen",
+                    "Trinkampullen",
+                    "Tropfen",
+                    "Vials / Flaschen"
+                ]
+            },
+            {
+                "id": "4",
+                "title": "Spezielle Formen",
+                "items": [
+                    "Aerosole",
+                    "Inhalatoren",
+                    "Suppositorien",
+                    "Systeme mit veränderter Wirkstofffreisetzung",
+                    "Transdermale therapeutische Systeme",
+                    "Vorgefüllte Injektionsspritzen"
+                ]
+            }
+        ]
+    },
+    "logistics": {
+        "title": "Unsere Spezialisten in Einkauf und Vertrieb können Ihnen schnell,\n kompetent und zuverlässig weiterhelfen.",
+        "description":"Durch unser europaweites Netzwerk an Herstellern, Lieferanten und Großhandlungen sind wir von GC Pharma in der Lage, innerhalb kürzester Zeit den Bedarf an nahezu allen in Europa zugelassenen Humanarzneimitteln zu decken.",
+        "slogan": "Mit unserem europaweiten Netzwerk an Herstellern und Lieferanten sind wir in der Lage, innerhalb kürzester Zeit den Bedarf an vielen Humanarzneimitteln zu decken.",
+        "contact_title":"Benötigen Sie  Fertigarzneimittel aus dem Europäischen Wirtschaftsraum?",
+        "contact_content": "Sprechen Sie uns an! Unsere Spezialisten in Einkauf und Vertrieb können Ihnen schnell, kompetent und zuverlässig weiterhelfen",
+        "contact_button":"Sprechen Sie uns an!",
+        "cards": [
+            {
+                "id": 1,
+                "imgAddr" : "/images/pages/logistics/logistics-card-1.png", 
+                "infoText" : "Die German Capital Pharma GmbH bietet Ihren Kunden aus den Bereichen sowohl der Human- als auch der Tierarzneimittel qualitativ höchste Lagerdienstleistungen an. Dabei ist die Lagerung von Arzneimitteln und sonstigen medizinischen Produkten und Präparaten sowohl im Bereich der Normaltemperatur (ambient, 15 bis 25°C), gekühlt (inkl. Kühlkette bei 2 bis 8°C) als auch tiefgekühlt (-25 bis -20°C) möglich.",
+                "btnText" : "Weiter lesen",
+                "linkAddr" : "/logistics-storage"
+            },
+            {
+                "id": 2,
+                "imgAddr" : "/images/pages/logistics/logistics-card-2.png", 
+                "infoText" : "Die German Capital Pharma GmbH bietet Ihren Kunden aus den Bereichen sowohl der Human- als auch der Tierarzneimittel qualitativ höchste Lagerdienstleistungen an. Dabei ist die Lagerung von Arzneimitteln und sonstigen medizinischen Produkten und Präparaten sowohl im Bereich der Normaltemperatur (ambient, 15 bis 25°C), gekühlt (inkl. Kühlkette bei 2 bis 8°C) als auch tiefgekühlt (-25 bis -20°C) möglich. ",
+                "btnText" : "Weiter lesen",
+                "linkAddr" : "/logistics-shipment"
+            },
+            {
+                "id": 3,
+                "imgAddr" : "/images/pages/logistics/logistics-card-3.png", 
+                "infoText" : "Durch unser europaweites Netzwerk an Herstellern, Lieferanten und Großhandlungen sind wir von GC Pharma in der Lage, innerhalb kürzester Zeit den Bedarf an nahezu allen in Europa zugelassenen Humanarzneimitteln zu decken. Benötigen Sie Fertigarzneimittel aus dem Europäischen Wirtschaftsraum? ",
+                "btnText" : "Weiter lesen",
+                "linkAddr" : "/logistics-purchasing"
+            }
+        ],
+        "storage": {
+            "breadcrumb": "LOGISTIK > LAGERUNG",
+            "title":"Das sind die drei wichtigen Lagerung-Fakten\n der GC Pharma GmbH",
+            "boxes": [
+                {
+                    "id": 1,
+                    "description": "Alle Lagerbereiche sind nach dem Stand der Technik qualifiziert, werden in regelmäßigen Abständen requalifiziert und sind mit modernsten Temperaturüberwachungssystemen ausgestattet, die kontinuierlich alle Daten aufzeichnen und bei Abweichungen unmittelbar Alarm auslösen.",
+                    "slider": {
+                        "delay": 2000,
+                        "imgWidth": "187px",
+                        "imgHeight": "190px",
+                        "images": [
+                            "/images/pages/logistics/logistics-storage-1-1.png",
+                            "/images/pages/logistics/logistics-storage-1-2.png",
+                            "/images/pages/logistics/logistics-storage-1-3.png"
+                        ]
+                    }
+                },
+                {
+                    "id": 2,
+                    "description": "Auch für die Sicherheit der Produkte unserer Kunden ist das Beste gerade gut genug.  Alle Firmen- und Lagerräume sind mittels einer Einbruchmeldeanlage mit Körperschallmeldern, Türkontakten, Brand- und Überschwemmungsmeldern und permanenter Videoüberwachung gesichert. ",
+                    "slider": {
+                        "delay": 2000,
+                        "imgWidth": "188px",
+                        "imgHeight": "190px",
+                        "images": [
+                            "/images/pages/logistics/logistics-storage-2-1.png",
+                            "/images/pages/logistics/logistics-storage-2-2.png"
+                        ]
+                    }
+                },
+                {
+                    "id": 3,
+                    "description": "Bei Auslösen des Alarms wird dieser entweder direkt an die 24h besetzte Alarmzentrale (Feuer, Rauch, Überschwemmung) oder direkt an die Berliner Polizei (Einbruch) weitergeleitet.",
+                    "slider": {
+                        "delay": 2000,
+                        "imgWidth": "189px",
+                        "imgHeight": "188px",
+                        "images": [
+                            "/images/pages/logistics/logistics-storage-3-1.png",
+                            "/images/pages/logistics/logistics-storage-3-2.png"
+                        ]
+                    }
+                }
+            ]
+        },
+        "purchasing": {
+            "breadcrumb": "LOGISTIK > EINKAUF",
+            "title":"Benötigen Sie Fertigarzneimittel aus dem\n Europäischen Wirtschaftsraum?",
+            "description": "Mit unserem europaweiten Netzwerk an Herstellern und Lieferanten sind wir in der Lage, innerhalb kürzester Zeit den Bedarf an vielen Humanarzneimitteln zu decken.Sprechen Sie uns an! Unsere Spezialisten in Einkauf und Vertrieb können Ihnen schnell, kompetent und zuverlässig weiterhelfen. Durch unser europaweites Netzwerk an Herstellern, Lieferanten und Großhandlungen sind wir von GC Pharma in der Lage, innerhalb kürzester Zeit den Bedarf an nahezu allen in Europa zugelassenen Humanarzneimitteln zu decken."
+        },
+        "shipment": {
+            "breadcrumb": "LOGISTIK > VERSAND",
+            "title":"Das sind die vier wichtigen Versand-Fakten\n der GC Pharma GmbH",
+            "boxes": [
+                {
+                    "id": 1,
+                    "description": "Neben der Lagerung bieten wir unseren Kunden auch umfassend Dienstleistungen in den Bereichen Versand und Kommissionierung an.",
+                    "image": "/images/pages/logistics/logistics-shipment-1.jpg"
+                },
+                {
+                    "id": 2,
+                    "description": "Wir verpacken die Produkte unsere Kunden in geeignete und zuvor umfassend qualifizierte Verpackungen und stellen diese dann dem gewünschten Logistikpartner zur Abholung bereit.",
+                    "image": "/images/pages/logistics/logistics-shipment-2.png"
+                },
+                {
+                    "id": 3,
+                    "description": "Durch die speziellen Versandverpackungen unserer Partner können wir dabei die gewünschten Laufzeiten (von 24h bis 92 h oder länger) im gewünschten Temperaturbereich (ambient, 2 bis 8°C oder -25 bis -20°C) gewährleisten. ",
+                    "image": "/images/pages/logistics/logistics-shipment-3.png"
+                },
+                {
+                    "id": 4,
+                    "description": "Durch unser europaweites Netzwerk an Herstellern, Lieferanten und Großhandlungen sind wir von GC Pharma in der Lage, innerhalb kürzester Zeit den Bedarf an nahezu allen in Europa zugelassenen Humanarzneimitteln zu decken. Benötigen Sie Fertigarzneimittel aus dem Europäischen Wirtschaftsraum? ",
+                    "image": "/images/pages/logistics/logistics-shipment-4.png"
+                }
+            ]
+        }
+    }
+
 }
