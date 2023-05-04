@@ -10,17 +10,21 @@ import cartReducer, { getTotals } from "./slices/cartSlice";
 import authReducer from "./slices/authSlice";
 import { productsApi } from "./slices/productsApi";
 
+import jobsReducer, { jobsFetch } from "./slices/jobsSlice";
+
 const store = configureStore({
   reducer: {
     products: productsReducer,
     cart: cartReducer,
     auth: authReducer,
+    jobs: jobsReducer,
     [productsApi.reducerPath]: productsApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(productsApi.middleware),
 });
 
+store.dispatch(jobsFetch());
 store.dispatch(productsFetch());
 store.dispatch(getTotals());
 

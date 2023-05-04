@@ -19,6 +19,9 @@ import Products from "./components/admin/Products";
 import Users from "./components/admin/Users";
 import Orders from "./components/admin/Oders";
 import Summary from "./components/admin/Summary";
+import Jobs from "./components/admin/Jobs";
+import Banners from "./components/admin/Banners";
+import Hamburgers from "./components/admin/Hamburgers";
 import CreateProduct from "./components/admin/CreateProduct";
 
 function App() {
@@ -47,6 +50,15 @@ function App() {
               </Route>
               <Route path="users" element={<Users />} />
               <Route path="orders" element={<Orders />} />
+              <Route path="jobs" element={<Jobs />}>
+                <Route path="create-product" element={<CreateProduct />} />
+              </Route>
+              <Route path="banners" element={<Banners />}>
+                <Route path="create-product" element={<CreateProduct />} />
+              </Route>
+              <Route path="hamburgers" element={<Hamburgers />}>
+                <Route path="create-product" element={<CreateProduct />} />
+              </Route>
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
