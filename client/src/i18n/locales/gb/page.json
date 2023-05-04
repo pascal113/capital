@@ -410,5 +410,63 @@
         "form_company_email_placeholder": "e-mail address*",
         "form_message_label": "Your message:",
         "form_button_label": "Submit"
+    },
+    "about_company": {
+        "introduction": "For our “TVöD“ team in the area of Content & Product Creation we are looking for Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+
+        "content": [
+            {
+                "title": "WHAT YOU CAN EXPECT:",
+                
+                "subtitle": "",
+                
+                "detail": [
+                    "You are a technically competent contact person and coach for your team (8 employees)",
+                    "You support your team and are also largely responsible for operational tasks, e.g. for products, content and projects",
+                    "You will coordinate an external network of editors and authors made up of experts, thereby ensuring that our specialist content is up-to-date and relevant to practice",
+                    "You analyze and prioritize market and customer requirements, develop ideas for new formats or initiatives together with the team, e.g. in the area of legal tech, and drive their implementation",
+                    "You evaluate legal developments in labor and personnel law in public administration and their implications for our business and implement them together with your team"
+                ]
+            },
+            {
+                "title": "WHAT YOU BRING WITH YOU:",
+                
+                "subtitle": "",
+                
+                "detail": [
+                    "You have practical experience in leading a team and promote appreciative and open interaction within the team and beyond team boundaries",
+                    "You are a lawyer or have successfully completed a comparable degree with a focus on labor law and have initial experience in the areas of TVöD or TV-L",
+                    "As a pioneer in digitization, we are looking for someone who likes to think about complex legal issues in terms of new digital solutions",
+                    "You have strong communication skills and enjoy working with different disciplines and stakeholders"
+                ]
+            },
+            {
+                "title": "WE OFFER YOU:",
+                
+                "subtitle": "You can find an insight into our product portfolio here: GC Pharma Capital company profile. At GC Pharma Capital GmbH we believe that we can work best exactly where we feel most comfortable. That's why we offer you a hybrid working model with flexible working hours that combines the advantages of mobile, location-independent work and personal exchange on site. You can also expect the following:",
+                
+                "detail": [
+                    "Extensive benefits from events to sports and health offers to a healthy work-life balance",
+                    "Wide range of seminars and e-learning courses from the GC Pharma Academy as well as many other learning and development opportunities",
+                    "A culture characterized by responsibility, freedom and working together as equals",
+                    "Modern technical equipment and attractive workplace design"
+                ]
+            }
+        ],
+
+        "info" : {
+            "contact": [
+                "Reference number: 6767",
+                "John Doe",
+                "www.gcpharma/Karriere.de"
+            ],
+
+            "comment": [
+                "Not quite convinced yet? We offer you numerous benefits from Hansefit, JobRad, flexible working and financial benefits as well as learning and development opportunities. Are you interested in working in a highly motivated team? Then apply now! We are pleased to meet you!",
+
+                "GC Pharma GmbH is a leading international service and consulting company in the pharmaceutical sector that provides tailor-made service packages for its outsourcing partners. Our customers and partners can benefit from a wide range of services, from the development of active substances and development services for finished drugs, their approval and production to packaging and logistics."
+            ]
+        },
+        "button_label": "APPLY NOW"
     }
 }
