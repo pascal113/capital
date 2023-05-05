@@ -20,7 +20,7 @@ const ApplyPage = () => {
         textColor: 'white',
     };
 
-    const handleRest = e => {
+    const handleCancel = e => {
         //clearChildState(); 
     };
 
@@ -123,7 +123,7 @@ const ApplyPage = () => {
                                 </div>        
                             </div>
                             <div className='apply-button-range'>
-                                <button type="reset" className="apply_interrupt_button" onClick={handleRest}>{t('apply.reset_button')}</button>
+                                <button type="cancel" className="apply_interrupt_button" onClick={handleCancel}>{t('apply.cancel_button')}</button>
                                 <button type="submit" className="base_button apply_submit_button">{t('apply.submit_button')}</button>
                             </div>
                         </form>
