@@ -8,6 +8,7 @@ import cookieParser from 'cookie-parser'
 import session from 'express-session'
 import multer from 'multer';
 import SibApiV3Sdk from 'sib-api-v3-sdk';
+import cors from 'cors'
 
 import connectDB from './config/db.js'
 import {responseClient} from './utils/libs.js'
@@ -25,6 +26,7 @@ const port = env['API_PORT'];
 
 const app = new Express();
 app.use(Express.json());        // json data
+app.use(cors()); // cors 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser('express_react_cookie'));
 app.use(session({

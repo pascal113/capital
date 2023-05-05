@@ -43,6 +43,30 @@ const Dashboard = () => {
         >
           Users
         </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "link-active" : "link-inactive"
+          }
+          to="/admin/jobs"
+        >
+          Jobs
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "link-active" : "link-inactive"
+          }
+          to="/admin/banners"
+        >
+          Banners
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "link-active" : "link-inactive"
+          }
+          to="/admin/hamburgers"
+        >
+          Hamburgers
+        </NavLink>
       </SideNav>
       <Content>
         <Outlet />
