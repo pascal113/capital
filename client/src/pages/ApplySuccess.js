@@ -1,9 +1,11 @@
 import React from 'react'
 import BreadCrumb from '../components/common/BreadCrumb';
 import ImageViewer from '../components/image/ImageViewer';
+import { useTranslation } from 'react-i18next';
 
 const ApplySuccess = () => {
-    
+    const { t }  = useTranslation(['page']);
+
     const imgViwerData = {
         img: "/images/pages/about-us/about-company-top.png",
         label: "People are the power to success",
@@ -24,8 +26,8 @@ const ApplySuccess = () => {
                     <div className='send-image'>
                         <img src="/images/pages/about-us/about-us-send.png" alt="" />
                     </div>   
-                    <div className='title'><h1>Vielen Dank für die Zusendung Ihrer Bewerbungsunterlagen!</h1></div>
-                    <div className='comment'><span >Wir freuen uns über Ihr Interesse an einer Beschäftigung in unserem Unternehmen. Nach Prüfung Ihrer Unterlagen werden wir uns wieder mit Ihnen in Verbindung setzen. Bis dahin bitten wir um Ihre Geduld.</span></div>
+                    <div className='title'><h1>{t('apply_success.title')}</h1></div>
+                    <div className='comment'><span >{t('apply_success.comment')}</span></div>
                     </div>
                 </div>
             </section>

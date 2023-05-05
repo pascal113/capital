@@ -468,5 +468,42 @@
             ]
         },
         "button_label": "APPLY NOW"
+    },
+    "apply":{
+        "title": "HUMAN RESOURCES MANAGER (FULL-TIME)",
+        "comment": "Please enter your personal information below.",
+        "mandatory_placeholder": "Mandatory information",
+        "optional_placeholder": "(optional)",
+        "firstname_label": "FIRST NAME*:",
+        "lastname_label": "LAST NAME*:",
+        "email_label": "EMAIL LOGIN*:",
+        "email_comment": "Enter your email address here.",
+        "phone_label": "PHONE NUMBER*:",
+        "phone_comment": "Please enter your phone number in the following format, e.g. +49 170 1234567 (as an example for a German mobile phone number).",
+        "cv_label_top": "YOUR COVER LETTER/",
+        "cv_label_bottom": "CV*:",
+        "reports_label_top": "YOUR REPORTS*:",
+        "reports_label_bottom": "CERTIFICATES/ SCHOOL REPORTS",
+        "other_doc_label": "OTHER DOCUMENTS*:",
+        "upload_button": "Search",
+        "max_filesize_10mb": "Maximum 10 MB",
+        "entry_date_label": "YOUR EARLIEST POSSIBLE ENTRY DATE*:",
+        "entry_date_comment": "Please enter your entry date in the following format, e.g. 1/25/2023",
+        "salary_label": "YOUR SALARY REQUIREMENTS:",
+        "aware_label": "HOW DID YOU BECOME AWARE OF US:",
+        "yes": "Yes",
+        "no": "No",
+        "transfer_apply_label": "TRANSFER OF YOUR APPLICATION*:",
+        "transfer_apply_agree": "I agree that my application may be forwarded to other departments or Haufe companies for further job vacancies (this only applies to the four months after the end of my application process). I can revoke this consent at any time without giving reasons with effect for the future.",
+        "transfer_apply_disagree": "I do not consent to my application being forwarded to other departments or Haufe companies for further job vacancies. This means that my application will only be considered by the department or the Haufe Society that is responsible for this job offer.",
+        "confirm_label": "Please confirm*:",
+        "privacy_link": "Privacy statement",
+        "privacy_agree_label": "I agree with the Privacy Policy",
+        "cancel_button": "Interrupt",
+        "submit_button": "Send in your application"
+    },
+    "apply_success": {
+        "title": "Thank you for sending your application documents!",
+        "comment": "We are pleased that you are interested in working in our company. After checking your documents, we will get in touch with you again. Until then we ask for your patience."
     }
 }

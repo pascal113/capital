@@ -500,8 +500,12 @@
         "confirm_label": "Bitte bestätigen*:",
         "privacy_link": "Zur Datenschutzerklärung",
         "privacy_agree_label": "Ich bin mit der Datenschutzerklärung einverstanden",
-        "reset_button": "Abbrechen",
+        "cancel_button": "Abbrechen",
         "submit_button": "Bewerbung einreichen"
+    },
+    "apply_success": {
+        "title": "Vielen Dank für die Zusendung Ihrer Bewerbungsunterlagen!",
+        "comment": "Wir freuen uns über Ihr Interesse an einer Beschäftigung in unserem Unternehmen. Nach Prüfung Ihrer Unterlagen werden wir uns wieder mit Ihnen in Verbindung setzen. Bis dahin bitten wir um Ihre Geduld."
     }
 
 }
