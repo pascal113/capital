@@ -1,0 +1,18 @@
+.home{
+    flex: 4;
+}
+
+.addHomeBtn {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 20px;
+    margin-bottom: 40px;
+}
+
+.homeWidgets{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    margin: 20px;
+    flex-wrap: wrap;
+}
