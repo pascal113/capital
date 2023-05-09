@@ -1,38 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-
 import { Provider } from "react-redux";
-import { configureStore } from "@reduxjs/toolkit";
-
-import productsReducer, { productsFetch } from "./slices/productsSlice";
-import cartReducer, { getTotals } from "./slices/cartSlice";
-import authReducer from "./slices/authSlice";
-import { productsApi } from "./slices/productsApi";
-
-import jobsReducer, { jobsFetch } from "./slices/jobsSlice";
-
-const store = configureStore({
-  reducer: {
-    products: productsReducer,
-    cart: cartReducer,
-    auth: authReducer,
-    jobs: jobsReducer,
-    [productsApi.reducerPath]: productsApi.reducer,
-  },
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(productsApi.middleware),
-});
-
-store.dispatch(jobsFetch());
-store.dispatch(productsFetch());
-store.dispatch(getTotals());
+import { store, persistor } from "./redux/store";
+import { PersistGate } from "redux-persist/integration/react";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
+  <Provider store={store}>
+    <PersistGate loading="null" persistor={persistor}>
       <App />
-    </Provider>
-  </React.StrictMode>,
+    </PersistGate>
+  </Provider>,
   document.getElementById("root")
 );
