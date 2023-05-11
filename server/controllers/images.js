@@ -121,7 +121,7 @@ const get_image_list = asyncHandler(async (req, res) => {
 
   try {
 
-    const { type } = req.body;
+    const { type } = req.query;
     const filter = {};
 
     if (type) {
