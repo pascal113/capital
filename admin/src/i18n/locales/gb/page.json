@@ -1,0 +1,33 @@
+{
+    "menu": [
+        {
+            "title": "Über GC Pharma GmbH",
+            "subtitle": [
+                "Unser Unternehmensprofil",
+                "Unsere Unternehmensziele"
+            ]
+        },
+        {
+            "title": "Dienstleistungen",
+            "subtitle": [
+                "Produktion",
+                "Logistik",
+                "Nahrungsergänzungsmittel",
+                "Beratung"
+            ]
+        },
+        {
+            "title": "Karriere",
+            "subtitle": [
+                "Stellenausschreibungen"
+            ]
+        },
+        {
+            "title": "Kontakt",
+            "subtitle": [
+                "Haben Sie Rückfragen?"
+            ]
+        }
+    ]
+
+}

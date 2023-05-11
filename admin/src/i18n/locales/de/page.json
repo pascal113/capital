@@ -1,0 +1,75 @@
+{
+    "menu": [
+        {
+            "title": {
+                "id":   0, 
+                "label": "Home"
+            }
+        },
+        {
+            "title": {
+                "id":   1, 
+                "label": "Über GC Pharma GmbH"
+            },
+            "subtitle": [
+                {
+                    "id":   2, 
+                    "label": "Unser Unternehmensprofil"
+                },
+                {
+                    "id":   3, 
+                    "label": "Unsere Unternehmensziele"
+                }
+            ]
+        },
+        {
+            "title": {
+                "id":   4, 
+                "label": "Dienstleistungen"
+            },
+            "subtitle": [
+                {
+                    "id":   5, 
+                    "label": "Produktion"
+                },
+                {
+                    "id":   6, 
+                    "label": "Logistik"
+                },
+                {
+                    "id":   7, 
+                    "label": "Nahrungsergänzungsmittel"
+                },
+                {
+                    "id":   8, 
+                    "label": "Beratung"
+                }
+            ]
+        },
+        {
+            "title": {
+                "id":   9, 
+                "label": "Karriere"
+            },
+            "subtitle": [
+                {
+                    "id":   10, 
+                    "label": "Stellenausschreibungen"
+                }
+            ]
+        },
+        {
+            "title": {
+                "id":   11, 
+                "label": "Kontakt"
+            },
+            "subtitle": [
+                {
+                    "id":   12, 
+                    "label": "Haben Sie Rückfragen?"
+                }
+            ]
+        }
+    ]
+
+}
