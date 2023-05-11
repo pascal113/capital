@@ -23,10 +23,10 @@
             "title": "Services ",
             "sub_title": [
                 "Production",
-                "Purchasing",
-                "Dietary Supplements",
+                "Procurement",
+                "Supplements",
                 "Storage",
-                "Advice"
+                "Consulting"
             ]
         }
     ],
@@ -38,8 +38,8 @@
         {
             "title": "About GC Pharma GmbH",
             "subtitle": [
-                "Our company profile",
-                "Our corporate goals"
+                "About us",
+                "Our goals"
             ]
         },
         {
@@ -47,14 +47,14 @@
             "subtitle": [
                 "Production",
                 "Logistics",
-                "Dietary supplements",
-                "Advice"
+                "Supplements",
+                "Consulting"
             ]
         },
         {
             "title": "Career",
             "subtitle": [
-                "Job postings"
+                "Job opportunities"
             ]
         },
         {
@@ -67,31 +67,31 @@
     "breadcrumb": "return",
     "company_profile": {
         "title": "GC Pharma GmbH",
-        "p1": "GC Pharma is a leading international service and consulting company in the pharmaceutical sector that provides tailor-made service packages for its outsourcing partners. Our customers and partners can benefit from a wide range of services, from the development of active substances and development services for finished drugs, their approval and production to packaging and logistics.",
+        "p1": "C Pharma is a leading international service and consulting company in the pharmaceutical sector, providing customized service packages for its outsourcing partners. Our clients and partners can benefit from a wide range of services, ranging from the development of active ingredients to development services for pre-formulated drugs, their registration and production, packaging and logistics.",
         
-        "p2": "We focus on offering certified services and products along a process interface coordinated with the customer from a single source. This means that we can guarantee excellent quality in every area. With our partners, suppliers and manufacturers, we form a powerful network that exports medicines of the highest European quality, so that we can come a step closer to our dream of comprehensive health for everyone. With our partners, suppliers and manufacturers, we form a powerful network that exports medicines of the highest European quality, so that we can come a little closer to our dream of comprehensive health for everyone."
+        "p2": "Our focus is on providing certified services and products through a customer-tailored process interface, all from a single source, thereby ensuring outstanding quality in every area. Together with our partners, suppliers, and manufacturers, we form a high-performance network that exports medications of the highest European quality, bringing us one step closer to realizing our dream of comprehensive health for all."
     },
     "corporate_goals": {
-        "title": "Our goal: health for life.",
-        "p1_strong": "At GC Pharma, we have made it our mission to put people, their health and well-being at the center of everything we do. While this state of health is an easy goal to achieve in Europe, many other countries lack adequate medical care to enjoy health. ",
+        "title": "Our goals: Health for life.",
+        "p1_strong": "At GC Pharma, we have made it our mission to put people, their health, and well-being at the center of our actions. While achieving a state of good health is a relatively easily attainable goal in Europe, many other countries lack adequate medical care to enjoy good health.",
         
-        "p1_normal": "Most of the world's diseases are now treatable with medication, yet a large proportion of the world's people do not have access to these vital medicines. This sad truth contradicts the human right to health care. Together with our partners and you, our customers, we would like to contribute to working on solutions to this global problem.",
+        "p1_normal": "Most of the world's diseases are now treatable with medication, yet a large portion of the world's population still lacks access to these life-saving drugs. This sad reality contradicts the human right to healthcare. Together with our partners and you, our customers, we want to contribute to working on solutions to this global problem.",
 
-        "left_p1": "“Health is a state of complete physical, mental and social well-being and not merely the absence of disease or infirmity.“",
+        "left_p1": "“Health is a state of complete physical, mental, and social well-being and not merely the absence of disease or infirmity.“",
         
         "left_p2": "World Health Organization (WHO)",
 
-        "right_p1": "On the one hand, we therefore see our most important task as being to question the status quo of pharmacy with our European partners and customers. In this way, we can identify and tread new and better paths in the manufacture and distribution of pharmaceuticals. With our high-quality products and services, we want to make our active contribution to a better, healthier society.",
+        "right_p1": "Therefore, our primary task is, on the one hand, to question the status quo of pharmacy with our European partners and customers. This way, we can identify and explore new and better ways in the production and distribution of medicines. With our high-quality products and services, we aim to make an active contribution to a better, healthier society.",
         
-        "right_p2": "With them we want to improve the quality of life of all people through prevention, healing and relief. On the other hand, we would like to make it possible to pass on our high quality standards in the pharmaceutical sector to other countries. It is our vocation to contribute to ensuring that health does not remain a privilege, but is attainable for everyone. With our promise “Made in Germany“ we guarantee that research, production and quality assurance take place in Germany and correspond to our high German values. This promise of the highest quality also applies to all our merchandise."
+        "right_p2": "We aim to increase the quality of life for all people through prevention, healing, and relief, and we also strive to enable our high-quality standards in the pharmaceutical field to be transferred to other countries. Our calling is to ensure that health is not a privilege but is accessible to every person. With our promise of “Made in Germany,“ we guarantee that research, production, and quality assurance take place in Germany and meet our high German values. This commitment to the highest quality also applies to all of our traded goods."
     },
     "production" : {
         "title": "Our services at a glance",
-        "left_p1": "Together with our qualified partners from research and production, we can offer you a complete full service for your products. ",
-        "left_p2": "We would be happy to support you in formulating your own active ingredients or generics, and advise you on the selection of the appropriate application forms for your patients. Of course, our partners are also happy to take over the entire production for you. Since the entire manufacturing process at our partners can take place in rooms of cleanliness class B (under laminar airflow A in B), with final sterilization using an autoclave in the final container, depending on the dosage form, you can rely on the highest pharmaceutical quality and hygiene standards in every respect. In addition to the guidelines of the European Pharmacopoeia and the EU GMP guidelines (Good Manufacturing Practices), the laboratories comply with the numerous national and international standards and directives that deal with production and the premises required for this.",
-        "slogan_title": "Our experienced experts will be happy to advise you on choosing the right form\n of application for your target market and target group.",
-        "slogan_left": "However, the choice of the dosage form to be produced is entirely up to you. The modern production facilities are state-of-the-art and thus allow the high-quality and efficient manufacture of a wide variety of dosage forms: from solid drugs to be administered orally, such as tablets and capsules, to semi-solid or liquid forms, such as creams or infusions, we can manufacture all common dosage forms for you, also in large batches.",
-        "slogan_right": "If it is not possible for us and our partners to produce a dosage form you need, we will be happy to put you in contact with leading manufacturers. This enables you to receive various products from a single source within a very short time, to react flexibly to your customers' wishes and to be able to be sure of the optimal quality of your medication at all times.",
+        "left_p1": "Together with our qualified partners in research and production, we can offer you a complete full-service for your products. ",
+        "left_p2": "We are happy to assist you in formulating your own active ingredients or generics, advise you on the selection of suitable application forms for your patients, and of course, our partners are also happy to take on the entire production process for you. As the entire manufacturing process can take place in our partners' facilities, depending on the dosage form, in cleanrooms of purity class B (under laminar airflow A in B), with final sterilization by autoclave in the final container, you can rely on the highest pharmaceutical quality and hygiene standards in every respect. In addition to complying with the guidelines of the European Pharmacopoeia and the EU-GMP guidelines (Good Manufacturing Practices), the laboratories comply with numerous national and international standards and regulations that deal with the production process and the necessary facilities.",
+        "slogan_title": "Our experienced experts are happy to advise you on choosing the appropriate application form for your target market and audience.",
+        "slogan_left": "The choice of the drug form to be manufactured is entirely up to you. Our state-of-the-art production facilities allow for the high-quality and efficient production of various drug forms, from solid, orally administered medications such as tablets and capsules to semi-solid or liquid forms such as creams or infusions. We can manufacture all common drug forms in large batches.",
+        "slogan_right": "In case it is not possible for us or our partners to produce the specific dosage form that you require, we would be pleased to connect you with leading manufacturers. This allows you to receive different products from a single source in a short amount of time, react flexibly to the demands of your customers, and always be certain of the optimal quality of your medications.",
         "dosage_title": "We can offer you the following dosage forms:",
         "dosageData": [
             {
@@ -99,16 +99,16 @@
                 "title": "Solid Shapes",
                 "items": [
                     "Effervescent products (granules, effervescent tablets)",
-                    "globules",
-                    "granules, pellets",
+                    "Globules",
+                    "Granules, pellets",
                     "Hard capsules (vegetable or with pork/beef gelatine)",
-                    "chewable tablets",
-                    "pastilles",
-                    "powder",
-                    "suppositories",
+                    "Chewable tablets",
+                    "Pastilles",
+                    "Powder",
+                    "Suppositories",
                     "Tablets (film tablets, coated tablets)",
-                    "Softgels (with gelatin or vegetable)",
-                    "cytotoxics"
+                    "Soft capsules (with gelatin or vegetable)",
+                    "Cytotoxics"
                 ]
             },
             {
@@ -160,10 +160,10 @@
         ]
     },
     "logistics": {
-        "title": "Our specialists in purchasing and sales can help you quickly,\n competently and reliably.",
-        "description":"Thanks to our Europe-wide network of manufacturers, suppliers and wholesalers, we at GC Pharma are able to cover the need for almost all human medicines approved in Europe within a very short time.",
-        "slogan": "With our Europe-wide network of manufacturers and suppliers, we are able to cover the need for many human medicines within a very short time.",
-        "contact_title":"Do you need finished medicinal products from the European Economic Area?",
+        "title": "Our procurement and sales specialists can assist you quickly, competently, and reliably.",
+        "description":"With our Europe-wide network of manufacturers, suppliers, and wholesalers, GC Pharma is able to meet the demand for almost all human pharmaceuticals approved in Europe within a very short time.",
+        "slogan": "With our European network of manufacturers and suppliers, we are able to meet the demand for many human pharmaceuticals within a very short time.",
+        "contact_title":"Do you require finished medicinal products from the European Economic Area?",
         "contact_content": "Contact us! Our specialists in purchasing and sales can help you quickly, competently and reliably.",
         "contact_button":"Contact us!",
         "cards": [
