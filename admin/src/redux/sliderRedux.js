@@ -1,4 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
+import ToastService from "react-material-toast";
+
+const toast = ToastService.new({
+    place: "bottomRight",
+    duration: 2,
+    maxCount: 3
+});
 
 export const sliderSlice = createSlice({
     name: "slider",
@@ -15,7 +22,7 @@ export const sliderSlice = createSlice({
         },
         getSliderSuccess: (state, action) => {
         state.isFetching = false;
-        state.sliders = action.payload;
+        state.sliders = action.payload.data;
         },
         getSliderFailure: (state) => {
         state.isFetching = false;
@@ -29,13 +36,15 @@ export const sliderSlice = createSlice({
         deleteSliderSuccess: (state, action) => {
         state.isFetching = false;
         state.sliders.splice(
-            state.sliders.findIndex((item) => item._id === action.payload),
+            state.sliders.findIndex((item) => item._id === action.payload.id),
             1
         );
+        toast.success("delete success");
         },
         deleteSliderFailure: (state) => {
         state.isFetching = false;
         state.error = true;
+        toast.error("delete failed");
         },
         //UPDATE
         updateSliderStart: (state) => {
@@ -46,24 +55,28 @@ export const sliderSlice = createSlice({
         state.isFetching = false;
         state.sliders[
             state.sliders.findIndex((item) => item._id === action.payload.id)
-        ] = action.payload.sliders;
+        ] = action.payload.data;
+        toast.success("update success");
         },
         updateSliderFailure: (state) => {
         state.isFetching = false;
         state.error = true;
+        toast.error("update failed");
         },
-        //UPDATE
+        //ADD
         addSliderStart: (state) => {
         state.isFetching = true;
         state.error = false;
         },
         addSliderSuccess: (state, action) => {
         state.isFetching = false;
-        state.sliders.push(action.payload);
+        state.sliders.push(action.payload.data);
+        toast.success("add success");
         },
         addSliderFailure: (state) => {
         state.isFetching = false;
         state.error = true;
+        toast.error("add failed");
         },
     },
 });

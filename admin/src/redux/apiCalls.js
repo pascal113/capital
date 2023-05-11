@@ -1,5 +1,6 @@
 import { loginFailure, loginStart, loginSuccess } from "./userRedux";
 import { publicRequest, userRequest } from "../requestMethods";
+
 import {
   getProductFailure,
   getProductStart,
@@ -14,6 +15,7 @@ import {
   addProductStart,
   addProductSuccess,
 } from "./productRedux";
+
 
 
 import {
@@ -46,15 +48,47 @@ export const login = async (dispatch, user) => {
 
 export const getSliders = async (dispatch) => {
   dispatch(getSliderStart());
-  const body = JSON.stringify({
+  const params = JSON.stringify({
     "type": "banner",
     });
 
   try {
-    const res = await userRequest.get("/images/list", {data: body});
+    const res = await userRequest.get("/images/list", { 
+      params:{
+        type: 'banner',
+      }
+    });
     dispatch(getSliderSuccess(res.data));
   } catch (err) {
     dispatch(getSliderFailure());
+  }
+};
+
+
+export const addSlider = async (index, type, slider, dispatch) => {
+  dispatch(addSliderStart());
+  try {
+    // add
+    const res = await userRequest.post(
+      `/images/add`, 
+      slider, 
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+
+      if(res.data.code === 0){
+        const id = res.data.id;
+        const data = res.data.data;
+        dispatch(addSliderSuccess({ id, data }));
+      }
+      else {
+        dispatch(addSliderFailure());
+      }
+    
+  } catch (err) {
+    dispatch(addSliderFailure());
   }
 };
 
@@ -72,23 +106,27 @@ export const updateSlider = async (id, slider, dispatch) => {
   dispatch(updateSliderStart());
   try {
     // update
-    dispatch(updateSliderSuccess({ id, slider }));
+    const res = await userRequest.post(
+      `/images/${id}`, 
+      slider, 
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        }
+      });
+
+      if(res.data.code === 0){
+        const data = res.data.data;
+        dispatch(updateSliderSuccess({ id, data }));
+      }
+      else {
+        dispatch(updateSliderFailure());
+      }
+    
   } catch (err) {
     dispatch(updateSliderFailure());
   }
 };
-export const addSlider = async (slider, dispatch) => {
-  /*dispatch(addSliderStart());
-  try {
-    const res = await userRequest.post(`/products`, slider);
-    dispatch(addSliderSuccess(res.data));
-  } catch (err) {
-    dispatch(addSliderFailure());
-  }*/
-};
-
-
-
 
 export const getProducts = async (dispatch) => {
   dispatch(getProductStart());
