@@ -65,7 +65,7 @@ export default function Home() {
   return (
     <div className="home">
       <div className="addHomeBtn">
-        <Button variant="contained" component="label" size="medium" color="success" startIcon={<AddIcon />}>
+        <Button variant="contained" component="label" size="medium" color="primary" startIcon={<AddIcon />}>
           Create
           <input type="file" accept=".bmp,.jpg,.jpeg,.png" hidden onChange={handleCreate}/>
         </Button>
