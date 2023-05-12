@@ -17,7 +17,6 @@ import {
 } from "./productRedux";
 
 
-
 import {
   getSliderStart,
   getSliderSuccess,
@@ -32,6 +31,15 @@ import {
   addSliderSuccess,
   addSliderFailure,
 } from "./sliderRedux";
+
+import {
+  getMenuStart,
+  getMenuSuccess,
+  getMenuFailure,
+  updateMenuStart,
+  updateMenuSuccess,
+  updateMenuFailure,
+} from "./menuRedux";
 
 export const login = async (dispatch, user) => {
   dispatch(loginStart());
@@ -48,10 +56,7 @@ export const login = async (dispatch, user) => {
 
 export const getSliders = async (dispatch) => {
   dispatch(getSliderStart());
-  const params = JSON.stringify({
-    "type": "banner",
-    });
-
+ 
   try {
     const res = await userRequest.get("/images/list", { 
       params:{
@@ -125,6 +130,47 @@ export const updateSlider = async (id, slider, dispatch) => {
     
   } catch (err) {
     dispatch(updateSliderFailure());
+  }
+};
+
+export const getMenus = async (dispatch) => {
+  dispatch(getMenuStart());
+  
+  try {
+    const res = await userRequest.get("/images/list", { 
+      params:{
+        type: 'hamburger',
+      }
+    });
+    dispatch(getMenuSuccess(res.data));
+  } catch (err) {
+    dispatch(getMenuFailure());
+  }
+};
+
+export const updateMenu = async (id, menu, dispatch) => {
+  dispatch(updateMenuStart());
+  try {
+    // update
+    const res = await userRequest.post(
+      `/images/${id}`, 
+      menu, 
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        }
+      });
+
+      if(res.data.code === 0){
+        const data = res.data.data;
+        dispatch(updateMenuSuccess({ id, data }));
+      }
+      else {
+        dispatch(updateMenuFailure());
+      }
+    
+  } catch (err) {
+    dispatch(updateMenuFailure());
   }
 };
 

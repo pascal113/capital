@@ -1,71 +1,108 @@
 {
-    "menu": [
+    "sidebar": [
         {
-            "title": {
-                "id":   0, 
-                "label": "Home"
-            }
+            "id":   0, 
+            "label": "Home",
+            "link": "/",
+            "icon": "Home"
         },
         {
-            "title": {
-                "id":   1, 
-                "label": "Über GC Pharma GmbH"
-            },
-            "subtitle": [
+            "id":   1, 
+            "label": "Menu",
+            "link": "/menus",
+            "icon": "List"
+        },
+        {
+            "id":   2, 
+            "label": "Jobs",
+            "link": "/jobs",
+            "icon": "Work"
+        }
+    ],
+
+    "menu": [
+        {
+            "id":   0,
+            "index": 0,
+            "subIndex": 0,
+            "label": "Home"
+        },
+        {
+            "id":   1,
+            "index": 1,
+            "subIndex": 0,
+            "label": "Über GC Pharma GmbH",
+            "submenu": [
                 {
                     "id":   2, 
+                    "index": 1,
+                    "subIndex": 1,
                     "label": "Unser Unternehmensprofil"
                 },
                 {
                     "id":   3, 
+                    "index": 1,
+                    "subIndex": 2,
                     "label": "Unsere Unternehmensziele"
                 }
             ]
         },
         {
-            "title": {
-                "id":   4, 
-                "label": "Dienstleistungen"
-            },
-            "subtitle": [
+            "id":   4,
+            "index": 2,
+            "subIndex": 0,
+            "label": "Dienstleistungen",
+            "submenu": [
                 {
                     "id":   5, 
+                    "index": 2,
+                    "subIndex": 1,
                     "label": "Produktion"
                 },
                 {
                     "id":   6, 
+                    "index": 2,
+                    "subIndex": 2,
                     "label": "Logistik"
                 },
                 {
                     "id":   7, 
+                    "index": 2,
+                    "subIndex": 3,
                     "label": "Nahrungsergänzungsmittel"
                 },
                 {
                     "id":   8, 
+                    "index": 2,
+                    "subIndex": 4,
                     "label": "Beratung"
                 }
             ]
         },
         {
-            "title": {
-                "id":   9, 
-                "label": "Karriere"
-            },
-            "subtitle": [
+            "id":   9,
+            "index": 3,
+            "subIndex": 0,
+            "label": "Karriere",
+            "submenu": [
                 {
                     "id":   10, 
+                    "index": 3,
+                    "subIndex": 1,
                     "label": "Stellenausschreibungen"
                 }
             ]
         },
         {
-            "title": {
-                "id":   11, 
-                "label": "Kontakt"
-            },
-            "subtitle": [
+            "id":   11,
+            "index": 4,
+            "subIndex": 0,
+            "label": "Kontakt",
+            "submenu": [
                 {
                     "id":   12, 
+                    "index": 4,
+                    "subIndex": 1,
                     "label": "Haben Sie Rückfragen?"
                 }
             ]
