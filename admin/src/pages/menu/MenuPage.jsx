@@ -23,16 +23,17 @@ const MenuPage = () => {
     const dispatch = useDispatch();
     const menus = useSelector((state) => state.menu.menus);
     const inputFile = useRef(null);
-    const [selectedMenu, setSelectedMenu] = useState({path: "", image: null, title_de: "",   title_gb: ""});
+    const [selectedMenu, setSelectedMenu] = useState({path: "", title_de: "",   title_gb: ""});
     const [selectedIndex, setSelectedIndex] = useState(0);
-    const [file, setFile] = useState([]);
-    
+    const [imageFile, setImageFile] = useState(null);
     const [submitting, setSubmitting] = useState(false);
 
     useEffect(() => {
         getMenus(dispatch);
         setSelectedMenu(menus.filter((item) => item.order === 0)[0]);
     }, [dispatch]);
+
+    console.log('imageFile', imageFile);
     
     const handleInputChange = (e) => {
         const { name, value } = e.target;        
@@ -43,16 +44,53 @@ const MenuPage = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        console.log('submit value', event.target);
         
     };
 
+    async function getImageSize(imageUrl) {
+        let img = new Image();
+        img.src = imageUrl;
+        await img.decode();
+        let width = img.width;
+        let height = img.height;
+        return {width,height};
+    };
+
     const handleFileChange = e => {
-        setFile([...file, e.target.files[0]]);
-        setSubmitting(true);
+        const file = e.target.files[0];
+        
+        if (file.size/(1024*1024) > 2) {
+            alert("file size must not be greater than to 2MB")
+        }
+        else {
+        let imageUrl = URL.createObjectURL(file);
+        getImageSize(imageUrl)
+        .then(imgSize => {
+            if(imgSize.width < 770){
+            alert('image width must be larger than 770px');
+            URL.revokeObjectURL(imageUrl);
+            }
+            else{
+                setImageFile(file);
+                const newMenu = {...selectedMenu};
+                newMenu['path'] = imageUrl;        
+                setSelectedMenu(newMenu);
+                setSubmitting(true);
+                URL.revokeObjectURL(imageUrl);
+            }
+        })
+        .catch((error) => {
+            alert(error);
+            URL.revokeObjectURL(imageUrl);
+        })
+        }
+        e.target.value = null; 
     }
 
     const handleListItemClick = (event, index) => {
-        setSelectedIndex(index);      
+        setSelectedIndex(index);
+        setImageFile(null);
         setSelectedMenu(menus.filter((item) => item.order === index)[0]);
     };
 
@@ -108,7 +146,7 @@ const MenuPage = () => {
             { selectedMenu && (
                 <div className='menuForm'>
                     <form onSubmit={handleSubmit}>
-                        <img className="" src={`http://localhost:3030/${ selectedMenu.path}`} alt="" onClick={() => inputFile.current.click()}></img> 
+                        <img className="" src={(selectedMenu.path.search('blob:') >= 0)?`${selectedMenu.path}`:`http://localhost:3030/${selectedMenu.path}`} alt="" onClick={() => inputFile.current.click()}></img> 
                         <input type="file" accept=".bmp,.jpg,.jpeg,.png" style={{display: 'none'}} onChange={handleFileChange} ref={inputFile}/>
                         <Box sx={{ maxWidth: '100%', mt:5}}>
                             <TextField  name="title_de" type="text" label="Description(German)" variant="standard" value={selectedMenu.title_de} 
