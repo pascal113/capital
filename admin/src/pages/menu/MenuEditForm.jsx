@@ -85,8 +85,10 @@ const MenuEditForm = (props) => {
     return (
         <div className='menuForm'>
             <form onSubmit={handleSubmit}>
-                <img className="" src={(formData.path.search('blob:') >= 0)?`${formData.path}`:`http://localhost:3030/${formData.path}`} alt="" onClick={() => inputFile.current.click()}></img> 
-                <input type="file" accept=".bmp,.jpg,.jpeg,.png" style={{display: 'none'}} onChange={handleFileChange} ref={inputFile}/>
+                
+                    <img className='imageFile' src={(formData.path.search('blob:') >= 0)?`${formData.path}`:`http://localhost:3030/${formData.path}`} alt="" onClick={() => inputFile.current.click()}></img> 
+                    <input type="file" accept=".bmp,.jpg,.jpeg,.png" style={{display: 'none'}} onChange={handleFileChange} ref={inputFile}/>
+                
                 <Box sx={{ maxWidth: '100%', mt:5}}>
                     <TextField  name="title_de" type="text" label="Description(German)" variant="standard" value={formData.title_de} 
                         onChange={handleInputChange} fullWidth/>

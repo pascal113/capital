@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "./menuPage.css";
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
-import IndeterminateCheckBoxIcon from '@mui/icons-material/AddCircleOutlineOutlined';
+import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';
 import { List, ListSubheader, ListItemButton, ListItemIcon, ListItemText, Collapse, Divider } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
