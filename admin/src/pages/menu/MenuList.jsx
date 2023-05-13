@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import "./menuPage.css";
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
 import IndeterminateCheckBoxIcon from '@mui/icons-material/AddCircleOutlineOutlined';
@@ -10,7 +10,7 @@ const MenuList = (props) => {
     const [selectedIndex, setSelectedIndex] = useState(0);
     const handleListItemClick = (event, index) => {
         setSelectedIndex(index);
-        props.handleListClick(index);
+        props.handleListItemClick(index);
     };
     
     return (
