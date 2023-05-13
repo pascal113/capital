@@ -120,9 +120,7 @@ const get_image = asyncHandler(async (req, res) => {
 const get_image_list = asyncHandler(async (req, res) => {
 
   try {
-    console.log('get_image_list');    
-    console.log(req.query);
-    // const { type } = req.body;
+
     const { type } = req.query;
     const filter = {};
 

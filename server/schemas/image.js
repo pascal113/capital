@@ -9,7 +9,9 @@ const imageSchema = mongoose.Schema({
     type: String,  // 'banner', 'hamburger'
     index: Number,
     subIndex: Number,
-    title: String,
+    order: Number,
+    title_de: String,
+    title_gb: String,
     url: String,
     description: String   
 }, {
