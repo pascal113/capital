@@ -19,7 +19,7 @@ import MenuPage from "./pages/menu/MenuPage";
 import { useSelector } from "react-redux";
 
 function App() {
-  // const admin = useSelector((state) => state.user.currentUser.isAdmin);
+  //const admin = useSelector((state) => state.user.currentUser.isAdmin);
   const admin = true;
   return (
     <Router>
