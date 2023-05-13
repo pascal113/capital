@@ -90,8 +90,8 @@ const get_job = asyncHandler(async (req, res) => {
         const job = await Job.findById(jobId);
 
         if (!job) {
-        responseClient(res, 404, 1, 'Job not found');
-        return;
+            responseClient(res, 404, 1, 'Job not found');
+            return;
         }
 
         responseClient(res, 200, 0, 'Success', job);

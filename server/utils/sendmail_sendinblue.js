@@ -11,25 +11,20 @@ const sendContactMail = async ({
     console.log(param);
     let email = param.email;
     console.log(email);
-    const message = `<h4>${i18n.__('CheckEmailTitle')}</h4>
-                      <p>${i18n.__('ThankRegistering')}</p><br />
-                      <p>${i18n.__('WelcomeToTeam', TEAM_NAME)}</p>
-                      <p>${i18n.__('CheckEmailSection1')}</p>
-                      <p>${param.department} </p>
+    const message = `<h4>${param.mail_subject}</h4>
+                      <p> Abteilung -> ${param.department} </p>
                       <p>${param.company_name} </p>
                       <p>${param.company_phone} </p>
                       <p>${param.company_address} </p>
                       <p>${param.company_plz} </p>
-                      <p>${param.user_name} </p>
-                      <p>${i18n.__('CheckEmailSection2')}</p>
-                      <p>${i18n.__('CheckEmailSection3', SERVICE_MAIL)}</p>
-                      <br />
-                      <p>${i18n.__('FromTeam', TEAM_NAME)}</p>`;
+                      <p>${param.email} </p>
+                      <p>${param.user_message} </p>`;
+                      
     return await sendinblue({
       to: [{
-        email
+        email: process.env.MAIL_RECEIVER
       }],
-      subject: i18n.__('ContactEmailSubject', TEAM_NAME),
+      subject: param.mail_subject,
       sender: {
         email: process.env.MAIL_SENDER,
         name: TEAM_NAME

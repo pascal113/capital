@@ -120,8 +120,10 @@ const get_image = asyncHandler(async (req, res) => {
 const get_image_list = asyncHandler(async (req, res) => {
 
   try {
-
-    const { type } = req.body;
+    console.log('get_image_list');    
+    console.log(req.query);
+    // const { type } = req.body;
+    const { type } = req.query;
     const filter = {};
 
     if (type) {
@@ -131,7 +133,7 @@ const get_image_list = asyncHandler(async (req, res) => {
     const images = await Image.find(filter);
 
     if (images) {
-      responseClient(res, 200, 0, images);
+      responseClient(res, 200, 0, 'success', images);
     } else {
       responseClient(res, 404, 0, 'No images found');
     }

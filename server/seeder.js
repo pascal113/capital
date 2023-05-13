@@ -8,6 +8,7 @@ import jobs from './seed/jobs.js';
 import User from './models/user.js';
 import Job from './models/job.js';
 import Image from './models/image.js';
+import Mail from './models/mail.js';
 dotenv.config();
 await connectDB();
 
@@ -33,6 +34,7 @@ const destroyAllData = async () => {
     await User.deleteMany();
     await Job.deleteMany();
     await Image.deleteMany();
+    await Mail.deleteMany();
     console.log('Data Destroy'.red.inverse);
     process.exit();
   } catch (error) {
