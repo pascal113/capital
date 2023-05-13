@@ -6,40 +6,32 @@ import {responseClient} from '../utils/libs.js'
 const add_image = asyncHandler(async (req, res) => {
 
   try {
+    const {
+      type,
+      index
+    } = req.body;
 
     let path = req.file.path;
 
-    const {
+    const addImage = await Image.create({
+      path,
       type,
-      index,
-      title,
-      description
-    } = req.body;
-
-    console.log(req.body);
-
-    const image = await Image.findOne({
-      index: index,
-      type: type
+      index
     });
+  
+    // const resData = await addImage.save();
+    responseClient(res,200,0,'Save success',addImage);
 
-    if (image === null || image.length === 0) {
-      const addImage = await Image.create({
-        path,
-        type,
-        index,
-        title,
-        description
-      });
-    
-      const resData = await addImage.save();
-      console.log('ok');
-      responseClient(res,200,0,'Save success',resData);
-    }
-    else {
-      console.log(image);
-      responseClient(res,200,0,'Image already exist');
-    }
+    // const image = await Image.findOne({
+    //   index: index,
+    //   type: type
+    // });
+
+    // if (image) {
+    //   console.log(image);
+    //   responseClient(res,200,0,'Image already exist');
+    // }
+
   }
   catch (error) {
     console.log(error);
@@ -60,14 +52,16 @@ const update_image = asyncHandler(async (req, res) => {
       return;
     }
 
-    let path = req.file.path;
+    let path = '';
+    if(req.file) {
+      path = req.file.path;
+    }
     
-    const { type, index, title, description } = req.body;
-    image.path = path;
+    const { type, title_de, title_gb } = req.body;
+    image.path = path || image.path;
     image.type = type || image.type;
-    image.index = index || image.index;
-    image.title = title || image.title;
-    image.description = description || image.description;
+    image.title_de = title_de || image.title_de;
+    image.title_gb = title_gb || image.title_gb;
 
     await image.save();
     responseClient(res, 200, 0, 'Image updated successfully', image);
