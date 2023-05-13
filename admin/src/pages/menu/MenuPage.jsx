@@ -6,23 +6,26 @@ import MenuList from "./MenuList";
 import MenuEditForm from "./MenuEditForm";
 
 const MenuPage = () => {
+    console.log('menupage rendering');
+    
     const dispatch = useDispatch();
     const menus = useSelector((state) => state.menu.menus);
-    const [menuData, setMenuData] = useState({});
+    const [selectedIndex, setSelectedIndex] = useState(0);
 
     useEffect(() => {
         getMenus(dispatch);
-        setMenuData(menus.filter((item) => item.order === 0)[0]);
     }, [dispatch]);
 
     const handleListItemClick = (index) => {
-        setMenuData(menus.filter((item) => item.order === index)[0]);
+        console.log('index', index);
+        setSelectedIndex(index);
+        //setMenuData(menus.filter((item) => item.order === index)[0]);
     };
 
     return (
         <div className='menuPage'>
-            <MenuList handleListClick={handleListItemClick}/>
-            <MenuEditForm menuData={menuData}/>
+            <MenuList handleListItemClick={handleListItemClick}/>
+            <MenuEditForm menus={menus} selectedIndex={selectedIndex}/>
         </div>
     );
 }

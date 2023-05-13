@@ -1,30 +1,48 @@
 import React, { useState, useEffect, useRef } from 'react';
 import "./menuPage.css";
 import { TextField, Button, Box } from '@mui/material';
-import { SaveIcon } from '@mui/icons-material/Save';
+import SaveIcon from '@mui/icons-material/Save';
+import { useDispatch } from "react-redux";
+import { updateMenu } from "../../redux/apiCalls";
 
 const MenuEditForm = (props) => { 
+    console.log('MenuEditForm rendering');
+
+    const dispatch = useDispatch();
+    
+    const {menus, selectedIndex} = props;    
+    const [formData, setFormData] = useState({id: '',  path: '', title_de:'',  title_gb: '' });
     const inputFile = useRef(null);
-    const [formData, setFormData] = useState(props.menuData);
     const [imageFile, setImageFile] = useState(null);
 
-    console.log('formData', formData);
-
     useEffect(() => {
-        
-    }, []);
+        setFormData(menus.filter((item) => item.order === selectedIndex)[0]);
+        setImageFile(null);
+    }, [selectedIndex]);
     
     const handleInputChange = (e) => {
         const { name, value } = e.target;        
-        /*const newMenu = {...selectedMenu};
+        /*const newMenu = {...formData};
         newMenu[name] = value;        
-        setSelectedMenu(newMenu);*/
+        setFormData(newMenu);*/
+        setFormData({...formData, [name]: value});
     };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log('submit value', event.target);
+    const handleSubmit = async (e) => {
+        e.preventDefault();
         
+        const { title_de, title_gb } = e.target.elements;
+
+        const form = new FormData();
+        form.append("type", 'hamburger');
+        form.append("title_de", title_de.value);
+        form.append("title_gb", title_gb.value);
+        
+        if(imageFile !== null){
+            form.append("image", imageFile);
+        }
+
+        updateMenu(formData._id, form, dispatch);
     };
 
     async function getImageSize(imageUrl) {
@@ -52,11 +70,8 @@ const MenuEditForm = (props) => {
             }
             else{
                 setImageFile(file);
-                /*const newMenu = {...selectedMenu};
-                newMenu['path'] = imageUrl;        
-                setSelectedMenu(newMenu);
-                setSubmitting(true);
-                URL.revokeObjectURL(imageUrl);*/
+                setFormData({...formData, path: imageUrl});
+                URL.revokeObjectURL(imageUrl);
             }
         })
         .catch((error) => {
@@ -68,10 +83,7 @@ const MenuEditForm = (props) => {
     }
 
     return (
-        <>
-        {
-        formData.length && (
-            <div className='menuForm'>
+        <div className='menuForm'>
             <form onSubmit={handleSubmit}>
                 <img className="" src={(formData.path.search('blob:') >= 0)?`${formData.path}`:`http://localhost:3030/${formData.path}`} alt="" onClick={() => inputFile.current.click()}></img> 
                 <input type="file" accept=".bmp,.jpg,.jpeg,.png" style={{display: 'none'}} onChange={handleFileChange} ref={inputFile}/>
@@ -87,9 +99,7 @@ const MenuEditForm = (props) => {
                     <Button variant="contained" startIcon={<SaveIcon />} color="primary" type="submit" >Save</Button>
                 </Box>
             </form>
-            </div>
-        )}
-        </>
+        </div>
     );
 }
 
