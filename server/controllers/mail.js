@@ -15,12 +15,13 @@ const send_contact = asyncHandler(async (req, res) => {
             email,
             user_message
         } = req.body;
-    
+
+        let type = 'contact';    
         let mail_date = getMailDate();  
-        let mail_log = await Mail.find().sort({createdAt:-1}).limit(1);
+        let mail_log = await Mail.find({type: type}).sort({createdAt:-1}).limit(1);
 
         let mail_index = 0;
-        let type = 'contact';
+        
     
         if (mail_log === null || mail_log.length === 0) {
           mail_index = 1;
@@ -80,19 +81,52 @@ const send_job = asyncHandler(async (req, res) => {
         application_process // true, false
       } = req.body;
   
-      console.log(req.body);
+      let type = 'job';    
+      let mail_date = getMailDate();  
+      let mail_log = await Mail.find({type: type}).sort({createdAt:-1}).limit(1);
 
-      console.log(req.files);
+      let mail_index = 0;
+      
+  
+      if (mail_log === null || mail_log.length === 0) {
+        mail_index = 1;
+      }
+      else {
+        mail_index = mail_log[0].index + 1;
+      }
+
+      let mail_subject = 'J-' + mail_date + '-' + mail_index;
+      let application_process_data = 'Ja';
+
+      if(application_process !== 'true') {
+        application_process_data = 'Nein';
+      }
+
+      const mailParam = { 
+        first_name,
+        last_name,
+        email,
+        phone_number,
+        statement_duty,
+        payment,
+        attented,
+        application_process_data,
+        mail_subject
+      };
+      
+      let addMailLog = await Mail.create({
+        type,
+        subject: mail_subject,
+        index: mail_index
+      });
   
       let send_res = await sendJobMail({
-        param: req.body,
+        param: mailParam,
         files: req.files
       });
 
-      console.log(send_res);
-
       if (send_res) {
-        responseClient(res,200,0,'Send success');
+        responseClient(res,200,0,'Send success', addMailLog);
       }
       else {
         responseClient(res);

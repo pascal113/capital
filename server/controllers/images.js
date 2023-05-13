@@ -1,6 +1,5 @@
 import asyncHandler from 'express-async-handler';
-import fs from 'fs'
-import {responseClient} from '../utils/libs.js'
+import {responseClient, getRootPath, deleteImageFile} from '../utils/libs.js'
 import Image from '../models/image.js'
 
 
@@ -54,13 +53,12 @@ const update_image = asyncHandler(async (req, res) => {
       return;
     }
 
-    fs.unlink(image.path, (err) => {
-      if (err) {
-        console.error(err)
-        return
-      }
-      console.log('File has been deleted')
-    });
+    let rootPath = getRootPath();
+    console.log(rootPath);
+
+    console.log(rootPath + image.path);
+
+    deleteImageFile(rootPath + image.path);
 
     let path = '';
     if(req.file) {

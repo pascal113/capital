@@ -1,5 +1,7 @@
 import path from "path";
+import fs from 'fs'
 import i18n from "../config/i18n.js";
+import { upload } from "./multer.js";
 
 export const errorMessageGenerator = msgCode => {
     return i18n.__(msgCode);
@@ -28,5 +30,38 @@ export const getMailDate = () => {
 };
 
 export const getRootPath = () => {
-    
+    const projectPath = path.resolve();
+    return projectPath + '/';
 };
+
+export const deleteImageFile = imagePath => {
+    fs.unlink(imagePath, (err) => {
+        if (err) {
+          console.error(err);
+          return false;
+        }
+        console.log('file deleted');
+        return true;
+    });
+};
+
+export const initAllImageFile = () => {
+    
+    const dstDirectory = getRootPath() + 'uploads';
+    const srcDirectory = getRootPath() + 'backups';
+
+    fs.readdirSync(dstDirectory).forEach(file => {
+        const filePath = `${dstDirectory}/${file}`;
+        deleteImageFile(filePath);
+    });
+
+    fs.readdirSync(srcDirectory).forEach(file => {
+        const filePath = `${srcDirectory}/${file}`;
+        const destPath = `${dstDirectory}/${file}`;
+        fs.copyFileSync(filePath, destPath);
+    });
+};
+
+export const isEmpty = (obj) => {
+    return Object.keys(obj).length === 0;
+}
