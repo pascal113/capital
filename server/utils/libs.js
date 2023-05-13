@@ -15,3 +15,13 @@ export const responseClient = (res,httpCode = 500, code = 3, message='Server Err
     responseData.data = data;
     res.status(httpCode).json(responseData);
 };
+
+export const getMailDate = () => {
+    const today = new Date();
+    const dd = String(today.getDate()).padStart(2, '0');
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const yy = String(today.getFullYear()).slice(-2);
+    const formattedDate = `${dd}-${mm}-${yy}`;
+
+    return formattedDate;
+};

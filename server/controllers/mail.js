@@ -1,6 +1,6 @@
-import Image from '../models/image.js'
+import Mail from '../models/mail.js'
 import asyncHandler from 'express-async-handler';
-import {responseClient} from '../utils/libs.js'
+import { responseClient, getMailDate } from '../utils/libs.js'
 import { sendContactMail, sendJobMail } from "../utils/sendmail_sendinblue.js";
 
 const send_contact = asyncHandler(async (req, res) => {
@@ -13,19 +13,47 @@ const send_contact = asyncHandler(async (req, res) => {
             company_address,
             company_plz,
             email,
-            user_name
+            user_message
         } = req.body;
     
-        console.log(req.body);
+        let mail_date = getMailDate();  
+        let mail_log = await Mail.find().sort({createdAt:-1}).limit(1);
 
-        let send_res = await sendContactMail({
-            param: req.body
+        let mail_index = 0;
+        let type = 'contact';
+    
+        if (mail_log === null || mail_log.length === 0) {
+          mail_index = 1;
+        }
+        else {
+          mail_index = mail_log[0].index + 1;
+        }
+
+        let mail_subject = 'C-' + mail_date + '-' + mail_index;
+
+        const mailParam = { 
+          department,
+          company_name,
+          company_phone,
+          company_address,
+          company_plz,
+          email,
+          user_message,
+          mail_subject
+        };
+        
+        let addMailLog = await Mail.create({
+          type,
+          subject: mail_subject,
+          index: mail_index
         });
 
-        console.log(send_res);
+        let send_res = await sendContactMail({
+            param: mailParam
+        });
 
         if (send_res) {
-          responseClient(res,200,0,'Send success');
+          responseClient(res,200,0,'Send success', addMailLog);
         }
         else {
           responseClient(res);
