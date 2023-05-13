@@ -1,3 +1,4 @@
+import path from "path";
 import i18n from "../config/i18n.js";
 
 export const errorMessageGenerator = msgCode => {
@@ -24,4 +25,8 @@ export const getMailDate = () => {
     const formattedDate = `${dd}-${mm}-${yy}`;
 
     return formattedDate;
+};
+
+export const getRootPath = () => {
+    
 };

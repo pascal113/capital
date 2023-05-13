@@ -1,6 +1,8 @@
-import Image from '../models/image.js'
 import asyncHandler from 'express-async-handler';
+import fs from 'fs'
 import {responseClient} from '../utils/libs.js'
+import Image from '../models/image.js'
+
 
 // Add an image
 const add_image = asyncHandler(async (req, res) => {
@@ -51,6 +53,14 @@ const update_image = asyncHandler(async (req, res) => {
       responseClient(res, 404, 1, 'Image not found');
       return;
     }
+
+    fs.unlink(image.path, (err) => {
+      if (err) {
+        console.error(err)
+        return
+      }
+      console.log('File has been deleted')
+    });
 
     let path = '';
     if(req.file) {
