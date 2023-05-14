@@ -1,22 +1,19 @@
-import Sidebar from "./components/sidebar/Sidebar";
-import Topbar from "./components/topbar/Topbar";
+
 import "./App.css";
-import Home from "./pages/home/Home";
+import { useSelector } from "react-redux";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Redirect,
 } from "react-router-dom";
-import UserList from "./pages/userList/UserList";
-import User from "./pages/user/User";
-import NewUser from "./pages/newUser/NewUser";
-import ProductList from "./pages/productList/ProductList";
-import Product from "./pages/product/Product";
-import NewProduct from "./pages/newProduct/NewProduct";
+import Sidebar from "./components/sidebar/Sidebar";
+import Topbar from "./components/topbar/Topbar";
 import Login from "./pages/login/Login";
+import Home from "./pages/home/Home";
 import MenuPage from "./pages/menu/MenuPage";
-import { useSelector } from "react-redux";
+import Job from "./pages/job/Job";
+
 
 function App() {
   const admin = useSelector((state) => state.user.isAdmin);
@@ -37,6 +34,9 @@ function App() {
               </Route>
               <Route path="/admin/menus">
                 <MenuPage />
+              </Route>
+              <Route path="/admin/jobs">
+                <Job />
               </Route>
             </div>
           </>

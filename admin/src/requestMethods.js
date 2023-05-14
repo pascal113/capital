@@ -11,7 +11,6 @@ const BASE_URL = "http://localhost:3030/api/";
 
 
 let tokenInfo = localStorage.getItem("token");
-console.log('tokenInfo', tokenInfo);
 let token = 'token';
 if(tokenInfo) {
   token = tokenInfo;

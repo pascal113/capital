@@ -1,6 +1,6 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import userReducer from "./userRedux";
-import productReducer from "./productRedux";
+import jobReducer from "./jobRedux";
 import sliderReducer from "./sliderRedux";
 import menuReducer from "./menuRedux";
 
@@ -24,7 +24,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   user: userReducer,
-  product: productReducer,
+  job: jobReducer,
   slider: sliderReducer,
   menu: menuReducer,
 });
