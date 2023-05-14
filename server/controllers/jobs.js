@@ -32,7 +32,7 @@ const add_job = asyncHandler( async (req, res) => {
         }
         else {
             console.log(job);
-            responseClient(res,200,0,'Job already exist');
+            responseClient(res,200,1,'Job already exist');
         }
     }
     catch (error) {
@@ -127,7 +127,7 @@ const get_job_list = asyncHandler(async (req, res) => {
         if (jobs && jobs.length) {
             responseClient(res, 200, 0, 'Success', jobs);
         } else {
-            responseClient(res, 404, 0, 'No jobs found');
+            responseClient(res, 404, 1, 'No jobs found');
         }
     }
     catch (error) {
