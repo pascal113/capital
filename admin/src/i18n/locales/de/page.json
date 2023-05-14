@@ -3,19 +3,19 @@
         {
             "id":   0, 
             "label": "Home",
-            "link": "/",
+            "link": "/admin/",
             "icon": "Home"
         },
         {
             "id":   1, 
             "label": "Menu",
-            "link": "/menus",
+            "link": "/admin/menus",
             "icon": "List"
         },
         {
             "id":   2, 
             "label": "Jobs",
-            "link": "/jobs",
+            "link": "/admin/jobs",
             "icon": "Work"
         }
     ],

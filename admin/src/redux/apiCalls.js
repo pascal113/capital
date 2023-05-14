@@ -1,4 +1,4 @@
-import { loginFailure, loginStart, loginSuccess } from "./userRedux";
+import { loginFailure, loginStart, loginSuccess,   loginFailureWithMessage } from "./userRedux";
 import { publicRequest, userRequest } from "../requestMethods";
 
 import {
@@ -45,7 +45,12 @@ export const login = async (dispatch, user) => {
   dispatch(loginStart());
   try {
     const res = await publicRequest.post("/auth/login", user);
-    dispatch(loginSuccess(res.data));
+    if(res.data.code === 0){
+      dispatch(loginSuccess(res.data));
+    }
+    else {
+      dispatch(loginFailureWithMessage(res.data));
+    }
   } catch (err) {
     dispatch(loginFailure());
   }
@@ -56,7 +61,7 @@ export const login = async (dispatch, user) => {
 
 export const getSliders = async (dispatch) => {
   dispatch(getSliderStart());
- 
+
   try {
     const res = await userRequest.get("/images/list", { 
       params:{

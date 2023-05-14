@@ -24,7 +24,7 @@ export default function Login() {
       .email('Email is invalid'),
     password: Yup.string()
       .required('Password is required')
-      .min(6, 'Password must be at least 6 characters')
+      .min(5, 'Password must be at least 5 characters')
       .max(40, 'Password must not exceed 40 characters'),
   });
 
@@ -36,9 +36,12 @@ export default function Login() {
   } = useForm({
     resolver: yupResolver(validationSchema)
   });
-  const onSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
+  const onSubmit = data => {
+
+    login(dispatch, data);
+
+    //event.preventDefault();
+    /*const data = new FormData(event.currentTarget);
     console.log({
       email: data.get("email"),
       password: data.get("password"),
@@ -46,7 +49,7 @@ export default function Login() {
     const email =data.get("email");
     const password =data.get("password");
 
-    login(dispatch, { email, password });
+    login(dispatch, { email, password });*/
   };
 
   return (

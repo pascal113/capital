@@ -1,9 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
+import ToastService from "react-material-toast";
+
+const toast = ToastService.new({
+    place: "bottomRight",
+    duration: 2,
+    maxCount: 3
+});
 
 const userSlice = createSlice({
   name: "user",
   initialState: {
-    currentUser: null,
+    token: '',
+    isAdmin: false,
     isFetching: false,
     error: false,
   },
@@ -13,17 +21,29 @@ const userSlice = createSlice({
     },
     loginSuccess: (state, action) => {
       state.isFetching = false;
-      state.currentUser = action.payload;
+      state.isAdmin = true;
+      state.token = action.payload.data.token;
+      console.log('action.payload', action.payload);
+      localStorage.setItem("token", state.token);
     },
-    loginFailure: (state) => {
+    loginFailure: (state, action) => {
       state.isFetching = false;
+      state.isAdmin = false;
       state.error = true;
+      toast.error(`login failed`);
+    },
+    loginFailureWithMessage: (state, action) => {
+      state.isFetching = false;
+      state.isAdmin = false;
+      state.error = true;
+      toast.error(`login failed.  ${action.payload.message}`);
     },
     logout: (state) => {
-      state.currentUser = null;
+      state.isAdmin = false;
+      state.token = '';
     },
   },
 });
 
-export const { loginStart, loginSuccess, loginFailure } = userSlice.actions;
+export const { loginStart, loginSuccess, loginFailure, loginFailureWithMessage } = userSlice.actions;
 export default userSlice.reducer;

@@ -9,17 +9,21 @@ const BASE_URL = "http://localhost:3030/api/";
 //   TOKEN = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.accessToken;
 // }
 
+
+let tokenInfo = localStorage.getItem("token");
+console.log('tokenInfo', tokenInfo);
+let token = 'token';
+if(tokenInfo) {
+  token = tokenInfo;
+}
+
 export const publicRequest = axios.create({
   baseURL: BASE_URL,
 });
 
 export const userRequest = axios.create({
   baseURL: BASE_URL,
+  headers: {
+    "x-auth-token": `${token}`,
+  },
 });
-
-/*
-export const userRequest = axios.create({
-  baseURL: BASE_URL,
-  headers: { token: `Bearer ${TOKEN}` },
-});
-*/
