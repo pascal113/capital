@@ -19,12 +19,12 @@ import MenuPage from "./pages/menu/MenuPage";
 import { useSelector } from "react-redux";
 
 function App() {
-  //const admin = useSelector((state) => state.user.currentUser.isAdmin);
-  const admin = true;
+  const admin = useSelector((state) => state.user.isAdmin);
+  //const admin = true;
   return (
     <Router>
       <Switch>
-        <Route path="/admin/login">
+        <Route path="/login">
           <Login />
         </Route>
         {admin && (
@@ -32,26 +32,11 @@ function App() {
             <Topbar />
             <div className="container">
               <Sidebar />
-              <Route exact path="/">
+              <Route exact path="/admin/">
                 <Home />
               </Route>
-              <Route path="/users">
-                <UserList />
-              </Route>
-              <Route path="/user/:userId">
-                <User />
-              </Route>
-              <Route path="/newUser">
-                <NewUser />
-              </Route>
-              <Route path="/menus">
+              <Route path="/admin/menus">
                 <MenuPage />
-              </Route>
-              <Route path="/product/:productId">
-                <Product />
-              </Route>
-              <Route path="/newproduct">
-                <NewProduct />
               </Route>
             </div>
           </>
