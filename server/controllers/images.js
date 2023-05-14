@@ -1,6 +1,7 @@
-import Image from '../models/image.js'
 import asyncHandler from 'express-async-handler';
-import {responseClient} from '../utils/libs.js'
+import {responseClient, getRootPath, deleteImageFile} from '../utils/libs.js'
+import Image from '../models/image.js'
+
 
 // Add an image
 const add_image = asyncHandler(async (req, res) => {
@@ -51,6 +52,13 @@ const update_image = asyncHandler(async (req, res) => {
       responseClient(res, 404, 1, 'Image not found');
       return;
     }
+
+    let rootPath = getRootPath();
+    console.log(rootPath);
+
+    console.log(rootPath + image.path);
+
+    deleteImageFile(rootPath + image.path);
 
     let path = '';
     if(req.file) {

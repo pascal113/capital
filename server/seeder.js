@@ -9,6 +9,7 @@ import User from './models/user.js';
 import Job from './models/job.js';
 import Image from './models/image.js';
 import Mail from './models/mail.js';
+import {initAllImageFile} from './utils/libs.js'
 dotenv.config();
 await connectDB();
 
@@ -20,7 +21,8 @@ const createBaseData = async () => {
     const createdUser = await User.insertMany(users);
     console.log(createdUser);
     await Job.insertMany(jobs);
-    await Image.insertMany(images);    
+    await Image.insertMany(images);
+    initAllImageFile();   
     console.log('Data Imported'.green.inverse);
     process.exit();
   } catch (error) {

@@ -1,24 +1,19 @@
-import { TEAM_NAME, SERVICE_MAIL } from "../config/constant.js";
 import sendinblue from "./sendinblue.js";
-import i18n from "../config/i18n.js";
 import dotenv from 'dotenv';
-import e from "express";
+import {isEmpty} from './libs.js'
 dotenv.config();
 
 const sendContactMail = async ({
     param
   }) => {
-    console.log(param);
-    let email = param.email;
-    console.log(email);
     const message = `<h4>${param.mail_subject}</h4>
                       <p> Abteilung -> ${param.department} </p>
-                      <p>${param.company_name} </p>
-                      <p>${param.company_phone} </p>
-                      <p>${param.company_address} </p>
-                      <p>${param.company_plz} </p>
-                      <p>${param.email} </p>
-                      <p>${param.user_message} </p>`;
+                      <p> Firmenname -> ${param.company_name} </p>
+                      <p> Firmenrufnummer -> ${param.company_phone} </p>
+                      <p> Firmenanschrift -> ${param.company_address} </p>
+                      <p> PLZ - ${param.company_plz} </p>
+                      <p> E-Mail -> ${param.email} </p>
+                      <p> Nachricht -> ${param.user_message} </p>`;
                       
     return await sendinblue({
       to: [{
@@ -26,8 +21,7 @@ const sendContactMail = async ({
       }],
       subject: param.mail_subject,
       sender: {
-        email: process.env.MAIL_SENDER,
-        name: TEAM_NAME
+        email: process.env.MAIL_SENDER
       },
       htmlContent: message
     });
@@ -37,64 +31,41 @@ const sendJobMail = async ({
   param,
   files
 }) => {
-  let email = param.email;
-  console.log(param);
 
-  const message = `<h4>${i18n.__('CheckEmailTitle')}</h4>
-                    <p>${i18n.__('ThankRegistering')}</p><br />
-                    <p>${i18n.__('WelcomeToTeam', TEAM_NAME)}</p>
-                    <p>${i18n.__('CheckEmailSection1')}</p>
-                    <p>${param.department} </p>
-                    <p>${param.company_name} </p>
-                    <p>${param.company_phone} </p>
-                    <p>${param.company_address} </p>
-                    <p>${param.company_plz} </p>
-                    <p>${param.user_name} </p>
-                    <p>${i18n.__('CheckEmailSection2')}</p>
-                    <p>${i18n.__('CheckEmailSection3', SERVICE_MAIL)}</p>
-                    <br />
-                    <p>${i18n.__('FromTeam', TEAM_NAME)}</p>`;
+  const message = `<h4>${param.mail_subject}</h4>
+    <p> VORNAME -> ${param.first_name} </p>
+    <p> NACHNAME -> ${param.last_name} </p>
+    <p> E-MAIL -> ${param.email} </p>
+    <p> TELEFONNUMMER -> ${param.phone_number} </p>
+    <p> DEIN FRÜHSTMÖGLICHER EINTRITTSTERMIN - ${param.statement_duty} </p>
+    <p> DEINE GEHALTSVORSTELLUNGEN -> ${param.payment} </p>
+    <p> WIE BIST DU AUF UNS AUFMERKSAM GEWORDEN -> ${param.attented} </p>
+    <p> WEITERGABE DEINER BEWERBUNG -> ${param.application_process_data} </p>`;
   
   const mail_data = {
     to: [{
-      email
+      email: process.env.MAIL_RECEIVER
     }],
-    subject: i18n.__('JobEmailSubject', TEAM_NAME),
+    subject: param.mail_subject,
     sender: {
-      email: process.env.MAIL_SENDER,
-      name: TEAM_NAME
+      email: process.env.MAIL_SENDER
     },
     htmlContent: message
   };
 
-  console.log(files);
-  const attachments = Object.keys(files).map(key => {
-    const fileArray = files[key];
-    return fileArray.map(file => ({
-      name: file.originalname,
-      content: file.buffer.toString('base64'),
-      type: file.mimetype
-    }));
-  }).flat();
-  
-//  console.log(attachments);
+  if (!isEmpty(files)) {
+    console.log('data files');
+    const attachments = Object.keys(files).map(key => {
+      const fileArray = files[key];
+      return fileArray.map(file => ({
+        name: file.originalname,
+        content: file.buffer.toString('base64'),
+        type: file.mimetype
+      }));
+    }).flat();
 
-  // const attachments = [];
-
-  // Object.keys(files).forEach(key => {
-  //   const fileArray = files[key];
-  //   fileArray.forEach(file => {
-  //     attachments.push({
-  //       name: file.originalname,
-  //       content: file.buffer.toString('base64'),
-  //       type: file.mimetype
-  //     });
-  //   });
-  // });
-
-  // console.log(attachments);
-
-  mail_data.attachment = attachments;
+    mail_data.attachment = attachments;
+  }  
 
   return await sendinblue(mail_data);
 };
