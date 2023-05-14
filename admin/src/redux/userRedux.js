@@ -23,7 +23,6 @@ const userSlice = createSlice({
       state.isFetching = false;
       state.isAdmin = true;
       state.token = action.payload.data.token;
-      console.log('action.payload', action.payload);
       localStorage.setItem("token", state.token);
     },
     loginFailure: (state, action) => {
@@ -36,11 +35,12 @@ const userSlice = createSlice({
       state.isFetching = false;
       state.isAdmin = false;
       state.error = true;
-      toast.error(`login failed.  ${action.payload.message}`);
+      toast.error(`${action.payload.message}`);
     },
     logout: (state) => {
       state.isAdmin = false;
       state.token = '';
+      localStorage.setItem("token", state.token);
     },
   },
 });
