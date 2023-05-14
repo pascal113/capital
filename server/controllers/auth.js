@@ -80,7 +80,7 @@ const login = asyncHandler(async (req, res) => {
 
                 const token = generateAuthTokenByUser(updatedUser);
                 console.log('login ', token);
-                res.send(token);
+                responseClient(res, 200, 0, 'success', {token: token});
             }
         } else {        
             await user.save();
