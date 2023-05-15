@@ -1,0 +1,257 @@
+// For screens smaller than 768px (mobile)
+@media only screen and (max-width: 767px) {
+    #corporate_goals {
+        padding-top: 0rem;
+        @include centered;
+
+        .container {
+            width: 100%;
+            background-color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            padding-bottom: 239px;
+
+            .corporate_goals_info_wrapper {
+                margin-top: 70px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .corporate_goals_title {
+                    width: 100%;
+                    padding: 0px 30px;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 18px;
+                    text-align: center;
+                    color: #585858;
+                }
+
+                .corporate_goals_rectangle {
+                    margin-top: 26px;
+                    width: 68px;
+                    height: 4px;
+                    background-color: #585858;
+                }
+
+                .corporate_goals_description {
+                    margin-top: 39px;
+                    padding: 0px 30px 0px 30px;
+                    width: 100%;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 12px;
+                    line-height: 179.3%;
+                    text-align: left;
+                    color: #585858;
+                }
+            }
+
+            .corporate_goals_wrapper {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+
+                .corporate_goals_left_col {
+                    margin-top: 90px;
+                    padding: 35px 26px 35px 209px;
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: end;
+                    width: 100%;
+
+                    .paragraph {
+                        width: 100%;
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 18px;
+                        line-height: 23px;
+                        text-align: right;
+                        color: #D30000;
+                    }
+
+                    .border-box {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        width: 250px;
+                        height: 100%;
+                        box-sizing: border-box;
+                        border: 6px solid #D30000;
+                        border-right: none;
+                    }
+                }
+
+                .corporate_goals_right_col {
+                    margin-top: 90px;
+                    padding: 0px 30px 50px 30px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 45px;
+                    width: 100%;
+
+                    .paragraph {
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 179.3%;
+                        display: flex;
+                        align-items: center;
+                        text-align: justify;
+                        color: #000000;
+                    }
+                }
+            }
+        }
+
+        .corporate_goals_img {
+            position: absolute;
+            right: -13px;
+            width: 303px;
+            height: 207px;
+        }
+    }
+}
+
+// For screens larger than 768px (desktop)
+@media only screen and (min-width: 768px) {
+    #corporate_goals {
+        padding-top: 0rem;
+        @include centered;
+
+        .container {
+            width: 100%;
+            background-color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+
+            h1 {
+                margin-top: 95px;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 25px;
+                line-height: 32px;
+                text-align: center;
+                color: #585858;
+            }
+        }
+    }
+
+    .corporate_goals_title {
+        width: 464px;
+        height: 52px;
+        margin: auto;
+        font-family: 'DIN Pro Bold', sans-serif;
+    }
+
+    .corporate_goals_rectangle {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 17px;
+        width: 68px;
+        height: 9px;
+        background-color: #585858;
+    }
+
+    .corporate_goals_description {
+        width: 765px;
+        height: 249px;
+        margin: auto;
+        margin-top: 37px;
+        font-family: 'DIN Pro Regular', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 25.1px;
+        color: #585858;
+        align-items: center;
+        text-align: justify;
+
+        strong {
+            font-weight: 700;
+        }
+    }
+
+    .corporate_goals_wrapper {
+        padding-top: 44px;
+        padding-bottom: 164px;
+        display: grid;
+        grid-template-columns: 487px auto;
+        gap: 0rem;
+
+        @include devices(lg) {
+            grid-template-columns: 1fr;
+            gap: 0rem;
+        }
+
+
+    }
+
+    .corporate_goals_img {
+        float: right;
+        width: 632px;
+        height: 420px;
+        margin-bottom: 173px;
+    }
+
+    .corporate_goals_left_col {
+
+        .paragraph {
+            margin-left: 49px;
+            margin-top: 56px;
+            width: 390px;
+            font-family: 'DIN Pro Bold';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 25px;
+            line-height: 32px;
+            text-align: left;
+            color: #D30000;
+        }
+
+        .paragraph:nth-child(2) {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 26px;
+            color: #585858;
+        }
+
+        .border-box {
+            position: absolute;
+            left: -31px;
+            top: 740px;
+            width: 518px;
+            height: 368px;
+            right: -12px;
+            box-sizing: border-box;
+            border: 8px solid #D30000;
+        }
+    }
+
+    .corporate_goals_right_col {
+
+        .paragraph {
+            width: 568px;
+            margin-left: 56px;
+            font-family: 'DIN Pro Regular', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 25px;
+            color: #585858;
+            display: flex;
+            align-items: center;
+            text-align: justify;
+
+        }
+
+        .paragraph:first-child {
+            margin-bottom: 3rem;
+        }
+    }
+}

@@ -1,0 +1,576 @@
+// For screens smaller than 768px (mobile)
+@media only screen and (max-width: 767px) {
+    #apply {
+        padding-top: 0rem;
+        @include centered;
+
+        .container {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+    }
+
+    .apply_wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-top: 108px;
+        padding-left: 28px;
+        padding-right: 28px;
+        padding-bottom: 42px;
+        color: #585858;
+        text-align: left;
+        font-family: 'Din Pro Bold';
+
+        .title {
+            h1 {
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 18px;
+                text-align: justify;
+            }
+        }
+
+        .comment {
+            margin-top: 24px;
+
+
+            span {
+                font-size: 11px;
+                line-height: 14px;
+            }
+        }
+
+        .apply_form {
+            width: 100%;
+            font-family: 'Din Pro Regular';
+            margin-top: 25px;
+
+            .form_control {
+                margin-top: 25px;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 21px;
+                color: #646464;
+            }
+
+            .label {
+                color: #646464;
+                font-size: 12px;
+                line-height: 15px;
+            }
+
+            .label_comment {
+                display: block;
+                margin-top: 5px;
+                color: #B3B3B3;
+                font-size: 12px;
+                line-height: 15px;
+            }
+
+            input {
+                margin-top: 18px;
+                width: 100%;
+                padding: 12px 12px 12px 12px;
+                font-family: 'Din Pro Regular';
+                border: 0.33px solid #CFCFCF;
+                transition: border-color 0.5s ease-out;
+                font-size: 12px;
+                line-height: 15px;
+            }
+
+            input::placeholder {
+                color: #CFCFCF;
+            }
+
+            input:required {
+                border: 0.33px solid #676767;
+            }
+
+            input:optional {
+                border: 0.33px solid #585858;
+            }
+
+            input:required:valid {
+                border: 0.33px solid #009220;
+                background: url(../../../../public/images/pages/about-us/check.svg) no-repeat 98% 50%;
+            }
+
+            input:required:focus:invalid {
+                color: #D30000;
+                border: 0.33px solid #D30000;
+            }
+
+            input:required:focus:valid {
+                color: #009220;
+                background: url(../../../../public/images/pages/about-us/check.svg) no-repeat 98% 50%;
+            }
+
+            input[type="radio"] {
+                margin-top: 0;
+                width: 24px;
+                height: 24px;
+                padding: 0;
+            }
+
+            input[type="checkbox"] {
+                margin-top: 0;
+                width: 24px;
+                height: 24px;
+                padding: 0;
+            }
+
+            input[type="file"] {
+                border: none;
+                outline: none;
+                border-bottom: 1px solid #ccc;
+                /* You can adjust the color and thickness of the outline */
+            }
+
+            .apply-upload-section {
+                display: flex;
+                flex-direction: column;
+                gap: 18px;
+
+                .apply-upload-label {
+                    display: flex;
+                    flex-direction: column;
+                    font-size: 14px;
+                    line-height: 18px;
+                }
+
+                .label-small {
+                    display: block;
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 18px;
+                }
+
+                &:nth-child(1) {
+                    margin-top: 48px;
+                }
+
+                &:nth-child(2) {
+                    margin-top: 20px;
+                }
+
+                &:nth-child(3) {
+                    margin-top: 34px;
+                    margin-bottom: 40px;
+                }
+
+            }
+
+            .radio-box-section {
+                display: grid;
+                grid-template-columns: 40px 48px auto;
+                align-items: top;
+                margin-top: 25px;
+
+                #radio-box:checked {
+                    background-color: #D01C1C;
+                }
+
+                .radio-label {
+                    font-family: 'Din Pro Bold';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 18px;
+                    color: #646464;
+                }
+
+                .radio-comment {
+                    font-family: 'Din Pro Regular';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 18px;
+                    color: #646464;
+                    opacity: 56%;
+                }
+
+                .custom-radio {
+                    /* hiding browser el */
+                    appearance: none;
+                    /* Safari support */
+                    -webkit-appearance: none;
+                    border: 6px solid #D9D9D9;
+                    background-color: #D9D9D9;
+                }
+
+                /* keyboard navigation focus appearance */
+                .custom-radio:focus-visible {
+                    outline-offset: 0;
+                }
+            }
+
+            .agree-policy {
+                margin-top: 50px;
+
+                .link-apply {
+                    display: block;
+                    margin-top: 10px;
+                    font-family: 'DIN Pro Regular';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 12px;
+                    line-height: 15px;
+                    text-decoration-line: underline;
+                    color: #4870FF;
+                }
+            }
+
+            .check-box-section {
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                gap: 20px;
+                margin-top: 25px;
+
+
+                #check-box:checked {
+                    background-color: #4870FF;
+                }
+
+                .check-label {
+                    font-family: 'Din Pro Bold';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 12px;
+                    line-height: 15px;
+                    color: #646464;
+                    color: #4870FF;
+                }
+
+                .custom-check {
+                    /* hiding browser el */
+                    appearance: none;
+                    /* Safari support */
+                    -webkit-appearance: none;
+                    border: 6px solid #D9D9D9;
+                    background-color: #D9D9D9;
+                }
+
+                /* keyboard navigation focus appearance */
+                .custom-check:focus-visible {
+                    outline-offset: 0;
+                }
+            }
+
+            .apply-button-range {
+                margin-top: 84px;
+                display: flex;
+                flex-direction: column-reverse;
+                align-items: center;
+                gap: 12px;
+
+                .apply_interrupt_button {
+                    background-color: white;
+                    color: #585858;
+                    width: 219px;
+                    height: 52px;
+                    border: 3px solid #646464;
+                    transform: matrix(1, 0.01, -0.01, 1, 0, 0);
+
+                    &:hover {
+                        background-color: #f0f0f0;
+                    }
+                }
+
+                .apply_submit_button {
+                    width: 220px;
+                    height: 52px;
+                }
+            }
+        }
+    }
+}
+
+// For screens larger than 768px (desktop)
+@media only screen and (min-width: 768px) {
+    #apply {
+        padding-top: 0rem;
+        @include centered;
+
+        .container {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+    }
+
+    .apply_wrapper {
+        width: 100%;
+        height: 100%;
+        padding: 154px 170px 309px 170px;
+        color: #585858;
+        text-align: left;
+        font-family: 'Din Pro Bold';
+
+        .title {
+            h1 {
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 26px;
+                text-align: justify;
+            }
+        }
+
+        .comment {
+            margin-top: 51px;
+            line-height: 23px;
+
+            span {
+                font-size: 18px;
+                line-height: 23px;
+            }
+        }
+
+        .apply_form {
+            width: 100%;
+            font-family: 'Din Pro Regular';
+            margin-top: 82px;
+
+            .form_control {
+                margin-top: 25px;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 21px;
+                color: #646464;
+            }
+
+            .label {
+                color: #646464;
+            }
+
+            .label_comment {
+                display: block;
+                margin-top: 12px;
+                color: #B3B3B3;
+            }
+
+            input {
+                margin-top: 14px;
+                width: 100%;
+                padding: 12px 12px 12px 12px;
+                font-family: 'Din Pro Regular';
+                border: 0.33px solid #CFCFCF;
+                transition: border-color 0.5s ease-out;
+            }
+
+            input::placeholder {
+                color: #CFCFCF;
+            }
+
+            input:required {
+                border: 0.33px solid #676767;
+            }
+
+            input:optional {
+                border: 0.33px solid #585858;
+            }
+
+            input:required:valid {
+                border: 0.33px solid #009220;
+                background: url(../../../../public/images/pages/about-us/check.svg) no-repeat 98% 50%;
+            }
+
+            input:required:focus:invalid {
+                color: #D30000;
+                border: 0.33px solid #D30000;
+            }
+
+            input:required:focus:valid {
+                color: #009220;
+                background: url(../../../../public/images/pages/about-us/check.svg) no-repeat 98% 50%;
+            }
+
+            input[type="radio"] {
+                margin-top: 0;
+                width: 24px;
+                height: 24px;
+                padding: 0;
+            }
+
+            input[type="checkbox"] {
+                margin-top: 0;
+                width: 24px;
+                height: 24px;
+                padding: 0;
+            }
+
+            input[type="file"] {
+                border: none;
+                outline: none;
+                border-bottom: 1px solid #ccc;
+                /* You can adjust the color and thickness of the outline */
+            }
+
+            .apply-upload-section {
+                display: grid;
+                grid-template-columns: 20% auto;
+                gap: 10px;
+
+                .apply-upload-label {
+                    display: flex;
+                    flex-direction: column;
+
+                }
+
+                .label-small {
+                    display: block;
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 18px;
+                }
+
+                &:nth-child(1) {
+                    margin-top: 48px;
+                }
+
+                &:nth-child(2) {
+                    margin-top: 20px;
+                }
+
+                &:nth-child(3) {
+                    margin-top: 34px;
+                    margin-bottom: 40px;
+                }
+
+            }
+
+            .radio-box-section {
+                display: grid;
+                grid-template-columns: 40px 48px auto;
+                align-items: top;
+                margin-top: 25px;
+
+                #radio-box:checked {
+                    background-color: #D01C1C;
+                }
+
+                .radio-label {
+                    font-family: 'Din Pro Bold';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 18px;
+                    color: #646464;
+                }
+
+                .radio-comment {
+                    font-family: 'Din Pro Regular';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 18px;
+                    color: #646464;
+                    opacity: 56%;
+                }
+
+                .custom-radio {
+                    /* hiding browser el */
+                    appearance: none;
+                    /* Safari support */
+                    -webkit-appearance: none;
+                    border: 6px solid #D9D9D9;
+                    background-color: #D9D9D9;
+                }
+
+                /* keyboard navigation focus appearance */
+                .custom-radio:focus-visible {
+                    outline-offset: 0;
+                }
+            }
+
+            .agree-policy {
+                margin-top: 50px;
+
+                .link-apply {
+                    display: block;
+                    margin-top: 10px;
+                    font-family: 'DIN Pro Regular';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 16px;
+                    line-height: 21px;
+                    text-decoration-line: underline;
+                    color: #4870FF;
+                }
+            }
+
+            .check-box-section {
+                display: flex;
+                justify-content: start;
+                gap: 20px;
+                align-items: top;
+                margin-top: 25px;
+
+
+                #check-box:checked {
+                    background-color: #4870FF;
+                }
+
+                .check-label {
+                    font-family: 'Din Pro Bold';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 16px;
+                    line-height: 21px;
+                    color: #646464;
+                    color: #4870FF;
+                }
+
+                .custom-check {
+                    /* hiding browser el */
+                    appearance: none;
+                    /* Safari support */
+                    -webkit-appearance: none;
+                    border: 6px solid #D9D9D9;
+                    background-color: #D9D9D9;
+                }
+
+                /* keyboard navigation focus appearance */
+                .custom-check:focus-visible {
+                    outline-offset: 0;
+                }
+            }
+
+            .apply-button-range {
+                margin-top: 113px;
+                display: flex;
+                gap: 12px;
+                justify-content: end;
+
+                .apply_interrupt_button {
+                    background-color: white;
+                    color: #585858;
+                    width: 219px;
+                    height: 52px;
+                    border: 3px solid #646464;
+                    transform: matrix(1, 0.01, -0.01, 1, 0, 0);
+
+                    &:hover {
+                        background-color: #f0f0f0;
+                    }
+                }
+
+                .apply_submit_button {
+                    width: 220px;
+                    height: 52px;
+                }
+            }
+        }
+    }
+}

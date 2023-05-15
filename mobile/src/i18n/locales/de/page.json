@@ -1,0 +1,511 @@
+{
+    "header": {
+        "menu_label": "Menü"
+    },
+    "footer": [
+        {
+            "title": "Anschrift",
+            "sub_title": [
+                "German Capital Pharma GmbH",
+                "Badstr. 20",
+                "13357 Berlin",
+                "Deutschland"
+            ]
+        },
+        {
+            "title": "Rechtliches",
+            "sub_title": [
+                "Datenschutzrichtlinien",
+                "Impressum"
+            ]
+        },
+        {
+            "title": "Dienstleistungen ",
+            "sub_title": [
+                "Produktion",
+                "Einkauf",
+                "Nahrungsergänzungsmittel",
+                "Lagerung",
+                "Beratung"
+            ]
+        }
+    ],
+    "home": {
+        "company": "GERMAN CAPITAL PHARMA GmbH",
+        "slogan": "Gesundheit für das Leben"
+    },
+
+    "menu": [
+        {
+            "title": "Über GC Pharma GmbH",
+            "subtitle": [
+                "Unser Unternehmensprofil",
+                "Unsere Unternehmensziele"
+            ]
+        },
+        {
+            "title": "Dienstleistungen",
+            "subtitle": [
+                "Produktion",
+                "Logistik",
+                "Nahrungsergänzungsmittel",
+                "Beratung"
+            ]
+        },
+        {
+            "title": "Karriere",
+            "subtitle": [
+                "Stellenausschreibungen"
+            ]
+        },
+        {
+            "title": "Kontakt",
+            "subtitle": [
+                "Haben Sie Rückfragen?"
+            ]
+        }
+    ],
+    "breadcrumb": "zurück",
+    "company_profile": {
+        "title": "GC Pharma GmbH",
+        "p1": "GC Pharma ist eine international führende Dienstleistungs-und Beratungsgesellschaft im pharmazeutischen Bereich, die maßgeschneiderte Service-Pakete für ihre Outsourcing Partner bereitstellt. Unsere Kunden und Partner können aus einer breiten Angebotspalette von der Entwicklung von Wirksubstanzen über Entwicklungsdienstleistungen für fertig formulierte Medikamente, deren Zulassung und Produktion bis hin zur Verpackung und Logistik profitieren.",
+        
+        "p2": "Unseren Schwerpunkt setzen wir dabei auf dem Angebot zertifizierter Dienstleistungen und Produkte entlang einer mit dem Kunden abgestimmten Prozess-Schnittstelle aus einer Hand. Somit können wir in jedem Bereich herausragende Qualität garantieren. Mit unseren Partnern, Lieferanten und Herstellern bilden wir ein leistungsstarkes Netzwerk, das Medikamente höchster europäischer Qualität exportiert, damit wir unserem Traum von umfassender Gesundheit für alle Menschen ein Stück näher kommen. Mit unseren Partnern, Lieferanten und Herstellern bilden wir ein leistungsstarkes Netzwerk, das Medikamente höchster europäischer Qualität exportiert, damit wir unserem Traum von umfassender Gesundheit für alle ein Stück näher kommen."
+    },
+    "corporate_goals": {
+        "title": "Unser Ziel: Gesundheit für das Leben.",
+        "p1_strong": "Wir bei GC Pharma haben es uns zur Aufgabe gemacht, den Menschen, seine Gesundheit und sein Wohlbefinden, in den Mittelpunkt unseres Handelns zu stellen. Während dieser Zustand der Gesundheit in Europa ein leicht zu erreichendes Ziel ist, mangelt es in vielen anderen Ländern an adäquater medizinischer Versorgung, um Gesundheit zu genießen.",
+        
+        "p1_normal": " Die meisten Krankheiten der Welt sind inzwischen medikamentös behandelbar, dennoch hat ein Großteil der Menschen weltweit keinen Zugang zu diesen lebensnotwendigen Medikamenten. Diese traurige Wahrheit widerspricht dem Menschenrecht auf Gesundheitsfürsorge. Gemeinsam mit unseren Partnern und Ihnen, unseren Kunden, möchten wir dazu beitragen, an Lösungen dieses globalen Problems zu arbeiten.",
+
+        "left_p1": "“Gesundheit ist ein Zustand vollkommenen körperlichen, geistigen und sozialen Wohlbefindens und nicht allein das Fehlen von Krankheit und Gebrechen.“",
+        
+        "left_p2": "Weltgesundheitsorganisation (WHO)",
+
+        "right_p1": "Unsere vornehmste Aufgabe sehen wir daher zum einen darin mit unseren europäischen Partnern und Kunden den Status Quo der Pharmazie zu hinterfragen. So können wir neue und bessere Wege in der Herstellung und Distribution von Arzneimitteln aufzeigen und beschreiten. Mit unseren hochwertigen Produkten und Dienstleistungen möchten wir so unseren aktiven Beitrag zu einer besseren, gesünderen Gesellschaft leisten.",
+        
+        "right_p2": "Mit ihnen möchten wir die Lebensqualität aller Menschen durch Vorbeugung, Heilung und Linderung erhöhen. Zum Anderen aber möchten wir es ermöglichen unsere hohen Qualitätsstandards im pharmazeutischen Bereich auch in andere Länder weiterzugeben. Unsere Berufung ist es, dazu beizutragen, dass Gesundheit kein Privileg bleibt, sondern für jeden Menschen erreichbar wird. Mit unserem Versprechen „Made in Germany“ garantieren wir, dass Forschung, Produktion und Qualitätssicherung in Deutschland stattfinden und unseren hohen, deutschen Wertvorstellungen entsprechen. Dieses Versprechen höchster Qualität gilt auch für unsere gesamten Handelswaren."
+    },
+    "production" : {
+        "title": "Unsere Leistungen im Überblick",
+        "left_p1": "Gemeinsam mit unseren qualifizierten Partnern aus Forschung und Produktion können wir Ihnen einen kompletten Full-Service für Ihre Produkte bieten. ",
+        "left_p2": "Gerne unterstützen wir Sie bei der Formulierung eigener Wirkstoffe oder Generika, beraten Sie bei der Auswahl der geeigneten Applikationsformen für Ihre Patienten. Selbstverständlich übernehmen unsere Partner auch gerne die gesamte Produktion für Sie. Da der gesamte Herstellungsprozess bei unseren Partnern je nach Arzneiform in Räumen der Reinheitsklasse B (unter  Laminar Airflow A in B), mit abschließender Sterilisation mittels Autoklav im Endbehältnis stattfinden kann, können Sie sich in jeder Hinsicht auf höchste pharmazeutische Qualitäts- und Hygienestandards verlassen. Neben den Richtlinien des Europäischen Arzneibuches und des EU-GMP-Leitfadens (Good Manufacturing Practices), entsprechen die Labore den zahlreichen nationalen und internationalen Normen und Richtlichen, die sich mit der Herstellung und den hierfür notwendigen Räumlichkeiten befassen.",
+        "slogan_title": "Unsere erfahrenen Experten beraten Sie gerne bei der Wahl\n der richtigen Applikationsform für Ihren Zielmarkt und Zielgruppe.",
+        "slogan_left": "Die Wahl der herzustellenden Arzneiform bleibt dabei jedoch ganz Ihnen überlassen. Die modernen Produktionsanlagen befinden sich auf dem neuesten technischen Stand und erlauben so die qualitativ hochwertige und effiziente Herstellung vielfältigster Arzneiformen: von festen, oral zu applizierenden Medikamenten, wie Tabletten und Kapseln, bis hin zu halbfesten oder flüssigen Formen, wie Cremes oder Infusionen, können wir alle gängigen Arzneiformen auch in großen Chargen für Sie herstellen.",
+        "slogan_right": "Sollte es uns und unseren Partnern nicht möglich sein, eine von Ihnen benötigte Darreichungsform zu produzieren, stellen wir Ihnen gerne den Kontakt zu führenden Herstellern her. Dies ermöglicht es Ihnen, verschiedene Produkte binnen kürzester Zeit aus einer Hand zu empfangen, flexibel auf die Wünsche Ihrer Kunden zu reagieren und sich der optimalen Qualität Ihrer Medikamente jederzeit sicher sein zu können.",
+        "dosage_title": "Folgende Darreichungsformen können wir Ihnen anbieten:",
+        "dosageData": [
+            {
+                "id": "1",
+                "title": "Feste Formen",
+                "items": [
+                    "Brauseprodukte (Granulate, Brausetabletten)",
+                    "Globuli",
+                    "Granulate, Pellets",
+                    "Hartkapseln (pflanzlich oder mit Schweine- /Rindergelatine)",
+                    "Kautabletten",
+                    "Pastillen",
+                    "Pulver",
+                    "Suppositorien",
+                    "Tabletten (Filmtabletten, Dragees)",
+                    "Weichkapseln (mit Gelatine oder pflanzlich)",
+                    "Zytotoxica"
+                ]
+            },
+            {
+                "id": "2",
+                "title": "Halbfeste Formen",
+                "items": [
+                    "Cremes",
+                    "Emulsionen und Suspensionen",
+                    "Gele",
+                    "Lotionen",
+                    "Pasten",
+                    "Salben",
+                    "Zäpfchen"
+                ]
+            },
+            {
+                "id": "3",
+                "title": "Flüssige Formen",
+                "items": [
+                    "Ampullen",
+                    "Destillate",
+                    "Infusionen",
+                    "Injectabilia",
+                    "(Lyophilisierung, aseptische Herstellung, terminale Sterilisation)",
+                    "Karpulen und Zylinderampullen",
+                    "orale Flüssigkeiten",
+                    "(reine Flüssigkeiten, kolloidale Flüssigkeiten)",
+                    "Säfte",
+                    "Sirupe",
+                    "Sprays",
+                    "Tinkturen",
+                    "Trinkampullen",
+                    "Tropfen",
+                    "Vials / Flaschen"
+                ]
+            },
+            {
+                "id": "4",
+                "title": "Spezielle Formen",
+                "items": [
+                    "Aerosole",
+                    "Inhalatoren",
+                    "Suppositorien",
+                    "Systeme mit veränderter Wirkstofffreisetzung",
+                    "Transdermale therapeutische Systeme",
+                    "Vorgefüllte Injektionsspritzen"
+                ]
+            }
+        ]
+    },
+    "logistics": {
+        "title": "Unsere Spezialisten in Einkauf und Vertrieb können Ihnen schnell,\n kompetent und zuverlässig weiterhelfen.",
+        "description":"Durch unser europaweites Netzwerk an Herstellern, Lieferanten und Großhandlungen sind wir von GC Pharma in der Lage, innerhalb kürzester Zeit den Bedarf an nahezu allen in Europa zugelassenen Humanarzneimitteln zu decken.",
+        "slogan": "Mit unserem europaweiten Netzwerk an Herstellern und Lieferanten sind wir in der Lage, innerhalb kürzester Zeit den Bedarf an vielen Humanarzneimitteln zu decken.",
+        "contact_title":"Benötigen Sie  Fertigarzneimittel aus dem Europäischen Wirtschaftsraum?",
+        "contact_content": "Sprechen Sie uns an! Unsere Spezialisten in Einkauf und Vertrieb können Ihnen schnell, kompetent und zuverlässig weiterhelfen",
+        "contact_button":"Sprechen Sie uns an!",
+        "cards": [
+            {
+                "id": 1,
+                "imgAddr" : "/images/pages/logistics/logistics-card-1.png", 
+                "infoText" : "Die German Capital Pharma GmbH bietet Ihren Kunden aus den Bereichen sowohl der Human- als auch der Tierarzneimittel qualitativ höchste Lagerdienstleistungen an. Dabei ist die Lagerung von Arzneimitteln und sonstigen medizinischen Produkten und Präparaten sowohl im Bereich der Normaltemperatur (ambient, 15 bis 25°C), gekühlt (inkl. Kühlkette bei 2 bis 8°C) als auch tiefgekühlt (-25 bis -20°C) möglich.",
+                "btnText" : "Weiter lesen",
+                "linkAddr" : "/logistics-storage"
+            },
+            {
+                "id": 2,
+                "imgAddr" : "/images/pages/logistics/logistics-card-2.png", 
+                "infoText" : "Die German Capital Pharma GmbH bietet Ihren Kunden aus den Bereichen sowohl der Human- als auch der Tierarzneimittel qualitativ höchste Lagerdienstleistungen an. Dabei ist die Lagerung von Arzneimitteln und sonstigen medizinischen Produkten und Präparaten sowohl im Bereich der Normaltemperatur (ambient, 15 bis 25°C), gekühlt (inkl. Kühlkette bei 2 bis 8°C) als auch tiefgekühlt (-25 bis -20°C) möglich. ",
+                "btnText" : "Weiter lesen",
+                "linkAddr" : "/logistics-shipment"
+            },
+            {
+                "id": 3,
+                "imgAddr" : "/images/pages/logistics/logistics-card-3.png", 
+                "infoText" : "Durch unser europaweites Netzwerk an Herstellern, Lieferanten und Großhandlungen sind wir von GC Pharma in der Lage, innerhalb kürzester Zeit den Bedarf an nahezu allen in Europa zugelassenen Humanarzneimitteln zu decken. Benötigen Sie Fertigarzneimittel aus dem Europäischen Wirtschaftsraum? ",
+                "btnText" : "Weiter lesen",
+                "linkAddr" : "/logistics-purchasing"
+            }
+        ],
+        "storage": {
+            "breadcrumb": "LOGISTIK > LAGERUNG",
+            "title":"Das sind die drei wichtigen Lagerung-Fakten\n der GC Pharma GmbH",
+            "boxes": [
+                {
+                    "id": 1,
+                    "description": "Alle Lagerbereiche sind nach dem Stand der Technik qualifiziert, werden in regelmäßigen Abständen requalifiziert und sind mit modernsten Temperaturüberwachungssystemen ausgestattet, die kontinuierlich alle Daten aufzeichnen und bei Abweichungen unmittelbar Alarm auslösen.",
+                    "slider": {
+                        "delay": 2000,
+                        "imgWidth": "187px",
+                        "imgHeight": "190px",
+                        "images": [
+                            "/images/pages/logistics/logistics-storage-1-1.png",
+                            "/images/pages/logistics/logistics-storage-1-2.png",
+                            "/images/pages/logistics/logistics-storage-1-3.png"
+                        ]
+                    }
+                },
+                {
+                    "id": 2,
+                    "description": "Auch für die Sicherheit der Produkte unserer Kunden ist das Beste gerade gut genug.  Alle Firmen- und Lagerräume sind mittels einer Einbruchmeldeanlage mit Körperschallmeldern, Türkontakten, Brand- und Überschwemmungsmeldern und permanenter Videoüberwachung gesichert. ",
+                    "slider": {
+                        "delay": 2000,
+                        "imgWidth": "188px",
+                        "imgHeight": "190px",
+                        "images": [
+                            "/images/pages/logistics/logistics-storage-2-1.png",
+                            "/images/pages/logistics/logistics-storage-2-2.png"
+                        ]
+                    }
+                },
+                {
+                    "id": 3,
+                    "description": "Bei Auslösen des Alarms wird dieser entweder direkt an die 24h besetzte Alarmzentrale (Feuer, Rauch, Überschwemmung) oder direkt an die Berliner Polizei (Einbruch) weitergeleitet.",
+                    "slider": {
+                        "delay": 2000,
+                        "imgWidth": "189px",
+                        "imgHeight": "188px",
+                        "images": [
+                            "/images/pages/logistics/logistics-storage-3-1.png",
+                            "/images/pages/logistics/logistics-storage-3-2.png"
+                        ]
+                    }
+                }
+            ]
+        },
+        "purchasing": {
+            "breadcrumb": "LOGISTIK > EINKAUF",
+            "title":"Benötigen Sie Fertigarzneimittel aus dem\n Europäischen Wirtschaftsraum?",
+            "description": "Mit unserem europaweiten Netzwerk an Herstellern und Lieferanten sind wir in der Lage, innerhalb kürzester Zeit den Bedarf an vielen Humanarzneimitteln zu decken.Sprechen Sie uns an! Unsere Spezialisten in Einkauf und Vertrieb können Ihnen schnell, kompetent und zuverlässig weiterhelfen. Durch unser europaweites Netzwerk an Herstellern, Lieferanten und Großhandlungen sind wir von GC Pharma in der Lage, innerhalb kürzester Zeit den Bedarf an nahezu allen in Europa zugelassenen Humanarzneimitteln zu decken."
+        },
+        "shipment": {
+            "breadcrumb": "LOGISTIK > VERSAND",
+            "title":"Das sind die vier wichtigen Versand-Fakten\n der GC Pharma GmbH",
+            "boxes": [
+                {
+                    "id": 1,
+                    "description": "Neben der Lagerung bieten wir unseren Kunden auch umfassend Dienstleistungen in den Bereichen Versand und Kommissionierung an.",
+                    "image": "/images/pages/logistics/logistics-shipment-1.jpg"
+                },
+                {
+                    "id": 2,
+                    "description": "Wir verpacken die Produkte unsere Kunden in geeignete und zuvor umfassend qualifizierte Verpackungen und stellen diese dann dem gewünschten Logistikpartner zur Abholung bereit.",
+                    "image": "/images/pages/logistics/logistics-shipment-2.png"
+                },
+                {
+                    "id": 3,
+                    "description": "Durch die speziellen Versandverpackungen unserer Partner können wir dabei die gewünschten Laufzeiten (von 24h bis 92 h oder länger) im gewünschten Temperaturbereich (ambient, 2 bis 8°C oder -25 bis -20°C) gewährleisten. ",
+                    "image": "/images/pages/logistics/logistics-shipment-3.png"
+                },
+                {
+                    "id": 4,
+                    "description": "Durch unser europaweites Netzwerk an Herstellern, Lieferanten und Großhandlungen sind wir von GC Pharma in der Lage, innerhalb kürzester Zeit den Bedarf an nahezu allen in Europa zugelassenen Humanarzneimitteln zu decken. Benötigen Sie Fertigarzneimittel aus dem Europäischen Wirtschaftsraum? ",
+                    "image": "/images/pages/logistics/logistics-shipment-4.png"
+                }
+            ]
+        }
+    },
+    "advice": {
+        "title": "Von der Herstellung oder dem Einkauf von Arzneimitteln bis hin zur zielgruppengerechten Vermarktung unterstützen und beraten wir von GC Pharma gerne.",
+        "p1_strong": "Ganz gleich, an welcher Stelle der Entstehung eines Arzneimittels Sie einsteigen möchten, wir bieten Ihnen das passende Angebot!",
+        "p1_normal": "Die Gesundheit des Patienten steht im Mittelpunkt jeglicher pharmazeutischen Arbeit, um diese sicherzustellen, müssen Arzneimittel den unterschiedlichsten Regularien und Vorschriften gerecht werden. Wir von GC Pharma setzen uns aktiv dafür ein, dass auch Menschen im EU Ausland in den Genuss der hohen Standards unserer Medikamente kommen. Deswegen haben wir Experten für die verschiedenen Einfuhrbestimmungen einzelner Länder, vor allem der Staaten des mittleren Ostens und Nordafrikas, in unser Team aufgenommen. Sprechen Sie uns an, wir freuen uns, Sie zu beraten! Die pharmazeutische und unternehmerische Erfahrung unserer Experten von GC Pharma stellt sicher, dass wir stets passgenaue Konzepte entwickeln, die Sie als Unternehmen aktiv voranbringen und ihren Patienten die bestmögliche Qualität und Versorgung bieten. Hierfür steht uns ein Team aus IT-Management-Spezialisten, Rechtsexperten mit den Schwerpunkten Arzneimittel- und Unternehmensrecht sowie Marketingberatern jederzeit zur Seite.",
+        "service": "Unser Leistungsspektrum umfasst hierbei:",
+        "cards": [
+            {
+                "id": 1,
+                "btnText" : "Erstellung von Projektentwicklungsplänen", 
+                "infoList" : [
+                    "Analytische Entwicklung",
+                    "Technischer Transfer und Produktion",
+                    "Produktion von Testmedikation durch unsere Partner",
+                    "Erstellung von Prüfplänen und Studiendesigns für die klinische Wirksamkeits- und Verträglichkeitsprüfung",
+                    "Beratung zu und Durchführung von klinischen Studien",
+                    "Zulassungsstrategien"
+                ]
+            },
+            {
+                "id": 2,
+                "btnText" : "Aufbau von Vermarktungsstrategien", 
+                "infoList" : [
+                    "Marktpositionierung",
+                    "Vermittlung von qualifiziertem Schlüsselpersonal",
+                    "Einholung von Genehmigungen, Hersteller- und Großhandelserlaubnis",
+                    "Rechts- und Unternehmensberatung",
+                    "IT-Beratung",
+                    "Überprüfung der Marktfähigkeit unter Berücksichtigung einzelstaatlicher Sonderregelungen"
+                ]
+            }
+        ]
+    },
+    "job_posting": {
+        "title": "GC Pharma GmbH als Arbeitgeber",
+        "description": "Unser Mindset, Veränderungsprozessen unvoreingenommen und mutig zu begegnen, hat sich ebenso wenig verändert, wie die zentrale Verankerung des Erfolgsfaktors „Mensch“ in unserem unternehmerischen Bewusstsein. Unsere Mitarbeiter:innen sind nicht nur wegen ihrer Cleverness stets das Wichtigste unseres Unternehmens. Was die Menschen in der GC Pharma GmbH auszeichnet, ist eine unnachahmliche Mischung aus Intuition, Freude und Begeisterung.",
+        "button_label": "58 STELLEN ERKUNDEN"
+    },
+    "about_us": {
+        "form_search_label": "SUCHE",
+        "form_type_label": "ART:",
+        "form_location_label": "STANDORT:",
+        "form_activity_label": "TÄTIGKEITSBEREICH:",
+        "row_per_page": "Zeilen pro Seite",
+        "page_until": " bis ",
+        "page_of": " von ",
+        "type": [
+            {
+                "name" : "Full-Time",
+                "value" : "Full-Time",
+                "defaultValue": true
+            },
+            {
+                "name" : "Part-Time",
+                "value" : "Part-Time",
+                "defaultValue": false
+            }
+        ],
+    
+        "location": [
+            {
+                "name" : "Berlin",
+                "value" : "Berlin",
+                "defaultValue": true
+            },
+            {
+                "name" : "Hamburg",
+                "value" : "Hamburg",
+                "defaultValue": false
+            },
+            {
+                "name" : "München",
+                "value" : "München",
+                "defaultValue": false
+            },
+            {
+                "name" : "Köln",
+                "value" : "Köln",
+                "defaultValue": false
+            }
+        ],
+    
+        "activity": [
+            {
+                "id": 1,
+                "name" : "Adminstration",
+                "value" : "Adminstration"
+            },
+            {
+                "id": 2,
+                "name" : "Finance/Controlling",
+                "value" : "Finance/Controlling"
+            },
+            {
+                "id": 3,
+                "name" : "Product Management",
+                "value" : "Product Management"
+            },
+            {
+                "id": 4,
+                "name" : "Technology Developement",
+                "value" : "Technology Developement"
+            }
+        ]
+    },
+    "contact": {
+        "title": "Sie haben Fragen?",
+        "headquarters": "ZENTRALE",
+        "company_name": "German Capital Pharma GmbH",
+        "company_address": "Badstr. 20 13357 Berlin, Deutschland",
+        "form_title": "Nehmen Sie Kontakt mit uns auf",
+        "form_comment": "Mit * markierte Felder sind Pflichtfelder.",
+        "form_department_label": "An welche Abteilung möchten Sie sich wenden?",
+        "form_department_options": [
+            {
+                "name": "Arzneimittelsicherheit",
+                "value": "Drug Safety",
+                "defaultValue": true
+            },
+            {
+                "name": "Biometrie",
+                "value": "Biometrics"
+            },
+            {
+                "name": "Info-Center",
+                "value": "Info Center"
+            },
+            {
+                "name": "Beratung",
+                "value": "Advice"
+            }
+        ],
+        "form_company_name_label": "Firmenname",
+        "form_company_name_placeholder": "Firmenname",
+        "form_company_phone_label": "Firmenrufnummer",
+        "form_company_phone_placeholder": "Rufnummer",
+        "form_company_address_label": "Firmenanschrift",
+        "form_company_address_placeholder": "Firmenanschrift",
+        "form_company_postcode_label": "PLZ",
+        "form_company_postcode_placeholder": "PLZ*",
+        "form_company_email_label": "E-Mail Adresse",
+        "form_company_email_placeholder": "E-Mail Adresse*",
+        "form_message_label": "Ihre Nachricht:",
+        "form_button_label": "Absenden"
+    },
+    "about_company": {
+        "introduction": "Für unser Team „TVöD“ im Bereich Content & Product Creation suchen wir zum Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est  Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+
+        "content": [
+            {
+                "title": "DAS ERWARTET DICH:",
+                
+                "subtitle": "",
+                
+                "detail": [
+                    "Du bist fachlich kompetente:r Ansprechpartner:in und Coach für Dein Team (8 Mitarbeiter:innen)",
+                    "Du unterstützt dein Team und bist auch selbst maßgeblich für operative Aufgaben z.B. für Produkte, Inhalte und Projekte verantwortlich",
+                    "Du koordinierst ein externes Herausgeber- und Autoren-Netzwerk aus Fachexpert:innen und stellt so Aktualität und Praxisrelevanz unserer Fachinhalte sicher",
+                    "Du analysierst und priorisierst Markt- und Kundenanforderungen, entwickelst gemeinsam mit dem Team Ideen für neue Formate oder Initiativen, z.B. im Bereich Legal-Tech und treibst deren Umsetzung voran",
+                    "Du bewertest Rechtsentwicklungen im Arbeits- und Personalrecht der öffentlichen Verwaltung und deren Implikationen für unser Geschäft und setzt diese gemeinsam mit Deinem Team um"
+                ]
+            },
+            {
+                "title": "DAS BRINGST DU MIT:",
+                
+                "subtitle": "",
+                
+                "detail": [
+                    "Du hast praktische Erfahrung in der Führung eines Teams und förderst einen wertschätzenden und offenen Umgang im Team und über Teamgrenzen hinaus",
+                    "Du bist Jurist:in oder hast ein vergleichbares Studium mit Schwerpunkt Arbeitsrecht, erfolgreich abgeschlossen und bringst erste Erfahrungen aus den Bereichen TVöD oder TV-L",
+                    "Als Vorreiter für Digitalisierung suchen wir jemanden, der komplexe juristische Sachverhalte gerne auch in neuen digitalen Lösungsansätzen denkt",
+                    "Du bist kommunikationsstark und hast große Freude daran, mit verschiedenen Fachdisziplinen und Stakeholdern zu agieren"
+                ]
+            },
+            {
+                "title": "DAS BIETEN WIR DIR:",
+                
+                "subtitle": "Einen Einblick in unser Produktportfolio findest du hier:  GC Pharma Captial Unternehmensprofil. bei GC Pharma Capital GmbH glauben wir daran, dass wir genau dort am besten arbeiten können, wo wir uns am wohlsten fühlen. Deshalb bieten wir dir ein hybrides Arbeitsmodell mit flexiblen Arbeitszeiten, das die Vorteile aus mobiler, ortsunabhängiger Arbeit und persönlichem Austausch vor Ort vereint. Außerdem erwartet dich Folgendes:",
+                
+                "detail": [
+                    "Umfangreiche Benefits von Events über Sport- und Gesundheitsangebote bis zur gesunden Work-Life-Balance",
+                    "Breites Angebot an Seminaren und E-Learnings der GC Pharma Akademie sowie viele weitere Lerngelegenheiten und Entwicklungsmöglichkeiten",
+                    "Eine Kultur, die geprägt ist von Verantwortung, Freiraum und einem Miteinander auf Augenhöhe",
+                    "Moderne technische Ausstattung und attraktive Arbeitsplatzgestaltung"
+                ]
+            }
+        ],
+
+        "info" : {
+            "contact": [
+                "Kennziffer: 6767",
+                "Max Mustermann",
+                "www.gcpharma/Karriere.de"
+            ],
+
+            "comment": [
+                "Noch nicht ganz überzeugt? Wir bieten dir zahlreiche Benefits von Hansefit, JobRad, über flexibles Arbeiten bis hin zu finanziellen Leistungen sowie Lern-und Entwicklungsmöglichkeiten. Hast du Interesse, in einem hoch motivierten Team zu arbeiten? Dann bewirb dich jetzt! Wir freuen uns dich kennenzulernen!",
+
+                "GC Pharma GmbH ist eine international führende Dienstleistungs-und Beratungsgesellschaft im pharmazeutischen Bereich, die maßgeschneiderte Service-Pakete für ihre Outsourcing Partner bereitstellt. Unsere Kunden und Partner können aus einer breiten Angebotspalette von der Entwicklung von Wirksubstanzen über Entwicklungsdienstleistungen für fertig formulierte Medikamente, deren Zulassung und Produktion bis hin zur Verpackung und Logistik profitieren."
+            ]
+        },
+        "button_label": "JETZT BEWERBEN"
+    },
+    "apply":{
+        "title": "HUMAN RECOURCES MANAGER  (VOLLZEIT)",
+        "comment": "Bitte erfasse im Folgenden deine persönlichen Informationen.",
+        "mandatory_placeholder": "Pflichtangabe",
+        "optional_placeholder": "(optional)",
+        "firstname_label": "VORNAME*:",
+        "lastname_label": "NACHNAME*:",
+        "email_label": "E-MAIL LOGIN*:",
+        "email_comment": "Gib hier deine E-Mail Adresse ein.",
+        "phone_label": "TELEFONNUMMER*:",
+        "phone_comment": "Bitte hinterlege deine Telefonnummer in folgendem Format, z.B. +49 170 1234567 (als Bsp. für eine deutsche Mobilfunknummer).",
+        "cv_label_top": "DEIN ANSCHREIBEN/",
+        "cv_label_bottom": "LEBENSLAUF*:",
+        "reports_label_top": "DEINE ZEUGNISSE*:",
+        "reports_label_bottom": "ZERTIFIKATE/ SCHULZEUGNISSE",
+        "other_doc_label": "WEITERE DOKUMENTE*:",
+        "upload_button": "Durchsuchen",
+        "max_filesize_10mb": "Maximal 10 MB",
+        "entry_date_label": "DEIN FRÜHSTMÖGLICHER EINTRITTSTERMIN*:",
+        "entry_date_comment": "Bitte hinterlege deine eintrittstermin in folgendem Format, z.B. 1/25/2023",
+        "salary_label": "DEINE GEHALTSVORSTELLUNGEN:",
+        "aware_label": "WIE BIST DU AUF UNS AUFMERKSAM GEWORDEN:",
+        "yes": "Ja",
+        "no": "Nein",
+        "transfer_apply_label": "WEITERGABE DEINER BEWERBUNG*:",
+        "transfer_apply_agree": "Ich bin damit einverstanden, dass meine Bewerbung zur Prüfung für weitere Stellenangebote an andere Fachbereiche bzw. Haufe-Gesellschaften übermittelt wird (dies gilt ausschl. für die vier Monate nach Abschluss meines Bewerbungsverfahrens). Diese Einwilligung kann ich jederzeit ohne Angabe von Gründen mit Wirkung für die Zukunft widerrufen.",
+        "transfer_apply_disagree": "Ich bin nicht damit einverstanden, dass meine Bewerbung zur Prüfung für weitere Stellenangebote an andere Fachbereiche bzw. Haufe-Gesellschaften übermittelt wird. Das bedeutet, dass meine Bewerbung nur von dem Fachbereich bzw. der Haufe-Gesellschaft berücksichtigt wird, die für dieses Stellenangebot zuständig ist.",
+        "confirm_label": "Bitte bestätigen*:",
+        "privacy_link": "Zur Datenschutzerklärung",
+        "privacy_agree_label": "Ich bin mit der Datenschutzerklärung einverstanden",
+        "cancel_button": "Abbrechen",
+        "submit_button": "Bewerbung einreichen"
+    },
+    "apply_success": {
+        "title": "Vielen Dank für die Zusendung Ihrer Bewerbungsunterlagen!",
+        "comment": "Wir freuen uns über Ihr Interesse an einer Beschäftigung in unserem Unternehmen. Nach Prüfung Ihrer Unterlagen werden wir uns wieder mit Ihnen in Verbindung setzen. Bis dahin bitten wir um Ihre Geduld."
+    }
+
+}

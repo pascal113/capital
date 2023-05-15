@@ -1,0 +1,509 @@
+{
+    "header": {
+        "menu_label": "Menu"
+    },
+    "footer": [
+        {
+            "title": "Address",
+            "sub_title": [
+                "German Capital Pharma GmbH",
+                "Badstr. 20",
+                "13357 Berlin",
+                "Deutschland"
+            ]
+        },
+        {
+            "title": "Legal",
+            "sub_title": [
+                "Privacy Policy",
+                "Imprint"
+            ]
+        },
+        {
+            "title": "Services ",
+            "sub_title": [
+                "Production",
+                "Purchasing",
+                "Dietary Supplements",
+                "Storage",
+                "Advice"
+            ]
+        }
+    ],
+    "home": {
+        "company": "GERMAN CAPITAL PHARMA GmbH",
+        "slogan": "Health For Life"
+    },
+    "menu": [
+        {
+            "title": "About GC Pharma GmbH",
+            "subtitle": [
+                "Our company profile",
+                "Our corporate goals"
+            ]
+        },
+        {
+            "title": "Services",
+            "subtitle": [
+                "Production",
+                "Logistics",
+                "Dietary supplements",
+                "Advice"
+            ]
+        },
+        {
+            "title": "Career",
+            "subtitle": [
+                "Job postings"
+            ]
+        },
+        {
+            "title": "Contact",
+            "subtitle": [
+                "Do you have any questions?"
+            ]
+        }
+    ],
+    "breadcrumb": "return",
+    "company_profile": {
+        "title": "GC Pharma GmbH",
+        "p1": "GC Pharma is a leading international service and consulting company in the pharmaceutical sector that provides tailor-made service packages for its outsourcing partners. Our customers and partners can benefit from a wide range of services, from the development of active substances and development services for finished drugs, their approval and production to packaging and logistics.",
+        
+        "p2": "We focus on offering certified services and products along a process interface coordinated with the customer from a single source. This means that we can guarantee excellent quality in every area. With our partners, suppliers and manufacturers, we form a powerful network that exports medicines of the highest European quality, so that we can come a step closer to our dream of comprehensive health for everyone. With our partners, suppliers and manufacturers, we form a powerful network that exports medicines of the highest European quality, so that we can come a little closer to our dream of comprehensive health for everyone."
+    },
+    "corporate_goals": {
+        "title": "Our goal: health for life.",
+        "p1_strong": "At GC Pharma, we have made it our mission to put people, their health and well-being at the center of everything we do. While this state of health is an easy goal to achieve in Europe, many other countries lack adequate medical care to enjoy health. ",
+        
+        "p1_normal": "Most of the world's diseases are now treatable with medication, yet a large proportion of the world's people do not have access to these vital medicines. This sad truth contradicts the human right to health care. Together with our partners and you, our customers, we would like to contribute to working on solutions to this global problem.",
+
+        "left_p1": "“Health is a state of complete physical, mental and social well-being and not merely the absence of disease or infirmity.“",
+        
+        "left_p2": "World Health Organization (WHO)",
+
+        "right_p1": "On the one hand, we therefore see our most important task as being to question the status quo of pharmacy with our European partners and customers. In this way, we can identify and tread new and better paths in the manufacture and distribution of pharmaceuticals. With our high-quality products and services, we want to make our active contribution to a better, healthier society.",
+        
+        "right_p2": "With them we want to improve the quality of life of all people through prevention, healing and relief. On the other hand, we would like to make it possible to pass on our high quality standards in the pharmaceutical sector to other countries. It is our vocation to contribute to ensuring that health does not remain a privilege, but is attainable for everyone. With our promise “Made in Germany“ we guarantee that research, production and quality assurance take place in Germany and correspond to our high German values. This promise of the highest quality also applies to all our merchandise."
+    },
+    "production" : {
+        "title": "Our services at a glance",
+        "left_p1": "Together with our qualified partners from research and production, we can offer you a complete full service for your products. ",
+        "left_p2": "We would be happy to support you in formulating your own active ingredients or generics, and advise you on the selection of the appropriate application forms for your patients. Of course, our partners are also happy to take over the entire production for you. Since the entire manufacturing process at our partners can take place in rooms of cleanliness class B (under laminar airflow A in B), with final sterilization using an autoclave in the final container, depending on the dosage form, you can rely on the highest pharmaceutical quality and hygiene standards in every respect. In addition to the guidelines of the European Pharmacopoeia and the EU GMP guidelines (Good Manufacturing Practices), the laboratories comply with the numerous national and international standards and directives that deal with production and the premises required for this.",
+        "slogan_title": "Our experienced experts will be happy to advise you on choosing the right form\n of application for your target market and target group.",
+        "slogan_left": "However, the choice of the dosage form to be produced is entirely up to you. The modern production facilities are state-of-the-art and thus allow the high-quality and efficient manufacture of a wide variety of dosage forms: from solid drugs to be administered orally, such as tablets and capsules, to semi-solid or liquid forms, such as creams or infusions, we can manufacture all common dosage forms for you, also in large batches.",
+        "slogan_right": "If it is not possible for us and our partners to produce a dosage form you need, we will be happy to put you in contact with leading manufacturers. This enables you to receive various products from a single source within a very short time, to react flexibly to your customers' wishes and to be able to be sure of the optimal quality of your medication at all times.",
+        "dosage_title": "We can offer you the following dosage forms:",
+        "dosageData": [
+            {
+                "id": "1",
+                "title": "Solid Shapes",
+                "items": [
+                    "Effervescent products (granules, effervescent tablets)",
+                    "globules",
+                    "granules, pellets",
+                    "Hard capsules (vegetable or with pork/beef gelatine)",
+                    "chewable tablets",
+                    "pastilles",
+                    "powder",
+                    "suppositories",
+                    "Tablets (film tablets, coated tablets)",
+                    "Softgels (with gelatin or vegetable)",
+                    "cytotoxics"
+                ]
+            },
+            {
+                "id": "2",
+                "title": "semi-solid forms",
+                "items": [
+                    "creams",
+                    "emulsions and suspensions",
+                    "gels",
+                    "lotions",
+                    "pastes",
+                    "Anoint",
+                    "suppository"
+                ]
+            },
+            {
+                "id": "3",
+                "title": "liquid forms",
+                "items": [
+                    "ampoules",
+                    "distillates",
+                    "infusions",
+                    "injectables",
+                    "(lyophilization, aseptic manufacturing, terminal sterilization)",
+                    "cartridges and cartridges",
+                    "oral liquids",
+                    "(pure liquids, colloidal liquids)",
+                    "juices",
+                    "syrups",
+                    "spray",
+                    "tinctures",
+                    "drinking ampoules",
+                    "drops",
+                    "vials / bottles"
+                ]
+            },
+            {
+                "id": "4",
+                "title": "Special Shapes",
+                "items": [
+                    "aerosols",
+                    "inhalers",
+                    "suppositories",
+                    "Modified release systems",
+                    "Transdermal therapeutic systems",
+                    "pre-filled hypodermic syringes"
+                ]
+            }
+        ]
+    },
+    "logistics": {
+        "title": "Our specialists in purchasing and sales can help you quickly,\n competently and reliably.",
+        "description":"Thanks to our Europe-wide network of manufacturers, suppliers and wholesalers, we at GC Pharma are able to cover the need for almost all human medicines approved in Europe within a very short time.",
+        "slogan": "With our Europe-wide network of manufacturers and suppliers, we are able to cover the need for many human medicines within a very short time.",
+        "contact_title":"Do you need finished medicinal products from the European Economic Area?",
+        "contact_content": "Contact us! Our specialists in purchasing and sales can help you quickly, competently and reliably.",
+        "contact_button":"Contact us!",
+        "cards": [
+            {
+                "id": 1,
+                "imgAddr" : "/images/pages/logistics/logistics-card-1.png", 
+                "infoText" : "German Capital Pharma GmbH offers its customers in the areas of both human and veterinary medicinal products the highest quality storage services. Medicines and other medical products and preparations are stored at normal temperature (ambient, 15 to 25°C), refrigerated (including the cold chain at 2 to 8°C) and deep-frozen (-25 to -20°C) possible.",
+                "btnText" : "Continue reading",
+                "linkAddr" : "/logistics-storage"
+            },
+            {
+                "id": 2,
+                "imgAddr" : "/images/pages/logistics/logistics-card-2.png", 
+                "infoText" : "German Capital Pharma GmbH offers its customers in the areas of both human and veterinary medicinal products the highest quality storage services. Medicines and other medical products and preparations are stored at normal temperature (ambient, 15 to 25°C), refrigerated (including the cold chain at 2 to 8°C) and deep-frozen (-25 to -20°C) possible.",
+                "btnText" : "Continue reading",
+                "linkAddr" : "/logistics-shipment"
+            },
+            {
+                "id": 3,
+                "imgAddr" : "/images/pages/logistics/logistics-card-3.png", 
+                "infoText" : "Thanks to our Europe-wide network of manufacturers, suppliers and wholesalers, we at GC Pharma are able to cover the need for almost all human medicines approved in Europe within a very short time. Do you need finished medicinal products from the European Economic Area?",
+                "btnText" : "Continue reading",
+                "linkAddr" : "/logistics-purchasing"
+            }
+        ],
+        "storage": {
+            "breadcrumb": "LOGISTICS > STORAGE",
+            "title":"These are the three important storage facts\n of GC Pharma GmbH",
+            "boxes": [
+                {
+                    "id": 1,
+                    "description": "All storage areas are qualified according to the state of the art, are requalified at regular intervals and are equipped with the most modern temperature monitoring systems, which continuously record all data and immediately trigger an alarm in the event of deviations.",
+                    "slider": {
+                        "delay": 2000,
+                        "imgWidth": "187px",
+                        "imgHeight": "190px",
+                        "images": [
+                            "/images/pages/logistics/logistics-storage-1-1.png",
+                            "/images/pages/logistics/logistics-storage-1-2.png",
+                            "/images/pages/logistics/logistics-storage-1-3.png"
+                        ]
+                    }
+                },
+                {
+                    "id": 2,
+                    "description": "When it comes to the safety of our customers' products, only the best is good enough. All company and storage rooms are secured by means of a burglar alarm system with structure-borne noise detectors, door contacts, fire and flood detectors and permanent video surveillance. ",
+                    "slider": {
+                        "delay": 2000,
+                        "imgWidth": "188px",
+                        "imgHeight": "190px",
+                        "images": [
+                            "/images/pages/logistics/logistics-storage-2-1.png",
+                            "/images/pages/logistics/logistics-storage-2-2.png"
+                        ]
+                    }
+                },
+                {
+                    "id": 3,
+                    "description": "When the alarm is triggered, it is either forwarded directly to the 24-hour alarm center (fire, smoke, flood) or directly to the Berlin police (burglary).",
+                    "slider": {
+                        "delay": 2000,
+                        "imgWidth": "189px",
+                        "imgHeight": "188px",
+                        "images": [
+                            "/images/pages/logistics/logistics-storage-3-1.png",
+                            "/images/pages/logistics/logistics-storage-3-2.png"
+                        ]
+                    }
+                }
+            ]
+        },
+        "purchasing": {
+            "breadcrumb": "LOGISTICS > PURCHASING",
+            "title":"Do you need finished medicinal products from the\n European Economic Area?",
+            "description": "With our Europe-wide network of manufacturers and suppliers, we are able to cover the need for many human medicines within a very short time. Talk to us! Our specialists in purchasing and sales can help you quickly, competently and reliably. Thanks to our Europe-wide network of manufacturers, suppliers and wholesalers, we at GC Pharma are able to cover the need for almost all human medicines approved in Europe within a very short time."
+        },
+        "shipment": {
+            "breadcrumb": "LOGISTICS > SHIPPING",
+            "title":"These are the four important shipping facts\n of GC Pharma GmbH",
+            "boxes": [
+                {
+                    "id": 1,
+                    "description": "In addition to storage, we also offer our customers comprehensive services in the areas of shipping and order picking.",
+                    "image": "/images/pages/logistics/logistics-shipment-1.jpg"
+                },
+                {
+                    "id": 2,
+                    "description": "We pack our customers' products in suitable and comprehensively qualified packaging and then make them available to the desired logistics partner for collection.",
+                    "image": "/images/pages/logistics/logistics-shipment-2.png"
+                },
+                {
+                    "id": 3,
+                    "description": "Thanks to the special shipping packaging from our partners, we can guarantee the desired transit times (from 24 to 92 hours or longer) in the desired temperature range (ambient, 2 to 8°C or -25 to -20°C).",
+                    "image": "/images/pages/logistics/logistics-shipment-3.png"
+                },
+                {
+                    "id": 4,
+                    "description": "Thanks to our Europe-wide network of manufacturers, suppliers and wholesalers, we at GC Pharma are able to cover the need for almost all human medicines approved in Europe within a very short time. Do you need finished medicinal products from the European Economic Area?",
+                    "image": "/images/pages/logistics/logistics-shipment-4.png"
+                }
+            ]
+        }
+    },
+    "advice": {
+        "title": "We at GC Pharma are happy to support and advise you on everything from the manufacture or purchase of medicines to marketing tailored to the target group.",
+        "p1_strong": "No matter at which point in the development of a drug you want to get started, we have the right offer for you!",
+        "p1_normal": "The health of the patient is the focus of all pharmaceutical work, in order to ensure this, drugs must meet a wide variety of rules and regulations. We at GC Pharma are actively committed to ensuring that people in other EU countries can also enjoy the high standards of our medicines. That is why we have included experts for the various import regulations of individual countries, especially those in the Middle East and North Africa, in our team. Talk to us, we look forward to advising you! The pharmaceutical and entrepreneurial experience of our experts at GC Pharma ensures that we always develop tailor-made concepts that actively advance you as a company and offer your patients the best possible quality and care. A team of IT management specialists, legal experts specializing in drug and corporate law, and marketing consultants is always at our side for this purpose.",
+        "service": "Our range of services includes:",
+        "cards": [
+            {
+                "id": 1,
+                "btnText" : "Creation of project development plans", 
+                "infoList" : [
+                    "Analytical Development",
+                    "Technical transfer and production",
+                    "Production of test medication by our partners",
+                    "Preparation of test plans and study designs for the clinical efficacy and tolerability testing",
+                    "Advice on and implementation of clinical studies",
+                    "Admission Strategies"
+                ]
+            },
+            {
+                "id": 2,
+                "btnText" : "Development of marketing strategies", 
+                "infoList" : [
+                    "market positioning",
+                    "Placement of qualified key personnel",
+                    "Obtaining permits, manufacturing and wholesale permits",
+                    "Legal and business advice",
+                    "IT consulting",
+                    "Verification of marketability, taking into account special national regulations"
+                ]
+            }
+        ]
+    },
+    "job_posting": {
+        "title": "GC Pharma GmbH as an employer",
+        "description": "Our mindset of facing change processes unbiasedly and courageously has changed just as little as the central anchoring of the success factor “people“ in our entrepreneurial consciousness. Our employees are always the most important thing in our company, and not just because of their cleverness. What distinguishes the people at GC Pharma GmbH is an inimitable mixture of intuition, joy and enthusiasm.",
+        "button_label": "EXPLORE 58 PLACES"
+    },
+    "about_us": {
+        "form_search_label": "SEARCH",
+        "form_type_label": "TYPE:",
+        "form_location_label": "LOCATION:",
+        "form_activity_label": "FIELD OF ACTIVITY:",
+        "row_per_page": "Rows per page",
+        "page_until": " - ",
+        "page_of": " of ",
+        "type": [
+            {
+                "name" : "Full-Time",
+                "value" : "Full-Time",
+                "defaultValue": true
+            },
+            {
+                "name" : "Part-Time",
+                "value" : "Part-Time",
+                "defaultValue": false
+            }
+        ],
+    
+        "location": [
+            {
+                "name" : "Berlin",
+                "value" : "Berlin",
+                "defaultValue": true
+            },
+            {
+                "name" : "Hamburg",
+                "value" : "Hamburg",
+                "defaultValue": false
+            },
+            {
+                "name" : "München",
+                "value" : "München",
+                "defaultValue": false
+            },
+            {
+                "name" : "Köln",
+                "value" : "Köln",
+                "defaultValue": false
+            }
+        ],
+    
+        "activity": [
+            {
+                "id": 1,
+                "name" : "Adminstration",
+                "value" : "Adminstration"
+            },
+            {
+                "id": 2,
+                "name" : "Finance/Controlling",
+                "value" : "Finance/Controlling"
+            },
+            {
+                "id": 3,
+                "name" : "Product Management",
+                "value" : "Product Management"
+            },
+            {
+                "id": 4,
+                "name" : "Technology Developement",
+                "value" : "Technology Developement"
+            }
+        ]
+    },
+    "contact": {
+        "title": "Any questions?",
+        "headquarters": "HEADQUARTERS",
+        "company_name": "German Capital Pharma GmbH",
+        "company_address": "Badstr. 20 13357 Berlin, Germany",
+        "form_title": "Feel free to contact us",
+        "form_comment": "Fields marked with * are mandatory.",
+        "form_department_label": "Which department would you like to contact?",
+        "form_department_options": [
+            {
+                "name": "Drug Safety",
+                "value": "Drug Safety",
+                "defaultValue": true
+            },
+            {
+                "name": "Biometrics",
+                "value": "Biometrics"
+            },
+            {
+                "name": "Info Center",
+                "value": "Info Center"
+            },
+            {
+                "name": "Advice",
+                "value": "Advice"
+            }
+        ],
+        "form_company_name_label": "company name",
+        "form_company_name_placeholder": "company name",
+        "form_company_phone_label": "company phone number",
+        "form_company_phone_placeholder": "phone number",
+        "form_company_address_label": "company address",
+        "form_company_address_placeholder": "company address",
+        "form_company_postcode_label": "Postcode",
+        "form_company_postcode_placeholder": "Postcode*",
+        "form_company_email_label": "e-mail address",
+        "form_company_email_placeholder": "e-mail address*",
+        "form_message_label": "Your message:",
+        "form_button_label": "Submit"
+    },
+    "about_company": {
+        "introduction": "For our “TVöD“ team in the area of Content & Product Creation we are looking for Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+
+        "content": [
+            {
+                "title": "WHAT YOU CAN EXPECT:",
+                
+                "subtitle": "",
+                
+                "detail": [
+                    "You are a technically competent contact person and coach for your team (8 employees)",
+                    "You support your team and are also largely responsible for operational tasks, e.g. for products, content and projects",
+                    "You will coordinate an external network of editors and authors made up of experts, thereby ensuring that our specialist content is up-to-date and relevant to practice",
+                    "You analyze and prioritize market and customer requirements, develop ideas for new formats or initiatives together with the team, e.g. in the area of legal tech, and drive their implementation",
+                    "You evaluate legal developments in labor and personnel law in public administration and their implications for our business and implement them together with your team"
+                ]
+            },
+            {
+                "title": "WHAT YOU BRING WITH YOU:",
+                
+                "subtitle": "",
+                
+                "detail": [
+                    "You have practical experience in leading a team and promote appreciative and open interaction within the team and beyond team boundaries",
+                    "You are a lawyer or have successfully completed a comparable degree with a focus on labor law and have initial experience in the areas of TVöD or TV-L",
+                    "As a pioneer in digitization, we are looking for someone who likes to think about complex legal issues in terms of new digital solutions",
+                    "You have strong communication skills and enjoy working with different disciplines and stakeholders"
+                ]
+            },
+            {
+                "title": "WE OFFER YOU:",
+                
+                "subtitle": "You can find an insight into our product portfolio here: GC Pharma Capital company profile. At GC Pharma Capital GmbH we believe that we can work best exactly where we feel most comfortable. That's why we offer you a hybrid working model with flexible working hours that combines the advantages of mobile, location-independent work and personal exchange on site. You can also expect the following:",
+                
+                "detail": [
+                    "Extensive benefits from events to sports and health offers to a healthy work-life balance",
+                    "Wide range of seminars and e-learning courses from the GC Pharma Academy as well as many other learning and development opportunities",
+                    "A culture characterized by responsibility, freedom and working together as equals",
+                    "Modern technical equipment and attractive workplace design"
+                ]
+            }
+        ],
+
+        "info" : {
+            "contact": [
+                "Reference number: 6767",
+                "John Doe",
+                "www.gcpharma/Karriere.de"
+            ],
+
+            "comment": [
+                "Not quite convinced yet? We offer you numerous benefits from Hansefit, JobRad, flexible working and financial benefits as well as learning and development opportunities. Are you interested in working in a highly motivated team? Then apply now! We are pleased to meet you!",
+
+                "GC Pharma GmbH is a leading international service and consulting company in the pharmaceutical sector that provides tailor-made service packages for its outsourcing partners. Our customers and partners can benefit from a wide range of services, from the development of active substances and development services for finished drugs, their approval and production to packaging and logistics."
+            ]
+        },
+        "button_label": "APPLY NOW"
+    },
+    "apply":{
+        "title": "HUMAN RESOURCES MANAGER (FULL-TIME)",
+        "comment": "Please enter your personal information below.",
+        "mandatory_placeholder": "Mandatory information",
+        "optional_placeholder": "(optional)",
+        "firstname_label": "FIRST NAME*:",
+        "lastname_label": "LAST NAME*:",
+        "email_label": "EMAIL LOGIN*:",
+        "email_comment": "Enter your email address here.",
+        "phone_label": "PHONE NUMBER*:",
+        "phone_comment": "Please enter your phone number in the following format, e.g. +49 170 1234567 (as an example for a German mobile phone number).",
+        "cv_label_top": "YOUR COVER LETTER/",
+        "cv_label_bottom": "CV*:",
+        "reports_label_top": "YOUR REPORTS*:",
+        "reports_label_bottom": "CERTIFICATES/ SCHOOL REPORTS",
+        "other_doc_label": "OTHER DOCUMENTS*:",
+        "upload_button": "Search",
+        "max_filesize_10mb": "Maximum 10 MB",
+        "entry_date_label": "YOUR EARLIEST POSSIBLE ENTRY DATE*:",
+        "entry_date_comment": "Please enter your entry date in the following format, e.g. 1/25/2023",
+        "salary_label": "YOUR SALARY REQUIREMENTS:",
+        "aware_label": "HOW DID YOU BECOME AWARE OF US:",
+        "yes": "Yes",
+        "no": "No",
+        "transfer_apply_label": "TRANSFER OF YOUR APPLICATION*:",
+        "transfer_apply_agree": "I agree that my application may be forwarded to other departments or Haufe companies for further job vacancies (this only applies to the four months after the end of my application process). I can revoke this consent at any time without giving reasons with effect for the future.",
+        "transfer_apply_disagree": "I do not consent to my application being forwarded to other departments or Haufe companies for further job vacancies. This means that my application will only be considered by the department or the Haufe Society that is responsible for this job offer.",
+        "confirm_label": "Please confirm*:",
+        "privacy_link": "Privacy statement",
+        "privacy_agree_label": "I agree with the Privacy Policy",
+        "cancel_button": "Interrupt",
+        "submit_button": "Send in your application"
+    },
+    "apply_success": {
+        "title": "Thank you for sending your application documents!",
+        "comment": "We are pleased that you are interested in working in our company. After checking your documents, we will get in touch with you again. Until then we ask for your patience."
+    }
+}

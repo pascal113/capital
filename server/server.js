@@ -87,6 +87,9 @@ const indexProcess = (req, res, next) => {
 
 if (env['ENV'] === 'production') {
     console.log('production mode');
+
+    // mobile
+    // app.use('/mobile', Express.static(path.join(__dirname, '/mobile/build')));
     
     // admin route
     app.use('/admin', beforeAdminProcess); 

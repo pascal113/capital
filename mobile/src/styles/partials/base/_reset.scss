@@ -1,0 +1,220 @@
+// For screens smaller than 768px (mobile)
+@media only screen and (max-width: 767px) {
+    ::-webkit-scrollbar {
+        width: 0.6vw;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: var(--track-color);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--thumb-color);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--thumb-hover-color);
+    }
+
+    ::selection {
+        background-color: var(--main-color-2);
+        color: #fff;
+    }
+
+    ::-moz-selection {
+        background-color: var(--main-color-2);
+        color: #fff;
+    }
+
+    *,
+    *::before,
+    *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        font-size: 16px;
+        scrollbar-width: thin;
+        scrollbar-color: var(--thumb-color) var(--track-color);
+
+        @include devices(xs) {
+            font-size: 15px;
+        }
+    }
+
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        margin: 0;
+        padding: 0;
+    }
+
+    section {
+        position: relative;
+        overflow: hidden;
+        white-space: pre-line;
+    }
+
+    input,
+    button,
+    textarea {
+        border: none;
+        outline: none;
+        line-height: 1;
+        color: inherit;
+        font-size: inherit;
+        font-family: inherit;
+        background-color: transparent;
+    }
+
+    input[type="checkbox"],
+    input[type="range"] {
+        accent-color: var(--main-color-2);
+    }
+
+    button {
+        cursor: pointer;
+    }
+
+    textarea {
+        resize: vertical;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    img {
+        max-width: 100%;
+        height: 135px;
+        object-fit: cover;
+        border: 0;
+        padding: 0;
+    }
+
+    svg {
+        vertical-align: middle;
+        user-select: none;
+    }
+
+    del {
+        color: var(--text-muted);
+    }
+}
+
+// For screens larger than 768px (desktop)
+@media only screen and (min-width: 768px) {
+    ::-webkit-scrollbar {
+        width: 0.6vw;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: var(--track-color);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--thumb-color);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--thumb-hover-color);
+    }
+
+    ::selection {
+        background-color: var(--main-color-2);
+        color: #fff;
+    }
+
+    ::-moz-selection {
+        background-color: var(--main-color-2);
+        color: #fff;
+    }
+
+    *,
+    *::before,
+    *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        font-size: 16px;
+        scrollbar-width: thin;
+        scrollbar-color: var(--thumb-color) var(--track-color);
+
+        @include devices(xs) {
+            font-size: 15px;
+        }
+    }
+
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        margin: 0;
+        padding: 0;
+    }
+
+    section {
+        position: relative;
+        overflow: hidden;
+        white-space: pre-line;
+    }
+
+    input,
+    button,
+    textarea {
+        border: none;
+        outline: none;
+        line-height: 1;
+        color: inherit;
+        font-size: inherit;
+        font-family: inherit;
+        background-color: transparent;
+    }
+
+    input[type="checkbox"],
+    input[type="range"] {
+        accent-color: var(--main-color-2);
+    }
+
+    button {
+        cursor: pointer;
+    }
+
+    textarea {
+        resize: vertical;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        border: 0;
+        padding: 0;
+    }
+
+    svg {
+        vertical-align: middle;
+        user-select: none;
+    }
+
+    del {
+        color: var(--text-muted);
+    }
+}
