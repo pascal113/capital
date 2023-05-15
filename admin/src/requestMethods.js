@@ -10,10 +10,10 @@ const BASE_URL = "http://localhost:3030/api/";
 // }
 
 
-let tokenInfo = localStorage.getItem("token");
-let token = 'token';
-if(tokenInfo) {
-  token = tokenInfo;
+let userInfo = localStorage.getItem("user");
+let TOKEN = '';
+if(userInfo) {
+  TOKEN = JSON.parse(localStorage.getItem("user")).token;
 }
 
 export const publicRequest = axios.create({
@@ -23,6 +23,6 @@ export const publicRequest = axios.create({
 export const userRequest = axios.create({
   baseURL: BASE_URL,
   headers: {
-    "x-auth-token": `${token}`,
+    "x-auth-token": `${TOKEN}`,
   },
 });

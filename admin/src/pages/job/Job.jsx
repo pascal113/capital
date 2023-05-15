@@ -26,7 +26,7 @@ const Job = () => {
     const handleCreate = (e) => {
     };
     return (
-        <div className="home">
+        <div className="job">
             <div className="jobAddBtn">
                 <Button variant="contained" component="label" size="medium" color="primary" startIcon={<AddIcon />}>
                 Add

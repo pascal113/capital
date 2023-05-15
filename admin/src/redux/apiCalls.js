@@ -40,12 +40,13 @@ import {
   addJobFailure,
 } from "./jobRedux";
 
-export const login = async (dispatch, user) => {
+export const login = async (dispatch, user, history) => {
   dispatch(loginStart());
   try {
     const res = await publicRequest.post("/auth/login", user);
     if(res.data.code === 0){
       dispatch(loginSuccess(res.data));
+      history.push('/admin/');
     }
   } catch (err) {
     if (err.response) {
