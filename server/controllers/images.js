@@ -135,7 +135,7 @@ const get_image_list = asyncHandler(async (req, res) => {
     if (images) {
       responseClient(res, 200, 0, 'success', images);
     } else {
-      responseClient(res, 404, 0, 'No images found');
+      responseClient(res, 404, 1, 'No images found');
     }
   }
   catch (error) {

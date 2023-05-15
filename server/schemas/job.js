@@ -8,7 +8,8 @@ const jobSchema = mongoose.Schema({
     title: String,
     type: String,
     location: String,
-    field: String
+    field: String,
+    about: String
 }, {
     timestamps: true 
 });
