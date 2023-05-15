@@ -10,8 +10,8 @@ const toast = ToastService.new({
 const userSlice = createSlice({
   name: "user",
   initialState: {
-    token: '',
-    isAdmin: false,
+    token: localStorage.getItem("user")? JSON.parse(localStorage.getItem("user")).token: '',
+    isAdmin: localStorage.getItem("user")?JSON.parse(localStorage.getItem("user")).isAdmin:false,
     isFetching: false,
     error: false,
   },
@@ -23,7 +23,7 @@ const userSlice = createSlice({
       state.isFetching = false;
       state.isAdmin = true;
       state.token = action.payload.data.token;
-      localStorage.setItem("token", state.token);
+      localStorage.setItem("user", JSON.stringify({isAdmin: true, token: state.token}))
     },
     loginFailure: (state, action) => {
       state.isFetching = false;
@@ -40,7 +40,7 @@ const userSlice = createSlice({
     logout: (state) => {
       state.isAdmin = false;
       state.token = '';
-      localStorage.setItem("token", state.token);
+      localStorage.removeItem("user");
     },
   },
 });

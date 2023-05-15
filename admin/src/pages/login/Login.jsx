@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { login } from "../../redux/apiCalls";
+import { useHistory } from 'react-router-dom';
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
@@ -18,6 +19,7 @@ import signBkgImage from "../../assets/images/login/sign_bkg.png";
 
 export default function Login() {
   const dispatch = useDispatch();
+  const history = useHistory();
   const validationSchema = Yup.object().shape({
     email: Yup.string()
       .required('Email is required')
@@ -37,19 +39,7 @@ export default function Login() {
     resolver: yupResolver(validationSchema)
   });
   const onSubmit = data => {
-
-    login(dispatch, data);
-
-    //event.preventDefault();
-    /*const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
-    const email =data.get("email");
-    const password =data.get("password");
-
-    login(dispatch, { email, password });*/
+    login(dispatch, data, history);
   };
 
   return (
