@@ -84,6 +84,7 @@ const MenuItems = ({ menu_index, submenu_index, items, depthLevel}) => {
       ) : !items.url && items.submenu ? (
         <>
           <button
+            className='main_menu'
             type="button"
             aria-haspopup="menu"
             aria-expanded={dropdown ? 'true' : 'false'}

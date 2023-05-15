@@ -91,14 +91,14 @@
 
 .logistics_slogan{
     position: relative;
-    width: 100%px;
-    height: 337px;
-    margin: 171px 0 205px 0;
+    width: 100%;
+    height: 381px;
+    margin: 161px 0 157px 0;
     text-align: center;
 
     .logistics_slogan_content{
         position: absolute;
-        width: 700px;
+        width: 849px;
         font-family: 'DIN Pro Bold';
         font-style: normal;
         font-weight: 700;
@@ -119,7 +119,7 @@
     margin-bottom: 280px;
     
     .contact_left_column{
-        padding-left: 164px;
+        padding-left: 355px;
 
         .contact_title{
             width: 616px;
@@ -163,6 +163,7 @@
 
     .contact_right_column{
         img{
+            margin-right: 235px;
             float: right;
         }
         

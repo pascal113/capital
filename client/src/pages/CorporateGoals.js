@@ -19,6 +19,7 @@ const CorporateGols = () => {
                     </div>
                     <div className="wrapper corporate_goals_wrapper">
                         <div className="corporate_goals_left_col">
+                        
                             <p className='paragraph'>{t("corporate_goals.left_p1")}</p>
                             <p className='paragraph'>{t("corporate_goals.left_p2")}</p>
                             <div className='border-box' />

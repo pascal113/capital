@@ -40,7 +40,7 @@ const Production = () => {
                         <span>{t("production.dosage_title")}</span>
                     </div>
                     <div className='production_dosage_draw'>
-                        <img src="/images/pages/product_curve_line.png" alt="" className='production_dosage_curve_lines'/>
+                        <img src="/images/pages/production/product_curve_line.png" alt="" className='production_dosage_curve_lines'/>
                         <div className='production_dosage_container'>
                             <Dosage data={dosage_01} />
                             <Dosage data={dosage_02} />

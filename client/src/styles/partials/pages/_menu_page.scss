@@ -34,8 +34,8 @@
         list-style: none;
         flex-direction: column;
         background: url(../../../../public/images/menu/menu_sidebar.png);
-        width: 480px;
-        height: 737px;
+        width: 530px;
+        height: 1152px;
         padding-top: 73px;
     }
 
@@ -45,7 +45,7 @@
         font-weight: 700;
         font-size:   14px;
         line-height: 18px;
-        width: 242px;
+        width: 260px;
         height: 38px;
         color: #FFFFFF;
     }
@@ -89,9 +89,9 @@
     }
 
     .menu-items .submenu {
-        width: 221px;
+        width: 247px;
         height: 42px;
-        margin-left: 5px;
+        margin-left: 11px;
     }
 
     .menu-items .submenu a:hover,
@@ -104,7 +104,7 @@
 
     .dropdown {
         position: absolute;
-        left: 242px;
+        left: 247px;
         top: 0px;
         font-size: 0.875rem;
         z-index: 9999;
@@ -119,13 +119,14 @@
 }
 
 .menu_page_right_col {
-    
+    margin-top: 117px;
+        margin-left: 150px;
     .menu_page_img {
-        margin: 75px 86px 36px 104px;
+        
         img {
             @include img-fit;
-            width: 771px;
-            height: 423px;
+            width: 1115px;
+            height: 663px;
         }
     
         @include devices(sm) {
@@ -134,7 +135,7 @@
     }
 
     .menu_page_text {
-        margin-left: 104px;
+        margin-top: 56px;
         font-style: normal;
         font-weight: 700;
         font-size: 20px;

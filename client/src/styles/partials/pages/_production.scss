@@ -45,8 +45,7 @@
 }
 
 .production_wrapper {
-    padding-top: 106px;
-    padding-bottom: 87px;
+    margin-top: 113px;
     display: grid;
     grid-template-columns: 50% auto;
     gap: 0rem;
@@ -57,20 +56,19 @@
     }
 
     .production_left_col {
-
-        height: 479px;
+        height: 430px;
         background-color: #777978;
     
         .paragraph {
-            margin-left: 79px;
+            margin-left: 104px;
             font-style: normal;
             font-size: 14px;
             color: #FFFFFF;
         }
     
         .paragraph:nth-child(1){
-            margin-top: 64px;
-            width: 595px;
+            margin-top: 82px;
+            width: 769px;
             font-weight: 700;
             font-family: 'DIN Pro Bold';
             line-height: 21px;
@@ -80,7 +78,7 @@
         }
     
         .paragraph:nth-child(2){
-            width: 570px;
+            width: 737px;
             font-family: 'DIN Pro Regular';
             font-weight: 400;
             text-align: justify;
@@ -89,7 +87,7 @@
     }
     
     .production_right_col {
-        height: 481px;
+        height: 435px;
     }
 }
 
@@ -98,6 +96,7 @@
     width: 885px;
     height: 126px;
     margin: auto;
+    margin-top: 137px;
     font-family: 'DIN Pro Bold';
     font-style: normal;
     font-weight: 700;
@@ -109,10 +108,8 @@
 }
 
 .production_slogan_content{
-    margin-left: 191px;
-    margin-right: 200px;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 50% 50%;
     gap: 37px;
     font-style: normal;
     font-weight: 400;
@@ -123,13 +120,13 @@
 
     p:nth-child(1) {
         font-family: 'DIN Pro Regular';
-        width: 100%;
-        justify-content: right;
+        width: 503px;
+        justify-self: end;
     }
     p:nth-child(2) {
         font-family: 'DIN Pro Regular';
-        width: 100%;
-        justify-content: left;
+        width: 509px;
+        justify-self: start;
     }
     
 }
@@ -137,7 +134,7 @@
 
 .production_dosage{
     height: 45px;
-    margin-left: 191px;
+    margin-left: 458px;
     margin-top: 6rem;
     font-family: 'DIN Pro Bold';
     font-style: normal;
@@ -156,13 +153,13 @@
 
     .production_dosage_curve_lines{
         position: absolute;
-        left: 262px;
-        margin-top: 133px;
+        left: 492px;
+        top: -60px;
     }
 
     .production_dosage_container{
         display: grid;
-        margin-left: 80px;
+        margin-left: 353px;
         grid-template-columns: 317px 298px 316px 215px;
         
         .production_dosage_column{
@@ -201,12 +198,12 @@
         }
 
         .production_dosage_column:nth-child(2){
-            margin-left: 60px;
+            margin-left: 30px;
             .dosage_image {
                 width: 173px;
                 height: 152px;
                 margin-left: 0px;
-                margin-top: 238px;
+                margin-top: 220px;
                 margin-bottom: 55px;
                 
             }
@@ -215,12 +212,12 @@
             }
         }
         .production_dosage_column:nth-child(3){
-            margin-left: 60px;
+            margin-left: 30px;
             .dosage_image {
                 width: 159px;
                 height: 149px;
                 margin-left: 0px;
-                margin-top: 125px;
+                margin-top: 105px;
                 margin-bottom: 20px;
             }
             .subtitle{
@@ -228,7 +225,7 @@
             }
         }
         .production_dosage_column:nth-child(4){
-            margin-left: 25px;
+            margin-left: 20px;
             .dosage_image {
                 width: 176px;
                 height: 168px;

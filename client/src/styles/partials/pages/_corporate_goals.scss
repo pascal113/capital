@@ -9,20 +9,26 @@
         position: relative;
         overflow: hidden;
 
-        h1 {
-            margin-top: 95px;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 25px;
-            line-height: 32px;
-            text-align: center;
-            color: #585858;
-        }
+        
+    }
+}
+
+.corporate_goals_info_wrapper{
+    margin-top: 132px;
+
+    h1 {
+            
+        font-style: normal;
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 32px;
+        text-align: center;
+        color: #585858;
     }
 }
 
 .corporate_goals_title{
-    width: 464px;
+    width: 675px;
     height: 52px;
     margin: auto;
     font-family: 'DIN Pro Bold', sans-serif;
@@ -38,10 +44,10 @@
 }
 
 .corporate_goals_description{
-    width: 765px;
+    width: 786px;
     height: 249px;
     margin: auto;
-    margin-top: 37px;
+    margin-top: 45px;
     font-family: 'DIN Pro Regular', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -57,10 +63,11 @@
 }
 
 .corporate_goals_wrapper {
-    padding-top: 44px;
-    padding-bottom: 164px;
+    //padding-top: 44px;
+    //padding-bottom: 164px;
+    
     display: grid;
-    grid-template-columns: 487px auto;
+    grid-template-columns: 743px auto;
     gap: 0rem;
 
     @include devices(lg) {
@@ -75,14 +82,16 @@
     float:right;
     width: 632px;
     height: 420px;
-    margin-bottom: 173px;
+    margin-right: 226px;
+    margin-top: 103px;
+    margin-bottom: 134px;
 }
 
 .corporate_goals_left_col {
-
+    position: relative;
     .paragraph {
-        margin-left: 49px;
-        margin-top: 56px;
+        margin-left: 305px;
+        margin-top: 62px;
         width: 390px;
         font-family: 'DIN Pro Bold';
         font-style: normal;
@@ -103,9 +112,10 @@
     
     .border-box{
         position: absolute;
-        top: 740px;
-        width: 458px;
-        height: 368px;
+        margin-left: 225px;
+        top: 5px;
+        width: 518px;
+        height: 407px;
         box-sizing: border-box;
         border: 8px solid #D30000;
     }
@@ -116,6 +126,7 @@
     .paragraph {
         width: 568px;
         margin-left: 56px;
+        margin-top: 40px;
         font-family: 'DIN Pro Regular', sans-serif;
         font-style: normal;
         font-weight: 400;
