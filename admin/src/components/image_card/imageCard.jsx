@@ -6,6 +6,13 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import ConfirmDialog from '../confirm/ConfirmDialog';
 
+console.log('imageCard');
+
+const apiUrl = process.env.REACT_APP_API_URL;
+const apiKey = process.env.REACT_APP_API_PORT;
+console.log(apiUrl); // Output: http://example.com/api
+console.log(apiKey); // Output: 123456789
+
 
 export default function ImageCard(props) {
   const {item, onEdit, onDelete} = props;

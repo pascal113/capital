@@ -90,11 +90,13 @@ if (env['ENV'] === 'production') {
     
     // admin route
     app.use('/admin', beforeAdminProcess); 
-    app.use('/admin', Express.static(path.join(__dirname, '/admin/build')));
+    app.use('/admin', Express.static(path.join(__dirname, '/admin/build')));    
     app.use('/login', Express.static(path.join(__dirname, '/admin/build')));
-    // app.get('/admin/*', (req, res) => 
-    //     res.sendFile(path.resolve(__dirname, 'admin', 'build', 'index.html'))
-    // );
+
+    // for admin, admin/menus refresh
+    app.get('/admin/*', (req, res) =>   
+        res.sendFile(path.resolve(__dirname, 'admin', 'build', 'index.html'))
+    );
 
     app.get('/admin', (req, res) => {
         console.log('admin clinet');
@@ -107,10 +109,10 @@ if (env['ENV'] === 'production') {
 
     // app.use(indexProcess);
     app.use(Express.static(path.join(__dirname, '/client/build')));
-    // app.get('*', (req, res) => {
-    //     console.log('index clinet');
-    //     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-    // });
+    // for /company refresh
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    });
 } 
 
 app.listen(port, function (err) {
