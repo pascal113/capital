@@ -107,6 +107,12 @@
                 }
             ]
         }
-    ]
+    ],
+
+    "jobs": {
+        "row_per_page": "Zeilen pro Seite",
+        "page_until": " bis ",
+        "page_of": " von "
+    }
 
 }

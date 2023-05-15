@@ -1,7 +1,6 @@
 import "./job.css";
-import ImageCard from "../../components/image_card/imageCard";
+import JobList from "./JobList";
 import { useEffect, useMemo, useState } from "react";
-import { userRequest } from "../../requestMethods";
 import {Button} from '@mui/material';
 import AddIcon from '@material-ui/icons/Add';
 import { useDispatch, useSelector } from "react-redux";
@@ -33,11 +32,12 @@ const Job = () => {
                 </Button>
             </div>
             <div className="jobList">
-                {
+                <JobList jobs={jobs.data}></JobList>
+                {/*
                 jobs.map((item, index) => (
                     <ImageCard key={index} item={item} onDelete={handleRemove} onEdit={handleEdit}/>
                 ))
-                }
+                */}
             </div>
         </div>
     )
