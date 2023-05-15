@@ -9,8 +9,7 @@
         position: relative;
 
         .img_top {
-            width: 1440px;
-            height: 235px;
+            width: 1920px;
         }
 
         h1 {
@@ -62,9 +61,9 @@
         font-family: 'DIN Pro Bold';
         font-style: normal;
         font-weight: 700;
-        font-size: 12px;
+        font-size: 14px;
         line-height: 20px;
-        color: #585858;
+        color: #7B7B7B;
     }
 }
 
@@ -81,13 +80,12 @@
 .storage_01{
     position: relative;
     margin-top: 19px;
-    margin-bottom: 104px;
     display : flex;
     justify-content: start;
 
     .logistics_storage_dash_box{
         position: absolute;
-        left: 346px;
+        left: 600px;
         top: 54px;
         width: 710px;
         height: 171px;
@@ -95,30 +93,30 @@
     }
 
     .logistics_storage_digit_box {
-        margin-left: 290px;
+        margin-left: 544px;
     }
 
     .logistics_storage_description {
-        margin-left: 107px;
-        min-width: 372px;        
+        margin-left: 117px;
+        min-width: 321px;        
     }
 
     .storage_slider{
-        margin-left: 84px;
+        margin-left: 125px;
     }
 }
 
 
 .storage_02{
     position: relative;
-    margin-top: 104px;
+    margin-top: 78px;
     margin-right: 505px;
     display : flex;
     justify-content: start;
 
     .logistics_storage_dash_box{
         position: absolute;
-        left: 561px;
+        left: 814px;
         top: 14px;
         width: 261px;
         height: 266px;
@@ -126,20 +124,20 @@
     }
 
     .logistics_storage_digit_box {
-        margin-left: 506px;
+        margin-left: 759px;
         margin-top: 14px;
     }
 
     .logistics_storage_description {
         margin-left: 75px;
         margin-top: 0px;
-        min-width: 244px;
+        width: 340px;
         height: 198px;
     }
 
     .storage_slider{
         position: absolute;
-        margin-left: 701px;
+        margin-left: 954px;
         margin-top: 198px;
     }
 }
@@ -154,7 +152,7 @@
 
     .logistics_storage_dash_box{
         position: absolute;
-        left: 424px;
+        left: 678px;
         top: 102px;
         width: 555px;
         height: 156px;
@@ -162,13 +160,13 @@
     }
 
     .logistics_storage_digit_box {
-        margin-left: 365px;
+        margin-left: 619px;
     }
 
     .logistics_storage_description {
         margin-left: 88px;
-        margin-top: 87px;
-        min-width: 266px;        
+        margin-top: 69px;
+        min-width: 301px;        
     }
     
     .storage_slider{
