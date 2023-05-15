@@ -12,7 +12,7 @@
 }
 
 .advice_title{
-    margin-top: 146px;
+    margin-top: 247px;
     width: 867px;
     margin-left: auto;
     margin-right: auto;
@@ -37,11 +37,9 @@
 }
 
 .advice_wrapper {
-    padding-top: 155px;
-    padding-bottom: 146px;
     display: grid;
     grid-template-columns: 50% 50%;
-    gap: 0rem;
+    gap: 168px;
     
     @include devices(lg) {
         grid-template-columns: 1fr;
@@ -50,9 +48,10 @@
 }
 
 .advice_left_col {
+    margin-top: 274px;
+    justify-self: end;
     .paragraph {
-        width: 576px;
-        margin-left: 98px;
+        width: 627px;
         font-family: 'DIN Pro Regular', sans-serif;
         font-style: normal;
         font-weight: 400;
@@ -70,8 +69,12 @@
 }
 
 .advice_right_col {
+    margin-top: 169px;
+    justify-self: start;
+
     .slider {
         position: relative;
+        margin-left: -44px;
         margin-top: 47px;
         float:right;
         width: 572px;
@@ -82,7 +85,6 @@
         position: absolute;
         width: 576px;
         height: 572px;
-        right: -45px;
         box-sizing: border-box;
         border: 6px solid #D30000;
     }
@@ -94,6 +96,7 @@
     
 }
 .advice_services {
+    margin-top: 235px;
     
     .title {
         font-family: inherit;
@@ -111,7 +114,7 @@
         gap: 11px;
 
         margin-top: 40px;
-        margin-bottom: 100px;
+        margin-bottom: 368px;
 
         .advice_card{
             width: 341px;

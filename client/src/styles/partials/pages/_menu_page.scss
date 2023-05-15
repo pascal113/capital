@@ -16,7 +16,7 @@
     box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.1);
     
     display: grid;
-    grid-template-columns: 481px auto;
+    grid-template-columns: 530px auto;
     gap: 0rem;
 
     @include devices(lg) {
