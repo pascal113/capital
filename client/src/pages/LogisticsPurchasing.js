@@ -9,14 +9,13 @@ const LogisticsPurchasing = () => {
 
     const purchasingSliderData = {
         delay: 2000,
-        imgWidth: '1440px',
-        imgHeight: '342px',
+        imgWidth: '1920px',
+        imgHeight: '524px',
         images: [
             "/images/pages/logistics/logistics-purchasing-1.png",
             "/images/pages/logistics/logistics-purchasing-2.png",
             "/images/pages/logistics/logistics-purchasing-3.png",
             "/images/pages/logistics/logistics-purchasing-4.png",
-            "/images/pages/logistics/logistics-purchasing-5.png",
         ]
     };
 

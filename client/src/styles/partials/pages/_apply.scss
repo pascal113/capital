@@ -14,9 +14,12 @@
 
 
 .apply_wrapper{
-    width: 100%;
+    max-width: 1078px;
     height: 100%;
-    padding: 154px 170px 309px 170px;
+    //padding: 154px 170px 309px 170px;
+    margin: auto;
+    margin-top: 228px;
+    margin-bottom: 170px;
     color: #585858;
     text-align: left;
     font-family: 'Din Pro Bold';

@@ -14,7 +14,7 @@ const ApplyPage = () => {
     const imgViwerData = {
         img: "/images/pages/about-us/about-company-top.png",
         label: "People are the power to success",
-        textTop: '105px',
+        textTop: '153px',
         fontSize: '30px',
         fontFamily: 'Din Pro Bold',
         textColor: 'white',

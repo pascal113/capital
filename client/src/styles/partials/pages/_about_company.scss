@@ -14,9 +14,13 @@
 
 
 .about_company_wrapper{
-    width: 100%;
+    max-width: 828px;
     height: 100%;
-    padding: 138px 309px 200px 303px;
+    margin-top: 135px;
+    margin-bottom: 135px;
+    margin-left: auto;
+    margin-right: auto;
+    //padding: 138px 309px 200px 303px;
     color: #646464;
     text-align: left;
     
