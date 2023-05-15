@@ -6,12 +6,9 @@ import path from 'path';
 import bodyParser from 'body-parser'
 import cookieParser from 'cookie-parser'
 import session from 'express-session'
-import multer from 'multer';
-import SibApiV3Sdk from 'sib-api-v3-sdk';
 import cors from 'cors'
 
 import connectDB from './config/db.js'
-import {responseClient} from './utils/libs.js'
 
 import authRoutes from './routes/auth.js';
 import jobRoutes from './routes/jobs.js';
