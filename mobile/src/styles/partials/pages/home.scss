@@ -1,0 +1,168 @@
+// For screens smaller than 768px (mobile)
+@media only screen and (max-width: 767px) {
+    #home {
+        @include centered;
+
+        .container {
+            width: 100%;
+            height: 501px;
+            max-width: 100vw;
+
+            .swiper {
+                position: relative;
+                height: 100%;
+
+                .swiper-pagination {
+                    bottom: 20px;
+                }
+            }
+        }
+
+        .home_wrapper {
+            width: 100%;
+            //place-content: center;
+            //place-items: center;
+
+            .slider_container {
+                margin: 0;
+                padding: 0;
+
+                img {
+                    //@include img-fit;
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+
+            .slider_hover_caption {
+                position: absolute;
+                width: 100%;
+                z-index: 999;
+                color: #ffffff;
+
+                .hover_caption {
+                    font-family: 'DIN Pro Regular', sans-serif;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding-top: 73px;
+                    padding-left: 35px;
+                    padding-right: 35px;
+
+                    .hover_mark {
+                        width: 86px;
+                        height: 130px;
+                    }
+
+                    .hover_company_text {
+                        margin-top: 55px;
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 20px;
+                        line-height: 26px;
+                        text-align: center;
+                        color: #FFFFFF;
+                    }
+
+                    .hover_line {
+                        margin-top: 12px;
+                        width: 100%;
+                        height: 4px;
+                        background: #ffffff;
+                    }
+
+                    .hover_slug_text {
+                        margin-top: 12px;
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 18px;
+                        line-height: 23px;
+                        text-align: center;
+                        color: #FFFFFF;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// For screens larger than 768px (desktop)
+@media only screen and (min-width: 768px) {
+    #home {
+        @include centered;
+
+        .container {
+            width: 100%;
+            max-width: 100vw;
+            min-width: 640px;
+            position: relative;
+        }
+
+        .swiper-pagination {
+            bottom: 26.3%;
+        }
+
+        .home_wrapper {
+            width: 100%;
+            //place-content: center;
+            //place-items: center;
+
+            .slider_container {
+                margin: 0;
+                padding: 0;
+
+                img {
+                    //@include img-fit;
+                    position: relative;
+                    display: block;
+                    overflow: hidden;
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            .slider_hover_caption {
+                position: absolute;
+                width: 100%;
+                z-index: 999;
+                color: #ffffff;
+
+                .hover_caption {
+                    position: relative;
+                    font-family: 'DIN Pro Regular', sans-serif;
+
+                    .hover_mark {
+                        margin-left: 46.85%;
+                        margin-top: 8.2%;
+                    }
+
+                    .hover_company_text {
+                        margin-top: 31px;
+                        font-size: 1.67rem;
+                        text-align: center;
+                    }
+
+                    .hover_line {
+                        margin-top: 19px;
+                        margin-left: auto;
+                        margin-right: auto;
+                        width: 615px;
+                        height: 4px;
+                        background: #ffffff;
+                    }
+
+                    .hover_slug_text {
+                        margin-top: 19px;
+                        //left: 50%;
+                        //transform: translate(-50%);
+                        font-size: 1.35rem;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}

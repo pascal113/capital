@@ -1,0 +1,304 @@
+// For screens smaller than 768px (mobile)
+@media only screen and (max-width: 767px) {
+    #advice {
+        padding-top: 0rem;
+        @include centered;
+
+        .container {
+            width: 100%;
+            background-color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+
+            .advice_info_wrapper {
+                margin-top: 70px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .advice_title {
+                    width: 100%;
+                    padding: 0px 30px;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 18px;
+                    text-align: center;
+                    color: #585858;
+                }
+
+                .advice_rectangle {
+                    margin-top: 26px;
+                    width: 68px;
+                    height: 4px;
+                    background-color: #585858;
+                }
+            }
+
+            .advice_wrapper {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+
+                .advice_left_col {
+                    margin-top: 90px;
+                    padding: 0px 30px 90px 30px;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 179.3%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                    align-items: center;
+                    text-align: justify;
+                    color: #525151;
+                }
+
+                .advice_right_col {
+                    position: relative;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: end;
+                    width: 100%;
+
+                    .slider {
+                        position: absolute;
+                        top: 36px;
+                        right: 0px;
+                        width: 347px;
+                        height: 340px;
+                        margin-top: 0px;
+                        overflow: hidden;
+
+                        .imgContainer img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    .border-box {
+                        width: 323px;
+                        height: 416px;
+                        box-sizing: border-box;
+                        border: 6px solid #D30000;
+                        border-right: none;
+                    }
+                }
+            }
+
+            .advice_services {
+
+                margin-top: 76px;
+                display: flex;
+                flex-direction: column;
+                padding-left: 28px;
+                padding-right: 28px;
+
+                .title {
+                    font-family: inherit;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 18px;
+                    color: #585858;
+                    text-align: center;
+                }
+
+                .wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 11px;
+
+                    margin-top: 40px;
+                    margin-bottom: 100px;
+
+                    .advice_card {
+                        width: 341px;
+                        height: 251px;
+
+                        .service_button {
+                            width: 341px;
+                            height: 59px;
+                            font-weight: 700;
+                            font-size: 15px;
+                            font-family: inherit;
+                        }
+
+                        .service_content {
+                            margin-top: 18px;
+                            width: 100%;
+                            font-family: 'DIN Pro Regular', sans-serif;
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 12px;
+                            line-height: 18px;
+                            color: #585858;
+                            text-align: left;
+
+                            ul li {
+                                gap: 1.2rem;
+                                margin-left: 1rem;
+                                list-style-type: disc;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// For screens larger than 768px (desktop)
+@media only screen and (min-width: 768px) {
+    #advice {
+        padding-top: 0rem;
+        @include centered;
+
+        .container {
+            width: 100%;
+            background-color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+    }
+
+    .advice_title {
+        margin-top: 146px;
+        width: 867px;
+        margin-left: auto;
+        margin-right: auto;
+
+        h1 {
+            font-family: 'DIN Pro Bold', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 28px;
+            text-align: center;
+            color: #585858;
+        }
+
+        .advice_rectangle {
+            margin-top: 48px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 68px;
+            height: 9px;
+            background-color: #585858;
+        }
+    }
+
+    .advice_wrapper {
+        padding-top: 155px;
+        padding-bottom: 146px;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        gap: 0rem;
+
+        @include devices(lg) {
+            grid-template-columns: 1fr;
+            gap: 0rem;
+        }
+    }
+
+    .advice_left_col {
+        .paragraph {
+            width: 576px;
+            margin-left: 98px;
+            font-family: 'DIN Pro Regular', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 25px;
+            color: #353535;
+            display: flex;
+            align-items: center;
+            text-align: justify;
+
+            &:nth-child(1) {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    .advice_right_col {
+        .slider {
+            position: relative;
+            margin-top: 47px;
+            float: right;
+            width: 572px;
+            height: 471px;
+        }
+
+        .border-box {
+            position: absolute;
+            width: 576px;
+            height: 572px;
+            right: -45px;
+            box-sizing: border-box;
+            border: 6px solid #D30000;
+        }
+    }
+
+    .advice_service_wrapper {
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .advice_services {
+
+        .title {
+            font-family: inherit;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 26px;
+            color: #585858;
+            text-align: center;
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 11px;
+
+            margin-top: 40px;
+            margin-bottom: 100px;
+
+            .advice_card {
+                width: 341px;
+                height: 180px;
+
+                .service_button {
+                    width: 341px;
+                    height: 59px;
+                    font-weight: 700;
+                    font-size: 15px;
+                    font-family: inherit;
+                }
+
+                .service_content {
+                    margin-top: 18px;
+                    width: 100%;
+                    font-family: 'DIN Pro Regular', sans-serif;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 18px;
+                    color: #585858;
+                    text-align: left;
+
+                    ul li {
+                        gap: 1.2rem;
+                        margin-left: 1rem;
+                        list-style-type: disc;
+                    }
+                }
+            }
+        }
+    }
+}

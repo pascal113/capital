@@ -1,0 +1,234 @@
+// For screens smaller than 768px (mobile)
+@media only screen and (max-width: 767px) {
+    #about_us {
+        padding-top: 0rem;
+        @include centered;
+
+        .container {
+            width: 100%;
+            background-color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+    }
+
+    .about_wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-top: 53px;
+
+        .search_form {
+            display: inline-block;
+            width: 394px;
+            padding-left: 38px;
+            padding-right: 38px;
+            padding-top: 35px;
+            padding-bottom: 45px;
+            text-align: left;
+            background: #F1F1F1;
+            position: relative;
+
+            font-family: 'DIN Pro Regular', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 26px;
+            color: #585858;
+
+            .form_job_type {
+                margin-top: 27px;
+                font-size: 16px;
+                line-height: 23px;
+
+                .job_type_select {
+                    position: relative;
+                    margin-top: 8px;
+                    width: 100%;
+                    height: 34px;
+                }
+            }
+
+            .form_location {
+                margin-top: 32px;
+                font-size: 16px;
+                line-height: 23px;
+
+                .location_select {
+                    position: relative;
+                    margin-top: 8px;
+                    width: 100%;
+                    height: 34px;
+                }
+            }
+
+            .form_activity {
+                margin-top: 32px;
+                font-size: 16px;
+                line-height: 23px;
+
+                .multi_select {
+                    position: relative;
+                    margin-top: 8px;
+                    width: 100%;
+                }
+            }
+
+            .form_search_button {
+                margin-top: 52px;
+                background: #585858;
+                border: 0.5px solid #585858;
+                width: 203px;
+                height: 53px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                &:hover {
+                    background: #686868;
+                }
+
+                span {
+                    margin-left: 15px;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 18px;
+                    line-height: 23px;
+                    color: #FFFFFF;
+                }
+
+                i {
+                    margin-right: 17px;
+                }
+            }
+        }
+
+        .company-list {
+            padding-top: 73px;
+            padding-bottom: 50px;
+        }
+    }
+
+    .MuiTablePagination-selectLabel {
+        display: none;
+    }
+
+    .css-19ksc5q-MuiInputBase-root-MuiTablePagination-select {
+        display: none!important;
+    }
+}
+
+// For screens larger than 768px (desktop)
+@media only screen and (min-width: 768px) {
+    #about_us {
+        padding-top: 0rem;
+        @include centered;
+
+        .container {
+            width: 100%;
+            background-color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+    }
+
+    .about_wrapper {
+        width: 100%;
+        height: 100%;
+        padding: 92px 28px 20px 25px;
+        display: grid;
+        grid-template-columns: 394px auto;
+        gap: 11px;
+
+        .search_form {
+            display: inline-block;
+            width: 394px;
+            height: 761px;
+            padding-left: 38px;
+            padding-right: 38px;
+            text-align: left;
+            background: #F1F1F1;
+            position: relative;
+
+            font-family: 'DIN Pro Regular', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 26px;
+            color: #585858;
+
+            .form_search_label {
+                margin-top: 35px;
+            }
+
+            .form_job_type {
+                margin-top: 27px;
+                font-size: 16px;
+                line-height: 23px;
+
+                .job_type_select {
+                    position: relative;
+                    margin-top: 8px;
+                    width: 100%;
+                    height: 34px;
+                }
+            }
+
+            .form_location {
+                margin-top: 32px;
+                font-size: 16px;
+                line-height: 23px;
+
+                .location_select {
+                    position: relative;
+                    margin-top: 8px;
+                    width: 100%;
+                    height: 34px;
+                }
+            }
+
+            .form_activity {
+                margin-top: 32px;
+                font-size: 16px;
+                line-height: 23px;
+
+                .multi_select {
+                    position: relative;
+                    margin-top: 8px;
+                    width: 100%;
+                }
+            }
+
+            .form_search_button {
+                margin-top: 52px;
+                background: #585858;
+                border: 0.5px solid #585858;
+                width: 203px;
+                height: 53px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                &:hover {
+                    background: #686868;
+                }
+
+                span {
+                    margin-left: 15px;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 18px;
+                    line-height: 23px;
+                    color: #FFFFFF;
+                }
+
+                i {
+                    margin-right: 17px;
+                }
+            }
+        }
+    }
+}

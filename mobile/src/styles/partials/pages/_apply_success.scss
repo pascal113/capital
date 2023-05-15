@@ -1,0 +1,140 @@
+// For screens smaller than 768px (mobile)
+@media only screen and (max-width: 767px) {
+    #apply_success {
+        padding-top: 0rem;
+        @include centered;
+
+        .container {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+    }
+
+    .apply_success_wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 126px;
+        color: #585858;
+        text-align: left;
+        font-family: 'Din Pro Bold';
+
+        .send-image {
+            width: 68px;
+            height: 59px;
+            margin-left: auto;
+            margin-right: auto;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .title {
+            margin-top: 59px;
+
+            h1 {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 23px;
+                text-align: center;
+
+                color: #D30000;
+            }
+        }
+
+        .comment {
+            width: 266px;
+            height: 131px;
+            margin-top: 35px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 317px;
+            text-align: center;
+
+            span {
+                font-family: 'DIN Pro Regular', sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 10px;
+                color: #222222;
+            }
+        }
+    }
+}
+
+// For screens larger than 768px (desktop)
+@media only screen and (min-width: 768px) {
+    #apply_success {
+        padding-top: 0rem;
+        @include centered;
+
+        .container {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+    }
+
+
+    .apply_success_wrapper {
+        width: 100%;
+        height: 100%;
+        color: #585858;
+        text-align: left;
+        font-family: 'Din Pro Bold';
+
+        .send-image {
+            margin-top: 240px;
+            width: 120px;
+            height: 105px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .title {
+            margin-top: 55px;
+
+            h1 {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 25px;
+                line-height: 32px;
+                text-align: center;
+
+                color: #D30000;
+            }
+        }
+
+        .comment {
+            width: 455px;
+            height: 131px;
+            margin-top: 68px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 317px;
+            text-align: center;
+
+            span {
+                font-family: 'DIN Pro Regular', sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 11px;
+                color: #222222;
+            }
+        }
+    }
+}

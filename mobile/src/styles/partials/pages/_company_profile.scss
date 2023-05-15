@@ -1,0 +1,207 @@
+// For screens smaller than 768px (mobile)
+@media only screen and (max-width: 767px) {
+    #company_profile {
+        padding-top: 0rem;
+        @include centered;
+
+        .container {
+            width: 100%;
+            background-color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+
+            .company_profile_info_wrapper {
+                margin-top: 70px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .company_profile_title {
+                    width: 100%;
+                    padding: 0px 30px;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 18px;
+                    text-align: center;
+                    color: #585858;
+                }
+
+                .company_profile_rectangle {
+                    margin-top: 26px;
+                    width: 68px;
+                    height: 4px;
+                    background-color: #585858;
+                }
+
+                .company_profile_description {
+                    margin-top: 73px;
+                    padding: 0px 30px 0px 30px;
+                    width: 100%;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 12px;
+                    line-height: 179.3%;
+                    display: flex;
+                    align-items: center;
+                    text-align: justify;
+
+                    color: #585858;
+                }
+            }
+
+            .company_profile_wrapper {
+                width: 100%;
+                display: flex;
+                flex-direction: column-reverse;
+
+                .company_profile_left_col {
+                    margin-top: 90px;
+                    padding: 0px 30px 90px 30px;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 179.3%;
+                    display: flex;
+                    align-items: center;
+                    text-align: justify;
+                    color: #525151;
+                }
+
+                .company_profile_right_col {
+                    margin-top: 90px;
+                    position: relative;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: end;
+                    width: 100%;
+
+                    img {
+                        position: absolute;
+                        top: 29px;
+                        right: 0px;
+                        width: 285px;
+                        height: 170px;
+                    }
+
+                    .border-box {
+                        width: 258px;
+                        height: 229px;
+                        box-sizing: border-box;
+                        border: 6px solid #777978;
+                        border-right: none;
+                        z-index: 10;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// For screens larger than 768px (desktop)
+@media only screen and (min-width: 768px) {
+    #company_profile {
+        padding-top: 0rem;
+        @include centered;
+
+        .container {
+            width: 100%;
+            background-color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+
+            h1 {
+                margin-top: 95px;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 25px;
+                line-height: 32px;
+                text-align: center;
+                color: #585858;
+            }
+        }
+    }
+
+    .company_profile_title {
+        width: 464px;
+        height: 52px;
+        margin: auto;
+        font-family: 'DIN Pro Bold', sans-serif;
+    }
+
+    .company_profile_rectangle {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 17px;
+        width: 68px;
+        height: 9px;
+        background-color: #585858;
+    }
+
+    .company_profile_description {
+        width: 765px;
+        margin: auto;
+        margin-top: 37px;
+        font-family: 'DIN Pro Bold', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 25px;
+        color: #585858;
+        display: flex;
+        align-items: center;
+        text-align: justify;
+    }
+
+    .company_profile_wrapper {
+        padding-top: 170px;
+        padding-bottom: 318px;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        gap: 0rem;
+
+        @include devices(lg) {
+            grid-template-columns: 1fr;
+            gap: 0rem;
+        }
+    }
+
+    .company_profile_left_col {
+        .paragraph {
+            width: 576px;
+            margin-top: 54px;
+            margin-left: 98px;
+            font-family: 'DIN Pro Regular', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 25px;
+            color: #585858;
+            display: flex;
+            align-items: center;
+            text-align: justify;
+
+        }
+    }
+
+    .company_profile_right_col {
+
+        img {
+            position: relative;
+            margin-top: 54px;
+            display: inline;
+            float: right;
+        }
+
+        .border-box {
+            position: absolute;
+            width: 537px;
+            height: 433px;
+            right: -23px;
+            box-sizing: border-box;
+            border: 6px solid #777978;
+        }
+    }
+}

@@ -1,0 +1,423 @@
+// For screens smaller than 768px (mobile)
+@media only screen and (max-width: 767px) {
+    #contact {
+        padding-top: 0rem;
+        @include centered;
+
+        .container {
+            width: 100%;
+            background-color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+
+            .contact_info_wrapper {
+                margin-top: 70px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .contact_title {
+                    width: 100%;
+                    padding: 0px 30px;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 18px;
+                    text-align: center;
+                    color: #585858;
+                }
+
+                .contact_rectangle {
+                    margin-top: 26px;
+                    width: 68px;
+                    height: 4px;
+                    background-color: #585858;
+                }
+            }
+
+            .contact_position {
+                font-family: 'DIN Pro Bold', sans-serif;
+                display: flex;
+                flex-direction: column;
+                gap: 18px;
+                justify-content: center;
+                align-items: center;
+                margin-top: 28px;
+
+                .position_icon {
+                    display: none;
+                    width: 33px;
+                    height: 39px;
+                }
+
+                .headquarters {
+                    width: 149px;
+                    height: 26px;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 18px;
+                    color: #585858;
+                }
+
+                .position_address {
+                    h4,
+                    p {
+                        color: #585858;
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 12px;
+                        line-height: 15px;
+                        text-align: center;
+                    }
+                }
+            }
+
+            .contact_form_wrapper {
+                margin-top: 53px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                .contact_form {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    height: 100%;
+                    padding-left: 28px;
+                    padding-right: 28px;
+                    padding-top: 39px;
+                    padding-bottom: 14px;
+                    text-align: left;
+                    background: rgba(217, 217, 217, 0.26);
+
+                    .form_item_title {
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 14px;
+                        line-height: 16px;
+                        letter-spacing: 0.03em;
+                        color: #585858;
+                    }
+
+                    .form_item_comment {
+                        margin-top: 21px;
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 12px;
+                        line-height: 15px;
+                        color: #585858;
+                    }
+
+                    .form_item_department {
+                        position: relative;
+                        margin-top: 13px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        width: 100%;
+
+                        .label {
+                            width: 204px;
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 12px;
+                            line-height: 18px;
+                            letter-spacing: 0.03em;
+                            color: #585858;
+                        }
+
+                        .custom-dropdown {
+                            margin-top: 17px;
+                            width: 100%!important;
+                        }
+                    }
+
+                    .form_item_company {
+                        position: relative;
+                        margin-top: 23px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        gap: 23px;
+                    }
+
+                    .form_item_plz {
+                        position: relative;
+                        margin-top: 18px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        gap: 23px;
+                    }
+
+                    .form_item_email {
+                        position: relative;
+                        margin-top: 23px;
+                        width: 100%;
+
+                        .css-1x68rds-MuiFormControl-root-MuiTextField-root {
+                            width: 100%;
+                        }
+                    }
+
+                    .form_item_message {
+                        margin-top: 29px;
+                        width: 100%;
+
+                        .label {
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 12px;
+                            line-height: 18px;
+                            display: flex;
+                            align-items: center;
+                            letter-spacing: 0.005em;
+                            color: #585858;
+                        }
+
+                        .message {
+                            position: relative;
+                            margin-top: 14px;
+                            width: 100%;
+
+                            .css-363m3z-MuiFormControl-root-MuiTextField-root {
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                    .form_item_button {
+                        margin-top: 25px;
+                        width: 100%;
+                        height: 33px;
+                    }
+                }
+
+                .contact_map {
+                    width: 100%;
+                    height: 652px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// For screens larger than 768px (desktop)
+@media only screen and (min-width: 768px) {
+    #contact {
+        padding-top: 0rem;
+        @include centered;
+
+        .container {
+            width: 100%;
+            background-color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+
+            h1 {
+                margin-top: 177px;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 30px;
+                line-height: 39px;
+                text-align: center;
+                color: #585858;
+            }
+        }
+    }
+
+    .contact_title {
+        width: 369px;
+        height: 52px;
+        margin: auto;
+        font-family: 'DIN Pro Bold', sans-serif;
+    }
+
+    .contact_rectangle {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 31px;
+        width: 68px;
+        height: 9px;
+        background-color: #585858;
+    }
+
+    .contact_description {
+        width: 677px;
+        margin: auto;
+        margin-top: 62px;
+        margin-bottom: 128px;
+        font-family: 'DIN Pro Bold', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 25px;
+        color: #585858;
+        display: flex;
+        align-items: center;
+        text-align: justify;
+    }
+
+    .contact_position {
+        font-family: 'DIN Pro Bold', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 68px;
+
+
+        .position_icon {
+            width: 33px;
+            height: 39px;
+
+        }
+
+        .headquarters {
+            width: 149px;
+            height: 26px;
+
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 26px;
+            color: #585858;
+        }
+
+        .position_address {
+            text-align: left;
+
+            margin-left: 32px;
+
+            h4,
+            p {
+                color: #585858;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 21px;
+
+            }
+        }
+    }
+
+    .contact_form_wrapper {
+        margin-top: 153px;
+        margin-bottom: 297px;
+        height: 579px;
+        display: flex;
+        justify-content: center;
+
+        .contact_form {
+            display: inline-block;
+            width: 468px;
+            height: 100%;
+            padding-left: 33px;
+            padding-right: 37px;
+            text-align: left;
+            background: rgba(217, 217, 217, 0.26);
+
+            .form_item_title {
+                margin-top: 31px;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 23px;
+                letter-spacing: 0.03em;
+                color: #585858;
+            }
+
+            .form_item_comment {
+                margin-top: 21px;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 12px;
+                line-height: 15px;
+
+                color: #585858;
+            }
+
+            .form_item_department {
+                position: relative;
+                margin-top: 13px;
+                display: flex;
+                justify-content: center;
+
+                .label {
+                    width: 204px;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 12px;
+                    line-height: 18px;
+                    letter-spacing: 0.03em;
+                    color: #585858;
+                }
+            }
+
+            .form_item_company {
+                position: relative;
+                margin-top: 32px;
+                height: 35px;
+                display: flex;
+                justify-content: center;
+                gap: 13px;
+            }
+
+            .form_item_plz {
+                position: relative;
+                margin-top: 18px;
+                height: 35px;
+                display: flex;
+                justify-content: center;
+                gap: 13px;
+            }
+
+            .form_item_email {
+                position: relative;
+                margin-top: 18px;
+                height: 35px;
+            }
+
+            .form_item_message {
+
+                margin-top: 11px;
+
+                .label {
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 15px;
+                    line-height: 22px;
+                    display: flex;
+                    align-items: center;
+                    letter-spacing: 0.005em;
+                    color: #585858;
+                }
+
+                .message {
+                    position: relative;
+                    margin-top: 8px;
+                    width: 100%;
+                }
+            }
+
+            .form_item_button {
+                margin-top: 12px;
+                width: 100%;
+                height: 33px;
+            }
+
+        }
+
+        .contact_map {
+            width: 463px;
+            height: 100%;
+        }
+    }
+}

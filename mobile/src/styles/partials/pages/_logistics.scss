@@ -1,0 +1,378 @@
+// For screens smaller than 768px (mobile)
+@media only screen and (max-width: 767px) {
+    #logistics {
+        padding-top: 0rem;
+        @include centered;
+
+        .container {
+            width: 100%;
+            background-color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+
+            .logistics_info_wrapper {
+                margin-top: 70px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .logistics_title {
+                    width: 100%;
+                    padding: 0px 30px;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 18px;
+                    text-align: center;
+                    color: #585858;
+                }
+
+                .logistics_rectangle {
+                    margin-top: 26px;
+                    width: 68px;
+                    height: 4px;
+                    background-color: #585858;
+                }
+
+                .logistics_description {
+                    margin-top: 38px;
+                    padding: 0px 30px;
+                    width: 100%;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 12px;
+                    line-height: 161.3%;
+                    text-align: justify;
+                    color: #585858;
+                }
+            }
+
+            .logistics_wrapper {
+                display: flex;
+                flex-direction: column;
+                gap: 48px;
+                padding: 0px 30px;
+                width: 100%;
+
+                .logistics_card {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+
+                    .logistics_card_text {
+                        margin-top: 37px;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 12px;
+                        line-height: 179.3%;
+                        text-align: justify;
+                        color: #000000;
+                    }
+
+                    a {
+                        margin-top: 43px;
+                        display: flex;
+                        justify-content: center;
+                    }
+
+                    .card_button {
+                        width: 143px;
+                        height: 48px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 14px;
+                        line-height: 18px;
+                        color: #FFFFFF;
+                    }
+                }
+            }
+
+            .logistics_slogan {
+                margin-top: 48px;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 337px;
+
+                .desktop_img {
+                    display: none;
+                }
+
+                .mobile_img {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .logistics_slogan_content {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0px 50px;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 18px;
+                    line-height: 161.3%;
+                    text-align: center;
+                    color: #FFFFFF;
+                }
+            }
+
+            .logistics_contact_wrapper {
+                position: relative;
+                margin-top: 61px;
+                margin-bottom: 100px;
+                display: flex;
+                flex-direction: column;
+
+                .contact_left_column {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 50px;
+                    width: 100%;
+                    padding: 0px 30px;
+
+                    .contact_title {
+                        width: 100%;
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 18px;
+                        line-height: 145.8%;
+                        color: #585858;
+                    }
+
+                    .contact_content {
+                        width: 100%;
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 14px;
+                        line-height: 161.3%;
+                        color: #585858;
+                    }
+
+                    a {
+                        margin-top: 350px;
+
+                        .contact_button {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 100%;
+                            height: 66px;
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 20px;
+                            line-height: 26px;
+                            color: #FFFFFF;
+                        }
+                    }
+                }
+
+                .contact_right_column {
+                    position: absolute;
+                    top: 120px;
+                    left: 0;
+                    width: 100%;
+                    margin-top: 100px;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// For screens larger than 768px (desktop)
+@media only screen and (min-width: 768px) {
+    #logistics {
+        padding-top: 0rem;
+        @include centered;
+
+        .container {
+            width: 100%;
+            background-color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+
+            h1 {
+                margin-top: 135px;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 25px;
+                line-height: 32px;
+                text-align: center;
+                color: #585858;
+            }
+        }
+    }
+
+    .logistics_title {
+        width: 941px;
+        height: 58px;
+        margin: auto;
+        font-family: 'DIN Pro Bold', sans-serif;
+    }
+
+    .logistics_rectangle {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 58px;
+        width: 68px;
+        height: 9px;
+        background-color: #585858;
+    }
+
+    .logistics_description {
+        font-family: 'DIN Pro Bold';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 23px;
+        text-align: center;
+        color: #585858;
+        width: 613px;
+        height: 127px;
+        margin: auto;
+        margin-top: 64px;
+    }
+
+    .logistics_wrapper {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 65px;
+        width: 100%;
+
+        .logistics_card {
+            width: 326px;
+
+            img {
+                width: 327px;
+                height: 200px;
+            }
+
+            .logistics_card_text {
+                width: 100%;
+                height: 181px;
+                font-family: 'DIN Pro Regular', sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 22px;
+                text-align: justify;
+                color: #000000;
+                margin-top: 37px;
+                margin-bottom: 54px;
+            }
+
+            .card_button {
+                width: 143px;
+                height: 48px;
+                font-family: inherit;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    .logistics_slogan {
+        position: relative;
+        width: 100%px;
+        height: 337px;
+        margin: 171px 0 205px 0;
+        text-align: center;
+
+        .mobile_img {
+            display: none;
+        }
+
+        .logistics_slogan_content {
+            position: absolute;
+            width: 700px;
+            font-family: 'DIN Pro Bold';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 25px;
+            line-height: 40px;
+            text-align: center;
+            color: #FFFFFF;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+
+    .logistics_contact_wrapper {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        margin-bottom: 280px;
+
+        .contact_left_column {
+            padding-left: 164px;
+
+            .contact_title {
+                width: 616px;
+                margin-top: 36px;
+                font-family: 'DIN Pro Bold';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 25px;
+                line-height: 36px;
+                color: #585858;
+
+                text-align: left;
+            }
+
+            .contact_content {
+                width: 419px;
+                height: 127px;
+                margin-top: 80px;
+                margin-bottom: 40px;
+                font-family: 'DIN Pro Bold';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 29px;
+                color: #585858;
+
+                text-align: left;
+            }
+
+            .contact_button {
+                float: left;
+                width: 290px;
+                height: 66px;
+                margin-left: 0px;
+                font-family: inherit;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 26px;
+            }
+        }
+
+        .contact_right_column {
+            img {
+                float: right;
+            }
+        }
+    }
+}
