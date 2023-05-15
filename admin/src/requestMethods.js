@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const BASE_URL = "http://localhost:3030/api/";
+//const BASE_URL = "/api/";
 //console.log('start data');
 //let rootInfo = localStorage.getItem("persist:root");
 //let TOKEN = 'test-tokent';

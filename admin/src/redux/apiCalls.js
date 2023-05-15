@@ -170,7 +170,7 @@ export const updateMenu = async (id, menu, dispatch) => {
 export const getJobs = async (dispatch) => {
   dispatch(getJobStart());
   try {
-    const res = await publicRequest.get("/jobs");
+    const res = await userRequest.get("/jobs/list");
     if(res.data.code === 0){
       dispatch(getJobSuccess(res.data));
     }
