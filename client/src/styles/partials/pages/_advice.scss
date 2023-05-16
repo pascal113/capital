@@ -39,8 +39,7 @@
 .advice_wrapper {
     display: grid;
     grid-template-columns: 50% 50%;
-    gap: 168px;
-    
+    margin-top: 169px; 
     @include devices(lg) {
         grid-template-columns: 1fr;
         gap: 0rem;
@@ -48,10 +47,10 @@
 }
 
 .advice_left_col {
-    margin-top: 274px;
-    justify-self: end;
+    margin-top: 105px;
+    margin-left: 287px;
     .paragraph {
-        width: 627px;
+        max-width: 627px;
         font-family: 'DIN Pro Regular', sans-serif;
         font-style: normal;
         font-weight: 400;
@@ -69,24 +68,23 @@
 }
 
 .advice_right_col {
-    margin-top: 169px;
-    justify-self: start;
-
-    .slider {
-        position: relative;
-        margin-left: -44px;
-        margin-top: 47px;
-        float:right;
-        width: 572px;
-        height: 471px;
-    }
-
+    margin-left: 78px;
+    
     .border-box{
-        position: absolute;
-        width: 576px;
-        height: 572px;
+        position: relative;
+        margin-left:122px;
+        max-width: 576px;
+        min-height: 572px;
         box-sizing: border-box;
         border: 6px solid #D30000;
+    }
+
+    .advice_slider {
+        position: absolute;
+        left: -44px;
+        top: 47px;
+        width: 100%;
+        height: auto;
     }
 }
 

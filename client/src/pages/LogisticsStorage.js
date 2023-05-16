@@ -16,37 +16,39 @@ const LogisticsStorage = () => {
                         <img src="/images/pages/logistics/logistics-top.png" alt="" />
                     </div>
                     <BreadCrumb detail_info={t('logistics.storage.breadcrumb')} />
-                    <h1 className='logistics_storage_title'>{t('logistics.storage.title')}</h1>
-                    <div className='storage_01'>
-                        <div className='logistics_storage_dash_box' />
-                        <div className='logistics_storage_digit_box'>
-                            <span className='digit'>{storageData[0].id}</span>
+                    <div className='storageContainer'>
+                        <h1 className='logistics_storage_title'>{t('logistics.storage.title')}</h1>
+                        <div className='storage_01'>
+                            <div className='logistics_storage_dash_box' />
+                            <div className='logistics_storage_digit_box'>
+                                <span className='digit'>{storageData[0].id}</span>
+                            </div>
+                            <div className='logistics_storage_description'><span>{storageData[0].description}</span></div>
+                            <div className='storage_slider'>
+                                <ImageSlider data={storageData[0].slider} />
+                            </div>
                         </div>
-                        <div className='logistics_storage_description'><span>{storageData[0].description}</span></div>
-                        <div className='storage_slider'>
-                            <ImageSlider data={storageData[0].slider} />
-                        </div>
-                    </div>
 
-                    <div className='storage_02'>
-                        <div className='logistics_storage_dash_box' />
-                        <div className='logistics_storage_digit_box'>
-                            <span className='digit'>{storageData[1].id}</span>
+                        <div className='storage_02'>
+                            <div className='logistics_storage_dash_box' />
+                            <div className='logistics_storage_digit_box'>
+                                <span className='digit'>{storageData[1].id}</span>
+                            </div>
+                            <div className='logistics_storage_description'><span>{storageData[1].description}</span></div>
+                            <div className='storage_slider'>
+                                <ImageSlider data={storageData[1].slider} />
+                            </div>
                         </div>
-                        <div className='logistics_storage_description'><span>{storageData[1].description}</span></div>
-                        <div className='storage_slider'>
-                            <ImageSlider data={storageData[1].slider} />
-                        </div>
-                    </div>
 
-                    <div className='storage_03'>
-                        <div className='logistics_storage_dash_box' />
-                        <div className='logistics_storage_digit_box'>
-                            <span className='digit'>{storageData[2].id}</span>
-                        </div>
-                        <div className='logistics_storage_description'><span>{storageData[2].description}</span></div>
-                        <div className='storage_slider'>
-                            <ImageSlider data={storageData[2].slider} />
+                        <div className='storage_03'>
+                            <div className='logistics_storage_dash_box' />
+                            <div className='logistics_storage_digit_box'>
+                                <span className='digit'>{storageData[2].id}</span>
+                            </div>
+                            <div className='logistics_storage_description'><span>{storageData[2].description}</span></div>
+                            <div className='storage_slider'>
+                                <ImageSlider data={storageData[2].slider} />
+                            </div>
                         </div>
                     </div>
                 </div>

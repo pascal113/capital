@@ -58,9 +58,11 @@
     .production_left_col {
         height: 430px;
         background-color: #777978;
+        padding-left: 104px;
+        padding-right: 78px;
     
         .paragraph {
-            margin-left: 104px;
+            max-width: 769px;
             font-style: normal;
             font-size: 14px;
             color: #FFFFFF;
@@ -68,7 +70,7 @@
     
         .paragraph:nth-child(1){
             margin-top: 82px;
-            width: 769px;
+            max-width: 769px;
             font-weight: 700;
             font-family: 'DIN Pro Bold';
             line-height: 21px;
@@ -78,7 +80,7 @@
         }
     
         .paragraph:nth-child(2){
-            width: 737px;
+            max-width: 737px;
             font-family: 'DIN Pro Regular';
             font-weight: 400;
             text-align: justify;
@@ -88,12 +90,13 @@
     
     .production_right_col {
         height: 435px;
+        
     }
 }
 
 
 .production_slogan{
-    width: 885px;
+    max-width: 885px;
     height: 126px;
     margin: auto;
     margin-top: 137px;
@@ -120,12 +123,12 @@
 
     p:nth-child(1) {
         font-family: 'DIN Pro Regular';
-        width: 503px;
+        max-width: 503px;
         justify-self: end;
     }
     p:nth-child(2) {
         font-family: 'DIN Pro Regular';
-        width: 509px;
+        max-width: 509px;
         justify-self: start;
     }
     

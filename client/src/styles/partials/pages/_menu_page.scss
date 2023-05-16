@@ -120,14 +120,14 @@
 
 .menu_page_right_col {
     margin-top: 117px;
-        margin-left: 150px;
+    margin-left: 150px;
     .menu_page_img {
         
-        img {
+        /*img {
             @include img-fit;
             width: 1115px;
             height: 663px;
-        }
+        }*/
     
         @include devices(sm) {
             grid-row: 1;
