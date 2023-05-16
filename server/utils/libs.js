@@ -64,4 +64,14 @@ export const initAllImageFile = () => {
 
 export const isEmpty = (obj) => {
     return Object.keys(obj).length === 0;
-}
+};
+
+export const splitStringToArray = (string, split) => {
+    let array_data = [];
+    let string_list = string.split(split);
+    string_list.forEach((string) => {
+        array_data.push(string);
+    });
+
+    return array_data;
+};

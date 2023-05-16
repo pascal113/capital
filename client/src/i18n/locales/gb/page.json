@@ -64,7 +64,7 @@
             ]
         }
     ],
-    "breadcrumb": "return",
+    "breadcrumb": "Return",
     "company_profile": {
         "title": "GC Pharma GmbH",
         "p1": "C Pharma is a leading international service and consulting company in the pharmaceutical sector, providing customized service packages for its outsourcing partners. Our clients and partners can benefit from a wide range of services, ranging from the development of active ingredients to development services for pre-formulated drugs, their registration and production, packaging and logistics.",
@@ -77,13 +77,13 @@
         
         "p1_normal": "Most of the world's diseases are now treatable with medication, yet a large portion of the world's population still lacks access to these life-saving drugs. This sad reality contradicts the human right to healthcare. Together with our partners and you, our customers, we want to contribute to working on solutions to this global problem.",
 
-        "left_p1": "“Health is a state of complete physical, mental, and social well-being and not merely the absence of disease or infirmity.“",
+        "left_p1": "Health is a state of complete physical, mental, and social well-being and not merely the absence of disease or infirmity.",
         
         "left_p2": "World Health Organization (WHO)",
 
         "right_p1": "Therefore, our primary task is, on the one hand, to question the status quo of pharmacy with our European partners and customers. This way, we can identify and explore new and better ways in the production and distribution of medicines. With our high-quality products and services, we aim to make an active contribution to a better, healthier society.",
         
-        "right_p2": "We aim to increase the quality of life for all people through prevention, healing, and relief, and we also strive to enable our high-quality standards in the pharmaceutical field to be transferred to other countries. Our calling is to ensure that health is not a privilege but is accessible to every person. With our promise of “Made in Germany,“ we guarantee that research, production, and quality assurance take place in Germany and meet our high German values. This commitment to the highest quality also applies to all of our traded goods."
+        "right_p2": "We aim to increase the quality of life for all people through prevention, healing, and relief, and we also strive to enable our high-quality standards in the pharmaceutical field to be transferred to other countries. Our calling is to ensure that health is not a privilege but is accessible to every person. With our promise of 'Made in Germany,' we guarantee that research, production, and quality assurance take place in Germany and meet our high German values. This commitment to the highest quality also applies to all of our traded goods."
     },
     "production" : {
         "title": "Our services at a glance",
@@ -113,7 +113,7 @@
             },
             {
                 "id": "2",
-                "title": "semi-solid forms",
+                "title": "Semi-Solid Forms",
                 "items": [
                     "creams",
                     "emulsions and suspensions",
@@ -126,7 +126,7 @@
             },
             {
                 "id": "3",
-                "title": "liquid forms",
+                "title": "Liquid Forms",
                 "items": [
                     "ampoules",
                     "distillates",
@@ -302,7 +302,7 @@
     "job_posting": {
         "title": "GC Pharma GmbH as an employer",
         "description": "Our mindset of facing change processes unbiasedly and courageously has changed just as little as the central anchoring of the success factor “people“ in our entrepreneurial consciousness. Our employees are always the most important thing in our company, and not just because of their cleverness. What distinguishes the people at GC Pharma GmbH is an inimitable mixture of intuition, joy and enthusiasm.",
-        "button_label": "EXPLORE 58 PLACES"
+        "button_label": "EXPLORE 58 opportunities"
     },
     "about_us": {
         "form_search_label": "SEARCH",
@@ -398,16 +398,16 @@
                 "value": "Advice"
             }
         ],
-        "form_company_name_label": "company name",
-        "form_company_name_placeholder": "company name",
-        "form_company_phone_label": "company phone number",
-        "form_company_phone_placeholder": "phone number",
-        "form_company_address_label": "company address",
-        "form_company_address_placeholder": "company address",
+        "form_company_name_label": "Company Name",
+        "form_company_name_placeholder": "Company Name",
+        "form_company_phone_label": "Company Phone Number",
+        "form_company_phone_placeholder": "Phone Number",
+        "form_company_address_label": "Company Address",
+        "form_company_address_placeholder": "Company Address",
         "form_company_postcode_label": "Postcode",
         "form_company_postcode_placeholder": "Postcode*",
-        "form_company_email_label": "e-mail address",
-        "form_company_email_placeholder": "e-mail address*",
+        "form_company_email_label": "E-mail Address",
+        "form_company_email_placeholder": "E-mail Address*",
         "form_message_label": "Your message:",
         "form_button_label": "Submit"
     },
@@ -429,7 +429,7 @@
                 ]
             },
             {
-                "title": "WHAT YOU BRING WITH YOU:",
+                "title": "YOUR QUALIFICATIONS:",
                 
                 "subtitle": "",
                 
@@ -499,8 +499,8 @@
         "confirm_label": "Please confirm*:",
         "privacy_link": "Privacy statement",
         "privacy_agree_label": "I agree with the Privacy Policy",
-        "cancel_button": "Interrupt",
-        "submit_button": "Send in your application"
+        "cancel_button": "Cancel",
+        "submit_button": "Submit your application"
     },
     "apply_success": {
         "title": "Thank you for sending your application documents!",
