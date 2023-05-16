@@ -9,7 +9,14 @@ const add_job = asyncHandler( async (req, res) => {
             title,
             type,
             location,
-            field
+            field,
+            introduction,
+            content_waiting_for_you_detail,
+            content_bring_with_you_detail,
+            content_we_offer_you_subtitle,
+            content_we_offer_you_detail,
+            info_contact,
+            info_comment
         } = req.body;
 
         const job = await Job.findOne({
@@ -19,16 +26,51 @@ const add_job = asyncHandler( async (req, res) => {
         });
     
         if (job === null || job.length === 0) {
+
+            let about_data = {};
+            about_data.introduction = introduction;
+            about_data.content = [];
+            
+            let content_waiting_for_you = {};
+            content_waiting_for_you.title = 'DAS ERWARTET DICH:';
+            content_waiting_for_you.subtitle = '';
+            content_waiting_for_you.detail = content_waiting_for_you_detail;
+    
+            about_data.content.push(content_waiting_for_you);
+    
+            let content_bring_with_you = {};
+            content_bring_with_you.title = 'DAS BRINGST DU MIT:';
+            content_bring_with_you.subtitle = '';
+            content_bring_with_you.detail = content_bring_with_you_detail;
+    
+            about_data.content.push(content_bring_with_you);
+    
+            let content_we_offer_you = {};
+            content_we_offer_you.title = 'DAS BIETEN WIR DIR:';
+            content_we_offer_you.subtitle = content_we_offer_you_subtitle;
+            content_we_offer_you.detail = content_we_offer_you_detail;
+    
+            about_data.content.push(content_we_offer_you);
+    
+            about_data.info = {};
+            about_data.info.contact = info_contact;
+            about_data.info.comment = info_comment;        
+    
+            console.log(about_data);
+
+            let about = JSON.stringify(about_data);
+            console.log(about);
+
             const addJob = await Job.create({
                 title,
                 type,
                 location,
-                field
+                field,
+                about
             });
-        
-            const resData = await addJob.save();
-            console.log('ok');
-            responseClient(res,200,0,'Save success',resData);
+
+            console.log('ok');            
+            responseClient(res,200,0,'Save success',addJob);
         }
         else {
             console.log(job);
@@ -36,7 +78,7 @@ const add_job = asyncHandler( async (req, res) => {
         }
     }
     catch (error) {
-        console.log(err);
+        console.log(error);
         responseClient(res);
     }
 });
@@ -123,15 +165,25 @@ const get_job_list = asyncHandler(async (req, res) => {
         }
     
         const jobs = await Job.find(filter);
+        
+        let data_job_list = [];
+        jobs.forEach((job) => {            
+            let job_json_data = JSON.parse(JSON.stringify(job));
+            if(job.about) {
+                job_json_data.about = JSON.parse(job.about);
+            }            
+            
+            data_job_list.push(job_json_data);
+        });
     
         if (jobs && jobs.length) {
-            responseClient(res, 200, 0, 'Success', jobs);
+            responseClient(res, 200, 0, 'Success', data_job_list);
         } else {
             responseClient(res, 404, 1, 'No jobs found');
         }
     }
     catch (error) {
-        console.log(err);
+        console.log(error);
         responseClient(res);
     }
 });

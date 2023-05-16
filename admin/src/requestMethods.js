@@ -1,6 +1,9 @@
 import axios from "axios";
 
 const BASE_URL = "http://localhost:3030/api/";
+
+console.log('requestMethods');
+console.log(BASE_URL);
 //const BASE_URL = "/api/";
 //console.log('start data');
 //let rootInfo = localStorage.getItem("persist:root");
@@ -9,6 +12,12 @@ const BASE_URL = "http://localhost:3030/api/";
 // if(rootInfo) {
 //   TOKEN = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.accessToken;
 // }
+
+const apiUrl = process.env.REACT_APP_API_URL;
+const apiKey = process.env.REACT_APP_API_PORT;
+console.log(apiUrl); // Output: http://example.com/api
+console.log(apiKey); // Output: 123456789
+
 
 
 let userInfo = localStorage.getItem("user");
