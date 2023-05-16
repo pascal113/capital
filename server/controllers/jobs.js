@@ -1,6 +1,42 @@
 import Job from '../models/job.js'
 import asyncHandler from 'express-async-handler';
-import {responseClient} from '../utils/libs.js'
+import {responseClient, splitStringToArray} from '../utils/libs.js'
+
+const makeJobAboutJSONData = (params) => {
+    let about_data = {};
+
+    about_data.introduction = params.introduction;
+
+    about_data.content = [];            
+    let content_waiting_for_you = {};
+    content_waiting_for_you.title = 'DAS ERWARTET DICH:';
+    content_waiting_for_you.subtitle = '';
+    // content_waiting_for_you.detail = content_waiting_for_you_detail;
+    content_waiting_for_you.detail = splitStringToArray(params.content_waiting_for_you_detail, '\n'); 
+    about_data.content.push(content_waiting_for_you);
+
+    let content_bring_with_you = {};
+    content_bring_with_you.title = 'DAS BRINGST DU MIT:';
+    content_bring_with_you.subtitle = '';
+    // content_bring_with_you.detail = content_bring_with_you_detail;
+    content_bring_with_you.detail = splitStringToArray(params.content_bring_with_you_detail, '\n'); 
+    about_data.content.push(content_bring_with_you);
+
+    let content_we_offer_you = {};
+    content_we_offer_you.title = 'DAS BIETEN WIR DIR:';
+    content_we_offer_you.subtitle = params.content_we_offer_you_subtitle;
+    // content_we_offer_you.detail = content_we_offer_you_detail;
+    content_we_offer_you.detail = splitStringToArray(params.content_we_offer_you_detail, '\n');
+    about_data.content.push(content_we_offer_you);
+
+    about_data.info = {};
+    // about_data.info.contact = info_contact;
+    about_data.info.contact = splitStringToArray(params.info_contact, '\n');
+    // about_data.info.comment = info_comment;
+    about_data.info.comment = splitStringToArray(params.info_comment, '\n');
+
+    return about_data;
+};
 
 const add_job = asyncHandler( async (req, res) => {
 
@@ -9,14 +45,7 @@ const add_job = asyncHandler( async (req, res) => {
             title,
             type,
             location,
-            field,
-            introduction,
-            content_waiting_for_you_detail,
-            content_bring_with_you_detail,
-            content_we_offer_you_subtitle,
-            content_we_offer_you_detail,
-            info_contact,
-            info_comment
+            field
         } = req.body;
 
         const job = await Job.findOne({
@@ -27,35 +56,7 @@ const add_job = asyncHandler( async (req, res) => {
     
         if (job === null || job.length === 0) {
 
-            let about_data = {};
-            about_data.introduction = introduction;
-            about_data.content = [];
-            
-            let content_waiting_for_you = {};
-            content_waiting_for_you.title = 'DAS ERWARTET DICH:';
-            content_waiting_for_you.subtitle = '';
-            content_waiting_for_you.detail = content_waiting_for_you_detail;
-    
-            about_data.content.push(content_waiting_for_you);
-    
-            let content_bring_with_you = {};
-            content_bring_with_you.title = 'DAS BRINGST DU MIT:';
-            content_bring_with_you.subtitle = '';
-            content_bring_with_you.detail = content_bring_with_you_detail;
-    
-            about_data.content.push(content_bring_with_you);
-    
-            let content_we_offer_you = {};
-            content_we_offer_you.title = 'DAS BIETEN WIR DIR:';
-            content_we_offer_you.subtitle = content_we_offer_you_subtitle;
-            content_we_offer_you.detail = content_we_offer_you_detail;
-    
-            about_data.content.push(content_we_offer_you);
-    
-            about_data.info = {};
-            about_data.info.contact = info_contact;
-            about_data.info.comment = info_comment;        
-    
+            let about_data = makeJobAboutJSONData(req.body);    
             console.log(about_data);
 
             let about = JSON.stringify(about_data);
@@ -68,9 +69,10 @@ const add_job = asyncHandler( async (req, res) => {
                 field,
                 about
             });
-
-            console.log('ok');            
+                   
             responseClient(res,200,0,'Save success',addJob);
+
+            // responseClient(res,200,0,'Save success');
         }
         else {
             console.log(job);
@@ -94,11 +96,21 @@ const update_job = asyncHandler(async (req, res) => {
         return;
       }
   
-      const { title, type, location, field } = req.body;
+      const {
+        title,
+        type,
+        location,
+        field
+      } = req.body;
+
+      let job_about_data = makeJobAboutJSONData(req.body);
+      let about = JSON.stringify(job_about_data);
+
       job.title = title || job.title;
       job.type = type || job.type;
       job.location = location || job.location;
       job.field = field || job.field;
+      job.about = about || job.about;
   
       await job.save();
       responseClient(res, 200, 0, 'Job updated successfully', job);
@@ -136,7 +148,13 @@ const get_job = asyncHandler(async (req, res) => {
             return;
         }
 
-        responseClient(res, 200, 0, 'Success', job);
+        let job_json_data = JSON.parse(JSON.stringify(job));
+        if(job.about) {
+            job_json_data.about = JSON.parse(job.about);
+        }      
+        console.log(job_json_data);
+
+        responseClient(res, 200, 0, 'Success', job_json_data);
     } catch (error) {
         console.error(error);
         responseClient(res);
