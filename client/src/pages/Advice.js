@@ -10,8 +10,8 @@ const Advice = () => {
     const adviceCards = t('advice.cards', { returnObjects: true });
     const adviceSliders = {
         delay: 2000,
-        imgWidth: '572px',
-        imgHeight: '471px',
+        imgWidth: '100%',
+        imgHeight: 'auto',
         images: [
             "/images/pages/advice/advice-slider-1.png",
             "/images/pages/advice/advice-slider-2.png",
@@ -35,9 +35,10 @@ const Advice = () => {
                             <p className='paragraph'>{t('advice.p1_normal')}</p>
                         </div>
                         <div className="advice_right_col">
-                            <div className='border-box' />
-                            <div className='slider'>
-                                <ImageSlider data={adviceSliders} />
+                            <div className='border-box'>
+                                <div className='advice_slider'>
+                                    <ImageSlider data={adviceSliders} />
+                                </div>
                             </div>
                         </div>
                     </div>

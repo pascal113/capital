@@ -44,7 +44,7 @@
 }
 
 .corporate_goals_description{
-    width: 786px;
+    max-width: 786px;
     height: 249px;
     margin: auto;
     margin-top: 45px;
@@ -80,7 +80,7 @@
 
 .corporate_goals_img {
     float:right;
-    width: 632px;
+    max-width: 632px;
     height: 420px;
     margin-right: 226px;
     margin-top: 103px;
@@ -88,15 +88,25 @@
 }
 
 .corporate_goals_left_col {
-    position: relative;
-    .paragraph {
+    
+    .border-box{
+        position: relative;
         margin-left: 305px;
-        margin-top: 62px;
-        width: 390px;
+        margin-top: 5px;
+        max-width: 518px;
+        min-height: 407px;
+        box-sizing: border-box;
+        border: 8px solid #D30000;
+    }
+
+    .paragraph {
+        padding-top: 62px;
+        padding-left: 62px;
+        max-width: 390px;
         font-family: 'DIN Pro Bold';
         font-style: normal;
         font-weight: 700;
-        font-size: 25px;
+        font-size: 22px;
         line-height: 32px;
         text-align: left;
         color: #D30000;
@@ -105,28 +115,19 @@
     .paragraph:nth-child(2) {
         font-style: normal;
         font-weight: 700;
-        font-size: 20px;
+        font-size: 19px;
         line-height: 26px;
         color: #585858;
-    }
-    
-    .border-box{
-        position: absolute;
-        margin-left: 225px;
-        top: 5px;
-        width: 518px;
-        height: 407px;
-        box-sizing: border-box;
-        border: 8px solid #D30000;
     }
 }
 
 .corporate_goals_right_col {
     
     .paragraph {
-        width: 568px;
+        max-width: 598px;
         margin-left: 56px;
         margin-top: 40px;
+        padding-right: 30px;
         font-family: 'DIN Pro Regular', sans-serif;
         font-style: normal;
         font-weight: 400;

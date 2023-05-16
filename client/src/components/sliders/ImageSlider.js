@@ -29,9 +29,10 @@ const ImageSlider = ( props ) => {
                 slider.images.map((item, index) => {
                     return (
                         <SwiperSlide key={index}>
-                            <div className='imgContainer' style={imgStyle} >
+                                <img src={item} alt="sliders" style={imgStyle}/>
+                            {/*<div className='imgContainer' style={imgStyle} >
                                 <img src={item} alt="slider-img" />
-                            </div>
+                            </div>*/}
                         </SwiperSlide>
                     );
                 })

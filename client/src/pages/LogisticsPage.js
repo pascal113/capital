@@ -36,10 +36,10 @@ const LogisticsPage = () => {
                             </p>
                             <Link to="/contacts">
                                 <button type="button" className="base_button contact_button">{t("logistics.contact_button")}</button>
-                            </Link>
+                            </Link>                            
                         </div>
                         <div className='contact_right_column'>
-                            <img src="/images/pages/logistics/logistics_map.png" alt="" />
+                            <div style={{textAlign: 'left'}}><img src="/images/pages/logistics/logistics_map.png" alt="" /></div>
                         </div>
                         
                     </div>

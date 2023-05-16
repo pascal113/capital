@@ -199,8 +199,8 @@
                     "description": "Alle Lagerbereiche sind nach dem Stand der Technik qualifiziert, werden in regelmäßigen Abständen requalifiziert und sind mit modernsten Temperaturüberwachungssystemen ausgestattet, die kontinuierlich alle Daten aufzeichnen und bei Abweichungen unmittelbar Alarm auslösen.",
                     "slider": {
                         "delay": 2000,
-                        "imgWidth": "187px",
-                        "imgHeight": "190px",
+                        "imgWidth": "100%",
+                        "imgHeight": "auto",
                         "images": [
                             "/images/pages/logistics/logistics-storage-1-1.png",
                             "/images/pages/logistics/logistics-storage-1-2.png",
@@ -213,8 +213,8 @@
                     "description": "Auch für die Sicherheit der Produkte unserer Kunden ist das Beste gerade gut genug.  Alle Firmen- und Lagerräume sind mittels einer Einbruchmeldeanlage mit Körperschallmeldern, Türkontakten, Brand- und Überschwemmungsmeldern und permanenter Videoüberwachung gesichert. ",
                     "slider": {
                         "delay": 2000,
-                        "imgWidth": "188px",
-                        "imgHeight": "190px",
+                        "imgWidth": "100%",
+                        "imgHeight": "auto",
                         "images": [
                             "/images/pages/logistics/logistics-storage-2-1.png",
                             "/images/pages/logistics/logistics-storage-2-2.png"
@@ -226,8 +226,8 @@
                     "description": "Bei Auslösen des Alarms wird dieser entweder direkt an die 24h besetzte Alarmzentrale (Feuer, Rauch, Überschwemmung) oder direkt an die Berliner Polizei (Einbruch) weitergeleitet.",
                     "slider": {
                         "delay": 2000,
-                        "imgWidth": "189px",
-                        "imgHeight": "188px",
+                        "imgWidth": "100%",
+                        "imgHeight": "auto",
                         "images": [
                             "/images/pages/logistics/logistics-storage-3-1.png",
                             "/images/pages/logistics/logistics-storage-3-2.png"

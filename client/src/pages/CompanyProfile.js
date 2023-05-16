@@ -22,9 +22,8 @@ const CompanyProfile = () => {
                             <p className='paragraph'>{t("company_profile.p2")}</p>
                         </div>
                         <div className="company_profile_right_col">
-                            
-                            <img src="/images/pages/company-profile-1.png" alt="" />
                             <div className='border-box'>
+                                <img src="/images/pages/company-profile-1.png" alt="" />
                             </div>
                         </div>
                     </div>

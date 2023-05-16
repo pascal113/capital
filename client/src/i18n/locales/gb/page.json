@@ -198,8 +198,8 @@
                     "description": "All storage areas are qualified according to the state of the art, are requalified at regular intervals and are equipped with the most modern temperature monitoring systems, which continuously record all data and immediately trigger an alarm in the event of deviations.",
                     "slider": {
                         "delay": 2000,
-                        "imgWidth": "187px",
-                        "imgHeight": "190px",
+                        "imgWidth": "100%",
+                        "imgHeight": "auto",
                         "images": [
                             "/images/pages/logistics/logistics-storage-1-1.png",
                             "/images/pages/logistics/logistics-storage-1-2.png",
@@ -212,8 +212,8 @@
                     "description": "When it comes to the safety of our customers' products, only the best is good enough. All company and storage rooms are secured by means of a burglar alarm system with structure-borne noise detectors, door contacts, fire and flood detectors and permanent video surveillance. ",
                     "slider": {
                         "delay": 2000,
-                        "imgWidth": "188px",
-                        "imgHeight": "190px",
+                        "imgWidth": "100%",
+                        "imgHeight": "auto",
                         "images": [
                             "/images/pages/logistics/logistics-storage-2-1.png",
                             "/images/pages/logistics/logistics-storage-2-2.png"
@@ -225,8 +225,8 @@
                     "description": "When the alarm is triggered, it is either forwarded directly to the 24-hour alarm center (fire, smoke, flood) or directly to the Berlin police (burglary).",
                     "slider": {
                         "delay": 2000,
-                        "imgWidth": "189px",
-                        "imgHeight": "188px",
+                        "imgWidth": "100%",
+                        "imgHeight": "auto",
                         "images": [
                             "/images/pages/logistics/logistics-storage-3-1.png",
                             "/images/pages/logistics/logistics-storage-3-2.png"
