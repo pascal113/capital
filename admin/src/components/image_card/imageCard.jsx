@@ -5,14 +5,7 @@ import {Stack, Button} from '@mui/material';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import ConfirmDialog from '../confirm/ConfirmDialog';
-
-console.log('imageCard');
-
-const apiUrl = process.env.REACT_APP_API_URL;
-const apiKey = process.env.REACT_APP_API_PORT;
-console.log(apiUrl); // Output: http://example.com/api
-console.log(apiKey); // Output: 123456789
-
+import { getBaseURL } from "../../requestMethods";
 
 export default function ImageCard(props) {
   const {item, onEdit, onDelete} = props;
@@ -68,7 +61,7 @@ export default function ImageCard(props) {
   return (
     <>
       <div className="imageCard">
-        <img src={`http://localhost:3030/${ item.path}`} alt=""></img>
+        <img src={`${getBaseURL() + item.path}`} alt=""></img>
         <div className="btn">
           <Stack direction="row" alignItems="center" spacing={2} sx={{ m: 1}}>
             <Button variant="outlined" component="label" size="small" startIcon={<EditIcon />} onClick={handleSetting}>

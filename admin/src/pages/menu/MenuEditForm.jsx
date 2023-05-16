@@ -4,6 +4,7 @@ import { TextField, Button, Box } from '@mui/material';
 import SaveIcon from '@mui/icons-material/Save';
 import { useDispatch } from "react-redux";
 import { updateMenu } from "../../redux/apiCalls";
+import { getBaseURL } from "../../requestMethods";
 
 const MenuEditForm = (props) => { 
     console.log('MenuEditForm rendering');
@@ -87,7 +88,7 @@ const MenuEditForm = (props) => {
         {formData && (
             <div className='menuForm'>
             <form onSubmit={handleSubmit}>
-                <img className='imageFile' src={(formData.path.search('blob:') >= 0)?`${formData.path}`:`http://localhost:3030/${formData.path}`} alt="" onClick={() => inputFile.current.click()}></img> 
+                <img className='imageFile' src={(formData.path.search('blob:') >= 0)?`${formData.path}`:`${getBaseURL() + formData.path}`} alt="" onClick={() => inputFile.current.click()}></img> 
                 <input type="file" accept=".bmp,.jpg,.jpeg,.png" style={{display: 'none'}} onChange={handleFileChange} ref={inputFile}/>
                 
                 <Box sx={{ maxWidth: '100%', mt:5}}>

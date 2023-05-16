@@ -1,9 +1,7 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:3030/api/";
+let BASE_URL = "http://localhost:3030";
 
-console.log('requestMethods');
-console.log(BASE_URL);
 //const BASE_URL = "/api/";
 //console.log('start data');
 //let rootInfo = localStorage.getItem("persist:root");
@@ -14,11 +12,14 @@ console.log(BASE_URL);
 // }
 
 const apiUrl = process.env.REACT_APP_API_URL;
-const apiKey = process.env.REACT_APP_API_PORT;
-console.log(apiUrl); // Output: http://example.com/api
-console.log(apiKey); // Output: 123456789
+const apiPort = process.env.REACT_APP_API_PORT;
 
-
+if(apiPort) {
+  BASE_URL = apiUrl + ':' + apiPort;
+}
+else {
+  BASE_URL = apiUrl;
+}
 
 let userInfo = localStorage.getItem("user");
 let TOKEN = '';
@@ -27,12 +28,16 @@ if(userInfo) {
 }
 
 export const publicRequest = axios.create({
-  baseURL: BASE_URL,
+  baseURL: BASE_URL + '/api/',
 });
 
 export const userRequest = axios.create({
-  baseURL: BASE_URL,
+  baseURL: BASE_URL + '/api/',
   headers: {
     "x-auth-token": `${TOKEN}`,
   },
 });
+
+export const getBaseURL = () => {
+  return BASE_URL + '/';
+};
