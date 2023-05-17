@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 import BreadCrumb from '../components/common/BreadCrumb';
 import CustomDropdown from '../components/dropdown/CustomDropdown';
 import CustomMultiSelect from '../components/dropdown/CustomMultiSelect';
@@ -6,7 +6,11 @@ import CompanyList from '../components/list/CompanyList';
 import { useTranslation } from 'react-i18next';
 import aboutData from '../data/aboutData';
 
+import { useDispatch, useSelector } from "react-redux";
+import { getJobs } from "../redux/apiCalls";
+
 const AboutPage = () => {
+    
     const { t }  = useTranslation(['page']);
 
     const type_options = t('about_us.type', { returnObjects: true });

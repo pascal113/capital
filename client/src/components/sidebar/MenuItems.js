@@ -4,11 +4,13 @@ import { Link, useLocation } from 'react-router-dom';
 import menuContext from '../../contexts/menu/menuContext';
 import { useTranslation } from 'react-i18next'
 import i18n from "i18next";
+import commonContext from '../../contexts/common/commonContext';
 
 const MenuItems = ({ menu_index, submenu_index, items, depthLevel}) => {
   const { t }  = useTranslation(['page']);
   const [dropdown, setDropdown] = useState(false);
   const { hoverItem } = useContext(menuContext);
+  const { curLanguage } = useContext(commonContext);
 
   let ref = useRef();
 
@@ -33,8 +35,17 @@ const MenuItems = ({ menu_index, submenu_index, items, depthLevel}) => {
 
   const changeIntroduceItem = (item) => {
 
-    if(item.imgUrl || item.descText) {
-      hoverItem({'imgUrl': item.imgUrl,  'descText':item.descText});
+    let value = curLanguage;
+    
+    if (value === 'DE') {
+      if(item.imgUrl || item.descText) {
+        hoverItem({'imgUrl': item.imgUrl,  'descText':item.descText});
+      }
+    }
+    else {
+      if(item.imgUrl || item.descTextEn) {
+        hoverItem({'imgUrl': item.imgUrl,  'descText':item.descTextEn});
+      }
     }
   };
 

@@ -182,6 +182,7 @@ const get_job_list = asyncHandler(async (req, res) => {
             filter.field = {$in: fieldArray};
         }
     
+        // const jobs = await Job.find(filter).sort({createdAt:-1});
         const jobs = await Job.find(filter);
         
         let data_job_list = [];

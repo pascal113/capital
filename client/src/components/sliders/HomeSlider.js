@@ -8,8 +8,6 @@ import 'swiper/scss/pagination';
 import { useTranslation } from 'react-i18next'
 import i18n from "i18next";
 
-import { getBaseURL } from "../../requestMethods";
-
 const HomeSlider = (props) => {
     const { t }  = useTranslation(['page']);
     const { homeData } = props;
@@ -56,7 +54,7 @@ const HomeSlider = (props) => {
                                 </div>
                             </div>
                             <figure className="slider_container">
-                                <img src={`${getBaseURL() + path}`} alt="sliders" />
+                                <img src={`${path}`} alt="sliders" />
                             </figure>
                         </SwiperSlide>
                     );

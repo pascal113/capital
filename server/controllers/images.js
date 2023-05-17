@@ -130,6 +130,7 @@ const get_image_list = asyncHandler(async (req, res) => {
         filter.type = type;
     }
 
+    // const images = await Image.find(filter).sort({createdAt:-1});
     const images = await Image.find(filter);
 
     if (images) {

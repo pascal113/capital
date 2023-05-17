@@ -59,8 +59,7 @@ const jobs = [
 
                 "GC Pharma GmbH ist eine international führende Dienstleistungs-und Beratungsgesellschaft im pharmazeutischen Bereich, die maßgeschneiderte Service-Pakete für ihre Outsourcing Partner bereitstellt. Unsere Kunden und Partner können aus einer breiten Angebotspalette von der Entwicklung von Wirksubstanzen über Entwicklungsdienstleistungen für fertig formulierte Medikamente, deren Zulassung und Produktion bis hin zur Verpackung und Logistik profitieren."
             ]
-        },
-        "button_label": "JETZT BEWERBEN"
+        }
     }`
   },
   {

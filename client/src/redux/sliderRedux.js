@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import ToastService from "react-material-toast";
+import homeData from '../data/homeData';
+import { getBaseURL } from "../requestMethods";
 
 const toast = ToastService.new({
     place: "bottomRight",
@@ -23,12 +25,16 @@ export const sliderSlice = createSlice({
         getSliderSuccess: (state, action) => {
             state.isFetching = false;
             state.sliders = action.payload.data;
+            state.sliders.forEach((slider) => {
+                slider.path = getBaseURL() + slider.path;
+            });
             console.log('getSliderSuccess');
             console.log(state.sliders);
         },
         getSliderFailure: (state) => {
             state.isFetching = false;
             state.error = true;
+            state.sliders = homeData;
             toast.error("get images failed");
         }
     },
