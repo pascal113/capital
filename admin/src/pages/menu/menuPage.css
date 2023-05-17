@@ -18,8 +18,8 @@
 
 .menuForm .imageFile{
     cursor: pointer;
-    min-width: 770px;
-    min-height: 420px;
+    min-width: 1110px;
+    min-height: 660px;
     border: 1px dotted gray;
     border-radius: 2px;
 }

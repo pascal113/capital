@@ -5,6 +5,10 @@
     @include mx-auto;
     @include padding-x(0.0rem, 0.0rem);
 
+    @include devices(xxl) {
+        max-width: 1440px;
+    }
+
     @include devices(xl) {
         max-width: 1280px;
     }
