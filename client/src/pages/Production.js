@@ -36,17 +36,35 @@ const Production = () => {
                         <p>{t("production.slogan_left")}</p>
                         <p>{t("production.slogan_right")}</p>
                     </div>
-                    <div className='production_dosage'>
+                    {/*<div className='production_dosage'>
                         <span>{t("production.dosage_title")}</span>
                     </div>
                     <div className='production_dosage_draw'>
-                        <img src="/images/pages/production/product_curve_line.png" alt="" className='production_dosage_curve_lines'/>
+                        <div className='production_dosage_curve_lines'>
+                        <img src="/images/pages/production/product_curve_line.png" alt=""/>
+                        </div>
+                        
                         <div className='production_dosage_container'>
                             <Dosage data={dosage_01} />
                             <Dosage data={dosage_02} />
                             <Dosage data={dosage_03} />
                             <Dosage data={dosage_04} />
                         </div>   
+                    </div>
+                    */}
+                    <div className='production_dosage'>
+                        <div className='production_dosage_title'>
+                            <span>{t("production.dosage_title")}</span>
+                        </div>
+                        <div className='production_dosage_image'>
+                            <img src="/images/pages/production/product_curve_line.png" alt=""/>
+                        </div>
+                        <div className='production_dosage_container'>
+                            <Dosage data={dosage_01} />
+                            <Dosage data={dosage_02} />
+                            <Dosage data={dosage_03} />
+                            <Dosage data={dosage_04} />
+                        </div>
                     </div>
                 </div>
             </section>
