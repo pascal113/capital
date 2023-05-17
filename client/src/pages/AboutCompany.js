@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import ImageViewer from '../components/image/ImageViewer';
 //import aboutCompanyData from '../data/aboutCompanyData';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from "react-redux";
 
 const AboutCompany = () => {
     const { id } = useParams();
@@ -19,7 +20,10 @@ const AboutCompany = () => {
         textColor: 'white',
     };
 
-    const aboutCompanyData = t('about_company', {returnObjects: true});
+    // const aboutCompanyData = t('about_company', {returnObjects: true});
+
+    const jobsData = useSelector((state) => state.job.jobs);
+    const aboutCompanyData = jobsData.company[id_num].about;
 
     return (
         <>

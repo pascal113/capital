@@ -17,6 +17,16 @@ const AboutPage = () => {
     const location_options = t('about_us.location', { returnObjects: true });
     const activity_options = t('about_us.activity', { returnObjects: true });
 
+    const dispatch = useDispatch();
+    const jobsData = useSelector((state) => state.job.jobs);
+
+    console.log(jobsData);
+
+    useEffect(() => {
+        console.log('AboutPage useEffect');
+        getJobs(dispatch);
+    }, [dispatch]);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         const { job_type_select, location_select, activity_select } = e.target.elements;
@@ -64,7 +74,7 @@ const AboutPage = () => {
                             </div>                            
                             <button type="submit" className="base_button form_search_button"><span>{t('about_us.form_search_label')}</span><i className="fa fa-search" style={{ fontSize:18}}></i></button>
                         </form>
-                        <CompanyList className="companyList" companyList={aboutData.company}></CompanyList>
+                        <CompanyList className="companyList" companyList={jobsData.company}></CompanyList>
                     </div>
                 </div>
             </section>
