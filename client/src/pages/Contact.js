@@ -106,6 +106,8 @@ const Contact = () => {
                         <div className="position_address">
                             <h4>{t('contact.company_name')}</h4>
                             <p>{t('contact.company_address')}</p>
+                            <p>{t('contact.company_city')}</p>
+                            <p>{t('contact.company_country')}</p>
                         </div>
                         
                     </div>

@@ -31,7 +31,7 @@
         }
     ],
     "home": {
-        "company": "GERMAN CAPITAL PHARMA GmbH",
+        "company": "German Capital Pharma GmbH",
         "slogan": "Gesundheit für das Leben"
     },
 
@@ -376,7 +376,9 @@
         "title": "Sie haben Fragen?",
         "headquarters": "ZENTRALE",
         "company_name": "German Capital Pharma GmbH",
-        "company_address": "Badstr. 20 13357 Berlin, Deutschland",
+        "company_address": "Badstraße 20 13357",
+        "company_city": "Berlin",
+        "company_country": "Deutschland",
         "form_title": "Nehmen Sie Kontakt mit uns auf",
         "form_comment": "Mit * markierte Felder sind Pflichtfelder.",
         "form_department_label": "An welche Abteilung möchten Sie sich wenden?",

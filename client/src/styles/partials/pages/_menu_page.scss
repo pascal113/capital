@@ -119,8 +119,12 @@
 }
 
 .menu_page_right_col {
+    //margin-top: 117px;
+    //margin-left: 150px;
+    max-width: 1389px;
     margin-top: 117px;
-    margin-left: 150px;
+    margin-left: auto;
+    margin-right: auto;
     .menu_page_img {
         
         /*img {
