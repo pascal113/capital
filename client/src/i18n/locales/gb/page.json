@@ -31,7 +31,7 @@
         }
     ],
     "home": {
-        "company": "GERMAN CAPITAL PHARMA GmbH",
+        "company": "German Capital Pharma GmbH",
         "slogan": "Health For Life"
     },
     "menu": [
@@ -375,7 +375,9 @@
         "title": "Any questions?",
         "headquarters": "HEADQUARTERS",
         "company_name": "German Capital Pharma GmbH",
-        "company_address": "Badstr. 20 13357 Berlin, Germany",
+        "company_address": "Badstr. 20 13357",
+        "company_city": "Berlin",
+        "company_country": "Germany",
         "form_title": "Feel free to contact us",
         "form_comment": "Fields marked with * are mandatory.",
         "form_department_label": "Which department would you like to contact?",

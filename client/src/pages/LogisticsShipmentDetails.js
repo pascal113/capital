@@ -19,7 +19,7 @@ const LogisticsShipmentDetails = () => {
                     <div className='img_top'>
                         <img src="/images/pages/logistics/logistics-top.png" alt="" />
                     </div>
-                    <BreadCrumb detail_info={t('logistics.shipment.breadcrumb')} />
+                    <BreadCrumb detail_info={t('logistics.shipment.breadcrumb') + ` > ${id_num}`} />
                     {
                         shipmentData.length > 0 && (
                             <div className='logistics_shipment_details_wrapper'>
