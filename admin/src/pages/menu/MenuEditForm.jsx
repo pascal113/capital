@@ -65,8 +65,8 @@ const MenuEditForm = (props) => {
         let imageUrl = URL.createObjectURL(file);
         getImageSize(imageUrl)
         .then(imgSize => {
-            if(imgSize.width < 770){
-            alert('image width must be larger than 770px');
+            if(imgSize.width < 1110){
+            alert('image width must be at least 1110 ');
             URL.revokeObjectURL(imageUrl);
             }
             else{

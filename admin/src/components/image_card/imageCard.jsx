@@ -30,8 +30,8 @@ export default function ImageCard(props) {
       let imageUrl = URL.createObjectURL(file);
       getImageSize(imageUrl)
       .then(imgSize => {
-        if(imgSize.width < 1440){
-          alert('image width must be larger than 1440px');
+        if(imgSize.width < 1920){
+          alert('image width must be at least 1920px');
         }
         else{
           const formData = new FormData();

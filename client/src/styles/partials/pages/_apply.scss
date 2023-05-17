@@ -86,7 +86,7 @@
         input:optional {
             border: 0.33px solid #585858;
         }
-        input:required:valid {
+        input:not([type="date"]):required:valid {
             border: 0.33px solid #009220;
             background: url(../../../../public/images/pages/about-us/check.svg) no-repeat 98% 50%;
         }

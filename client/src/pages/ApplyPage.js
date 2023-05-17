@@ -1,15 +1,18 @@
-import React from 'react'
+import React, {useState } from 'react'
 import BreadCrumb from '../components/common/BreadCrumb';
 import { useParams, useNavigate } from "react-router-dom";
 import ImageViewer from '../components/image/ImageViewer';
 import SelectUploadFile from '../components/upload/SelectUploadFile';
 import { useTranslation } from 'react-i18next';
+import "react-datepicker/dist/react-datepicker.css";
+import DatePicker from "react-datepicker";
 
 const ApplyPage = () => {
     const { id } = useParams();
     const id_num = parseInt(id);
     const navigate = useNavigate();
     const { t }  = useTranslation(['page']);
+    const [date, setDate] = useState(new Date());
         
     const imgViwerData = {
         img: "/images/pages/about-us/about-company-top.png",
@@ -90,8 +93,13 @@ const ApplyPage = () => {
 
                             <div className='form_control'>
                                 <span className='label'>{t('apply.entry_date_label')}</span>
-                                <input name="entry_date" type="text" placeholder={t('apply.phone_comment')} required pattern="^(1[0-2]|0?[1-9])/(3[01]|[12][0-9]|0?[1-9])/(?:(?:19|20)[0-9]{2})$"/>
-                                <span className='label_comment'>{t('apply.entry_date_comment')}</span>
+                                <DatePicker
+                                    selected={date}
+                                    onChange={date => setDate(date)}
+                                    dateFormat="dd.MM.yyyy"
+                                />
+                                {/*<input name="entry_date" type="text" placeholder={t('apply.mandatory_placeholder')} required pattern="^(1[0-2]|0?[1-9])/(3[01]|[12][0-9]|0?[1-9])/(?:(?:19|20)[0-9]{2})$"/>
+                                <span className='label_comment'>{t('apply.entry_date_comment')}</span>*/}
                             </div>
                             <div className='form_control'>
                                 <span className='label'>{t('apply.salary_label')}</span>
