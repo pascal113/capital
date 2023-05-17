@@ -79,8 +79,8 @@ const images = [
     index: 1,
     subIndex: 0,
     order: 1,
-    title_de: 'Über GC Pharma GmbH',
-    title_gb: 'Über GC Pharma GmbH',
+    title_de: 'GC Pharma GmbH I Wir über uns',
+    title_gb: 'GC Pharma GmbH / About us',
     url: '',
     description: `hamburgermenu image`
   },
@@ -91,7 +91,7 @@ const images = [
     subIndex: 1,
     order: 2,
     title_de: 'Unser Unternehmensprofil',
-    title_gb: 'Unser Unternehmensprofil',
+    title_gb: 'Our Company',
     url: '/company-profile',
     description: `hamburgermenu image`
   },
@@ -102,7 +102,7 @@ const images = [
     subIndex: 2,
     order: 3,
     title_de: 'Unsere Unternehmensziele',
-    title_gb: 'Unsere Unternehmensziele',
+    title_gb: 'Our Goals',
     url: '/corporate-goals',
     description: `hamburgermenu image`
   },
@@ -113,7 +113,7 @@ const images = [
     subIndex: 0,
     order: 4,
     title_de: 'Dienstleistungen',
-    title_gb: 'Dienstleistungen',
+    title_gb: 'Services',
     url: '',
     description: `hamburgermenu image`
   },
@@ -124,7 +124,7 @@ const images = [
     subIndex: 1,
     order: 5,
     title_de: 'Produktion',
-    title_gb: 'Produktion',
+    title_gb: 'Production',
     url: '/production',
     description: `hamburgermenu image`
   },
@@ -135,7 +135,7 @@ const images = [
     subIndex: 2,
     order: 6,
     title_de: 'Logistik',
-    title_gb: 'Logistik',
+    title_gb: 'Logistic',
     url: '/logistics',
     description: `hamburgermenu image`
   },
@@ -146,7 +146,7 @@ const images = [
     subIndex: 3,
     order: 7,
     title_de: 'Nahrungsergänzungsmittel',
-    title_gb: 'Nahrungsergänzungsmittel',
+    title_gb: 'Supplements',
     url: '/dietary',
     description: `hamburgermenu image`
   },
@@ -157,7 +157,7 @@ const images = [
     subIndex: 4,
     order: 8,
     title_de: 'Beratung',
-    title_gb: 'Beratung',
+    title_gb: 'Consulting',
     url: '/advice',
     description: `hamburgermenu image`
   },
@@ -168,7 +168,7 @@ const images = [
     subIndex: 0,
     order: 9,
     title_de: 'Karriere',
-    title_gb: 'Karriere',
+    title_gb: 'Career',
     url: '',
     description: `hamburgermenu image`
   },
@@ -179,7 +179,7 @@ const images = [
     subIndex: 1,
     order: 10,
     title_de: 'Stellenausschreibungen',
-    title_gb: 'Stellenausschreibungen',
+    title_gb: 'Job Posts',
     url: '/job-postings',
     description: `hamburgermenu image`
   },
@@ -190,7 +190,7 @@ const images = [
     subIndex: 0,
     order: 11,
     title_de: 'Kontakt',
-    title_gb: 'Kontakt',
+    title_gb: 'Contact',
     url: '',
     description: `hamburgermenu image`
   },
@@ -201,7 +201,7 @@ const images = [
     subIndex: 1,
     order: 12,
     title_de: 'Haben Sie Rückfragen?',
-    title_gb: 'Haben Sie Rückfragen?',
+    title_gb: 'Do you have any questions?',
     url: '/contacts',
     description: `hamburgermenu image`
   }

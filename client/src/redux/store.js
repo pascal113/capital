@@ -24,7 +24,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   job: jobReducer,
   slider: sliderReducer,
-  menu: menuReducer,
+  menu: menuReducer
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

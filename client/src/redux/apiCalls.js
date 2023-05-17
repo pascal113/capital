@@ -44,6 +44,7 @@ export const getMenus = async (dispatch) => {
     });
     dispatch(getMenuSuccess(res.data));
   } catch (err) {
+    console.log(err);
     dispatch(getMenuFailure());
   }
 };

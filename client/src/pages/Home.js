@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import HomeSlider from '../components/sliders/HomeSlider';
-import homeData from '../data/homeData';
 import { useDispatch, useSelector } from "react-redux";
 import { getSliders } from "../redux/apiCalls";
 
