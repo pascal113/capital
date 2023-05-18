@@ -1,4 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
+import ToastService from "react-material-toast";
+
+const toast = ToastService.new({
+  place: "bottomRight",
+  duration: 2,
+  maxCount: 3
+});
 
 export const jobSlice = createSlice({
   name: "job",
@@ -16,6 +23,7 @@ export const jobSlice = createSlice({
     getJobSuccess: (state, action) => {
       state.isFetching = false;
       state.jobs = action.payload;
+      console.log('getJobSuccess', action.payload);
     },
     getJobFailure: (state) => {
       state.isFetching = false;
@@ -32,6 +40,7 @@ export const jobSlice = createSlice({
         state.jobs.findIndex((item) => item._id === action.payload),
         1
       );
+      toast.success("delete success");
     },
     deleteJobFailure: (state) => {
       state.isFetching = false;
