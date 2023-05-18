@@ -7,12 +7,18 @@ import { useTranslation } from 'react-i18next';
 import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from "react-datepicker";
 
+import { useDispatch } from "react-redux";
+import { sendJobMail } from "../redux/apiCalls";
+
 const ApplyPage = () => {
     const { id } = useParams();
     const id_num = parseInt(id);
     const navigate = useNavigate();
     const { t }  = useTranslation(['page']);
     const [date, setDate] = useState(new Date());
+
+    const [selectedOption, setSelectedOption] = useState('option_yes');
+    const [isChecked, setIsChecked] = useState(false);
         
     const imgViwerData = {
         img: "/images/pages/about-us/about-company-top.png",
@@ -23,21 +29,53 @@ const ApplyPage = () => {
         textColor: 'white',
     };
 
+    const dispatch = useDispatch();
+
     const handleCancel = e => {
         //clearChildState(); 
+    };
+    
+    const handleOptionChange = (event) => {
+        setSelectedOption(event.target.value);
+    };
+
+    const handleCheckboxChange = (event) => {
+        setIsChecked(event.target.checked);
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        /*const { job_type_select, location_select, activity_select } = e.target.elements;
+
+        console.log('job mail');
+
+        const { firstname, lastname, email, phone, duty_date, salary, 
+            aware, radio_box_yes, radio_box_no, check_box_policy } = e.target.elements;
+
+        let application_process = true;
+        if(selectedOption === 'option_no') {
+            application_process = false;
+        }
+
+        console.log(selectedOption);
+
+        console.log(check_box_policy.value);
         
-        let details = {
-            job_type: job_type_select.value,
-            location: location_select.value,
-            activity: activity_select.value,
+        let params = {
+            first_name: firstname.value,
+            last_name: lastname.value,
+            email: email.value,
+            phone_number: phone.value,
+            statement_duty: duty_date.value,
+            payment: salary.value,
+            attented: aware.value,
+            application_process: application_process
         };
-        console.log('value', details);*/
-        navigate('/apply-success');
+        console.log('value', params);
+        
+        let res = sendJobMail(params, dispatch);
+        if(res) {
+            navigate('/apply-success');
+        }
     };
 
     return (
@@ -94,6 +132,7 @@ const ApplyPage = () => {
                             <div className='form_control'>
                                 <span className='label'>{t('apply.entry_date_label')}</span>
                                 <DatePicker
+                                    name="duty_date"
                                     selected={date}
                                     onChange={date => setDate(date)}
                                     dateFormat="dd.MM.yyyy"
@@ -111,13 +150,15 @@ const ApplyPage = () => {
                             </div>
                             <div className='form_control'>
                                 <span className='label'>{t('apply.transfer_apply_label')}</span>
-                                <div className='radio-box-section'>
-                                    <input type="radio" name="radio-box" id="radio-box" className="custom-radio"/>
+                                <div className='radio-box-section'>                                    
+                                    <input type="radio" name="radio_box_yes" id="radio-box" className="custom-radio" 
+                                    value="option_yes" checked={selectedOption === 'option_yes'} onChange={handleOptionChange} />                                    
                                     <span className='radio-label'>{t('apply.yes')}</span>
                                     <span className='radio-comment'>{t('apply.transfer_apply_agree')}</span>
                                 </div>
                                 <div className='radio-box-section'>
-                                    <input type="radio" name="radio-box" id="radio-box" className="custom-radio"/>
+                                    <input type="radio" name="radio_box_no" id="radio-box" className="custom-radio"
+                                    value="option_no" checked={selectedOption === 'option_no'} onChange={handleOptionChange} />
                                     <span className='radio-label'>{t('apply.no')}</span>
                                     <span className='radio-comment'>{t('apply.transfer_apply_disagree')}</span>
                                 </div>
@@ -126,13 +167,14 @@ const ApplyPage = () => {
                                 <span className='label'>{t('apply.confirm_label')}</span>
                                 <a target="_blank" href="https://www.gc-pharma.de/de/datenschutzerklaerung.html" className='link-apply'>{t('apply.privacy_link')}</a>
                                 <div className='check-box-section'>
-                                    <input type="checkbox" name="check-box" id="check-box" className="custom-check" />
+                                    <input type="checkbox" name="check_box_policy" id="check-box" className="custom-check"
+                                        checked={isChecked} onChange={handleCheckboxChange} />
                                     <span className='check-label'>{t('apply.privacy_agree_label')}</span>
                                 </div>        
                             </div>
                             <div className='apply-button-range'>
                                 <button type="cancel" className="apply_interrupt_button" onClick={handleCancel}>{t('apply.cancel_button')}</button>
-                                <button type="submit" className="base_button apply_submit_button">{t('apply.submit_button')}</button>
+                                <button type="submit" className="base_button apply_submit_button" disabled={!isChecked}>{t('apply.submit_button')}</button>
                             </div>
                         </form>
                     </div>

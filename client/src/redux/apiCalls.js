@@ -101,20 +101,16 @@ export const sendContactMail = async (params, dispatch) => {
 export const sendJobMail = async (params, dispatch) => {
   dispatch(sendJobStart());
   try {
-    // add
     const res = await publicRequest.post(
-      `/mail/job`, 
-      params, 
-      {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-    });
+      "/mail/job", 
+      params);
 
     if(res.data.code === 0){
       dispatch(sendJobSuccess());
+      return true;
     }
   } catch (err) {
     dispatch(sendJobFailure());
+    return false;
   }
 };

@@ -122,7 +122,7 @@ const send_job = asyncHandler(async (req, res) => {
         subject: mail_subject,
         index: mail_index
       });
-  
+      
       let send_res = await sendJobMail({
         param: mailParam,
         files: req.files
