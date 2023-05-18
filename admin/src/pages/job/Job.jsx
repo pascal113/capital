@@ -31,14 +31,14 @@ const Job = () => {
                 Add
                 </Button>
             </div>
-            <div className="jobList">
+            
                 <JobList jobs={jobs.data}></JobList>
                 {/*
                 jobs.map((item, index) => (
                     <ImageCard key={index} item={item} onDelete={handleRemove} onEdit={handleEdit}/>
                 ))
                 */}
-            </div>
+            
         </div>
     )
 }

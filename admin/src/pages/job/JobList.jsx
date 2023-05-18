@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { makeStyles, withStyles } from '@mui/styles';
 import { ListItem, List, Divider, Box, ListItemText, TablePagination } from "@mui/material";
 import { useTranslation } from 'react-i18next';
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
+import IconButton from '@mui/material/IconButton';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -15,43 +17,20 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-const MyListItemText = withStyles({
-    root: {
-        color: "#585858",
-        fontFamily: 'Din Pro Bold', 
-        fontSize: '14px',
-        
-        "&:hover": {
-            color: "#D30000",
-        }
-    },
-    selected: {}
-})(ListItemText);
-
-
-
-const CustomListItem = ({ linkTo, primary, secondary }) => (
-    <ListItem component="span">
-        <Link to={linkTo}>
-            <MyListItemText primary={primary} disableTypography={true}/>
-            <MyListItemText primary={secondary} disableTypography={true} style={{ fontSize: '18px'}}/>
-        </Link>
-    </ListItem>
-);
-
+const listItemTextStyle = {
+    color: "#585858",
+    fontFamily: 'Din Pro Bold', 
+    fontSize: '14px',
+};
 
 const JobList = props => {
     const { t }  = useTranslation(['page']);
-    const classes = useStyles();
-    const { jobs } = props;
-
-    const jobListData = jobs.map((item) => ({ company: 'German Capital Pharma GmbH', department: item.title,  
-                        description: 'Art: ' + item.type + ' | ' + item.location + ' | ' + item.field}));
-
-    console.log('jobListData', jobListData);
-
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
+    const classes = useStyles();
+    const jobs = props.jobs;
+    const jobListData = jobs.map((item) => ({ company: 'German Capital Pharma GmbH', department: item.title,  
+                        description: 'Art: ' + item.type + ' | ' + item.location + ' | ' + item.field}));
 
     const handleChange = (event, value) => {
         setPage(value);
@@ -62,29 +41,61 @@ const JobList = props => {
         setPage(0);
     };
 
+    const handleEditClick = (event, index) => {
+        console.log('edit', index);
+    };
+
+    const handleDeleteClick = (event, index) => {
+        console.log('delete', index);
+    };
+
     return (
-        <div>
-            <List dense component="span">
+        <div className="jobList">
+            <List dense>
             <Divider/>
                 {jobListData
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((jobItem, id) => {
                     return (
-                        <div key={id}>
-                            <CustomListItem component="span" primary={jobItem.company} secondary={jobItem.department}/>
-                            <ListItem key={id} onClick={() => console.log("")}>
-                                <ListItemText
+                        <React.Fragment key={id}>
+                            <ListItemText
+                                sx={{ padding: "5px 10px 2px 0px" }}
+                                id={jobItem.id}
+                                primary={jobItem.company}
+                                primaryTypographyProps={listItemTextStyle}
+                            />
+                        
+                            <ListItemText
+                                sx={{ padding: "2px 10px 2px 0px" }}
+                                id={jobItem.id}
+                                primary={jobItem.department}
+                                primaryTypographyProps={listItemTextStyle}
+                            />
+                        
+                            <ListItemText 
+                                sx={{ padding: "2px 10px 5px 0px" }}
                                 id={jobItem.id}
                                 primary={jobItem.description}
-                                primaryTypographyProps={{ sx: { fontFamily: 'Din Pro Regular', fontSize: '14px', color: "#585858" } }}
-                                />
+                                primaryTypographyProps={listItemTextStyle}
+                            />
+                            <ListItem disablePadding={true} secondaryAction={
+                                <IconButton edge="end" aria-label="edit" onClick={(event) => handleEditClick(event, id)}>
+                                <EditIcon />
+                                </IconButton>} style={{ top: "-30px", right: "80px", left: "auto" }}>
                             </ListItem>
+                            
+                            <ListItem disablePadding={true} secondaryAction={
+                                <IconButton color="error" edge="end" aria-label="delete" onClick={(event) => handleDeleteClick(event, id)}>
+                                    <DeleteIcon />
+                                </IconButton>} style={{ top: "-30px", right: "10px", left: "auto" }}>
+                            </ListItem>
+
                             <Divider/>
-                        </div>
+                        </React.Fragment>
                     );
                 })}
             </List>
-            
+
             {<Box component="span">
                 <TablePagination
                 component="div"
