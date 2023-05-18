@@ -16,6 +16,9 @@ const send_contact = asyncHandler(async (req, res) => {
             user_message
         } = req.body;
 
+        console.log(req.body);
+        // console.log(req);
+
         let type = 'contact';    
         let mail_date = getMailDate();  
         let mail_log = await Mail.find({type: type}).sort({createdAt:-1}).limit(1);
@@ -119,7 +122,7 @@ const send_job = asyncHandler(async (req, res) => {
         subject: mail_subject,
         index: mail_index
       });
-  
+      
       let send_res = await sendJobMail({
         param: mailParam,
         files: req.files

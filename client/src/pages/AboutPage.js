@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import BreadCrumb from '../components/common/BreadCrumb';
 import CustomDropdown from '../components/dropdown/CustomDropdown';
 import CustomMultiSelect from '../components/dropdown/CustomMultiSelect';
 import CompanyList from '../components/list/CompanyList';
 import { useTranslation } from 'react-i18next';
-import aboutData from '../data/aboutData';
+
+import aboutData from "../data/aboutData";
 
 import { useDispatch, useSelector } from "react-redux";
 import { getJobs } from "../redux/apiCalls";
@@ -19,9 +20,9 @@ const AboutPage = () => {
 
     const dispatch = useDispatch();
     const jobsData = useSelector((state) => state.job.jobs);
-
+   
     console.log(jobsData);
-
+    
     useEffect(() => {
         console.log('AboutPage useEffect');
         getJobs(dispatch);

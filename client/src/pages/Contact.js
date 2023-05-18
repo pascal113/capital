@@ -5,6 +5,8 @@ import CustomDropdown from '../components/dropdown/CustomDropdown';
 import styled, { css } from 'styled-components';
 import { TextField } from "@mui/material";
 import { useTranslation } from 'react-i18next';
+import { useDispatch } from "react-redux";
+import { sendContactMail } from "../redux/apiCalls";
 
 const ValidationTextField = styled(TextField)({
     '& label.Mui-focused': {
@@ -61,35 +63,41 @@ const Contact = () => {
     const { t }  = useTranslation(['page']);
     const [status, setStatus] = useState("Submit");
     const department_options = t('contact.form_department_options', { returnObjects: true });
+
+    const dispatch = useDispatch();
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setStatus("Sending...");
         
         const { department_select, company_name, phone_number, company_address, plz, email, message } = e.target.elements;
-        let details = {
+        let params = {
             department: department_select.value,
             company_name: company_name.value,
-            phone_number: phone_number.value,
+            company_phone: phone_number.value,
             company_address: company_address.value,
-            plz: plz.value,
+            company_plz: plz.value,
             email: email.value,
-            message: message.value,
+            user_message: message.value        
         };
-        console.log('value', details);
-        try {
-            let response = await fetch("http://localhost:5000/contact", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json;charset=utf-8",
-                },
-                body: JSON.stringify(details),
-            });
-            setStatus("Submit");
-            let result = await response.json();
-            alert(result.status);
-        } catch (error) {
-            console.log('Fetch error: ', error);
-        }
+        console.log('value', params);
+
+        console.log('contact mail');
+        sendContactMail(params, dispatch);
+        // try {
+        //     let response = await fetch("http://localhost:5000/contact", {
+        //         method: "POST",
+        //         headers: {
+        //             "Content-Type": "application/json;charset=utf-8",
+        //         },
+        //         body: JSON.stringify(details),
+        //     });
+        //     setStatus("Submit");
+        //     let result = await response.json();
+        //     alert(result.status);
+        // } catch (error) {
+        //     console.log('Fetch error: ', error);
+        // }
     };
 
     return (

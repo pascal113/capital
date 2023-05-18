@@ -53,7 +53,7 @@ const sendJobMail = async ({
     htmlContent: message
   };
 
-  if (!isEmpty(files)) {
+  if (files !== undefined && !isEmpty(files)) {
     console.log('data files');
     const attachments = Object.keys(files).map(key => {
       const fileArray = files[key];
