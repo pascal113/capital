@@ -10,9 +10,8 @@
 }
 
 .jobList{
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
-    margin: 20px;
-    flex-wrap: wrap;
+    padding-left: 20px;
+    width: 80%;
+
+    
 }
