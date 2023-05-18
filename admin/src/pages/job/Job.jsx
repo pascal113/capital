@@ -82,8 +82,12 @@ const Job = () => {
     };
 
     const handleClose = () => {
-        console.log('handleClose');
-        setConfirmOpen(false);
+        setEditOpen(false);
+    }
+
+    const handleSubmit = (value) => {
+        console.log('handleSubmit', value);
+        setEditOpen(false);
     }
 
     const onUpdateJob = (id, job) => {
@@ -108,9 +112,9 @@ const Job = () => {
     };
 
     return (
-        <>
+        <div className="job">
         { editOpen===false? (
-            <div className="job">
+            <>
             <div className="jobAddBtn">
                 <Button variant="contained" component="label" size="medium" color="primary" startIcon={<AddIcon />} onClick={(event) => handleAddClick(event)}>
                 Add
@@ -187,12 +191,12 @@ const Job = () => {
                 Are you sure you want to delete this item?
             </ConfirmDialog>
             </div>
-            </div>
+            </>
         ) : (
-            <JobForm job={(selectedItem!==-1)? jobs[selectedItem] : null} handleClose={handleClose}/>
+            <JobForm job={(selectedItem!==-1)? jobs[selectedItem] : null} handleClose={handleClose}  open={editOpen} onClose={handleClose} handleSubmit={handleSubmit}/>
         )
         }
-        </>
+        </div>
     )
 }
 

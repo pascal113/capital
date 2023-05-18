@@ -23,7 +23,6 @@ export const jobSlice = createSlice({
     getJobSuccess: (state, action) => {
       state.isFetching = false;
       state.jobs = action.payload;
-      console.log('getJobSuccess', action.payload);
     },
     getJobFailure: (state) => {
       state.isFetching = false;
