@@ -172,7 +172,7 @@ export const getJobs = async (dispatch) => {
   try {
     const res = await userRequest.get("/jobs/list");
     if(res.data.code === 0){
-      dispatch(getJobSuccess(res.data));
+      dispatch(getJobSuccess(res.data.data));
     }
   } catch (err) {
     dispatch(getJobFailure());
