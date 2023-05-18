@@ -18,6 +18,15 @@ import {
   getJobFailure
 } from "./jobRedux";
 
+import {
+  sendContactStart,
+  sendContactSuccess,
+  sendContactFailure,
+  sendJobStart,
+  sendJobSuccess,
+  sendJobFailure
+} from "./mailRedux";
+
 export const getSliders = async (dispatch) => {
   dispatch(getSliderStart());
 
@@ -58,5 +67,54 @@ export const getJobs = async (dispatch) => {
     }
   } catch (err) {
     dispatch(getJobFailure());
+  }
+};
+
+export const sendContactMail = async (params, dispatch) => {
+  dispatch(sendContactStart());
+  try {
+    console.log('sendContactMail');
+    console.log(params);
+    const res = await publicRequest.post(
+      "/mail/contact", 
+      params);
+
+    // receive req body empty ???
+    // const res = await publicRequest.post(
+    //   "/mail/contact", 
+    //   params,
+    //   {
+    //     headers: {
+    //       "Content-Type": "multipart/form-data",
+    //     },
+    //   }
+    // );
+
+    if(res.data.code === 0){
+      dispatch(sendContactSuccess());
+    }
+  } catch (err) {
+    dispatch(sendContactFailure());
+  }
+};
+
+export const sendJobMail = async (params, dispatch) => {
+  dispatch(sendJobStart());
+  try {
+    // add
+    const res = await publicRequest.post(
+      `/mail/job`, 
+      params, 
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+    });
+
+    if(res.data.code === 0){
+      dispatch(sendJobSuccess());
+    }
+  } catch (err) {
+    dispatch(sendJobFailure());
   }
 };
