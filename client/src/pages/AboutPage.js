@@ -20,9 +20,7 @@ const AboutPage = () => {
 
     const dispatch = useDispatch();
     const jobsData = useSelector((state) => state.job.jobs);
-   
-    console.log(jobsData);
-    
+       
     useEffect(() => {
         console.log('AboutPage useEffect');
         getJobs(dispatch);
@@ -75,7 +73,7 @@ const AboutPage = () => {
                             </div>                            
                             <button type="submit" className="base_button form_search_button"><span>{t('about_us.form_search_label')}</span><i className="fa fa-search" style={{ fontSize:18}}></i></button>
                         </form>
-                        <CompanyList className="companyList" companyList={jobsData.company}></CompanyList>
+                        <CompanyList className="companyList" companyList={jobsData}></CompanyList>
                     </div>
                 </div>
             </section>
