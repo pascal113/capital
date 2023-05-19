@@ -112,7 +112,66 @@
     "jobs": {
         "row_per_page": "Zeilen pro Seite",
         "page_until": " bis ",
-        "page_of": " von "
+        "page_of": " von ",
+        "form": {
+            "type": [
+                {
+                    "name" : "Vollzeit",
+                    "value" : "Vollzeit",
+                    "defaultValue": true
+                },
+                {
+                    "name" : "Part-Time",
+                    "value" : "Part-Time",
+                    "defaultValue": false
+                }
+            ],
+        
+            "location": [
+                {
+                    "name" : "Berlin",
+                    "value" : "Berlin",
+                    "defaultValue": true
+                },
+                {
+                    "name" : "Hamburg",
+                    "value" : "Hamburg",
+                    "defaultValue": false
+                },
+                {
+                    "name" : "München",
+                    "value" : "München",
+                    "defaultValue": false
+                },
+                {
+                    "name" : "Köln",
+                    "value" : "Köln",
+                    "defaultValue": false
+                }
+            ],
+        
+            "field": [
+                {
+                    "id": 1,
+                    "name" : "Editorial & Production",
+                    "value" : "Editorial & Production"
+                },
+                {
+                    "id": 2,
+                    "name" : "Product Manager",
+                    "value" : "Product Manager"
+                }
+            ],
+            "lb_add_new": "Add New Job",
+            "lb_subtitle": "subtitle",
+            "lb_detailed_contents": "detailed contents",
+            "lb_contact": "Contact",
+            "lb_comment": "Comment",
+            "lb_content": [
+                "DAS ERWARTET DICH:",
+                "DAS BRINGST DU MIT:",
+                "DAS BIETEN WIR DIR:"
+            ]          
+        }
     }
-
 }

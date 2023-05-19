@@ -128,12 +128,12 @@ const Job = () => {
                 .map((jobItem, id) => {
                     return (
                         <React.Fragment key={id}>
-                            <ListItemText
+                            {/*<ListItemText
                                 sx={{ padding: "5px 10px 2px 0px" }}
                                 id={jobItem.id}
                                 primary={"German Capital Pharma GmbH"}
                                 primaryTypographyProps={listItemTextStyle}
-                            />
+                            />*/}
                         
                             <ListItemText
                                 sx={{ padding: "2px 10px 2px 0px" }}
@@ -193,7 +193,13 @@ const Job = () => {
             </div>
             </>
         ) : (
-            <JobForm job={(selectedItem!==-1)? jobs[selectedItem] : null} handleClose={handleClose}  open={editOpen} onClose={handleClose} handleSubmit={handleSubmit}/>
+            <JobForm 
+                job={(selectedItem!==-1)? jobs[selectedItem] : null} 
+                open={editOpen} 
+                handleClose={handleClose}  
+                onClose={handleClose} 
+                onSubmit={handleSubmit}>
+            </JobForm> 
         )
         }
         </div>
