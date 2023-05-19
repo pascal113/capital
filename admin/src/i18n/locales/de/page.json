@@ -134,8 +134,8 @@
                     "defaultValue": true
                 },
                 {
-                    "name" : "Hamburg",
-                    "value" : "Hamburg",
+                    "name" : "NewYork",
+                    "value" : "NewYork",
                     "defaultValue": false
                 },
                 {

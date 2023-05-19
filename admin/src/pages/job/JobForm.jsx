@@ -3,10 +3,8 @@ import { Theme, useTheme } from '@mui/material/styles';
 import {
     Box,
     FormControl,
-    Autocomplete,
     MenuItem,
     Chip,
-    OutlinedInput,
     InputLabel,
     Button, 
     TextField,
@@ -89,9 +87,10 @@ const JobForm = (props) => {
     const {open, job, handleClose } = props;
     const [formData, setFormData] = React.useState(getFormData(job));
     
-    const handleSelectChange = (event) => {
+    const handleSelectChange = (event, newValue) => {
         const { target: { name, value }, } = event;
-        setFormData({...formData, [name]: value});
+        //setFormData({...formData, [name]: value});
+        //console.log('handleSelectChange', formData);
     };
 
     const handleMultiSelectChange = (event) => {
@@ -101,7 +100,7 @@ const JobForm = (props) => {
 
     const handleFormItemChange = (event) => {
         const { target: { name, value }, } = event;
-        setFormData({...formData, [name]: value});
+        //setFormData({...formData, [name]: value});
     };    
 
     const validationSchema = Yup.object().shape({
@@ -113,17 +112,17 @@ const JobForm = (props) => {
         location: Yup.string()
             .required('Location is required'),
         content_waiting_for_you_detail: Yup.string()
-            .required('Location is required'),
+            .required('This field is required'),
         content_bring_with_you_detail: Yup.string()
-            .required('Location is required'),
+            .required('This field is required'),
         content_we_offer_you_subtitle: Yup.string()
-            .required('Location is required'),
+            .required('This field is required'),
         content_we_offer_you_detail: Yup.string()
-            .required('Location is required'),
+            .required('This field is required'),
         info_contact: Yup.string()
-            .required('Location is required'),
+            .required('This field is required'),
         info_comment: Yup.string()
-            .required('Location is required'),
+            .required('This field is required'),
     });
     
     const onSubmit = data => {
@@ -151,58 +150,51 @@ const JobForm = (props) => {
                     onSubmit={handleSubmit}
                 >
                     <FormControl sx={{ mt:3 }} fullWidth>
-                    <Controller
-                    control={control}
-                    name="introduction"
-                    render={({ field }) => (
-                        <TextField
-                            margin="normal"
-                            required
-                            fullWidth
-                            id="introduction"
-                            label="introduction"
-                            name="introduction"
-                            autoFocus
-                            multiline
-                            onChange={handleFormItemChange}
-                            placeholder="Please input introduction content"
-                            autoComplete="introduction"
-                            {...register('introduction')}
-                            error={errors.introduction ? true : false}
-                        />
-                        
-                    )}>
-                    </Controller>
-                    <Typography variant="inherit" color="textSecondary">
+                        <Controller
+                        control={control}
+                        name="introduction"
+                        render={({ field }) => (
+                            <TextField
+                                margin="normal"
+                                required
+                                fullWidth
+                                id="introduction"
+                                label="introduction"
+                                name="introduction"
+                                autoFocus
+                                multiline
+                                onChange={handleFormItemChange}
+                                placeholder="Please input introduction content"
+                                autoComplete="introduction"
+                                {...register('introduction')}
+                                error={errors.introduction ? true : false}
+                            />
+                            
+                        )}>
+                        </Controller>
+                        <Typography variant="inherit" color="textSecondary">
                         {errors.introduction?.message}
                         </Typography>  
                     </FormControl>
                     <FormControl sx={{ mt:3 }} fullWidth>
                         <InputLabel id="type-label">Type</InputLabel>
                         <Controller
-                    control={control}
-                    name="type"
-                    render={({ field }) => (
-                        <Select
-                            labelId="type-label"
-                            id="type"
-                            name="type"
-                            required
-                            value={formData.type}
-                            label="Type"
-                            onChange={handleSelectChange}
-                            autoComplete="type"
+                        control={control}
+                        name="type"
+                        render={({ field }) => (
+                            <Select
+                            {...field}
+                            label="type"
                             {...register('type')}
                             error={errors.type ? true : false}
-                        >
-                            {select_type_list.map((type, index) => (
-                                <MenuItem key={index} value={type.value}>
-                                    {type.name}
-                                </MenuItem>
-                            ))}
-                        </Select>
+                            >
+                                {select_type_list.map((item, index) => (
+                                    <MenuItem  key={index} value={item.value}>
+                                        {item.name}
+                                    </MenuItem>
+                                ))}
+                            </Select>
                         )}>
-                            
                         </Controller>
                         <Typography variant="inherit" color="textSecondary">
                             {errors.type?.message}
@@ -211,27 +203,21 @@ const JobForm = (props) => {
                     <FormControl sx={{ mt:3 }} fullWidth>
                         <InputLabel id="location-label">Location</InputLabel>
                         <Controller
-                    control={control}
-                    name="location"
-                    render={({ field }) => (
-                        <Select
-                            labelId="location-label"
-                            id="location"
-                            name="location"
-                            required
-                            value={formData.location}
+                        control={control}
+                        name="location"
+                        render={({ field }) => (
+                            <Select
+                            {...field}
                             label="location"
-                            onChange={handleSelectChange}
-                            autoComplete="location"
                             {...register('location')}
-                            error={errors.location ? true : false}
-                        >
-                            {select_location_list.map((location, index) => (
-                                <MenuItem key={index} value={location.value}>
-                                    {location.name}
-                                </MenuItem>
-                            ))}
-                        </Select>
+                            error={errors.type ? true : false}
+                            >
+                                {select_location_list.map((location, index) => (
+                                    <MenuItem key={index} value={location.value}>
+                                        {location.name}
+                                    </MenuItem>
+                                ))}
+                            </Select>
                         )}></Controller>
                         <Typography variant="inherit" color="textSecondary">
                             {errors.location?.message}
@@ -239,36 +225,36 @@ const JobForm = (props) => {
                     </FormControl>
                     <FormControl sx={{ mt:4 }} fullWidth>
                         <InputLabel id="field-label">Field</InputLabel>
-                        
-                        <Select
-                            id="field"
+                        <Controller
+                            control={control}
                             name="field"
-                            required
-                            multiple
-                            value={formData.field}
-                            onChange={handleMultiSelectChange}
-                            input={<OutlinedInput id="select-multiple-type" label="Chip" />}
-                            renderValue={(selected) => (
-                                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-                                {selected.map((value) => (
-                                    <Chip key={value} label={value} />
-                                ))}
-                                </Box>
-                            )}
-                            MenuProps={MenuProps}
-                            
-                            >
-                            {select_field_list.map((fieldItem, index) => (
-                                <MenuItem
-                                key={index}
-                                value={fieldItem.value}
-                                style={getStyles(fieldItem.name, formData.field, theme)}
+                            render={({ field: { onChange, value, name, ref } }) => (
+                                <Select
+                                id="field"
+                                variant="outlined"
+                                name={name}
+                                label="name"
+                                ref={ref}
+                                onChange={onChange}
+                                multiple
+                                fullWidth
+                                defaultValue={formData.field}
+                                renderValue={(selected) => (
+                                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+                                    {selected.map((value) => (
+                                        <Chip key={value} label={value} />
+                                    ))}
+                                    </Box>
+                                )}
                                 >
-                                {fieldItem.name}
-                                </MenuItem>
-                            ))}
-                        </Select>
-                        
+                                {select_field_list.map((fieldItem, index) => (
+                                    <MenuItem key={index} value={fieldItem.value}>
+                                    {fieldItem.name}
+                                    </MenuItem>
+                                ))}
+                                </Select>
+                            )}
+                        />
                     </FormControl>
                     <FormControl sx={{ mt:5 }} fullWidth>
                         <Typography sx={{fontWeight: 'bold'}} variant="subtitle1" component="div">
@@ -282,10 +268,11 @@ const JobForm = (props) => {
                             id="content_waiting_for_you_detail"
                             label={t('jobs.form.lb_detailed_contents')}
                             name="content_waiting_for_you_detail"
-                            value={formData.content_waiting_for_you_detail}
                             multiline
                             onChange={handleFormItemChange}
                             placeholder="Please input content"
+                            {...register('content_waiting_for_you_detail')}
+                            error={errors.content_waiting_for_you_detail ? true : false}
                         />
                     </FormControl>
 
@@ -301,10 +288,11 @@ const JobForm = (props) => {
                             id="content_bring_with_you_detail"
                             label={t('jobs.form.lb_detailed_contents')}
                             name="content_bring_with_you_detail"
-                            value={formData.content_bring_with_you_detail}
                             multiline
                             onChange={handleFormItemChange}
                             placeholder="Please input content"
+                            {...register('content_bring_with_you_detail')}
+                            error={errors.content_bring_with_you_detail ? true : false}
                         />
                     </FormControl>
 
@@ -320,13 +308,18 @@ const JobForm = (props) => {
                             id="content_we_offer_you_subtitle"
                             label={t('jobs.form.lb_subtitle')}
                             name="content_we_offer_you_subtitle"
-                            value={formData.content_we_offer_you_subtitle}
                             multiline
                             onChange={handleFormItemChange}
                             placeholder="Please input content"
+                            {...register('content_we_offer_you_subtitle')}
+                            error={errors.content_we_offer_you_subtitle ? true : false}
                         />
                     </FormControl>
                     <FormControl  fullWidth>
+                        <Controller
+                        control={control}
+                        name="content_we_offer_you_detail"
+                        render={({ field }) => (
                         <TextField
                             margin="normal"
                             sx={{ mt:2 }}
@@ -335,17 +328,27 @@ const JobForm = (props) => {
                             id="content_we_offer_you_detail"
                             label={t('jobs.form.lb_detailed_contents')}
                             name="content_we_offer_you_detail"
-                            value={formData.content_we_offer_you_detail}
                             multiline
                             onChange={handleFormItemChange}
                             placeholder="Please input content"
+                            {...register('content_we_offer_you_detail')}
+                            error={errors.content_we_offer_you_detail ? true : false}
                         />
+                        )}>
+                        </Controller>
+                        <Typography variant="inherit" color="textSecondary">
+                        {errors.content_we_offer_you_detail?.message}
+                        </Typography>  
                     </FormControl>
 
                     <FormControl sx={{ mt:5 }} fullWidth>
                         <Typography sx={{fontWeight: 'bold'}} variant="subtitle1" component="div">
                         {t('jobs.form.lb_contact')}
                         </Typography>
+                        <Controller
+                        control={control}
+                        name="info_contact"
+                        render={({ field }) => (
                         <TextField
                             margin="normal"
                             sx={{ mt:1 }}
@@ -354,11 +357,17 @@ const JobForm = (props) => {
                             id="info_contact"
                             label={t('jobs.form.lb_detailed_contents')}
                             name="info_contact"
-                            value={formData.info_contact}
                             multiline
                             onChange={handleFormItemChange}
                             placeholder="Please input content"
+                            {...register('info_contact')}
+                            error={errors.info_contact ? true : false}
                         />
+                        )}>
+                        </Controller>
+                        <Typography variant="inherit" color="textSecondary">
+                        {errors.info_contact?.message}
+                        </Typography>  
                     </FormControl>
 
 
@@ -366,6 +375,10 @@ const JobForm = (props) => {
                         <Typography sx={{fontWeight: 'bold'}} variant="subtitle1" component="div">
                         {t('jobs.form.lb_comment')}
                         </Typography>
+                        <Controller
+                        control={control}
+                        name="info_comment"
+                        render={({ field }) => (
                         <TextField
                             margin="normal"
                             sx={{ mt:1 }}
@@ -374,19 +387,23 @@ const JobForm = (props) => {
                             id="info_comment"
                             label={t('jobs.form.lb_detailed_contents')}
                             name="info_comment"
-                            value={formData.info_comment}
                             multiline
                             onChange={handleFormItemChange}
                             placeholder="Please input content"
+                            autoComplete="info_comment"
+                            {...register('info_comment')}
+                            error={errors.info_comment ? true : false}
                         />
-                        
+                        )}>
+                        </Controller>
+                        <Typography variant="inherit" color="textSecondary">
+                        {errors.info_comment?.message}
+                        </Typography>  
                     </FormControl>                
                     <Box display="flex"
                         justifyContent="flex-end"
                         alignItems="flex-end"
                     >
-                        {/*<Button type="submit" variant="contained" sx={{ mt: 5, mb: 0, mx: 5, paddingLeft: '30px', paddingRight: '30px' }} 
-                            size="large" onClick={handleSubmit(onSubmit)}>Save</Button>*/}
                         <Button type="submit" variant="contained" sx={{ mt: 5, mb: 0, mx: 5, paddingLeft: '30px', paddingRight: '30px' }} 
                             size="large" onClick={handleSubmit(onSubmit)}>Save</Button>
                         <Button variant="contained" color="error" sx={{ mt: 5, mb: 0 }} size="large" onClick={handleClose}>Cancel</Button>
