@@ -23,7 +23,7 @@ const AboutCompany = () => {
     // const aboutCompanyData = t('about_company', {returnObjects: true});
 
     const jobsData = useSelector((state) => state.job.jobs);
-    const aboutCompanyData = jobsData.company[id_num].about;
+    const aboutCompanyData = jobsData[id_num].about;
 
     return (
         <>
