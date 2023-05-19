@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 const SelectUploadFile = (props) => {
     const { t }  = useTranslation(['page']);
-    const [fileName, setFileName] = useState(props.fileName);
+    const [fileName, setFileName] = useState('');
     const hiddenFileInput = useRef(null);
     const max_file_size = 10*1024*1024; //10M
 
@@ -14,6 +14,7 @@ const SelectUploadFile = (props) => {
     
     const clearState = () => {
         setFileName('');
+        props.setFileData(null);
         props.passClearStateFunc(clearState);
     }
     const handleChange = event => {
@@ -27,6 +28,7 @@ const SelectUploadFile = (props) => {
             alert('Maximal 10 MB');
             return;
         }
+        props.setFileData(fileSelected);
         setFileName(fileSelected.name);
         event.target.value = '';
     };
