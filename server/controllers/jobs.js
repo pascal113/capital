@@ -151,7 +151,9 @@ const get_job = asyncHandler(async (req, res) => {
         let job_json_data = JSON.parse(JSON.stringify(job));
         if(job.about) {
             job_json_data.about = JSON.parse(job.about);
-        }      
+        }   
+        job_json_data.field = job.field ? job.field.split(',') : [];
+           
         console.log(job_json_data);
 
         responseClient(res, 200, 0, 'Success', job_json_data);
@@ -190,7 +192,9 @@ const get_job_list = asyncHandler(async (req, res) => {
             let job_json_data = JSON.parse(JSON.stringify(job));
             if(job.about) {
                 job_json_data.about = JSON.parse(job.about);
-            }            
+            }
+            
+            job_json_data.field = job.field ? job.field.split(',') : [];
             
             data_job_list.push(job_json_data);
         });

@@ -12,11 +12,12 @@ const makeJobItemData = (serverData) => {
   // let clonedAboutData = JSON.parse(JSON.stringify(aboutData));
   // let basic_data = clonedAboutData;
 
-  let basic_data = {};
-  basic_data.company = [];
+  let basic_data = [];  
+  // let basic_data = {};  
 
   serverData.forEach((job, index) => {
       let tmpData = {};
+      // let tmpData = [];
       tmpData.id = index;
       tmpData.name = "German Capital Pharma GmbH";
       tmpData.activity = job.title;
@@ -26,7 +27,7 @@ const makeJobItemData = (serverData) => {
       // job.about.button_label = "JETZT BEWERBEN";
       tmpData.about = job.about;
 
-      basic_data.company.push(tmpData);
+      basic_data.push(tmpData);
   });
 
   return basic_data;

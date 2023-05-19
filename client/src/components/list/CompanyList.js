@@ -42,11 +42,11 @@ const CustomListItem = ({ linkTo, primary, secondary }) => (
 
 const CompanyList = props => {
     const { t }  = useTranslation(['page']);
-    const classes = useStyles();
-    const { companyList } = props;
-
+    const classes = useStyles();    
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
+
+    const { companyList } = props;
 
     const handleChange = (event, value) => {
         setPage(value);
