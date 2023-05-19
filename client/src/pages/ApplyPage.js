@@ -16,6 +16,9 @@ const ApplyPage = () => {
     const navigate = useNavigate();
     const { t }  = useTranslation(['page']);
     const [date, setDate] = useState(new Date());
+    const [fileCV, setCVFileData] = useState(null);
+    const [fileReport, setReportFileData] = useState(null);
+    const [fileOther, setOtherFileData] = useState(null);
 
     const [selectedOption, setSelectedOption] = useState('option_yes');
     const [isChecked, setIsChecked] = useState(false);
@@ -56,9 +59,29 @@ const ApplyPage = () => {
             application_process = false;
         }
 
-        console.log(selectedOption);
+        const form = new FormData();
+        form.append("first_name", firstname.value);
+        form.append("last_name", lastname.value);
+        form.append("email", email.value);
+        form.append("phone_number", phone.value);
+        form.append("statement_duty", duty_date.value);
+        form.append("payment", salary.value);
+        form.append("attented", aware.value);
+        form.append("application_process", application_process);
 
-        console.log(check_box_policy.value);
+        console.log(fileCV);
+        
+        if(fileCV !== null){
+            form.append("resume", fileCV);
+        }
+
+        if(fileReport !== null){
+            form.append("certificate", fileReport);
+        }
+
+        if(fileOther !== null){
+            form.append("document", fileOther);
+        }
         
         let params = {
             first_name: firstname.value,
@@ -72,7 +95,7 @@ const ApplyPage = () => {
         };
         console.log('value', params);
         
-        let res = sendJobMail(params, dispatch);
+        let res = sendJobMail(form, dispatch);
         if(res) {
             navigate('/apply-success');
         }
@@ -113,18 +136,18 @@ const ApplyPage = () => {
                                         <span className='label'>{t('apply.cv_label_top')}</span>
                                         <span className='label'>{t('apply.cv_label_bottom')}</span>
                                     </div>
-                                    <SelectUploadFile />
+                                    <SelectUploadFile setFileData={setCVFileData} />
                                 </div>
                                 <div className='apply-upload-section'>
                                     <div className='apply-upload-label'>
                                         <span className='label'>{t('apply.reports_label_top')}</span>
                                         <span className='label-small'>{t('apply.reports_label_bottom')}</span>
                                     </div>
-                                    <SelectUploadFile />
+                                    <SelectUploadFile setFileData={setReportFileData} />
                                 </div>
                                 <div className='apply-upload-section'>
                                     <span className='label'>{t('apply.other_doc_label')}</span>
-                                    <SelectUploadFile />
+                                    <SelectUploadFile setFileData={setOtherFileData} />
                                 </div>
                                 
                             </div>

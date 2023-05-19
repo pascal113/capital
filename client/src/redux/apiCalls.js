@@ -102,8 +102,13 @@ export const sendJobMail = async (params, dispatch) => {
   dispatch(sendJobStart());
   try {
     const res = await publicRequest.post(
-      "/mail/job", 
-      params);
+      `/mail/job`, 
+      params, 
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        }
+    });
 
     if(res.data.code === 0){
       dispatch(sendJobSuccess());
