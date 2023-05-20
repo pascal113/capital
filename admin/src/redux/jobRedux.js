@@ -44,6 +44,7 @@ export const jobSlice = createSlice({
     deleteJobFailure: (state) => {
       state.isFetching = false;
       state.error = true;
+      toast.error("delete failed");
     },
     //UPDATE
     updateJobStart: (state) => {
@@ -52,13 +53,16 @@ export const jobSlice = createSlice({
     },
     updateJobSuccess: (state, action) => {
       state.isFetching = false;
+      //console.log('state.jobs', JSON.stringify(state.jobs, undefined, 2));
       state.jobs[
-        state.jobs.findIndex((item) => item._id === action.payload.id)
-      ] = action.payload.product;
+        state.jobs.findIndex((item) => item._id === action.payload.data._id)
+      ] = action.payload.data;
+      toast.success("update success");
     },
     updateJobFailure: (state) => {
       state.isFetching = false;
       state.error = true;
+      toast.error("update failed");
     },
     //ADD
     addJobStart: (state) => {
@@ -68,10 +72,12 @@ export const jobSlice = createSlice({
     addJobSuccess: (state, action) => {
       state.isFetching = false;
       state.jobs.push(action.payload);
+      toast.success("add success");
     },
     addJobFailure: (state) => {
       state.isFetching = false;
       state.error = true;
+      toast.error("add failed");
     },
   },
 });

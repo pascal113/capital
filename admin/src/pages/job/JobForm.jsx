@@ -66,7 +66,7 @@ const getFormData = (input) => {
     formData['title'] = input.title;
     formData['type'] = input.type;
     formData['location'] = input.location;
-    formData['field'] = input.field;
+    formData['field'] = input.field.split(/[,]+/);
     formData['introduction'] = input.about.introduction;
     formData['content_waiting_for_you_detail'] = input.about.content[0].detail.length > 0?input.about.content[0].detail.join('\n'):"";
     formData['content_bring_with_you_detail'] = input.about.content[1].detail.length > 0?input.about.content[1].detail.join('\n'):"";
@@ -74,6 +74,8 @@ const getFormData = (input) => {
     formData['content_we_offer_you_detail'] = input.about.content[2].detail.length > 0?input.about.content[2].detail.join('\n'):"";
     formData['info_contact'] = input.about.info.contact.length > 0?input.about.info.contact.join('\n'):"";
     formData['info_comment'] = input.about.info.comment.length > 0?input.about.info.comment.join('\n'):"";
+
+    console.log('form', input.field);
 
     return formData;
 }
@@ -107,9 +109,12 @@ const JobForm = (props) => {
     };    
 
     const validationSchema = Yup.object().shape({
+        title: Yup.string()
+            .required('Title is required')
+            .min(10, 'Introduction must be at least 10 characters'),
         introduction: Yup.string()
             .required('Introduction is required')
-            .min(10, 'Introduction must be at least 40 characters'),
+            .min(10, 'Introduction must be at least 10 characters'),
         type: Yup.string()
             .required('Type is required'),
         location: Yup.string()
@@ -129,6 +134,7 @@ const JobForm = (props) => {
     });
     
     const onSubmit = data => {
+        data.field = data.field.toString();
         props.onSubmit(formData.id, data);
     };
 
@@ -144,7 +150,7 @@ const JobForm = (props) => {
 
     return (
         <Dialog open={open} maxWidth="lg" onClick={(e) => e.stopPropagation()} onClose={handleClose} fullWidth>
-            <DialogTitle sx={{fontWeight: 'bold'}}>{formData.title}</DialogTitle>
+            <DialogTitle sx={{fontWeight: 'bold'}}>{formData.title===''?t('jobs.form.lb_add_new'):t('jobs.form.lb_edit')}</DialogTitle>
             <DialogContent>
                 <Box
                     component="form"
@@ -152,6 +158,33 @@ const JobForm = (props) => {
                     onSubmit={handleSubmit}
                 >
                     <FormControl sx={{ mt:3 }} fullWidth>
+                        <Controller
+                        control={control}
+                        name="title"
+                        render={({ field }) => (
+                            <TextField
+                                margin="normal"
+                                required
+                                fullWidth
+                                id="title"
+                                label="title"
+                                name="title"
+                                autoFocus
+                                multiline
+                                onChange={handleFormItemChange}
+                                placeholder="Please input title content"
+                                autoComplete="title"
+                                {...register('title')}
+                                error={errors.title ? true : false}
+                            />
+                            
+                        )}>
+                        </Controller>
+                        <Typography variant="inherit" color="textSecondary">
+                        {errors.introduction?.message}
+                        </Typography>  
+                    </FormControl>
+                    <FormControl sx={{ mt:1 }} fullWidth>
                         <Controller
                         control={control}
                         name="introduction"
@@ -163,7 +196,6 @@ const JobForm = (props) => {
                                 id="introduction"
                                 label="introduction"
                                 name="introduction"
-                                autoFocus
                                 multiline
                                 onChange={handleFormItemChange}
                                 placeholder="Please input introduction content"

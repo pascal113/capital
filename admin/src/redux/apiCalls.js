@@ -197,11 +197,7 @@ export const updateJob = async (id, job, dispatch) => {
     const res = await userRequest.post(
       `/jobs/${id}`, 
       job, 
-      {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        }
-    });
+    );
 
     if(res.data.code === 0){
       const data = res.data.data;
@@ -214,8 +210,14 @@ export const updateJob = async (id, job, dispatch) => {
 export const addJob = async (job, dispatch) => {
   dispatch(addJobStart());
   try {
-    const res = await userRequest.post(`/jobs`, job);
-    dispatch(addJobSuccess(res.data));
+    const res = await userRequest.post(
+      `/jobs/add`, 
+      job, 
+    );
+    if(res.data.code === 0){
+      const data = res.data.data;
+      dispatch(addJobSuccess(data));
+    }
   } catch (err) {
     dispatch(addJobFailure());
   }

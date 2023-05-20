@@ -160,9 +160,15 @@
                     "id": 2,
                     "name" : "Product Manager",
                     "value" : "Product Manager"
+                },
+                {
+                    "id": 2,
+                    "name" : "Industry",
+                    "value" : "Industry"
                 }
             ],
             "lb_add_new": "Add New Job",
+            "lb_edit": "Edit Job",
             "lb_subtitle": "subtitle",
             "lb_detailed_contents": "detailed contents",
             "lb_contact": "Contact",

@@ -69,8 +69,12 @@ const add_job = asyncHandler( async (req, res) => {
                 field,
                 about
             });
-                   
-            responseClient(res,200,0,'Save success',addJob);
+
+            let job_json_data = JSON.parse(JSON.stringify(addJob));
+            if(addJob.about) {
+                job_json_data.about = JSON.parse(addJob.about);
+            }
+            responseClient(res,200,0,'Save success',job_json_data);
 
             // responseClient(res,200,0,'Save success');
         }
@@ -111,9 +115,15 @@ const update_job = asyncHandler(async (req, res) => {
       job.location = location || job.location;
       job.field = field || job.field;
       job.about = about || job.about;
-  
+      
       await job.save();
-      responseClient(res, 200, 0, 'Job updated successfully', job);
+
+      let job_json_data = JSON.parse(JSON.stringify(job));
+      if(job.about) {
+          job_json_data.about = JSON.parse(job.about);
+      }   
+
+      responseClient(res, 200, 0, 'Job updated successfully', job_json_data);
     } catch (error) {
       console.log(error);
       responseClient(res);
@@ -152,7 +162,7 @@ const get_job = asyncHandler(async (req, res) => {
         if(job.about) {
             job_json_data.about = JSON.parse(job.about);
         }   
-        job_json_data.field = job.field ? job.field.split(',') : [];
+        // job_json_data.field = job.field ? job.field.split(',') : [];
            
         console.log(job_json_data);
 
@@ -194,7 +204,7 @@ const get_job_list = asyncHandler(async (req, res) => {
                 job_json_data.about = JSON.parse(job.about);
             }
             
-            job_json_data.field = job.field ? job.field.split(',') : [];
+            // job_json_data.field = job.field ? job.field.split(',') : [];
             
             data_job_list.push(job_json_data);
         });
