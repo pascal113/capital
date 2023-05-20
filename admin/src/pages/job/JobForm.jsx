@@ -75,8 +75,6 @@ const getFormData = (input) => {
     formData['info_contact'] = input.about.info.contact.length > 0?input.about.info.contact.join('\n'):"";
     formData['info_comment'] = input.about.info.comment.length > 0?input.about.info.comment.join('\n'):"";
 
-    console.log('form', input.field);
-
     return formData;
 }
 
@@ -117,6 +115,8 @@ const JobForm = (props) => {
             .min(10, 'Introduction must be at least 10 characters'),
         type: Yup.string()
             .required('Type is required'),
+        field: Yup.array()
+            .min(1, "This field is required"),
         location: Yup.string()
             .required('Location is required'),
         content_waiting_for_you_detail: Yup.string()
@@ -267,7 +267,7 @@ const JobForm = (props) => {
                                 id="field"
                                 variant="outlined"
                                 name={name}
-                                label="name"
+                                label="field"
                                 ref={ref}
                                 onChange={onChange}
                                 multiple
@@ -280,6 +280,8 @@ const JobForm = (props) => {
                                     ))}
                                     </Box>
                                 )}
+                                {...register('field')}
+                                error={errors.field ? true : false}
                                 >
                                 {select_field_list.map((fieldItem, index) => (
                                     <MenuItem key={index} value={fieldItem.value}>
@@ -289,6 +291,9 @@ const JobForm = (props) => {
                                 </Select>
                             )}
                         />
+                        <Typography variant="inherit" color="textSecondary">
+                            {errors.field?.message}
+                        </Typography>
                     </FormControl>
                     <FormControl sx={{ mt:5 }} fullWidth>
                         <Typography sx={{fontWeight: 'bold'}} variant="subtitle1" component="div">
