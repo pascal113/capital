@@ -315,13 +315,13 @@
         "page_of": " von ",
         "type": [
             {
-                "name" : "Full-Time",
-                "value" : "Full-Time",
+                "name" : "Vollzeit",
+                "value" : "Vollzeit",
                 "defaultValue": true
             },
             {
-                "name" : "Part-Time",
-                "value" : "Part-Time",
+                "name" : "Teilzeit",
+                "value" : "Teilzeit",
                 "defaultValue": false
             }
         ],
@@ -352,23 +352,23 @@
         "activity": [
             {
                 "id": 1,
-                "name" : "Adminstration",
-                "value" : "Adminstration"
+                "name" : "Verwaltung",
+                "value" : "Verwaltung"
             },
             {
                 "id": 2,
-                "name" : "Finance/Controlling",
-                "value" : "Finance/Controlling"
+                "name" : "Finanzen/Kontrolle",
+                "value" : "Finanzen/Kontrolle"
             },
             {
                 "id": 3,
-                "name" : "Product Management",
-                "value" : "Product Management"
+                "name" : "Produktmanagement",
+                "value" : "Produktmanagement"
             },
             {
                 "id": 4,
-                "name" : "Technology Developement",
-                "value" : "Technology Developement"
+                "name" : "Technologieentwicklung",
+                "value" : "Technologieentwicklung"
             }
         ]
     },

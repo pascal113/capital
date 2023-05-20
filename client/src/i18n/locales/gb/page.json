@@ -337,13 +337,13 @@
                 "defaultValue": false
             },
             {
-                "name" : "München",
-                "value" : "München",
+                "name" : "Munich",
+                "value" : "Munich",
                 "defaultValue": false
             },
             {
-                "name" : "Köln",
-                "value" : "Köln",
+                "name" : "Cologne",
+                "value" : "Cologne",
                 "defaultValue": false
             }
         ],

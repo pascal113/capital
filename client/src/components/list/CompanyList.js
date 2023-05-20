@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { makeStyles, withStyles } from '@mui/styles';
 import { ListItem, List, Divider, Box, ListItemText, TablePagination } from "@mui/material";
 import { useTranslation } from 'react-i18next';
+import commonContext from '../../contexts/common/commonContext';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -46,6 +47,10 @@ const CompanyList = props => {
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
     const { companyList } = props;
+    const companyListItem = Array.from(companyList);
+    const { curLanguage } = useContext(commonContext);
+
+    console.log('language', curLanguage);
 
     const handleChange = (event, value) => {
         setPage(value);
@@ -60,16 +65,23 @@ const CompanyList = props => {
         <div>
             <List dense component="span">
             <Divider/>
-                {companyList
+                {companyListItem
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((companyItem, id) => {
+                    let activity = companyItem.activity;
+                    let type = companyItem.type;
+                    if(curLanguage == 'GB') {
+                        activity = companyItem.activity_gb;
+                        type = companyItem.type_gb;
+                    }
+                    
                     return (
                         <div key={id}>
-                            <CustomListItem component="span" linkTo={`/about-company/${companyItem.id}`} primary={companyItem.activity} />
+                            <CustomListItem component="span" linkTo={`/about-company/${companyItem.id}`} primary={activity} />
                             <ListItem key={id} onClick={() => console.log("")}>
                                 <ListItemText
                                 id={companyItem.id}
-                                primary={companyItem.type}
+                                primary={type}
                                 primaryTypographyProps={{ sx: { fontFamily: 'Din Pro Regular', fontSize: '14px', color: "#585858" } }}
                                 />
                             </ListItem>

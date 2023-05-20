@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import ToastService from "react-material-toast";
-import aboutData from '../data/aboutData';
 
 const toast = ToastService.new({
     place: "bottomRight",
@@ -24,8 +23,13 @@ const makeJobItemData = (serverData) => {
       tmpData.type = 'Art: ' + job.type + ' | ' + job.location
          + ' | ' + job.field;
       
-      // job.about.button_label = "JETZT BEWERBEN";
       tmpData.about = job.about;
+
+      tmpData.activity_gb = job.title_gb;
+      tmpData.type_gb = 'Art: ' + job.type_gb + ' | ' + job.location_gb
+         + ' | ' + job.field_gb;
+      
+      tmpData.about_gb = job.about_gb;
 
       basic_data.push(tmpData);
   });
@@ -53,7 +57,7 @@ export const jobSlice = createSlice({
     getJobFailure: (state) => {
       state.isFetching = false;
       state.error = true;
-      state.jobs = aboutData;
+      state.jobs = [];
       toast.error("get job failed");
     }
   },

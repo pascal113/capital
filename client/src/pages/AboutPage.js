@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
 import BreadCrumb from '../components/common/BreadCrumb';
 import CustomDropdown from '../components/dropdown/CustomDropdown';
 import CustomMultiSelect from '../components/dropdown/CustomMultiSelect';
@@ -9,6 +9,7 @@ import aboutData from "../data/aboutData";
 
 import { useDispatch, useSelector } from "react-redux";
 import { getJobs } from "../redux/apiCalls";
+import commonContext from '../contexts/common/commonContext';
 
 const AboutPage = () => {
     
@@ -20,10 +21,13 @@ const AboutPage = () => {
 
     const dispatch = useDispatch();
     const jobsData = useSelector((state) => state.job.jobs);
+    const { curLanguage } = useContext(commonContext);
+
+    console.log('AboutPage jobsData');
        
     useEffect(() => {
         console.log('AboutPage useEffect');
-        getJobs(dispatch);
+        getJobs([], dispatch);
     }, [dispatch]);
 
     const handleSubmit = async (e) => {
@@ -31,11 +35,14 @@ const AboutPage = () => {
         const { job_type_select, location_select, activity_select } = e.target.elements;
         
         let details = {
-            job_type: job_type_select.value,
+            type: job_type_select.value,
             location: location_select.value,
-            activity: activity_select.value,
+            field: activity_select.value,
+            language: curLanguage
         };
         console.log('value', details);
+
+        getJobs(details, dispatch);
     };
 
     return (
