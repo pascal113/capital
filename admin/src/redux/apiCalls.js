@@ -1,5 +1,18 @@
-import { loginFailure, loginStart, loginSuccess,   loginFailureWithMessage } from "./userRedux";
-import { publicRequest, userRequest } from "../requestMethods";
+import { 
+  loginStart, 
+  loginSuccess,  
+  loginFailure,  
+  loginFailureWithMessage,
+  logoutStart, 
+  logoutSuccess,  
+  logoutFailure,  
+  logoutFailureWithMessage,
+} from "./userRedux";
+
+import { 
+  publicRequest, 
+  userRequest 
+} from "../requestMethods";
 
 import {
   getSliderStart,
@@ -53,6 +66,23 @@ export const login = async (dispatch, user, history) => {
       dispatch(loginFailureWithMessage(err.response.data));
     } else {
       dispatch(loginFailure()); 
+    }    
+  }
+};
+
+export const logout = async (dispatch, history) => {
+  dispatch(logoutStart());
+  try {
+    const res = await publicRequest.post("/auth/logout");
+    if(res.data.code === 0){
+      dispatch(logoutSuccess());
+      history.push('/login');
+    }
+  } catch (err) {
+    if (err.response) {
+      dispatch(logoutFailureWithMessage(err.response.data));
+    } else {
+      dispatch(logoutFailure()); 
     }    
   }
 };

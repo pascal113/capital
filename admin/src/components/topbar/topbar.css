@@ -28,17 +28,8 @@
 }
 
 .topbarIconContainer {
-  position: relative;
-  cursor: pointer;
-  margin-left: 10px;
-  color: #555;
-}
-
-.topDropdownmenu{
-  position: absolute;
-  top: 50px;
-  right: 0;
-  width: 17.5rem;
+  display: flex;
+  padding-top: 20px;
 }
 
 .topIconBadge{

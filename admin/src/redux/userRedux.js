@@ -37,13 +37,26 @@ const userSlice = createSlice({
       state.error = true;
       toast.error(`${action.payload.message}`);
     },
-    logout: (state) => {
+    logoutStart: (state) => {
+      state.isFetching = true;
+    },
+    logoutSuccess: (state) => {
       state.isAdmin = false;
       state.token = '';
       localStorage.removeItem("user");
     },
+    logoutFailureWithMessage: (state, action) => {
+      state.isFetching = false;
+      state.error = true;
+      toast.error(`${action.payload.message}`);
+    },
+    logoutFailure: (state, action) => {
+      state.isFetching = false;
+      state.error = true;
+      toast.error(`logout failed`);
+    },
   },
 });
 
-export const { loginStart, loginSuccess, loginFailure, loginFailureWithMessage } = userSlice.actions;
+export const { loginStart, loginSuccess, loginFailure, loginFailureWithMessage, logoutStart, logoutSuccess, logoutFailure, logoutFailureWithMessage } = userSlice.actions;
 export default userSlice.reducer;
