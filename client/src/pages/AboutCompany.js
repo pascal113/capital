@@ -1,15 +1,16 @@
-import React from 'react'
+import React, { useContext }  from 'react'
 import BreadCrumb from '../components/common/BreadCrumb';
 import { Link, useParams } from "react-router-dom";
 import ImageViewer from '../components/image/ImageViewer';
-//import aboutCompanyData from '../data/aboutCompanyData';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from "react-redux";
+import commonContext from '../contexts/common/commonContext';
 
 const AboutCompany = () => {
     const { id } = useParams();
     const id_num = parseInt(id);
     const { t }  = useTranslation(['page']);
+    const { curLanguage } = useContext(commonContext);
 
     const imgViwerData = {
         img: "/images/pages/about-us/about-company-top.png",
@@ -20,10 +21,14 @@ const AboutCompany = () => {
         textColor: 'white',
     };
 
-    // const aboutCompanyData = t('about_company', {returnObjects: true});
-
     const jobsData = useSelector((state) => state.job.jobs);
-    const aboutCompanyData = jobsData[id_num].about;
+    let aboutCompanyData = [];
+    if(curLanguage === 'DE') {
+        aboutCompanyData = jobsData[id_num].about;
+    }
+    else if(curLanguage === 'GB') {
+        aboutCompanyData = jobsData[id_num].about_gb;
+    }
 
     return (
         <>

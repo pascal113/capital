@@ -178,21 +178,46 @@ const get_job_list = asyncHandler(async (req, res) => {
     
     try {
         console.log('get_job_list');
-        const { type, location, field } = req.body;
+        console.log(req.query);
+        // const { type } = req.query;
+        const { type, location, field, language } = req.query;        
         const filter = {};
 
-        if (type) {
-            filter.type = type;
-        }
+        if(language === 'GB') {
+            if (type) {
+                filter.type_gb = type;
+            }
+        
+            if (location) {
+                filter.location_gb = location;
+            }
+        
+            if (field) {    
+                const fieldArray = field ? field.split(',') : [];
+
+                const patterns = fieldArray.map(term => new RegExp(term, 'i')); // 'i' flag makes the search case-insensitive
+                filter.field_gb = {$in: patterns};         
+            }
+        }   
+        else {
+            if (type) {
+                filter.type = type;
+            }
+        
+            if (location) {
+                filter.location = location;
+            }
+        
+            if (field) {
     
-        if (location) {
-            filter.location = location;
-        }
+                const fieldArray = field ? field.split(',') : [];
     
-        if (field) {
-            const fieldArray = field ? field.split(',') : [];
-            filter.field = {$in: fieldArray};
+                const patterns = fieldArray.map(term => new RegExp(term, 'i')); // 'i' flag makes the search case-insensitive
+                filter.field = {$in: patterns};         
+            }
         }
+
+        console.log(filter);
     
         // const jobs = await Job.find(filter).sort({createdAt:-1});
         const jobs = await Job.find(filter);
@@ -203,6 +228,10 @@ const get_job_list = asyncHandler(async (req, res) => {
             if(job.about) {
                 job_json_data.about = JSON.parse(job.about);
             }
+
+            if(job.about_gb) {
+                job_json_data.about_gb = JSON.parse(job.about_gb);
+            }
             
             // job_json_data.field = job.field ? job.field.split(',') : [];
             
@@ -212,7 +241,7 @@ const get_job_list = asyncHandler(async (req, res) => {
         if (jobs && jobs.length) {
             responseClient(res, 200, 0, 'Success', data_job_list);
         } else {
-            responseClient(res, 404, 1, 'No jobs found');
+            responseClient(res, 200, 1, 'No jobs found', []);
         }
     }
     catch (error) {

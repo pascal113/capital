@@ -58,11 +58,19 @@ export const getMenus = async (dispatch) => {
   }
 };
 
-export const getJobs = async (dispatch) => {
+export const getJobs = async (search, dispatch) => {
   dispatch(getJobStart());
   try {
-    const res = await publicRequest.get("/jobs/list");
-    if(res.data.code === 0){
+    const res = await publicRequest.get("/jobs/list", {
+      params:search
+    });
+
+    // const res = await publicRequest.get(
+    //   "/jobs/list",
+    //   search
+    // );
+
+    if(res.data.code === 0 || res.data.code === 1){
       dispatch(getJobSuccess(res.data));
     }
   } catch (err) {
@@ -79,18 +87,7 @@ export const sendContactMail = async (params, dispatch) => {
       "/mail/contact", 
       params);
 
-    // receive req body empty ???
-    // const res = await publicRequest.post(
-    //   "/mail/contact", 
-    //   params,
-    //   {
-    //     headers: {
-    //       "Content-Type": "multipart/form-data",
-    //     },
-    //   }
-    // );
-
-    if(res.data.code === 0){
+      if(res.data.code === 0){
       dispatch(sendContactSuccess());
     }
   } catch (err) {

@@ -9,7 +9,12 @@ const jobSchema = mongoose.Schema({
     type: String,
     location: String,
     field: String,
-    about: String
+    about: String,
+    title_gb: String,
+    type_gb: String,
+    location_gb: String,
+    field_gb: String,
+    about_gb: String
 }, {
     timestamps: true 
 });
