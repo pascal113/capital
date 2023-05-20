@@ -30,11 +30,10 @@ const MyListItemText = withStyles({
 
 
 
-const CustomListItem = ({ linkTo, primary, secondary }) => (
+const CustomListItem = ({ linkTo, primary }) => (
     <ListItem component="span">
         <Link to={linkTo}>
-            <MyListItemText primary={primary} disableTypography={true}/>
-            <MyListItemText primary={secondary} disableTypography={true} style={{ fontSize: '18px'}}/>
+            <MyListItemText primary={primary} disableTypography={true} style={{ fontSize: '18px'}}/>
         </Link>
     </ListItem>
 );
@@ -66,7 +65,7 @@ const CompanyList = props => {
                 .map((companyItem, id) => {
                     return (
                         <div key={id}>
-                            <CustomListItem component="span" linkTo={`/about-company/${companyItem.id}`} primary={companyItem.name} secondary={companyItem.activity}/>
+                            <CustomListItem component="span" linkTo={`/about-company/${companyItem.id}`} primary={companyItem.activity} />
                             <ListItem key={id} onClick={() => console.log("")}>
                                 <ListItemText
                                 id={companyItem.id}
