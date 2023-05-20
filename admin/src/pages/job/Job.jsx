@@ -85,8 +85,14 @@ const Job = () => {
         setEditOpen(false);
     }
 
-    const handleSubmit = (value) => {
-        console.log('handleSubmit', value);
+    const handleSubmit = (id, data) => {
+        console.log('handleSubmit', data);
+        if(id===''){
+
+        }
+        else {
+            onUpdateJob(id, data);
+        }
         setEditOpen(false);
     }
 
@@ -113,7 +119,7 @@ const Job = () => {
 
     return (
         <div className="job">
-        { editOpen===false? (
+        { (editOpen===false && jobs.length > 0)? (
             <>
             <div className="jobAddBtn">
                 <Button variant="contained" component="label" size="medium" color="primary" startIcon={<AddIcon />} onClick={(event) => handleAddClick(event)}>
@@ -123,11 +129,11 @@ const Job = () => {
             <div className="jobList">
             <List dense>
             <Divider/>
-                {jobs
+                {(jobs
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                .map((jobItem, id) => {
+                .map((jobItem, index) => {
                     return (
-                        <React.Fragment key={id}>
+                        <React.Fragment key={index}>
                             {/*<ListItemText
                                 sx={{ padding: "5px 10px 2px 0px" }}
                                 id={jobItem.id}
@@ -137,25 +143,24 @@ const Job = () => {
                         
                             <ListItemText
                                 sx={{ padding: "2px 10px 2px 0px" }}
-                                id={jobItem.id}
+                                
                                 primary={jobItem.title}
                                 primaryTypographyProps={listItemTextStyle}
                             />
                         
                             <ListItemText 
                                 sx={{ padding: "2px 10px 5px 0px" }}
-                                id={jobItem.id}
                                 primary={'Art: ' + jobItem.type + ' | ' + jobItem.location + ' | ' + jobItem.field}
                                 primaryTypographyProps={listItemTextStyle}
                             />
                             <ListItem disablePadding={true} secondaryAction={
-                                <IconButton edge="end" aria-label="edit" onClick={(event) => handleEditClick(event, id)}>
+                                <IconButton edge="end" aria-label="edit" onClick={(event) => handleEditClick(event, index)}>
                                 <EditIcon />
                                 </IconButton>} style={{ top: "-30px", right: "80px", left: "auto" }}>
                             </ListItem>
                             
                             <ListItem disablePadding={true} secondaryAction={
-                                <IconButton color="error" edge="end" aria-label="delete" onClick={(event) => handleDeleteClick(event, id)}>
+                                <IconButton color="error" edge="end" aria-label="delete" onClick={(event) => handleDeleteClick(event, index)}>
                                     <DeleteIcon />
                                 </IconButton>} style={{ top: "-30px", right: "10px", left: "auto" }}>
                             </ListItem>
@@ -164,7 +169,7 @@ const Job = () => {
                             
                         </React.Fragment>
                     );
-                })}
+                }))}
             </List>
             <Box component="span">
                 <TablePagination

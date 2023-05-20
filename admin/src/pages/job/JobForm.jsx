@@ -45,6 +45,7 @@ const getStyles = (name, personName, theme) => {
 
 const getFormData = (input) => {
     const formData = {
+        id: '',
         title: '',
         type: [],
         location: [],
@@ -61,6 +62,7 @@ const getFormData = (input) => {
     if(input == null)
         return formData;
 
+    formData['id'] = input._id;
     formData['title'] = input.title;
     formData['type'] = input.type;
     formData['location'] = input.location;
@@ -85,7 +87,8 @@ const JobForm = (props) => {
     const label_content_detail = t('jobs.form.lb_content', { returnObjects: true });
     const theme = useTheme();
     const {open, job, handleClose } = props;
-    const [formData, setFormData] = React.useState(getFormData(job));
+    //const [formData, setFormData] = React.useState(getFormData(job));
+    const formData = getFormData(job);
     
     const handleSelectChange = (event, newValue) => {
         const { target: { name, value }, } = event;
@@ -95,7 +98,7 @@ const JobForm = (props) => {
 
     const handleMultiSelectChange = (event) => {
         const { target: { name, value }, } = event;
-        setFormData({...formData, [name]: typeof value === 'string' ? value.split(',') : value,});
+        //setFormData({...formData, [name]: typeof value === 'string' ? value.split(',') : value,});
     };
 
     const handleFormItemChange = (event) => {
@@ -126,8 +129,7 @@ const JobForm = (props) => {
     });
     
     const onSubmit = data => {
-        console.log('onSubmit', data);
-        props.onSubmit(data);
+        props.onSubmit(formData.id, data);
     };
 
     const {
@@ -260,6 +262,10 @@ const JobForm = (props) => {
                         <Typography sx={{fontWeight: 'bold'}} variant="subtitle1" component="div">
                         {label_content_detail[0]}
                         </Typography>
+                        <Controller
+                        control={control}
+                        name="content_waiting_for_you_detail"
+                        render={({ field }) => (
                         <TextField
                             margin="normal"
                             sx={{ mt:1 }}
@@ -274,12 +280,20 @@ const JobForm = (props) => {
                             {...register('content_waiting_for_you_detail')}
                             error={errors.content_waiting_for_you_detail ? true : false}
                         />
+                        )}></Controller>
+                        <Typography variant="inherit" color="textSecondary">
+                            {errors.content_waiting_for_you_detail?.message}
+                        </Typography>
                     </FormControl>
 
                     <FormControl sx={{ mt:5 }} fullWidth>
                         <Typography sx={{fontWeight: 'bold'}} variant="subtitle1" component="div">
                         {label_content_detail[1]}
                         </Typography>
+                        <Controller
+                        control={control}
+                        name="content_bring_with_you_detail"
+                        render={({ field }) => (
                         <TextField
                             margin="normal"
                             sx={{ mt:1 }}
@@ -294,12 +308,20 @@ const JobForm = (props) => {
                             {...register('content_bring_with_you_detail')}
                             error={errors.content_bring_with_you_detail ? true : false}
                         />
+                        )}></Controller>
+                        <Typography variant="inherit" color="textSecondary">
+                            {errors.content_bring_with_you_detail?.message}
+                        </Typography>
                     </FormControl>
 
                     <FormControl sx={{ mt:5 }} fullWidth>
                         <Typography sx={{fontWeight: 'bold'}} variant="subtitle1" component="div">
                         {label_content_detail[2]}
                         </Typography>
+                        <Controller
+                        control={control}
+                        name="content_we_offer_you_subtitle"
+                        render={({ field }) => (
                         <TextField
                             margin="normal"
                             sx={{ mt:1 }}
@@ -314,6 +336,10 @@ const JobForm = (props) => {
                             {...register('content_we_offer_you_subtitle')}
                             error={errors.content_we_offer_you_subtitle ? true : false}
                         />
+                        )}></Controller>
+                        <Typography variant="inherit" color="textSecondary">
+                            {errors.content_we_offer_you_subtitle?.message}
+                        </Typography>
                     </FormControl>
                     <FormControl  fullWidth>
                         <Controller
