@@ -30,8 +30,15 @@
 .topbarIconContainer {
   position: relative;
   cursor: pointer;
-  margin-right: 10px;
+  margin-left: 10px;
   color: #555;
+}
+
+.topDropdownmenu{
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 17.5rem;
 }
 
 .topIconBadge{
