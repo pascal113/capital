@@ -194,8 +194,19 @@ export const deleteJob = async (id, dispatch) => {
 export const updateJob = async (id, job, dispatch) => {
   dispatch(updateJobStart());
   try {
-    // update
-    dispatch(updateJobSuccess({ id, job }));
+    const res = await userRequest.post(
+      `/jobs/${id}`, 
+      job, 
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        }
+    });
+
+    if(res.data.code === 0){
+      const data = res.data.data;
+      dispatch(updateJobSuccess({ id, data }));
+    }
   } catch (err) {
     dispatch(updateJobFailure());
   }
