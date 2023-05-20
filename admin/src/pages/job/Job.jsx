@@ -85,16 +85,19 @@ const Job = () => {
         setEditOpen(false);
     }
 
-    const handleSubmit = (id, data) => {
-        console.log('handleSubmit', data);
+    const handleSubmit = (id, data) => {        
         if(id===''){
-
+            onAddJob(id, data);
         }
         else {
             onUpdateJob(id, data);
         }
         setEditOpen(false);
     }
+
+    const onAddJob = (id, job) => {
+        addJob(job, dispatch);
+    };
 
     const onUpdateJob = (id, job) => {
         updateJob(id, job, dispatch);
@@ -119,7 +122,7 @@ const Job = () => {
 
     return (
         <div className="job">
-        { (editOpen===false && jobs.length > 0)? (
+        { editOpen===false? (
             <>
             <div className="jobAddBtn">
                 <Button variant="contained" component="label" size="medium" color="primary" startIcon={<AddIcon />} onClick={(event) => handleAddClick(event)}>
