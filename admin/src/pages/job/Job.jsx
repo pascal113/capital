@@ -157,8 +157,14 @@ const Job = () => {
                                 primaryTypographyProps={listItemTextStyle}
                             />
                             <ListItem disablePadding={true} secondaryAction={
-                                <IconButton edge="end" aria-label="edit" onClick={(event) => handleEditClick(event, index)}>
-                                <EditIcon />
+                                <IconButton edge="end" aria-label="edit" onClick={(event) => handleEditClick(event, index)} style={listItemTextStyle}>
+                                <EditIcon />Germany
+                                </IconButton>} style={{ top: "-30px", right: "200px", left: "auto" }}>
+                            </ListItem>
+
+                            <ListItem disablePadding={true} secondaryAction={
+                                <IconButton edge="end" aria-label="edit" onClick={(event) => handleEditClick(event, index)} style={listItemTextStyle}>
+                                <EditIcon />English
                                 </IconButton>} style={{ top: "-30px", right: "80px", left: "auto" }}>
                             </ListItem>
                             
