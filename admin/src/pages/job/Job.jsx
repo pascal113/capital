@@ -2,7 +2,7 @@ import "./job.css";
 
 import React, { useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteJob, getJobs, updateJob, addJob } from "../../redux/apiCalls";
+import { deleteJob, getJobs, updateJob, addJob, getJobTypes, getJobLocations, getJobFields } from "../../redux/apiCalls";
 import { useTranslation } from 'react-i18next';
 import ConfirmDialog from '../../components/confirm/ConfirmDialog';
 //import JobList from "./JobList";
@@ -44,6 +44,9 @@ const listItemTextStyle = {
 
 const Job = () => {
     const dispatch = useDispatch();
+    const types = useSelector((state) => state.job.types);
+    const locations = useSelector((state) => state.job.locations);
+    const fields = useSelector((state) => state.job.fields);
     const jobs = useSelector((state) => state.job.jobs);
     /*const jobListData = useMemo(() => {
         return jobs.length ? (jobs.data.map((item) => ({ company: 'German Capital Pharma GmbH', department: item.title,  
@@ -57,6 +60,13 @@ const Job = () => {
     const [confirmOpen, setConfirmOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState(-1);
     const [editOpen, setEditOpen] = useState(false);
+    const [editLanguage, setEditLanguage] = useState('de');
+
+    useEffect(() => {
+        getJobTypes(dispatch);
+        getJobLocations(dispatch);
+        getJobFields(dispatch);
+    }, []);
 
     useEffect(() => {
         getJobs(dispatch);
@@ -68,11 +78,13 @@ const Job = () => {
 
     const handleAddClick = (e) => {
         setSelectedItem(-1);
+        setEditLanguage('de');
         setEditOpen(true);
     };
 
-    const handleEditClick = (event, index) => {
+    const handleEditClick = (event, index, lang) => {
         setSelectedItem(getRealIndex(index));
+        setEditLanguage(lang);
         setEditOpen(true);
     };
 
@@ -120,6 +132,36 @@ const Job = () => {
         setPage(0);
     };
 
+
+    const getFieldName = (array, id) => {
+        for (let i=0, iLen=array.length; i<iLen; i++) {
+
+            if (array[i].id === id) 
+            return array[i];
+        }
+        
+        return '';
+    }
+
+    const getFieldNames = (id_array, language) => {
+        const id_arr_len = id_array.length;
+        const name = (language=== 'DE')?'name_de':'name_gb';
+        let filed_name = '';
+
+        if(id_arr_len <= 0)
+            return filed_name;
+
+        for(let i = 0; i < id_arr_len; i++) {
+            const id = id_array[i];
+            filed_name += fields[i].name_label;
+            if(i < (id_arr_len - 1)) {
+                filed_name += ', ';
+            }
+        }
+
+        return filed_name;
+    };
+
     return (
         <div className="job">
         { editOpen===false? (
@@ -153,17 +195,17 @@ const Job = () => {
                         
                             <ListItemText 
                                 sx={{ padding: "2px 10px 5px 0px" }}
-                                primary={'Art: ' + jobItem.type + ' | ' + jobItem.location + ' | ' + jobItem.field}
+                                primary={'Art: ' + types[jobItem.type] + ' | ' + locations[jobItem.location] + ' | ' + getFieldNames(jobItem.field)}
                                 primaryTypographyProps={listItemTextStyle}
                             />
                             <ListItem disablePadding={true} secondaryAction={
-                                <IconButton edge="end" aria-label="edit" onClick={(event) => handleEditClick(event, index)} style={listItemTextStyle}>
+                                <IconButton edge="end" aria-label="edit" onClick={(event) => handleEditClick(event, index, 'de')} style={listItemTextStyle}>
                                 <EditIcon />Germany
                                 </IconButton>} style={{ top: "-30px", right: "200px", left: "auto" }}>
                             </ListItem>
 
                             <ListItem disablePadding={true} secondaryAction={
-                                <IconButton edge="end" aria-label="edit" onClick={(event) => handleEditClick(event, index)} style={listItemTextStyle}>
+                                <IconButton edge="end" aria-label="edit" onClick={(event) => handleEditClick(event, index, 'gb')} style={listItemTextStyle}>
                                 <EditIcon />English
                                 </IconButton>} style={{ top: "-30px", right: "80px", left: "auto" }}>
                             </ListItem>
@@ -207,9 +249,13 @@ const Job = () => {
             </div>
             </>
         ) : (
-            <JobForm 
-                job={(selectedItem!==-1)? jobs[selectedItem] : null} 
-                open={editOpen} 
+            <JobForm
+                job={(selectedItem!==-1)? jobs[selectedItem] : null}
+                types={types}
+                locations={locations}
+                fields={fields}
+                open={editOpen}
+                editLanguage={editLanguage}
                 handleClose={handleClose}  
                 onClose={handleClose} 
                 onSubmit={handleSubmit}>

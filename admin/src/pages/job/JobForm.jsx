@@ -9,12 +9,10 @@ import {
     Button, 
     TextField,
     Dialog,
-
     DialogContent,
     DialogTitle,
     Typography
 } from '@mui/material';
-
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { useTranslation } from 'react-i18next';
 import { useForm, Controller } from 'react-hook-form';
@@ -42,8 +40,7 @@ const getStyles = (name, personName, theme) => {
     };
 };
 
-
-const getFormData = (input) => {
+const getFormData = (input, lang) => {
     const formData = {
         id: '',
         title: '',
@@ -63,10 +60,11 @@ const getFormData = (input) => {
         return formData;
 
     formData['id'] = input._id;
+    formData['language'] = (lang === 'de')?'DE':'GB';
     formData['title'] = input.title;
     formData['type'] = input.type;
     formData['location'] = input.location;
-    formData['field'] = input.field.split(/[,]+/);
+    formData['field'] = input.field.length > 0?input.field.split(/[,]+/):'';
     formData['introduction'] = input.about.introduction;
     formData['content_waiting_for_you_detail'] = input.about.content[0].detail.length > 0?input.about.content[0].detail.join('\n'):"";
     formData['content_bring_with_you_detail'] = input.about.content[1].detail.length > 0?input.about.content[1].detail.join('\n'):"";
@@ -81,14 +79,14 @@ const getFormData = (input) => {
 
 const JobForm = (props) => {
     const { t }  = useTranslation(['page']);
-    const select_type_list = t('jobs.form.type', { returnObjects: true });
-    const select_location_list = t('jobs.form.location', { returnObjects: true });
-    const select_field_list = t('jobs.form.field', { returnObjects: true });
+    //const select_type_list = t('jobs.form.type', { returnObjects: true });
+    //const select_location_list = t('jobs.form.location', { returnObjects: true });
+    //const select_field_list = t('jobs.form.field', { returnObjects: true });
     const label_content_detail = t('jobs.form.lb_content', { returnObjects: true });
     const theme = useTheme();
-    const {open, job, handleClose } = props;
+    const {open, job, types, locations, fields, editLanguage, handleClose } = props;
     //const [formData, setFormData] = React.useState(getFormData(job));
-    const formData = getFormData(job);
+    const formData = getFormData(job, editLanguage);
     
     const handleSelectChange = (event, newValue) => {
         const { target: { name, value }, } = event;
@@ -104,21 +102,26 @@ const JobForm = (props) => {
     const handleFormItemChange = (event) => {
         const { target: { name, value }, } = event;
         //setFormData({...formData, [name]: value});
-    };    
+    };
+
+    const title_name = editLanguage==='de'?'title': 'title_gb';
+    const type_name= editLanguage==='de'?'type': 'type';
+    const field_name = editLanguage==='de'?'field': 'field';
+    const location_name = editLanguage==='de'?'location': 'location';
 
     const validationSchema = Yup.object().shape({
-        title: Yup.string()
+        [title_name]: Yup.string()
             .required('Title is required')
             .min(10, 'Introduction must be at least 10 characters'),
         introduction: Yup.string()
             .required('Introduction is required')
             .min(10, 'Introduction must be at least 10 characters'),
-        type: Yup.string()
-            .required('Type is required'),
-        field: Yup.array()
+        [type_name]: Yup.string()
+            .required("This field is required"),
+        [field_name]: Yup.array()
             .min(1, "This field is required"),
-        location: Yup.string()
-            .required('Location is required'),
+        [location_name]: Yup.string()
+            .required("This field is required"),
         content_waiting_for_you_detail: Yup.string()
             .required('This field is required'),
         content_bring_with_you_detail: Yup.string()
@@ -160,28 +163,26 @@ const JobForm = (props) => {
                     <FormControl sx={{ mt:3 }} fullWidth>
                         <Controller
                         control={control}
-                        name="title"
+                        name={title_name}
                         render={({ field }) => (
                             <TextField
                                 margin="normal"
                                 required
                                 fullWidth
-                                id="title"
                                 label="title"
-                                name="title"
+                                name={title_name}
                                 autoFocus
                                 multiline
                                 onChange={handleFormItemChange}
                                 placeholder="Please input title content"
-                                autoComplete="title"
-                                {...register('title')}
-                                error={errors.title ? true : false}
+                                autoComplete={title_name}
+                                {...register(title_name)}
+                                error={errors[title_name] ? true : false}
                             />
-                            
                         )}>
                         </Controller>
                         <Typography variant="inherit" color="textSecondary">
-                        {errors.introduction?.message}
+                        {errors[title_name]?.message}
                         </Typography>  
                     </FormControl>
                     <FormControl sx={{ mt:1 }} fullWidth>
@@ -214,15 +215,15 @@ const JobForm = (props) => {
                         <InputLabel id="type-label">Type</InputLabel>
                         <Controller
                         control={control}
-                        name="type"
+                        name={type_name}
                         render={({ field }) => (
                             <Select
                             {...field}
                             label="type"
-                            {...register('type')}
-                            error={errors.type ? true : false}
+                            {...register(type_name)}
+                            error={errors[type_name] ? true : false}
                             >
-                                {select_type_list.map((item, index) => (
+                                {types.map((item, index) => (
                                     <MenuItem  key={index} value={item.value}>
                                         {item.name}
                                     </MenuItem>
@@ -231,22 +232,22 @@ const JobForm = (props) => {
                         )}>
                         </Controller>
                         <Typography variant="inherit" color="textSecondary">
-                            {errors.type?.message}
+                            {errors[type_name]?.message}
                         </Typography>
                     </FormControl>
                     <FormControl sx={{ mt:3 }} fullWidth>
                         <InputLabel id="location-label">Location</InputLabel>
                         <Controller
                         control={control}
-                        name="location"
+                        name={location_name}
                         render={({ field }) => (
                             <Select
                             {...field}
                             label="location"
-                            {...register('location')}
-                            error={errors.type ? true : false}
+                            {...register(location_name)}
+                            error={errors[location_name] ? true : false}
                             >
-                                {select_location_list.map((location, index) => (
+                                {locations.map((location, index) => (
                                     <MenuItem key={index} value={location.value}>
                                         {location.name}
                                     </MenuItem>
@@ -254,14 +255,14 @@ const JobForm = (props) => {
                             </Select>
                         )}></Controller>
                         <Typography variant="inherit" color="textSecondary">
-                            {errors.location?.message}
+                            {errors[location_name]?.message}
                         </Typography>
                     </FormControl>
                     <FormControl sx={{ mt:4 }} fullWidth>
                         <InputLabel id="field-label">Field</InputLabel>
                         <Controller
                             control={control}
-                            name="field"
+                            name={field_name}
                             render={({ field: { onChange, value, name, ref } }) => (
                                 <Select
                                 id="field"
@@ -280,10 +281,10 @@ const JobForm = (props) => {
                                     ))}
                                     </Box>
                                 )}
-                                {...register('field')}
-                                error={errors.field ? true : false}
+                                {...register(field_name)}
+                                error={errors[field_name] ? true : false}
                                 >
-                                {select_field_list.map((fieldItem, index) => (
+                                {fields.map((fieldItem, index) => (
                                     <MenuItem key={index} value={fieldItem.value}>
                                     {fieldItem.name}
                                     </MenuItem>
@@ -292,7 +293,7 @@ const JobForm = (props) => {
                             )}
                         />
                         <Typography variant="inherit" color="textSecondary">
-                            {errors.field?.message}
+                            {errors[field_name]?.message}
                         </Typography>
                     </FormControl>
                     <FormControl sx={{ mt:5 }} fullWidth>

@@ -116,8 +116,8 @@
         "form": {
             "type": [
                 {
-                    "name" : "Vollzeit",
-                    "value" : "Vollzeit",
+                    "name" : "Full-Time",
+                    "value" : "1",
                     "defaultValue": true
                 },
                 {
@@ -134,18 +134,18 @@
                     "defaultValue": true
                 },
                 {
-                    "name" : "NewYork",
-                    "value" : "NewYork",
+                    "name" : "Hamburg",
+                    "value" : "Hamburg",
                     "defaultValue": false
                 },
                 {
-                    "name" : "München",
-                    "value" : "München",
+                    "name" : "Munich",
+                    "value" : "Munich",
                     "defaultValue": false
                 },
                 {
-                    "name" : "Köln",
-                    "value" : "Köln",
+                    "name" : "Cologne",
+                    "value" : "Cologne",
                     "defaultValue": false
                 }
             ],
@@ -153,18 +153,23 @@
             "field": [
                 {
                     "id": 1,
-                    "name" : "Editorial & Production",
-                    "value" : "Editorial & Production"
+                    "name" : "Adminstration",
+                    "value" : "Adminstration"
                 },
                 {
                     "id": 2,
-                    "name" : "Product Manager",
-                    "value" : "Product Manager"
+                    "name" : "Finance/Controlling",
+                    "value" : "Finance/Controlling"
                 },
                 {
-                    "id": 2,
-                    "name" : "Industry",
-                    "value" : "Industry"
+                    "id": 3,
+                    "name" : "Product Management",
+                    "value" : "Product Management"
+                },
+                {
+                    "id": 4,
+                    "name" : "Technology Developement",
+                    "value" : "Technology Developement"
                 }
             ],
             "lb_add_new": "Add New Job",
