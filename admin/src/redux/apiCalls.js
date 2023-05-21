@@ -56,7 +56,7 @@ import {
 export const login = async (dispatch, user, history) => {
   dispatch(loginStart());
   try {
-    const res = await publicRequest.post("/auth/login", user);
+    const res = await userRequest.post("/auth/login", user);
     if(res.data.code === 0){
       dispatch(loginSuccess(res.data));
       history.push('/admin/');
