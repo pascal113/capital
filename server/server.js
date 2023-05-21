@@ -11,9 +11,12 @@ import cors from 'cors'
 import connectDB from './config/db.js'
 
 import authRoutes from './routes/auth.js';
-import jobRoutes from './routes/jobs.js';
+import jobsRoutes from './routes/jobs.js';
 import imagesRoutes from './routes/images.js';
 import mailRoutes from './routes/mail.js';
+import typesRoutes from './routes/types.js';
+import locationsRoutes from './routes/locations.js';
+import fieldsRoutes from './routes/fields.js';
 
 dotenv.config();
 await connectDB();
@@ -45,10 +48,13 @@ const apiLogger = (req, res, next) => {
 
 app.use('/api', apiLogger); // Routes
 
-app.use('/api/jobs', jobRoutes);
+app.use('/api/jobs', jobsRoutes);
 app.use('/api/images', imagesRoutes);
 app.use('/api/mail', mailRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/types', typesRoutes);
+app.use('/api/locations', locationsRoutes);
+app.use('/api/fields', fieldsRoutes);
 
 const __dirname = path.resolve();
 console.log(__dirname);

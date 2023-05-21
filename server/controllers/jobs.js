@@ -62,17 +62,20 @@ const add_job = asyncHandler( async (req, res) => {
             let about = JSON.stringify(about_data);
             console.log(about);
 
-            const addJob = await Job.create({
-                title,
+            const addJob = await Job.create({                
                 type,
                 location,
-                field,
-                about
+                field,                
+                title_de: title,
+                about_de: about,
+                title_gb: title,
+                about_gb: about
             });
 
             let job_json_data = JSON.parse(JSON.stringify(addJob));
-            if(addJob.about) {
-                job_json_data.about = JSON.parse(addJob.about);
+            if(addJob.about_de) {
+                job_json_data.about_de = JSON.parse(addJob.about_de);
+                job_json_data.about_gb = JSON.parse(addJob.about_gb);
             }
             responseClient(res,200,0,'Save success',job_json_data);
 
@@ -101,6 +104,7 @@ const update_job = asyncHandler(async (req, res) => {
       }
   
       const {
+        language,
         title,
         type,
         location,
@@ -110,18 +114,29 @@ const update_job = asyncHandler(async (req, res) => {
       let job_about_data = makeJobAboutJSONData(req.body);
       let about = JSON.stringify(job_about_data);
 
-      job.title = title || job.title;
       job.type = type || job.type;
       job.location = location || job.location;
       job.field = field || job.field;
-      job.about = about || job.about;
+
+      if(language === 'GB') {
+        job.title_gb = title || job.title_gb;
+        job.about_gb = about || job.about_gb;
+      }
+      else {
+        job.title_de = title || job.title_de;
+        job.about_de = about || job.about_de;
+      }   
       
       await job.save();
 
       let job_json_data = JSON.parse(JSON.stringify(job));
-      if(job.about) {
-          job_json_data.about = JSON.parse(job.about);
-      }   
+      if(job.about_de) {
+        job_json_data.about_de = JSON.parse(job.about_de);
+      }
+
+      if(job.about_gb) {
+        job_json_data.about_gb = JSON.parse(job.about_gb);
+      }
 
       responseClient(res, 200, 0, 'Job updated successfully', job_json_data);
     } catch (error) {
@@ -159,9 +174,14 @@ const get_job = asyncHandler(async (req, res) => {
         }
 
         let job_json_data = JSON.parse(JSON.stringify(job));
-        if(job.about) {
-            job_json_data.about = JSON.parse(job.about);
-        }   
+        if(job.about_de) {
+            job_json_data.about_de = JSON.parse(job.about_de);
+        }
+
+        if(job.about_gb) {
+            job_json_data.about_gb = JSON.parse(job.about_gb);
+        }
+
         // job_json_data.field = job.field ? job.field.split(',') : [];
            
         console.log(job_json_data);
@@ -179,45 +199,57 @@ const get_job_list = asyncHandler(async (req, res) => {
     try {
         console.log('get_job_list');
         console.log(req.query);
-        // const { type } = req.query;
-        const { type, location, field, language } = req.query;        
+        // const { type, location, field, language } = req.query;
+        const { type, location, field } = req.query;
         const filter = {};
 
-        if(language === 'GB') {
-            if (type) {
-                filter.type_gb = type;
-            }
-        
-            if (location) {
-                filter.location_gb = location;
-            }
-        
-            if (field) {    
-                const fieldArray = field ? field.split(',') : [];
-
-                const patterns = fieldArray.map(term => new RegExp(term, 'i')); // 'i' flag makes the search case-insensitive
-                filter.field_gb = {$in: patterns};         
-            }
-        }   
-        else {
-            if (type) {
-                filter.type = type;
-            }
-        
-            if (location) {
-                filter.location = location;
-            }
-        
-            if (field) {
+        if (type) {
+            filter.type = type;
+        }
     
-                const fieldArray = field ? field.split(',') : [];
+        if (location) {
+            filter.location = location;
+        }
     
-                const patterns = fieldArray.map(term => new RegExp(term, 'i')); // 'i' flag makes the search case-insensitive
-                filter.field = {$in: patterns};         
-            }
+        if (field) {
+            const fieldArray = field ? field.split(',') : [];
+            const patterns = fieldArray.map(term => new RegExp(term, 'i')); // 'i' flag makes the search case-insensitive
+            filter.field = {$in: patterns};         
         }
 
-        console.log(filter);
+        // if(language === 'GB') {
+        //     if (type) {
+        //         filter.type_gb = type;
+        //     }
+        
+        //     if (location) {
+        //         filter.location_gb = location;
+        //     }
+        
+        //     if (field) {    
+        //         const fieldArray = field ? field.split(',') : [];
+
+        //         const patterns = fieldArray.map(term => new RegExp(term, 'i')); // 'i' flag makes the search case-insensitive
+        //         filter.field_gb = {$in: patterns};         
+        //     }
+        // }   
+        // else {
+        //     if (type) {
+        //         filter.type = type;
+        //     }
+        
+        //     if (location) {
+        //         filter.location = location;
+        //     }
+        
+        //     if (field) {
+    
+        //         const fieldArray = field ? field.split(',') : [];
+    
+        //         const patterns = fieldArray.map(term => new RegExp(term, 'i')); // 'i' flag makes the search case-insensitive
+        //         filter.field = {$in: patterns};         
+        //     }
+        // }
     
         // const jobs = await Job.find(filter).sort({createdAt:-1});
         const jobs = await Job.find(filter);
@@ -225,8 +257,9 @@ const get_job_list = asyncHandler(async (req, res) => {
         let data_job_list = [];
         jobs.forEach((job) => {            
             let job_json_data = JSON.parse(JSON.stringify(job));
-            if(job.about) {
-                job_json_data.about = JSON.parse(job.about);
+
+            if(job.about_de) {
+                job_json_data.about_de = JSON.parse(job.about_de);
             }
 
             if(job.about_gb) {

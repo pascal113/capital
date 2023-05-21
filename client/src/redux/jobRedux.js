@@ -19,15 +19,15 @@ const makeJobItemData = (serverData) => {
       // let tmpData = [];
       tmpData.id = index;
       tmpData.name = "German Capital Pharma GmbH";
-      tmpData.activity = job.title;
-      tmpData.type = 'Art: ' + job.type + ' | ' + job.location
+      tmpData.activity_de = job.title_de;
+      tmpData.type_de = 'Art: ' + job.type + ' | ' + job.location
          + ' | ' + job.field;
       
-      tmpData.about = job.about;
+      tmpData.about_de = job.about_de;
 
       tmpData.activity_gb = job.title_gb;
-      tmpData.type_gb = 'Art: ' + job.type_gb + ' | ' + job.location_gb
-         + ' | ' + job.field_gb;
+      tmpData.type_gb = 'Art: ' + job.type + ' | ' + job.location
+         + ' | ' + job.field;
       
       tmpData.about_gb = job.about_gb;
 
@@ -41,6 +41,9 @@ export const jobSlice = createSlice({
   name: "job",
   initialState: {
     jobs: [],
+    types: [],
+    locations: [],
+    fields: [],
     isFetching: false,
     error: false,
   },
@@ -59,6 +62,51 @@ export const jobSlice = createSlice({
       state.error = true;
       state.jobs = [];
       toast.error("get job failed");
+    },
+    // Get Types
+    getTypeStart: (state) => {
+      state.isFetching = true;
+      state.error = false;
+    },
+    getTypeSuccess: (state, action) => {
+      state.isFetching = false;
+      state.jobs = makeJobItemData(action.payload.data);
+    },
+    getTypeFailure: (state) => {
+      state.isFetching = false;
+      state.error = true;
+      state.jobs = [];
+      toast.error("get job failed");
+    },
+    // Get Locations
+    getLocationStart: (state) => {
+      state.isFetching = true;
+      state.error = false;
+    },
+    getLocationSuccess: (state, action) => {
+      state.isFetching = false;
+      state.jobs = makeJobItemData(action.payload.data);
+    },
+    getLocationFailure: (state) => {
+      state.isFetching = false;
+      state.error = true;
+      state.jobs = [];
+      toast.error("get job failed");
+    },
+    // Get Fields
+    getFieldStart: (state) => {
+      state.isFetching = true;
+      state.error = false;
+    },
+    getFieldSuccess: (state, action) => {
+      state.isFetching = false;
+      state.jobs = makeJobItemData(action.payload.data);
+    },
+    getFieldFailure: (state) => {
+      state.isFetching = false;
+      state.error = true;
+      state.jobs = [];
+      toast.error("get job failed");
     }
   },
 });
@@ -66,7 +114,7 @@ export const jobSlice = createSlice({
 export const {
   getJobStart,
   getJobSuccess,
-  getJobFailure
+  getJobFailure,
 } = jobSlice.actions;
 
 export default jobSlice.reducer;
