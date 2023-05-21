@@ -1,9 +1,10 @@
 import "./job.css";
 
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteJob, getJobs, updateJob, addJob, getJobTypes, getJobLocations, getJobFields } from "../../redux/apiCalls";
 import { useTranslation } from 'react-i18next';
+import commonContext from '../../contexts/common/commonContext';
 import ConfirmDialog from '../../components/confirm/ConfirmDialog';
 //import JobList from "./JobList";
 import { makeStyles, withStyles } from '@mui/styles';
@@ -43,6 +44,7 @@ const listItemTextStyle = {
 };
 
 const Job = () => {
+    const { curLanguage } = useContext(commonContext);
     const dispatch = useDispatch();
     const types = useSelector((state) => state.job.types);
     const locations = useSelector((state) => state.job.locations);
@@ -53,6 +55,7 @@ const Job = () => {
                         description: 'Art: ' + item.type + ' | ' + item.location + ' | ' + item.field}))): [];
     }, [jobs]);*/
 
+    console.log('locations', locations);
     const { t }  = useTranslation(['page']);
     const classes = useStyles();
     const [page, setPage] = useState(0);
@@ -60,15 +63,12 @@ const Job = () => {
     const [confirmOpen, setConfirmOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState(-1);
     const [editOpen, setEditOpen] = useState(false);
-    const [editLanguage, setEditLanguage] = useState('de');
+    const [editLanguage, setEditLanguage] = useState('DE');
 
     useEffect(() => {
         getJobTypes(dispatch);
         getJobLocations(dispatch);
         getJobFields(dispatch);
-    }, []);
-
-    useEffect(() => {
         getJobs(dispatch);
     }, [dispatch]);
 
@@ -78,7 +78,7 @@ const Job = () => {
 
     const handleAddClick = (e) => {
         setSelectedItem(-1);
-        setEditLanguage('de');
+        setEditLanguage('DE');
         setEditOpen(true);
     };
 
@@ -132,29 +132,26 @@ const Job = () => {
         setPage(0);
     };
 
-
-    const getFieldName = (array, id) => {
+    const getItemName = (array, id, language) => {
         for (let i=0, iLen=array.length; i<iLen; i++) {
-
             if (array[i].id === id) 
-            return array[i];
+                return language==='DE'?array[i].name_de:array[i].name_gb;
         }
-        
         return '';
-    }
+    };
+    
 
-    const getFieldNames = (id_array, language) => {
-        const id_arr_len = id_array.length;
-        const name = (language=== 'DE')?'name_de':'name_gb';
+    const getFieldNames = (fieldNames, language) => {
+        const fieldArray = fieldNames ? fieldNames.split(',') : [];
+        const arr_len = fieldArray.length;
         let filed_name = '';
 
-        if(id_arr_len <= 0)
+        if(arr_len <= 0)
             return filed_name;
 
-        for(let i = 0; i < id_arr_len; i++) {
-            const id = id_array[i];
-            filed_name += fields[i].name_label;
-            if(i < (id_arr_len - 1)) {
+        for(let i = 0; i < arr_len; i++) {
+            filed_name += getItemName(fields, fieldArray[i], curLanguage);
+            if(i < (arr_len - 1)) {
                 filed_name += ', ';
             }
         }
@@ -177,6 +174,8 @@ const Job = () => {
                 {(jobs
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((jobItem, index) => {
+                    console.log('types', types);
+                    console.log('jobItem', jobItem);
                     return (
                         <React.Fragment key={index}>
                             {/*<ListItemText
@@ -189,23 +188,23 @@ const Job = () => {
                             <ListItemText
                                 sx={{ padding: "2px 10px 2px 0px" }}
                                 
-                                primary={jobItem.title}
+                                primary={curLanguage==='DE'?jobItem.title_de:jobItem.title_gb}
                                 primaryTypographyProps={listItemTextStyle}
                             />
                         
                             <ListItemText 
                                 sx={{ padding: "2px 10px 5px 0px" }}
-                                primary={'Art: ' + types[jobItem.type] + ' | ' + locations[jobItem.location] + ' | ' + getFieldNames(jobItem.field)}
+                                primary={'Art: ' + getItemName(types, jobItem.type, curLanguage) + ' | ' + getItemName(locations, jobItem.location, curLanguage) + ' | ' + getFieldNames(jobItem.field)}
                                 primaryTypographyProps={listItemTextStyle}
                             />
                             <ListItem disablePadding={true} secondaryAction={
-                                <IconButton edge="end" aria-label="edit" onClick={(event) => handleEditClick(event, index, 'de')} style={listItemTextStyle}>
+                                <IconButton edge="end" aria-label="edit" onClick={(event) => handleEditClick(event, index, 'DE')} style={listItemTextStyle}>
                                 <EditIcon />Germany
                                 </IconButton>} style={{ top: "-30px", right: "200px", left: "auto" }}>
                             </ListItem>
 
                             <ListItem disablePadding={true} secondaryAction={
-                                <IconButton edge="end" aria-label="edit" onClick={(event) => handleEditClick(event, index, 'gb')} style={listItemTextStyle}>
+                                <IconButton edge="end" aria-label="edit" onClick={(event) => handleEditClick(event, index, 'GB')} style={listItemTextStyle}>
                                 <EditIcon />English
                                 </IconButton>} style={{ top: "-30px", right: "80px", left: "auto" }}>
                             </ListItem>

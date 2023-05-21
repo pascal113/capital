@@ -60,7 +60,7 @@ const getFormData = (input, lang) => {
         return formData;
 
     formData['id'] = input._id;
-    formData['language'] = (lang === 'de')?'DE':'GB';
+    formData['language'] = (lang === 'DE')?'DE':'GB';
     formData['title'] = input.title;
     formData['type'] = input.type;
     formData['location'] = input.location;
@@ -104,10 +104,10 @@ const JobForm = (props) => {
         //setFormData({...formData, [name]: value});
     };
 
-    const title_name = editLanguage==='de'?'title': 'title_gb';
-    const type_name= editLanguage==='de'?'type': 'type';
-    const field_name = editLanguage==='de'?'field': 'field';
-    const location_name = editLanguage==='de'?'location': 'location';
+    const title_name = editLanguage==='DE'?'title': 'title_gb';
+    const type_name= editLanguage==='DE'?'type': 'type';
+    const field_name = editLanguage==='DE'?'field': 'field';
+    const location_name = editLanguage==='DE'?'location': 'location';
 
     const validationSchema = Yup.object().shape({
         [title_name]: Yup.string()

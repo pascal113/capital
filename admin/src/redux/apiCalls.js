@@ -203,7 +203,7 @@ export const updateMenu = async (id, menu, dispatch) => {
 export const getJobTypes = async (dispatch) => {
   dispatch(getJobStart());
   try {
-    const res = await userRequest.get("/jobs/types/list");
+    const res = await userRequest.get("/types/list");
     if(res.data.code === 0){
       dispatch(getJobTypeSuccess(res.data.data));
     }
@@ -215,7 +215,7 @@ export const getJobTypes = async (dispatch) => {
 export const getJobLocations = async (dispatch) => {
   dispatch(getJobStart());
   try {
-    const res = await userRequest.get("/jobs/locations/list");
+    const res = await userRequest.get("/locations/list");
     if(res.data.code === 0){
       dispatch(getJobLocationSuccess(res.data.data));
     }
@@ -227,7 +227,7 @@ export const getJobLocations = async (dispatch) => {
 export const getJobFields = async (dispatch) => {
   dispatch(getJobStart());
   try {
-    const res = await userRequest.get("/jobs/fields/list");
+    const res = await userRequest.get("/fields/list");
     if(res.data.code === 0){
       dispatch(getJobFieldSuccess(res.data.data));
     }
