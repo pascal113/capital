@@ -40,87 +40,79 @@ const getStyles = (name, personName, theme) => {
     };
 };
 
-const getFormData = (input, lang) => {
-    const formData = {
-        id: '',
-        title: '',
-        type: [],
-        location: [],
-        field: [],
-        introduction: '',
-        content_waiting_for_you_detail: '',
-        content_bring_with_you_detail: '',
-        content_we_offer_you_subtitle: '',
-        content_we_offer_you_detail: '',
-        info_contact: '',
-        info_comment: '',
-    };
+const getItemName = (array, id, language) => {
+    for (let i=0, iLen=array.length; i<iLen; i++) {
+        if (array[i].id === id) 
+            return language==='DE'?array[i].name_de:array[i].name_gb;
+    }
+    return '';
+};
 
-    if(input == null)
-        return formData;
-
-    formData['id'] = input._id;
-    formData['language'] = (lang === 'DE')?'DE':'GB';
-    formData['title'] = input.title;
-    formData['type'] = input.type;
-    formData['location'] = input.location;
-    formData['field'] = input.field.length > 0?input.field.split(/[,]+/):'';
-    formData['introduction'] = input.about.introduction;
-    formData['content_waiting_for_you_detail'] = input.about.content[0].detail.length > 0?input.about.content[0].detail.join('\n'):"";
-    formData['content_bring_with_you_detail'] = input.about.content[1].detail.length > 0?input.about.content[1].detail.join('\n'):"";
-    formData['content_we_offer_you_subtitle'] = input.about.content[2].subtitle;
-    formData['content_we_offer_you_detail'] = input.about.content[2].detail.length > 0?input.about.content[2].detail.join('\n'):"";
-    formData['info_contact'] = input.about.info.contact.length > 0?input.about.info.contact.join('\n'):"";
-    formData['info_comment'] = input.about.info.comment.length > 0?input.about.info.comment.join('\n'):"";
-
-    return formData;
+const getFormFields = (fields, ids, language) => {
+    let fieldNames = [];
+    const id_array = ids.split(',');
+    id_array.forEach((item) => {
+        fieldNames.push(getItemName(fields, item, language));
+    });
+    
+    return fieldNames;
 }
-
 
 const JobForm = (props) => {
     const { t }  = useTranslation(['page']);
-    //const select_type_list = t('jobs.form.type', { returnObjects: true });
-    //const select_location_list = t('jobs.form.location', { returnObjects: true });
-    //const select_field_list = t('jobs.form.field', { returnObjects: true });
     const label_content_detail = t('jobs.form.lb_content', { returnObjects: true });
-    const theme = useTheme();
     const {open, job, types, locations, fields, editLanguage, handleClose } = props;
-    //const [formData, setFormData] = React.useState(getFormData(job));
-    const formData = getFormData(job, editLanguage);
+    const sufLabel = (editLanguage === 'DE')?'_de':'_gb';
     
-    const handleSelectChange = (event, newValue) => {
-        const { target: { name, value }, } = event;
-        //setFormData({...formData, [name]: value});
-        //console.log('handleSelectChange', formData);
-    };
+    const getFormData = () => {
+        const formData = {
+            id: '',
+            title: '',
+            type: [],
+            location: [],
+            field: [],
+            introduction: '',
+            content_waiting_for_you_detail: '',
+            content_bring_with_you_detail: '',
+            content_we_offer_you_subtitle: '',
+            content_we_offer_you_detail: '',
+            info_contact: '',
+            info_comment: '',
+        };
 
-    const handleMultiSelectChange = (event) => {
-        const { target: { name, value }, } = event;
-        //setFormData({...formData, [name]: typeof value === 'string' ? value.split(',') : value,});
-    };
+        if(job == null)
+            return formData;
 
-    const handleFormItemChange = (event) => {
-        const { target: { name, value }, } = event;
-        //setFormData({...formData, [name]: value});
-    };
+        formData['id'] = job._id;
+        formData['language'] = editLanguage;
+        formData['title'] = job[`title${sufLabel}`];
+        formData['type'] = job.type;
+        formData['location'] = job.location;
+        formData['field'] = job.field.length > 0?getFormFields(fields, job.field, editLanguage):'';
+        formData['introduction'] = job[`about${sufLabel}`].introduction;
+        formData['content_waiting_for_you_detail'] = job[`about${sufLabel}`].content[0].detail.length > 0?job[`about${sufLabel}`].content[0].detail.join('\n'):"";
+        formData['content_bring_with_you_detail'] = job[`about${sufLabel}`].content[1].detail.length > 0?job[`about${sufLabel}`].content[1].detail.join('\n'):"";
+        formData['content_we_offer_you_subtitle'] = job[`about${sufLabel}`].content[2].subtitle;
+        formData['content_we_offer_you_detail'] = job[`about${sufLabel}`].content[2].detail.length > 0?job[`about${sufLabel}`].content[2].detail.join('\n'):"";
+        formData['info_contact'] = job[`about${sufLabel}`].info.contact.length > 0?job[`about${sufLabel}`].info.contact.join('\n'):"";
+        formData['info_comment'] = job[`about${sufLabel}`].info.comment.length > 0?job[`about${sufLabel}`].info.comment.join('\n'):"";
 
-    const title_name = editLanguage==='DE'?'title': 'title_gb';
-    const type_name= editLanguage==='DE'?'type': 'type';
-    const field_name = editLanguage==='DE'?'field': 'field';
-    const location_name = editLanguage==='DE'?'location': 'location';
+        return formData;
+    }
+    const formData = getFormData(job, editLanguage, sufLabel);
 
     const validationSchema = Yup.object().shape({
-        [title_name]: Yup.string()
+        title: Yup.string()
             .required('Title is required')
             .min(10, 'Introduction must be at least 10 characters'),
         introduction: Yup.string()
             .required('Introduction is required')
             .min(10, 'Introduction must be at least 10 characters'),
-        [type_name]: Yup.string()
+        type: Yup.string()
             .required("This field is required"),
-        [field_name]: Yup.array()
+        field: Yup.array()
             .min(1, "This field is required"),
-        [location_name]: Yup.string()
+        location: Yup.string()
             .required("This field is required"),
         content_waiting_for_you_detail: Yup.string()
             .required('This field is required'),
@@ -163,26 +155,25 @@ const JobForm = (props) => {
                     <FormControl sx={{ mt:3 }} fullWidth>
                         <Controller
                         control={control}
-                        name={title_name}
+                        name="title"
                         render={({ field }) => (
                             <TextField
                                 margin="normal"
                                 required
                                 fullWidth
                                 label="title"
-                                name={title_name}
+                                name="title"
                                 autoFocus
                                 multiline
-                                onChange={handleFormItemChange}
                                 placeholder="Please input title content"
-                                autoComplete={title_name}
-                                {...register(title_name)}
-                                error={errors[title_name] ? true : false}
+                                autoComplete="title"
+                                {...register("title")}
+                                error={errors.title ? true : false}
                             />
                         )}>
                         </Controller>
                         <Typography variant="inherit" color="textSecondary">
-                        {errors[title_name]?.message}
+                        {errors.title?.message}
                         </Typography>  
                     </FormControl>
                     <FormControl sx={{ mt:1 }} fullWidth>
@@ -198,7 +189,6 @@ const JobForm = (props) => {
                                 label="introduction"
                                 name="introduction"
                                 multiline
-                                onChange={handleFormItemChange}
                                 placeholder="Please input introduction content"
                                 autoComplete="introduction"
                                 {...register('introduction')}
@@ -215,54 +205,54 @@ const JobForm = (props) => {
                         <InputLabel id="type-label">Type</InputLabel>
                         <Controller
                         control={control}
-                        name={type_name}
+                        name="type"
                         render={({ field }) => (
                             <Select
                             {...field}
                             label="type"
-                            {...register(type_name)}
-                            error={errors[type_name] ? true : false}
+                            {...register("type")}
+                            error={errors.type ? true : false}
                             >
                                 {types.map((item, index) => (
-                                    <MenuItem  key={index} value={item.value}>
-                                        {item.name}
+                                    <MenuItem  key={index} value={item.id}>
+                                        {item[`name${sufLabel}`]}
                                     </MenuItem>
                                 ))}
                             </Select>
                         )}>
                         </Controller>
                         <Typography variant="inherit" color="textSecondary">
-                            {errors[type_name]?.message}
+                            {errors.type?.message}
                         </Typography>
                     </FormControl>
                     <FormControl sx={{ mt:3 }} fullWidth>
                         <InputLabel id="location-label">Location</InputLabel>
                         <Controller
                         control={control}
-                        name={location_name}
+                        name="location"
                         render={({ field }) => (
                             <Select
                             {...field}
                             label="location"
-                            {...register(location_name)}
-                            error={errors[location_name] ? true : false}
+                            {...register("location")}
+                            error={errors.location ? true : false}
                             >
-                                {locations.map((location, index) => (
-                                    <MenuItem key={index} value={location.value}>
-                                        {location.name}
+                                {locations.map((item, index) => (
+                                    <MenuItem key={index} value={item.id}>
+                                        {item[`name${sufLabel}`]}
                                     </MenuItem>
                                 ))}
                             </Select>
                         )}></Controller>
                         <Typography variant="inherit" color="textSecondary">
-                            {errors[location_name]?.message}
+                            {errors.location?.message}
                         </Typography>
                     </FormControl>
                     <FormControl sx={{ mt:4 }} fullWidth>
                         <InputLabel id="field-label">Field</InputLabel>
                         <Controller
                             control={control}
-                            name={field_name}
+                            name="field"
                             render={({ field: { onChange, value, name, ref } }) => (
                                 <Select
                                 id="field"
@@ -277,23 +267,23 @@ const JobForm = (props) => {
                                 renderValue={(selected) => (
                                     <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
                                     {selected.map((value) => (
-                                        <Chip key={value} label={value} />
+                                        <Chip key={value} label={value} value={'1'}/>
                                     ))}
                                     </Box>
                                 )}
-                                {...register(field_name)}
-                                error={errors[field_name] ? true : false}
+                                {...register("field")}
+                                error={errors.field ? true : false}
                                 >
-                                {fields.map((fieldItem, index) => (
-                                    <MenuItem key={index} value={fieldItem.value}>
-                                    {fieldItem.name}
+                                {fields.map((item, index) => (
+                                    <MenuItem key={index} value={item.id}>
+                                        {item[`name${sufLabel}`]}
                                     </MenuItem>
                                 ))}
                                 </Select>
                             )}
                         />
                         <Typography variant="inherit" color="textSecondary">
-                            {errors[field_name]?.message}
+                            {errors.field?.message}
                         </Typography>
                     </FormControl>
                     <FormControl sx={{ mt:5 }} fullWidth>
@@ -313,7 +303,6 @@ const JobForm = (props) => {
                             label={t('jobs.form.lb_detailed_contents')}
                             name="content_waiting_for_you_detail"
                             multiline
-                            onChange={handleFormItemChange}
                             placeholder="Please input content"
                             {...register('content_waiting_for_you_detail')}
                             error={errors.content_waiting_for_you_detail ? true : false}
@@ -341,7 +330,6 @@ const JobForm = (props) => {
                             label={t('jobs.form.lb_detailed_contents')}
                             name="content_bring_with_you_detail"
                             multiline
-                            onChange={handleFormItemChange}
                             placeholder="Please input content"
                             {...register('content_bring_with_you_detail')}
                             error={errors.content_bring_with_you_detail ? true : false}
@@ -369,7 +357,6 @@ const JobForm = (props) => {
                             label={t('jobs.form.lb_subtitle')}
                             name="content_we_offer_you_subtitle"
                             multiline
-                            onChange={handleFormItemChange}
                             placeholder="Please input content"
                             {...register('content_we_offer_you_subtitle')}
                             error={errors.content_we_offer_you_subtitle ? true : false}
@@ -393,7 +380,6 @@ const JobForm = (props) => {
                             label={t('jobs.form.lb_detailed_contents')}
                             name="content_we_offer_you_detail"
                             multiline
-                            onChange={handleFormItemChange}
                             placeholder="Please input content"
                             {...register('content_we_offer_you_detail')}
                             error={errors.content_we_offer_you_detail ? true : false}
@@ -422,7 +408,6 @@ const JobForm = (props) => {
                             label={t('jobs.form.lb_detailed_contents')}
                             name="info_contact"
                             multiline
-                            onChange={handleFormItemChange}
                             placeholder="Please input content"
                             {...register('info_contact')}
                             error={errors.info_contact ? true : false}
@@ -452,7 +437,6 @@ const JobForm = (props) => {
                             label={t('jobs.form.lb_detailed_contents')}
                             name="info_comment"
                             multiline
-                            onChange={handleFormItemChange}
                             placeholder="Please input content"
                             autoComplete="info_comment"
                             {...register('info_comment')}
