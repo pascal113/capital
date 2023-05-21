@@ -315,12 +315,12 @@
         "type": [
             {
                 "name" : "Full-Time",
-                "value" : "Full-Time",
+                "value" : "1",
                 "defaultValue": true
             },
             {
                 "name" : "Part-Time",
-                "value" : "Part-Time",
+                "value" : "2",
                 "defaultValue": false
             }
         ],
@@ -328,22 +328,22 @@
         "location": [
             {
                 "name" : "Berlin",
-                "value" : "Berlin",
+                "value" : "1",
                 "defaultValue": true
             },
             {
                 "name" : "Hamburg",
-                "value" : "Hamburg",
+                "value" : "2",
                 "defaultValue": false
             },
             {
                 "name" : "Munich",
-                "value" : "Munich",
+                "value" : "3",
                 "defaultValue": false
             },
             {
                 "name" : "Cologne",
-                "value" : "Cologne",
+                "value" : "4",
                 "defaultValue": false
             }
         ],
@@ -352,22 +352,22 @@
             {
                 "id": 1,
                 "name" : "Adminstration",
-                "value" : "Adminstration"
+                "value" : "1"
             },
             {
                 "id": 2,
                 "name" : "Finance/Controlling",
-                "value" : "Finance/Controlling"
+                "value" : "2"
             },
             {
                 "id": 3,
                 "name" : "Product Management",
-                "value" : "Product Management"
+                "value" : "3"
             },
             {
                 "id": 4,
                 "name" : "Technology Developement",
-                "value" : "Technology Developement"
+                "value" : "4"
             }
         ]
     },

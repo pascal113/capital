@@ -316,12 +316,12 @@
         "type": [
             {
                 "name" : "Vollzeit",
-                "value" : "Vollzeit",
+                "value" : "1",
                 "defaultValue": true
             },
             {
                 "name" : "Teilzeit",
-                "value" : "Teilzeit",
+                "value" : "2",
                 "defaultValue": false
             }
         ],
@@ -329,22 +329,22 @@
         "location": [
             {
                 "name" : "Berlin",
-                "value" : "Berlin",
+                "value" : "1",
                 "defaultValue": true
             },
             {
                 "name" : "Hamburg",
-                "value" : "Hamburg",
+                "value" : "2",
                 "defaultValue": false
             },
             {
                 "name" : "München",
-                "value" : "München",
+                "value" : "3",
                 "defaultValue": false
             },
             {
                 "name" : "Köln",
-                "value" : "Köln",
+                "value" : "4",
                 "defaultValue": false
             }
         ],
@@ -353,22 +353,22 @@
             {
                 "id": 1,
                 "name" : "Verwaltung",
-                "value" : "Verwaltung"
+                "value" : "1"
             },
             {
                 "id": 2,
                 "name" : "Finanzen/Kontrolle",
-                "value" : "Finanzen/Kontrolle"
+                "value" : "2"
             },
             {
                 "id": 3,
                 "name" : "Produktmanagement",
-                "value" : "Produktmanagement"
+                "value" : "3"
             },
             {
                 "id": 4,
                 "name" : "Technologieentwicklung",
-                "value" : "Technologieentwicklung"
+                "value" : "4"
             }
         ]
     },
