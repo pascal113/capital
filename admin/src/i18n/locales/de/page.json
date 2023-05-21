@@ -121,8 +121,8 @@
                     "defaultValue": true
                 },
                 {
-                    "name" : "Part-Time",
-                    "value" : "Part-Time",
+                    "name" : "Teilzeit",
+                    "value" : "Teilzeit",
                     "defaultValue": false
                 }
             ],

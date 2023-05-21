@@ -51,6 +51,9 @@ import {
   addJobStart,
   addJobSuccess,
   addJobFailure,
+  getJobTypeSuccess,
+  getJobLocationSuccess,
+  getJobFieldSuccess
 } from "./jobRedux";
 
 export const login = async (dispatch, user, history) => {
@@ -194,6 +197,42 @@ export const updateMenu = async (id, menu, dispatch) => {
     }
   } catch (err) {
     dispatch(updateMenuFailure());
+  }
+};
+
+export const getJobTypes = async (dispatch) => {
+  dispatch(getJobStart());
+  try {
+    const res = await userRequest.get("/jobs/types/list");
+    if(res.data.code === 0){
+      dispatch(getJobTypeSuccess(res.data.data));
+    }
+  } catch (err) {
+    dispatch(getJobFailure());
+  }
+};
+
+export const getJobLocations = async (dispatch) => {
+  dispatch(getJobStart());
+  try {
+    const res = await userRequest.get("/jobs/locations/list");
+    if(res.data.code === 0){
+      dispatch(getJobLocationSuccess(res.data.data));
+    }
+  } catch (err) {
+    dispatch(getJobFailure());
+  }
+};
+
+export const getJobFields = async (dispatch) => {
+  dispatch(getJobStart());
+  try {
+    const res = await userRequest.get("/jobs/fields/list");
+    if(res.data.code === 0){
+      dispatch(getJobFieldSuccess(res.data.data));
+    }
+  } catch (err) {
+    dispatch(getJobFailure());
   }
 };
 

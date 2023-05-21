@@ -11,6 +11,9 @@ export const jobSlice = createSlice({
   name: "job",
   initialState: {
     jobs: [],
+    types: [],
+    locations: [],
+    fields: [],
     isFetching: false,
     error: false,
   },
@@ -79,6 +82,20 @@ export const jobSlice = createSlice({
       state.error = true;
       toast.error("add failed");
     },
+
+    //GET TYPE
+    getJobTypeSuccess: (state, action) => {
+      state.isFetching = false;
+      state.types = action.payload;
+    },
+    getJobLocationSuccess: (state, action) => {
+      state.isFetching = false;
+      state.types = action.payload;
+    },
+    getJobFieldSuccess: (state, action) => {
+      state.isFetching = false;
+      state.types = action.payload;
+    },
   },
 });
 
@@ -95,6 +112,9 @@ export const {
   addJobStart,
   addJobSuccess,
   addJobFailure,
+  getJobTypeSuccess,
+  getJobLocationSuccess,
+  getJobFieldSuccess
 } = jobSlice.actions;
 
 export default jobSlice.reducer;
