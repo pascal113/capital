@@ -5,29 +5,94 @@ import CustomMultiSelect from '../components/dropdown/CustomMultiSelect';
 import CompanyList from '../components/list/CompanyList';
 import { useTranslation } from 'react-i18next';
 
-import aboutData from "../data/aboutData";
-
 import { useDispatch, useSelector } from "react-redux";
 import { getJobs } from "../redux/apiCalls";
 import commonContext from '../contexts/common/commonContext';
+
+const makeComboItemData = (items, language) => {
+  
+    let basic_data = [];  
+
+    items.forEach((item, index) => {
+        let tmpData = {};
+        tmpData.value = item.id;
+        if(language === 'GB') {
+            tmpData.name = item.name_gb;
+        }
+        else {
+            tmpData.name = item.name_de;
+        }
+        
+        if(index === 0) {
+            tmpData.defaultValue = true;
+        }
+        else {
+            tmpData.defaultValue = false;
+        }        
+
+        basic_data.push(tmpData);
+    });
+
+    return basic_data;
+};
+
+const makeMultiItemData = (items, language) => {
+  
+    let basic_data = [];  
+
+    items.forEach((item, index) => {
+        let tmpData = {};
+        tmpData.id = tmpData.value = item.id;
+        if(language === 'GB') {
+            tmpData.name = item.name_gb;
+        }
+        else {
+            tmpData.name = item.name_de;
+        }     
+
+        basic_data.push(tmpData);
+    });
+
+    return basic_data;
+};
 
 const AboutPage = () => {
     
     const { t }  = useTranslation(['page']);
 
-    const type_options = t('about_us.type', { returnObjects: true });
-    const location_options = t('about_us.location', { returnObjects: true });
-    const activity_options = t('about_us.activity', { returnObjects: true });
-
     const dispatch = useDispatch();
-    const jobsData = useSelector((state) => state.job.jobs);
+    // const jobsData = useSelector((state) => state.job);
+    const {jobsData, typesData, locationsData, fieldsData }  = useSelector(state => ({
+        jobsData : state.job.jobs,
+        typesData : state.job.types,
+        locationsData : state.job.locations,
+        fieldsData : state.job.fields,
+    }));
+
     const { curLanguage } = useContext(commonContext);
 
-    console.log('AboutPage jobsData');
+    // const type_options = t('about_us.type', { returnObjects: true });
+    // const location_options = t('about_us.location', { returnObjects: true });
+    // const activity_options = t('about_us.activity', { returnObjects: true });
+
+    // const type_options = makeComboItemData(jobsData.types, curLanguage);
+    // const location_options = makeComboItemData(jobsData.locations, curLanguage);
+    // const activity_options = makeMultiItemData(jobsData.fields, curLanguage);
+
+    const type_options = makeComboItemData(typesData, curLanguage);
+    const location_options = makeComboItemData(locationsData, curLanguage);
+    const activity_options = makeMultiItemData(fieldsData, curLanguage);
        
     useEffect(() => {
-        console.log('AboutPage useEffect');
+        console.log('AboutPage get jobs, types, locations, fields');
+        // getTypes(dispatch);
+        // getLocations(dispatch);
+        // getFields(dispatch);
         getJobs([], dispatch);
+
+        // type_options = makeComboItemData(jobsData.types, curLanguage);
+        // location_options = makeComboItemData(jobsData.locations, curLanguage);
+        // activity_options = makeMultiItemData(jobsData.fields, curLanguage);
     }, [dispatch]);
 
     const handleSubmit = async (e) => {

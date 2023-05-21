@@ -23,11 +23,12 @@ const AboutCompany = () => {
 
     const jobsData = useSelector((state) => state.job.jobs);
     let aboutCompanyData = [];
-    if(curLanguage === 'DE') {
-        aboutCompanyData = jobsData[id_num].about;
-    }
-    else if(curLanguage === 'GB') {
+
+    if(curLanguage === 'GB') {
         aboutCompanyData = jobsData[id_num].about_gb;
+    }
+    else if(curLanguage === 'DE') {
+        aboutCompanyData = jobsData[id_num].about_de;
     }
 
     return (

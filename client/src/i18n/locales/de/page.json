@@ -315,7 +315,7 @@
         "page_of": " von ",
         "type": [
             {
-                "name" : "Vollzeit",
+                "name" : "Vollzeit JSON",
                 "value" : "1",
                 "defaultValue": true
             },
@@ -328,7 +328,7 @@
     
         "location": [
             {
-                "name" : "Berlin",
+                "name" : "Berlin JSON",
                 "value" : "1",
                 "defaultValue": true
             },
@@ -352,7 +352,7 @@
         "activity": [
             {
                 "id": 1,
-                "name" : "Verwaltung",
+                "name" : "Verwaltung JSON",
                 "value" : "1"
             },
             {

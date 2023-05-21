@@ -68,12 +68,17 @@ const CompanyList = props => {
                 {companyListItem
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((companyItem, id) => {
-                    let activity = companyItem.activity;
-                    let type = companyItem.type;
+                    let activity = '';
+                    let type = '';
                     if(curLanguage == 'GB') {
                         activity = companyItem.activity_gb;
                         type = companyItem.type_gb;
                     }
+                    else {
+                        activity = companyItem.activity_de;
+                        type = companyItem.type_de;
+                    }
+
                     
                     return (
                         <div key={id}>
