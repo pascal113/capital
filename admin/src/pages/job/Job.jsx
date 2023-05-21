@@ -6,24 +6,12 @@ import { deleteJob, getJobs, updateJob, addJob, getJobTypes, getJobLocations, ge
 import { useTranslation } from 'react-i18next';
 import commonContext from '../../contexts/common/commonContext';
 import ConfirmDialog from '../../components/confirm/ConfirmDialog';
-//import JobList from "./JobList";
-import { makeStyles, withStyles } from '@mui/styles';
+import { makeStyles } from '@mui/styles';
 import { Button, ListItem, List, Divider, Box, ListItemText, TablePagination } from "@mui/material";
 import AddIcon from '@material-ui/icons/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import IconButton from '@mui/material/IconButton';
-
-import Input from '@mui/material/Input';
-import FilledInput from '@mui/material/FilledInput';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
-import InputAdornment from '@mui/material/InputAdornment';
-import FormHelperText from '@mui/material/FormHelperText';
-import FormControl from '@mui/material/FormControl';
-import TextField from '@mui/material/TextField';
-import Visibility from '@mui/icons-material/Visibility';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import JobForm from "./JobForm"
 
 const useStyles = makeStyles(theme => ({
@@ -45,19 +33,13 @@ const listItemTextStyle = {
 
 const Job = () => {
     const { curLanguage } = useContext(commonContext);
+    const { t }  = useTranslation(['page']);
+    const classes = useStyles();
     const dispatch = useDispatch();
     const types = useSelector((state) => state.job.types);
     const locations = useSelector((state) => state.job.locations);
     const fields = useSelector((state) => state.job.fields);
-    const jobs = useSelector((state) => state.job.jobs);
-    /*const jobListData = useMemo(() => {
-        return jobs.length ? (jobs.data.map((item) => ({ company: 'German Capital Pharma GmbH', department: item.title,  
-                        description: 'Art: ' + item.type + ' | ' + item.location + ' | ' + item.field}))): [];
-    }, [jobs]);*/
-
-    console.log('locations', locations);
-    const { t }  = useTranslation(['page']);
-    const classes = useStyles();
+    const jobs = useSelector((state) => state.job.jobs);    
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(10);
     const [confirmOpen, setConfirmOpen] = useState(false);
@@ -174,8 +156,6 @@ const Job = () => {
                 {(jobs
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((jobItem, index) => {
-                    console.log('types', types);
-                    console.log('jobItem', jobItem);
                     return (
                         <React.Fragment key={index}>
                             {/*<ListItemText
