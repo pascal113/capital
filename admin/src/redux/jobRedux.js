@@ -90,11 +90,11 @@ export const jobSlice = createSlice({
     },
     getJobLocationSuccess: (state, action) => {
       state.isFetching = false;
-      state.types = action.payload;
+      state.locations = action.payload;
     },
     getJobFieldSuccess: (state, action) => {
       state.isFetching = false;
-      state.types = action.payload;
+      state.fields = action.payload;
     },
   },
 });
