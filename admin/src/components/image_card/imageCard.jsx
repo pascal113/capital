@@ -6,8 +6,10 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import ConfirmDialog from '../confirm/ConfirmDialog';
 import { getBaseURL } from "../../requestMethods";
+import { useTranslation } from 'react-i18next';
 
 export default function ImageCard(props) {
+  const { t }  = useTranslation(['page']);
   const {item, onEdit, onDelete} = props;
   const [confirmOpen, setConfirmOpen] = useState(false);
   
@@ -24,14 +26,14 @@ export default function ImageCard(props) {
     const file = e.target.files[0];
 
     if (file.size/(1024*1024) > 2) {
-      alert("file size must not be greater than to 2MB")
+      alert(t('messages.file_2MB'))
     }
     else {
       let imageUrl = URL.createObjectURL(file);
       getImageSize(imageUrl)
       .then(imgSize => {
         if(imgSize.width < 1440){
-          alert('image width must be at least 1440px');
+          alert(t('messages.image_width'))
         }
         else{
           const formData = new FormData();
@@ -65,19 +67,19 @@ export default function ImageCard(props) {
         <div className="btn">
           <Stack direction="row" alignItems="center" spacing={2} sx={{ m: 1}}>
             <Button variant="outlined" component="label" size="small" startIcon={<EditIcon />} onClick={handleSetting}>
-              Setting
+              {t('edit')}
               <input type="file" accept=".bmp,.jpg,.jpeg,.png" hidden onChange={handleFileInput}/>
             </Button>
             <Button variant="outlined" color="error" size="small" startIcon={<DeleteIcon />} onClick={confirmRemove}>
-              Remove
+            {t('remove')}
             </Button>
             <ConfirmDialog
-              title="Delete Post?"
+              title={t('messages.warnnig')}
               open={confirmOpen}
               setOpen={setConfirmOpen}
               onConfirm={handleRemove}
             >
-              Are you sure you want to delete this image?
+              {t('messages.confirm_delete')}
             </ConfirmDialog>
             
           </Stack>

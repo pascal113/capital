@@ -17,7 +17,7 @@ export default function Sidebar() {
     <div className="sidebar">
       <div className="sidebarWrapper">
         <div className="sidebarMenu">
-          <h3 className="sidebarTitle">Dashboard</h3>
+          <h3 className="sidebarTitle">{t('dashboard')}</h3>
           <ul className="sidebarList">
             {
               t('sidebar', { returnObjects: true }).map((item, index) => {

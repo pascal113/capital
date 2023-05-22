@@ -5,9 +5,7 @@ import { getMenus } from "../../redux/apiCalls";
 import MenuList from "./MenuList";
 import MenuEditForm from "./MenuEditForm";
 
-const MenuPage = () => {
-    console.log('menupage rendering');
-    
+const MenuPage = () => {    
     const dispatch = useDispatch();
     const menus = useSelector((state) => state.menu.menus);
     const [selectedIndex, setSelectedIndex] = useState(0);
@@ -17,7 +15,6 @@ const MenuPage = () => {
     }, [dispatch]);
 
     const handleListItemClick = (index) => {
-        console.log('index', index);
         setSelectedIndex(index);
         //setMenuData(menus.filter((item) => item.order === index)[0]);
     };

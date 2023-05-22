@@ -4,11 +4,13 @@ import { useEffect, useMemo, useState } from "react";
 import { userRequest } from "../../requestMethods";
 import {Button} from '@mui/material';
 import AddIcon from '@material-ui/icons/Add';
+import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from "react-redux";
 import { deleteSlider, getSliders, updateSlider, addSlider } from "../../redux/apiCalls";
 
 
 export default function Home() {
+  const { t }  = useTranslation(['page']);
   const dispatch = useDispatch();
   const sliders = useSelector((state) => state.slider.sliders);
 
@@ -28,14 +30,14 @@ export default function Home() {
     const file = e.target.files[0];
 
     if (file.size/(1024*1024) > 2) {
-      alert("file size must not be greater than to 2MB")
+      alert(t('messages.file_2MB'))
     }
     else {
       let imageUrl = URL.createObjectURL(file);
       getImageSize(imageUrl)
       .then(imgSize => {
         if(imgSize.width < 1440){
-          alert('image width must be at least 1440px');
+          alert(t('messages.image_width_1440'))
         }
         else{
           const formData = new FormData();
@@ -66,7 +68,7 @@ export default function Home() {
     <div className="home">
       <div className="addHomeBtn">
         <Button variant="contained" component="label" size="medium" color="primary" startIcon={<AddIcon />}>
-          Create
+          {t('add')}
           <input type="file" accept=".bmp,.jpg,.jpeg,.png" hidden onChange={handleCreate}/>
         </Button>
       </div>
