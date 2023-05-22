@@ -1,4 +1,8 @@
 {
+    "topbar": {
+        "change_password": "change password",
+        "logout": "logout"  
+    },
     "sidebar": [
         {
             "id":   0, 

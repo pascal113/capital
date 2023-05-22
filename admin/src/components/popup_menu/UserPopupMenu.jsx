@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
+import { useTranslation } from 'react-i18next';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -10,8 +11,8 @@ import VpnKeyIcon  from '@mui/icons-material/VpnKey';
 import LogoutIcon from '@mui/icons-material/Logout';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
-
 export default function UserPopupMenu(props) {
+  const { t }  = useTranslation(['page']);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -36,7 +37,7 @@ export default function UserPopupMenu(props) {
           aria-haspopup="true"
           aria-expanded={open ? 'true' : undefined}
         >
-          <AccountCircleIcon fontSize='large'>M</AccountCircleIcon>
+          <AccountCircleIcon fontSize='large'></AccountCircleIcon>
         </IconButton>
       </Box>
       <Menu
@@ -78,7 +79,7 @@ export default function UserPopupMenu(props) {
           <ListItemIcon>
             <VpnKeyIcon fontSize="small" />
           </ListItemIcon>
-          Change Password
+          {t('topbar.change_password')}
         </MenuItem>
 
         <Divider />
@@ -87,7 +88,7 @@ export default function UserPopupMenu(props) {
           <ListItemIcon>
             <LogoutIcon fontSize="small" />
           </ListItemIcon>
-          Logout
+          {t('topbar.logout')}
         </MenuItem>
       </Menu>
     </React.Fragment>
