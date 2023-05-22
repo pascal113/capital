@@ -132,7 +132,7 @@ const Job = () => {
             return filed_name;
 
         for(let i = 0; i < arr_len; i++) {
-            filed_name += getItemName(fields, fieldArray[i], curLanguage);
+            filed_name += getItemName(fields, fieldArray[i], language);
             if(i < (arr_len - 1)) {
                 filed_name += ', ';
             }
@@ -174,7 +174,7 @@ const Job = () => {
                         
                             <ListItemText 
                                 sx={{ padding: "2px 10px 5px 0px" }}
-                                primary={'Art: ' + getItemName(types, jobItem.type, curLanguage) + ' | ' + getItemName(locations, jobItem.location, curLanguage) + ' | ' + getFieldNames(jobItem.field)}
+                                primary={'Art: ' + getItemName(types, jobItem.type, curLanguage) + ' | ' + getItemName(locations, jobItem.location, curLanguage) + ' | ' + getFieldNames(jobItem.field, curLanguage)}
                                 primaryTypographyProps={listItemTextStyle}
                             />
                             <ListItem disablePadding={true} secondaryAction={
