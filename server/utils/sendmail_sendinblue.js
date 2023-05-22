@@ -14,10 +14,21 @@ const sendContactMail = async ({
                       <p> PLZ - ${param.company_plz} </p>
                       <p> E-Mail -> ${param.email} </p>
                       <p> Nachricht -> ${param.user_message} </p>`;
+
+    let to_mail = process.env.MAIL_RECEIVER;                      
+    if(param.department === 'Sales' || param.department === 'Vertrieb') {
+      to_mail = process.env.MAIL_RECEIVER_SALES;
+    }
+    else if(param.department === 'Accounting' || param.department === 'Buchhaltung') {
+      to_mail = process.env.MAIL_RECEIVER_ACCOUNTING;
+    }
+    else if(param.department === 'Office' || param.department === 'Verwaltung') {
+      to_mail = process.env.MAIL_RECEIVER_OFFICE;
+    }
                       
     return await sendinblue({
       to: [{
-        email: process.env.MAIL_RECEIVER
+        email: to_mail
       }],
       subject: param.mail_subject,
       sender: {
