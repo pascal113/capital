@@ -50,8 +50,6 @@ const CompanyList = props => {
     const companyListItem = Array.from(companyList);
     const { curLanguage } = useContext(commonContext);
 
-    console.log('language', curLanguage);
-
     const handleChange = (event, value) => {
         setPage(value);
     };

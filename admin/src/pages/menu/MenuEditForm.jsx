@@ -5,10 +5,10 @@ import SaveIcon from '@mui/icons-material/Save';
 import { useDispatch } from "react-redux";
 import { updateMenu } from "../../redux/apiCalls";
 import { getBaseURL } from "../../requestMethods";
+import { useTranslation } from 'react-i18next';
 
 const MenuEditForm = (props) => { 
-    console.log('MenuEditForm rendering');
-
+    const { t }  = useTranslation(['page']);
     const dispatch = useDispatch();
     
     const {menus, selectedIndex} = props;    
@@ -59,14 +59,14 @@ const MenuEditForm = (props) => {
         const file = e.target.files[0];
         
         if (file.size/(1024*1024) > 2) {
-            alert("file size must not be greater than to 2MB")
+            alert(t('messages.file_2MB'))
         }
         else {
         let imageUrl = URL.createObjectURL(file);
         getImageSize(imageUrl)
         .then(imgSize => {
             if(imgSize.width < 1110){
-            alert('image width must be at least 1110 ');
+                alert(t('messages.image_width_1110'))
             URL.revokeObjectURL(imageUrl);
             }
             else{
@@ -92,15 +92,15 @@ const MenuEditForm = (props) => {
                 <input type="file" accept=".bmp,.jpg,.jpeg,.png" style={{display: 'none'}} onChange={handleFileChange} ref={inputFile}/>
                 
                 <Box sx={{ maxWidth: '100%', mt:5}}>
-                    <TextField  name="title_de" type="text" label="Description(German)" variant="standard" value={formData.title_de} 
+                    <TextField  name="title_de" type="text" label={t('description_german')} variant="standard" value={formData.title_de} 
                         onChange={handleInputChange} fullWidth/>
                 </Box>
                 <Box sx={{ maxWidth: '100%', mt:5}}>
-                    <TextField  name="title_gb" type="text" label="Description(English)" variant="standard" value={formData.title_gb} 
+                    <TextField  name="title_gb" type="text" label={t('description_english')} variant="standard" value={formData.title_gb} 
                         onChange={handleInputChange} fullWidth/>
                 </Box>
                 <Box sx={{ maxWidth: '100%', mt:5}}>
-                    <Button variant="contained" startIcon={<SaveIcon />} color="primary" type="submit" >Save</Button>
+                    <Button variant="contained" startIcon={<SaveIcon />} color="primary" type="submit" >{t('save')}</Button>
                 </Box>
             </form>
         </div>

@@ -33,6 +33,7 @@ const listItemTextStyle = {
 
 const Job = () => {
     const { curLanguage } = useContext(commonContext);
+
     const { t }  = useTranslation(['page']);
     const classes = useStyles();
     const dispatch = useDispatch();
@@ -179,13 +180,13 @@ const Job = () => {
                             />
                             <ListItem disablePadding={true} secondaryAction={
                                 <IconButton edge="end" aria-label="edit" onClick={(event) => handleEditClick(event, index, 'DE')} style={listItemTextStyle}>
-                                <EditIcon />Germany
+                                <EditIcon />{t('german')}
                                 </IconButton>} style={{ top: "-30px", right: "200px", left: "auto" }}>
                             </ListItem>
 
                             <ListItem disablePadding={true} secondaryAction={
                                 <IconButton edge="end" aria-label="edit" onClick={(event) => handleEditClick(event, index, 'GB')} style={listItemTextStyle}>
-                                <EditIcon />English
+                                <EditIcon />{t('english')}
                                 </IconButton>} style={{ top: "-30px", right: "80px", left: "auto" }}>
                             </ListItem>
                             

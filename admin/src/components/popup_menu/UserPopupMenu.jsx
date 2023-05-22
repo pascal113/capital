@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {useContext} from 'react';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import { useTranslation } from 'react-i18next';
@@ -10,8 +10,10 @@ import IconButton from '@mui/material/IconButton';
 import VpnKeyIcon  from '@mui/icons-material/VpnKey';
 import LogoutIcon from '@mui/icons-material/Logout';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import commonContext from '../../contexts/common/commonContext';
 
 export default function UserPopupMenu(props) {
+  const { curLanguage } = useContext(commonContext);
   const { t }  = useTranslation(['page']);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);

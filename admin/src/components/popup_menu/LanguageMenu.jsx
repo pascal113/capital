@@ -11,6 +11,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import commonContext from '../../contexts/common/commonContext';
 import imgGermany from "../../assets/images/header/DE.png";
 import imgEngland from "../../assets/images/header/GB.png";
+import i18n from "i18next";
 
 export default function LanguageMenu() {
     const { curLanguage, setLanguage } = useContext(commonContext);
@@ -73,14 +74,14 @@ export default function LanguageMenu() {
                 anchorOrigin={{ horizontal: 'left', vertical: 'bottom' }}
             >
                 
-                <MenuItem onClick={() => {setLanguage('DE')}}>
+                <MenuItem onClick={() => {setLanguage('DE'); i18n.changeLanguage('de');}}>
                     <ListItemIcon>
                         <LanguageIcon fontSize="medium" />
                     </ListItemIcon>
                     <ListItemText>Deutsch</ListItemText>
                 </MenuItem>
 
-                <MenuItem onClick={() => {setLanguage('GB')}}>
+                <MenuItem onClick={() => {setLanguage('GB'); i18n.changeLanguage('gb');}}>
                     <ListItemIcon>
                         <LanguageIcon fontSize="medium" />
                     </ListItemIcon>
