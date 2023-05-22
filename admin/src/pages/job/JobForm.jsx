@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {useState} from 'react';
 import { Theme, useTheme } from '@mui/material/styles';
 import {
     Box,
@@ -19,44 +19,15 @@ import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 
-
-const ITEM_HEIGHT = 48;
-const ITEM_PADDING_TOP = 8;
-const MenuProps = {
-    PaperProps: {
-        style: {
-        maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-        width: 250,
-        },
-    },
-};
-
-const getStyles = (name, personName, theme) => {
-    return {
-        fontWeight:
-        personName.indexOf(name) === -1
-            ? theme.typography.fontWeightRegular
-            : theme.typography.fontWeightMedium,
-    };
-};
-
-const getItemName = (array, id, language) => {
-    for (let i=0, iLen=array.length; i<iLen; i++) {
-        if (array[i].id === id) 
-            return language==='DE'?array[i].name_de:array[i].name_gb;
-    }
-    return '';
-};
-
-const getFormFields = (fields, ids, language) => {
-    let fieldNames = [];
-    const id_array = ids.split(',');
-    id_array.forEach((item) => {
-        fieldNames.push(getItemName(fields, item, language));
-    });
-    
-    return fieldNames;
-}
+//const getFormFields = (fields, ids, language) => {
+    //let fieldNames = [];
+    //const id_array = ids.split(',');
+    //id_array.forEach((item) => {
+    //    fieldNames.push(getItemName(fields, item, language));
+    //});
+    //
+    //return fieldNames;
+//}
 
 const JobForm = (props) => {
     const { t }  = useTranslation(['page']);
@@ -88,7 +59,7 @@ const JobForm = (props) => {
         formData['title'] = job[`title${sufLabel}`];
         formData['type'] = job.type;
         formData['location'] = job.location;
-        formData['field'] = job.field.length > 0?getFormFields(fields, job.field, editLanguage):'';
+        formData['field'] = job.field.length > 0?job.field.split(','):[];
         formData['introduction'] = job[`about${sufLabel}`].introduction;
         formData['content_waiting_for_you_detail'] = job[`about${sufLabel}`].content[0].detail.length > 0?job[`about${sufLabel}`].content[0].detail.join('\n'):"";
         formData['content_bring_with_you_detail'] = job[`about${sufLabel}`].content[1].detail.length > 0?job[`about${sufLabel}`].content[1].detail.join('\n'):"";
@@ -129,6 +100,7 @@ const JobForm = (props) => {
     });
     
     const onSubmit = data => {
+        console.log('data', data);
         data.field = data.field.toString();
         props.onSubmit(formData.id, data);
     };
@@ -263,11 +235,13 @@ const JobForm = (props) => {
                                 onChange={onChange}
                                 multiple
                                 fullWidth
-                                defaultValue={formData.field}
+                                value={value}
+                                //defaultValue={formData.field}
                                 renderValue={(selected) => (
                                     <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
                                     {selected.map((value) => (
-                                        <Chip key={value} label={value} value={'1'}/>
+                                        <Chip key={value} 
+                                        label={ (fields.find( item  => item.id === value))[`name${sufLabel}`]}/>
                                     ))}
                                     </Box>
                                 )}
@@ -275,7 +249,7 @@ const JobForm = (props) => {
                                 error={errors.field ? true : false}
                                 >
                                 {fields.map((item, index) => (
-                                    <MenuItem key={index} value={item.id}>
+                                    <MenuItem key={index} value={item.id ? item.id : item[`name${sufLabel}`]}>
                                         {item[`name${sufLabel}`]}
                                     </MenuItem>
                                 ))}
