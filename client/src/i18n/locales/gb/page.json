@@ -383,21 +383,17 @@
         "form_department_label": "Which department would you like to contact?",
         "form_department_options": [
             {
-                "name": "Drug Safety",
-                "value": "Drug Safety",
+                "name": "Sales",
+                "value": "Sales",
                 "defaultValue": true
             },
             {
-                "name": "Biometrics",
-                "value": "Biometrics"
+                "name": "Accounting",
+                "value": "Accounting"
             },
             {
-                "name": "Info Center",
-                "value": "Info Center"
-            },
-            {
-                "name": "Advice",
-                "value": "Advice"
+                "name": "Office",
+                "value": "Office"
             }
         ],
         "form_company_name_label": "Company Name",

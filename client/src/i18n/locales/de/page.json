@@ -384,21 +384,17 @@
         "form_department_label": "An welche Abteilung möchten Sie sich wenden?",
         "form_department_options": [
             {
-                "name": "Arzneimittelsicherheit",
-                "value": "Drug Safety",
+                "name": "Vertrieb",
+                "value": "Vertrieb",
                 "defaultValue": true
             },
             {
-                "name": "Biometrie",
-                "value": "Biometrics"
+                "name": "Buchhaltung",
+                "value": "Buchhaltung"
             },
             {
-                "name": "Info-Center",
-                "value": "Info Center"
-            },
-            {
-                "name": "Beratung",
-                "value": "Advice"
+                "name": "Verwaltung",
+                "value": "Verwaltung"
             }
         ],
         "form_company_name_label": "Firmenname",

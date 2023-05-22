@@ -11,47 +11,69 @@ import commonContext from '../contexts/common/commonContext';
 
 const makeComboItemData = (items, language) => {
   
-    let basic_data = [];  
+    let basic_data = []; 
+    
+    basic_data = [
+        {
+            "name" : "",
+            "value" : "",
+            "defaultValue": true
+        }
+    ];
 
-    items.forEach((item, index) => {
-        let tmpData = {};
-        tmpData.value = item.id;
-        if(language === 'GB') {
-            tmpData.name = item.name_gb;
-        }
-        else {
-            tmpData.name = item.name_de;
-        }
-        
-        if(index === 0) {
-            tmpData.defaultValue = true;
-        }
-        else {
-            tmpData.defaultValue = false;
-        }        
-
-        basic_data.push(tmpData);
-    });
+    if(items !== undefined) {
+        items.forEach((item, index) => {
+            let tmpData = {};
+            tmpData.value = item.id;
+            if(language === 'GB') {
+                tmpData.name = item.name_gb;
+            }
+            else {
+                tmpData.name = item.name_de;
+            }
+            
+            // if(index === 0) {
+            //     tmpData.defaultValue = true;
+            // }
+            // else {
+            //     tmpData.defaultValue = false;
+            // }
+            tmpData.defaultValue = false;      
+    
+            basic_data.push(tmpData);
+        });
+    }
+    // else {
+    //     basic_data = [
+    //         {
+    //             "name" : "Vollzeit JSON",
+    //             "value" : "1",
+    //             "defaultValue": true
+    //         }
+    //     ];
+    // }
 
     return basic_data;
 };
 
 const makeMultiItemData = (items, language) => {
   
-    let basic_data = [];  
+    let basic_data = [];
 
-    items.forEach((item, index) => {
-        let tmpData = {};
-        tmpData.id = tmpData.value = item.id;
-        if(language === 'GB') {
-            tmpData.name = item.name_gb;
-        }
-        else {
-            tmpData.name = item.name_de;
-        }     
-
-        basic_data.push(tmpData);
-    });
+    if(items !== undefined) {
+        items.forEach((item, index) => {
+            let tmpData = {};
+            tmpData.id = tmpData.value = item.id;
+            if(language === 'GB') {
+                tmpData.name = item.name_gb;
+            }
+            else {
+                tmpData.name = item.name_de;
+            }     
+    
+            basic_data.push(tmpData);
+        });
+    }
 
     return basic_data;
 };
