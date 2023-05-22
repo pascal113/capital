@@ -11,7 +11,6 @@ export default function Topbar() {
   const history = useHistory();
 
   const handleLogout = () => {
-    console.log('logout');
     logout(dispatch, history);
   };
 

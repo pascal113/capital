@@ -1,13 +1,19 @@
-import * as React from 'react';
+import React, {useContext} from 'react';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-
+import LanguageIcon from '@mui/icons-material/Language';
+import ListItemText from '@mui/material/ListItemText';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import commonContext from '../../contexts/common/commonContext';
+import imgGermany from "../../assets/images/header/DE.png";
+import imgEngland from "../../assets/images/header/GB.png";
 
 export default function LanguageMenu() {
+    const { curLanguage, setLanguage } = useContext(commonContext);
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -27,10 +33,9 @@ export default function LanguageMenu() {
                     aria-haspopup="true"
                     aria-expanded={open ? 'true' : undefined}
                 >
-                    <Avatar sx={{ width: 32, height: 32 }}>M</Avatar>
+                    <Avatar src={curLanguage==='DE'?imgGermany:imgEngland} sx={{ width: 24, height: 24 }}/>
                 </IconButton>
-
-                <Typography sx={{ minWidth: 100 }}>Germany</Typography>
+                <Typography sx={{ minWidth: 100 }}>{curLanguage==='DE'?'Deutsch':'English'}</Typography>
             </Box>
             <Menu
                 anchorEl={anchorEl}
@@ -67,12 +72,19 @@ export default function LanguageMenu() {
                 transformOrigin={{ horizontal: 'left', vertical: 'top' }}
                 anchorOrigin={{ horizontal: 'left', vertical: 'bottom' }}
             >
-                <MenuItem onClick={handleClose}>
-                    Germany
-                </MenuItem>
                 
-                <MenuItem onClick={handleClose}>
-                    English
+                <MenuItem onClick={() => {setLanguage('DE')}}>
+                    <ListItemIcon>
+                        <LanguageIcon fontSize="medium" />
+                    </ListItemIcon>
+                    <ListItemText>Deutsch</ListItemText>
+                </MenuItem>
+
+                <MenuItem onClick={() => {setLanguage('GB')}}>
+                    <ListItemIcon>
+                        <LanguageIcon fontSize="medium" />
+                    </ListItemIcon>
+                    <ListItemText>English</ListItemText>
                 </MenuItem>
             </Menu> 
         </>

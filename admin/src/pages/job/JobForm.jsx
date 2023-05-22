@@ -100,7 +100,6 @@ const JobForm = (props) => {
     });
     
     const onSubmit = data => {
-        console.log('data', data);
         data.field = data.field.toString();
         props.onSubmit(formData.id, data);
     };
