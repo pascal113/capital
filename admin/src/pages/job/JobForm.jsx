@@ -19,16 +19,6 @@ import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 
-//const getFormFields = (fields, ids, language) => {
-    //let fieldNames = [];
-    //const id_array = ids.split(',');
-    //id_array.forEach((item) => {
-    //    fieldNames.push(getItemName(fields, item, language));
-    //});
-    //
-    //return fieldNames;
-//}
-
 const JobForm = (props) => {
     const { t }  = useTranslation(['page']);
     const label_content_detail = t('jobs.form.lb_content', { returnObjects: true });
@@ -74,29 +64,27 @@ const JobForm = (props) => {
 
     const validationSchema = Yup.object().shape({
         title: Yup.string()
-            .required('Title is required')
-            .min(10, 'Introduction must be at least 10 characters'),
+            .required(t('messages.field_require')),
         introduction: Yup.string()
-            .required('Introduction is required')
-            .min(10, 'Introduction must be at least 10 characters'),
+            .required(t('messages.field_require')),
         type: Yup.string()
-            .required("This field is required"),
+            .required(t('messages.field_require')),
         field: Yup.array()
-            .min(1, "This field is required"),
+            .min(1, t('messages.field_require')),
         location: Yup.string()
-            .required("This field is required"),
+            .required(t('messages.field_require')),
         content_waiting_for_you_detail: Yup.string()
-            .required('This field is required'),
+            .required(t('messages.field_require')),
         content_bring_with_you_detail: Yup.string()
-            .required('This field is required'),
+            .required(t('messages.field_require')),
         content_we_offer_you_subtitle: Yup.string()
-            .required('This field is required'),
+            .required(t('messages.field_require')),
         content_we_offer_you_detail: Yup.string()
-            .required('This field is required'),
+            .required(t('messages.field_require')),
         info_contact: Yup.string()
-            .required('This field is required'),
+            .required(t('messages.field_require')),
         info_comment: Yup.string()
-            .required('This field is required'),
+            .required(t('messages.field_require')),
     });
     
     const onSubmit = data => {
@@ -132,11 +120,11 @@ const JobForm = (props) => {
                                 margin="normal"
                                 required
                                 fullWidth
-                                label="title"
+                                label={t('jobs.form.lb_title')}
                                 name="title"
                                 autoFocus
                                 multiline
-                                placeholder="Please input title content"
+                                placeholder={t('messages.enter_contents')}
                                 autoComplete="title"
                                 {...register("title")}
                                 error={errors.title ? true : false}
@@ -157,7 +145,7 @@ const JobForm = (props) => {
                                 required
                                 fullWidth
                                 id="introduction"
-                                label="introduction"
+                                label={t('jobs.form.lb_introduction')}
                                 name="introduction"
                                 multiline
                                 placeholder="Please input introduction content"
@@ -173,16 +161,17 @@ const JobForm = (props) => {
                         </Typography>  
                     </FormControl>
                     <FormControl sx={{ mt:3 }} fullWidth>
-                        <InputLabel id="type-label">Type</InputLabel>
+                        <InputLabel id="type-label">{t('jobs.form.lb_type')}</InputLabel>
                         <Controller
                         control={control}
                         name="type"
                         render={({ field }) => (
                             <Select
                             {...field}
-                            label="type"
+                            label={t('jobs.form.lb_type')}
                             {...register("type")}
                             error={errors.type ? true : false}
+                            required
                             >
                                 {types.map((item, index) => (
                                     <MenuItem  key={index} value={item.id}>
@@ -197,14 +186,15 @@ const JobForm = (props) => {
                         </Typography>
                     </FormControl>
                     <FormControl sx={{ mt:3 }} fullWidth>
-                        <InputLabel id="location-label">Location</InputLabel>
+                        <InputLabel id="location-label">{t('jobs.form.lb_location')}</InputLabel>
                         <Controller
                         control={control}
                         name="location"
                         render={({ field }) => (
                             <Select
                             {...field}
-                            label="location"
+                            label={t('jobs.form.lb_location')}
+                            required
                             {...register("location")}
                             error={errors.location ? true : false}
                             >
@@ -220,7 +210,7 @@ const JobForm = (props) => {
                         </Typography>
                     </FormControl>
                     <FormControl sx={{ mt:4 }} fullWidth>
-                        <InputLabel id="field-label">Field</InputLabel>
+                        <InputLabel id="field-label">{t('jobs.form.lb_field')}</InputLabel>
                         <Controller
                             control={control}
                             name="field"
@@ -229,10 +219,11 @@ const JobForm = (props) => {
                                 id="field"
                                 variant="outlined"
                                 name={name}
-                                label="field"
+                                label={t('jobs.form.lb_field')}
                                 ref={ref}
                                 onChange={onChange}
                                 multiple
+                                required
                                 fullWidth
                                 value={value}
                                 //defaultValue={formData.field}
@@ -276,7 +267,7 @@ const JobForm = (props) => {
                             label={t('jobs.form.lb_detailed_contents')}
                             name="content_waiting_for_you_detail"
                             multiline
-                            placeholder="Please input content"
+                            placeholder={t('messages.enter_contents')}
                             {...register('content_waiting_for_you_detail')}
                             error={errors.content_waiting_for_you_detail ? true : false}
                         />
@@ -303,7 +294,7 @@ const JobForm = (props) => {
                             label={t('jobs.form.lb_detailed_contents')}
                             name="content_bring_with_you_detail"
                             multiline
-                            placeholder="Please input content"
+                            placeholder={t('messages.enter_contents')}
                             {...register('content_bring_with_you_detail')}
                             error={errors.content_bring_with_you_detail ? true : false}
                         />
@@ -330,7 +321,7 @@ const JobForm = (props) => {
                             label={t('jobs.form.lb_subtitle')}
                             name="content_we_offer_you_subtitle"
                             multiline
-                            placeholder="Please input content"
+                            placeholder={t('messages.enter_contents')}
                             {...register('content_we_offer_you_subtitle')}
                             error={errors.content_we_offer_you_subtitle ? true : false}
                         />
@@ -353,7 +344,7 @@ const JobForm = (props) => {
                             label={t('jobs.form.lb_detailed_contents')}
                             name="content_we_offer_you_detail"
                             multiline
-                            placeholder="Please input content"
+                            placeholder={t('messages.enter_contents')}
                             {...register('content_we_offer_you_detail')}
                             error={errors.content_we_offer_you_detail ? true : false}
                         />
@@ -381,7 +372,7 @@ const JobForm = (props) => {
                             label={t('jobs.form.lb_detailed_contents')}
                             name="info_contact"
                             multiline
-                            placeholder="Please input content"
+                            placeholder={t('messages.enter_contents')}
                             {...register('info_contact')}
                             error={errors.info_contact ? true : false}
                         />
@@ -410,7 +401,7 @@ const JobForm = (props) => {
                             label={t('jobs.form.lb_detailed_contents')}
                             name="info_comment"
                             multiline
-                            placeholder="Please input content"
+                            placeholder={t('messages.enter_contents')}
                             autoComplete="info_comment"
                             {...register('info_comment')}
                             error={errors.info_comment ? true : false}
@@ -426,8 +417,8 @@ const JobForm = (props) => {
                         alignItems="flex-end"
                     >
                         <Button type="submit" variant="contained" sx={{ mt: 5, mb: 0, mx: 5, paddingLeft: '30px', paddingRight: '30px' }} 
-                            size="large" onClick={handleSubmit(onSubmit)}>Save</Button>
-                        <Button variant="contained" color="error" sx={{ mt: 5, mb: 0 }} size="large" onClick={handleClose}>Cancel</Button>
+                            size="large" onClick={handleSubmit(onSubmit)}>{t('save')}</Button>
+                        <Button variant="contained" color="error" sx={{ mt: 5, mb: 0 }} size="large" onClick={handleClose}>{t('cancel')}</Button>
                     </Box>
                 </Box>
             </DialogContent>

@@ -148,7 +148,7 @@ const Job = () => {
             <>
             <div className="jobAddBtn">
                 <Button variant="contained" component="label" size="medium" color="primary" startIcon={<AddIcon />} onClick={(event) => handleAddClick(event)}>
-                Add
+                {t('add')}
                 </Button>
             </div>
             <div className="jobList">
@@ -219,12 +219,12 @@ const Job = () => {
                 />
             </Box>
             <ConfirmDialog
-                title="Delete Job?"
+                title={t('messages.warnnig')}
                 open={confirmOpen}
                 setOpen={setConfirmOpen}
                 onConfirm={onDeleteJob}
                 >
-                Are you sure you want to delete this item?
+                {t('messages.confirm_delete')}
             </ConfirmDialog>
             </div>
             </>
