@@ -29,8 +29,8 @@ const JobForm = (props) => {
         const formData = {
             id: '',
             title: '',
-            type: [],
-            location: [],
+            type: '',
+            location: '',
             field: [],
             introduction: '',
             content_waiting_for_you_detail: '',
