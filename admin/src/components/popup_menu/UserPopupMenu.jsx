@@ -10,12 +10,12 @@ import IconButton from '@mui/material/IconButton';
 import VpnKeyIcon  from '@mui/icons-material/VpnKey';
 import LogoutIcon from '@mui/icons-material/Logout';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import commonContext from '../../contexts/common/commonContext';
+import ChangePassword from '../../pages/login/changePassword';
 
 export default function UserPopupMenu(props) {
-  const { curLanguage } = useContext(commonContext);
   const { t }  = useTranslation(['page']);
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [openChangePassword, setOpenChangePassword] = React.useState(false);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -28,71 +28,92 @@ export default function UserPopupMenu(props) {
     props.handleLogout();
   };
 
+  const handleOpenChangePassword = () =>{
+    setAnchorEl(null);
+    setOpenChangePassword(true);
+  }
+
+  const handleChangePassword = (data) => {
+    setOpenChangePassword(false);
+    props.handleChangePassword(data);
+  }
+
+  const handleChangePasswordClose = () => {
+    setAnchorEl(null);
+    setOpenChangePassword(false);
+  };
+
   return (
-    <React.Fragment>
-      <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-        <IconButton
-          onClick={handleClick}
-          size="small"
-          sx={{ ml: 1 }}
-          aria-controls={open ? 'account-menu' : undefined}
-          aria-haspopup="true"
-          aria-expanded={open ? 'true' : undefined}
+    <>
+    { (openChangePassword===false)? (
+      <React.Fragment>
+        <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
+          <IconButton
+            onClick={handleClick}
+            size="small"
+            sx={{ ml: 1 }}
+            aria-controls={open ? 'account-menu' : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? 'true' : undefined}
+          >
+            <AccountCircleIcon fontSize='large'></AccountCircleIcon>
+          </IconButton>
+        </Box>
+        <Menu
+          anchorEl={anchorEl}
+          id="account-menu"
+          open={open}
+          onClose={handleClose}
+          onClick={handleClose}
+          PaperProps={{
+            elevation: 0,
+            sx: {
+              overflow: 'visible',
+              filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
+              mt: 1.5,
+              '& .MuiAvatar-root': {
+                width: 32,
+                height: 32,
+                ml: -0.5,
+                mr: 1,
+              },
+              '&:before': {
+                content: '""',
+                display: 'block',
+                position: 'absolute',
+                top: 0,
+                right: 14,
+                width: 10,
+                height: 10,
+                bgcolor: 'background.paper',
+                transform: 'translateY(-50%) rotate(45deg)',
+                zIndex: 0,
+              },
+            },
+          }}
+          transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+          anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
         >
-          <AccountCircleIcon fontSize='large'></AccountCircleIcon>
-        </IconButton>
-      </Box>
-      <Menu
-        anchorEl={anchorEl}
-        id="account-menu"
-        open={open}
-        onClose={handleClose}
-        onClick={handleClose}
-        PaperProps={{
-          elevation: 0,
-          sx: {
-            overflow: 'visible',
-            filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
-            mt: 1.5,
-            '& .MuiAvatar-root': {
-              width: 32,
-              height: 32,
-              ml: -0.5,
-              mr: 1,
-            },
-            '&:before': {
-              content: '""',
-              display: 'block',
-              position: 'absolute',
-              top: 0,
-              right: 14,
-              width: 10,
-              height: 10,
-              bgcolor: 'background.paper',
-              transform: 'translateY(-50%) rotate(45deg)',
-              zIndex: 0,
-            },
-          },
-        }}
-        transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-        anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
-      >
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <VpnKeyIcon fontSize="small" />
-          </ListItemIcon>
-          {t('topbar.change_password')}
-        </MenuItem>
-
-        <Divider />
-
-        <MenuItem onClick={handleLogout}>
-          <ListItemIcon>
-            <LogoutIcon fontSize="small" />
-          </ListItemIcon>
-          {t('topbar.logout')}
-        </MenuItem>
-      </Menu>
-    </React.Fragment>
+          <MenuItem onClick={handleOpenChangePassword}>
+            <ListItemIcon>
+              <VpnKeyIcon fontSize="small" />
+            </ListItemIcon>
+            {t('topbar.change_password')}
+          </MenuItem>
+  
+          <Divider />
+  
+          <MenuItem onClick={handleLogout}>
+            <ListItemIcon>
+              <LogoutIcon fontSize="small" />
+            </ListItemIcon>
+            {t('topbar.logout')}
+          </MenuItem>
+        </Menu>
+      </React.Fragment>
+    ) : (
+      <ChangePassword open={openChangePassword} handleClose={handleChangePasswordClose} onSubmit={handleChangePassword}></ChangePassword>
+    )}
+    </>
   );
 }

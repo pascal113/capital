@@ -7,6 +7,7 @@
     "remove": "löschen",
     "save": "speichern",
     "cancel": "stornieren",
+    "ok": "OK",
     "description_english": "Englische Beschreibung",
     "description_german": "Deutsche Beschreibung",
     "login": {
@@ -206,16 +207,29 @@
         }
     },
 
+    "change_password": {
+        "title": "Kennwort ändern",
+        "old_password": "Altes Passwort",
+        "new_password": "Neues Kennwort",
+        "confirm_password": "Bestätige das Passwort"
+    },
+
     "messages": {
         "enter_contents": "Bitte geben Sie Inhalte ein",
         "field_require": "Dieses Feld ist erforderlich",
+        "not_match_password": "Passt nicht zum neuen Passwort!",
         "email_invalid": "E-Mail ist ungültig",
         "confirm_delete": "Möchten Sie dieses Bild wirklich löschen?",
+        "password_min": "Das Passwort muss 8 oder mehr Zeichen enthalten, davon mindestens eines: Großbuchstaben, Zahlen und Sonderzeichen",
+        "password_uppercase": "Das Passwort erfordert einen Großbuchstaben",
+        "password_lowercase": "Das Passwort erfordert einen Kleinbuchstaben",
+        "password_number": "Für das Passwort ist eine Zahl erforderlich",
+        "password_symbol": "Für das Passwort ist ein Symbol erforderlich",
         "file_2MB": "Die Dateigröße darf nicht größer als 2 MB sein",
         "image_width_1440": "Die Bildbreite muss mindestens 1440 Pixel betragen.",
         "image_width_1110": "Die Bildbreite muss mindestens 1110 Pixel betragen.",
         "field_minimal_10_chars": "Dieses Feld muss mindestens 10 Zeichen lang sein",
-        "warnnig": "Warnung",
+        "warning": "Warnung",
         "success": "",
         "failed": ""
     }
