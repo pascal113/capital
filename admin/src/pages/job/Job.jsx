@@ -219,7 +219,7 @@ const Job = () => {
                 />
             </Box>
             <ConfirmDialog
-                title={t('messages.warnnig')}
+                title={t('messages.warning')}
                 open={confirmOpen}
                 setOpen={setConfirmOpen}
                 onConfirm={onDeleteJob}

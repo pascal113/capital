@@ -7,6 +7,10 @@ import {
   logoutSuccess,  
   logoutFailure,  
   logoutFailureWithMessage,
+  changePasswordStart, 
+  changePasswordSuccess, 
+  changePasswordFailure, 
+  changePasswordFailureWithMessage
 } from "./userRedux";
 
 import { 
@@ -86,6 +90,23 @@ export const logout = async (dispatch, history) => {
       dispatch(logoutFailureWithMessage(err.response.data));
     } else {
       dispatch(logoutFailure()); 
+    }    
+  }
+};
+
+export const changePassword = async (dispatch, pwd, history) => {
+  dispatch(changePasswordStart());
+  try {
+    const res = await userRequest.post("/auth/changePassword", pwd);
+    if(res.data.code === 0){
+      dispatch(changePasswordSuccess(res.data));
+      //history.push('/login');
+    }
+  } catch (err) {
+    if (err.response) {
+      dispatch(changePasswordFailureWithMessage(err.response.data));
+    } else {
+      dispatch(changePasswordFailure()); 
     }    
   }
 };

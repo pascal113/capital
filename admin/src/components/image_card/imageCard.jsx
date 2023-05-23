@@ -74,7 +74,7 @@ export default function ImageCard(props) {
             {t('remove')}
             </Button>
             <ConfirmDialog
-              title={t('messages.warnnig')}
+              title={t('messages.warning')}
               open={confirmOpen}
               setOpen={setConfirmOpen}
               onConfirm={handleRemove}

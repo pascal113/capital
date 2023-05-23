@@ -55,8 +55,41 @@ const userSlice = createSlice({
       state.error = true;
       toast.error(`logout failed`);
     },
+    changePasswordStart: (state) => {
+      state.isFetching = true;
+    },
+    changePasswordSuccess: (state, action) => {
+      state.isFetching = false;
+      state.isAdmin = true;
+      state.token = action.payload.data.token;
+      localStorage.setItem("user", JSON.stringify({isAdmin: true, token: state.token}))
+    },
+    changePasswordFailure: (state, action) => {
+      state.isFetching = false;
+      state.error = true;
+      toast.error(`change password failed`);
+    },
+    changePasswordFailureWithMessage: (state, action) => {
+      state.isFetching = false;
+      state.error = true;
+      toast.error(`${action.payload.message}`);
+    },
   },
 });
 
-export const { loginStart, loginSuccess, loginFailure, loginFailureWithMessage, logoutStart, logoutSuccess, logoutFailure, logoutFailureWithMessage } = userSlice.actions;
+export const { 
+  loginStart, 
+  loginSuccess, 
+  loginFailure, 
+  loginFailureWithMessage, 
+  logoutStart, 
+  logoutSuccess, 
+  logoutFailure, 
+  logoutFailureWithMessage,
+  changePasswordStart, 
+  changePasswordSuccess, 
+  changePasswordFailure, 
+  changePasswordFailureWithMessage
+} = userSlice.actions;
+
 export default userSlice.reducer;

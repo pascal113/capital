@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import "./topbar.css";
 import { useDispatch } from "react-redux";
 import { useHistory } from 'react-router-dom';
-import { logout } from "../../redux/apiCalls";
+import { logout, changePassword } from "../../redux/apiCalls";
 import LanguageMenu from '../popup_menu/LanguageMenu';
 import UserPopupMenu from '../popup_menu/UserPopupMenu';
 
@@ -14,6 +14,11 @@ export default function Topbar() {
     logout(dispatch, history);
   };
 
+  const handleChangePassword = (data) => {
+    console.log('new password', data);
+    changePassword(dispatch, data, history);
+  };
+
   return (
     <div className="topbar">
       <div className="topbarWrapper">
@@ -23,7 +28,7 @@ export default function Topbar() {
         <div className="topRight">
           <div className="topbarIconContainer">
             <LanguageMenu></LanguageMenu>
-            <UserPopupMenu handleLogout={handleLogout}></UserPopupMenu>
+            <UserPopupMenu handleLogout={handleLogout} handleChangePassword={handleChangePassword}></UserPopupMenu>
           </div>
         </div>
       </div>
