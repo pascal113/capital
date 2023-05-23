@@ -1,17 +1,23 @@
 import React, {useContext} from 'react';
-import Box from '@mui/material/Box';
-import Avatar from '@mui/material/Avatar';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import LanguageIcon from '@mui/icons-material/Language';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemIcon from '@mui/material/ListItemIcon';
+import {
+    Box,
+    Avatar,
+    Menu,
+    MenuItem,
+    IconButton,
+    Typography,
+    ListItemText,
+    ListItemIcon,
+    ListItem,
+    ListItemAvatar
+} from '@mui/material';
+
 import commonContext from '../../contexts/common/commonContext';
+import i18n from "i18next";
+import LanguageIcon from '@mui/icons-material/Language';
 import imgGermany from "../../assets/images/header/DE.png";
 import imgEngland from "../../assets/images/header/GB.png";
-import i18n from "i18next";
+
 
 export default function LanguageMenu() {
     const { curLanguage, setLanguage } = useContext(commonContext);
@@ -51,8 +57,8 @@ export default function LanguageMenu() {
                     filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
                     mt: 1.5,
                     '& .MuiAvatar-root': {
-                    width: 32,
-                    height: 32,
+                    width: 24,
+                    height: 24,
                     ml: 1,
                     mr: -0.5,
                     },
@@ -73,19 +79,18 @@ export default function LanguageMenu() {
                 transformOrigin={{ horizontal: 'left', vertical: 'top' }}
                 anchorOrigin={{ horizontal: 'left', vertical: 'bottom' }}
             >
-                
                 <MenuItem onClick={() => {setLanguage('DE'); i18n.changeLanguage('de');}}>
-                    <ListItemIcon>
-                        <LanguageIcon fontSize="medium" />
-                    </ListItemIcon>
-                    <ListItemText>Deutsch</ListItemText>
+                    <ListItem sx={{ p: 0, }}>
+                        <Avatar alt="german" src={imgGermany}/>
+                        <ListItemText sx={{ ml: 3 }}>Deutsch</ListItemText>
+                    </ListItem>
                 </MenuItem>
 
                 <MenuItem onClick={() => {setLanguage('GB'); i18n.changeLanguage('gb');}}>
-                    <ListItemIcon>
-                        <LanguageIcon fontSize="medium" />
-                    </ListItemIcon>
-                    <ListItemText>English</ListItemText>
+                    <ListItem sx={{ p: 0, }}>
+                    <Avatar alt="english" src={imgEngland} />
+                        <ListItemText sx={{ ml: 3 }}>English</ListItemText>
+                    </ListItem>
                 </MenuItem>
             </Menu> 
         </>
