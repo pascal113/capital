@@ -6,8 +6,15 @@
     "edit": "bearbeiten",
     "remove": "löschen",
     "save": "speichern",
+    "cancel": "stornieren",
     "description_english": "Englische Beschreibung",
     "description_german": "Deutsche Beschreibung",
+    "login": {
+        "email": "Email",
+        "password": "Passwort",
+        "sign_in": "Anmeldung",
+        "log_in": "Anmeldung"
+    },
     "topbar": {
         "change_password": "Kennwort ändern",
         "logout": "Ausloggen"  
@@ -180,12 +187,17 @@
                     "value" : "Industry"
                 }
             ],
-            "lb_add_new": "Add New Job",
-            "lb_edit": "Edit Job",
-            "lb_subtitle": "subtitle",
-            "lb_detailed_contents": "detailed contents",
-            "lb_contact": "Contact",
-            "lb_comment": "Comment",
+            "lb_add_new": "Neuen Job hinzufügen",
+            "lb_edit": "Auftrag bearbeiten",
+            "lb_title": "Titel",
+            "lb_introduction": "Einführung",
+            "lb_type": "Typ",
+            "lb_location": "Standort",
+            "lb_field": "Feld",
+            "lb_subtitle": "Untertitel",
+            "lb_detailed_contents": "Inhalt",
+            "lb_contact": "Kontakt",
+            "lb_comment": "Kommentar",
             "lb_content": [
                 "DAS ERWARTET DICH:",
                 "DAS BRINGST DU MIT:",
@@ -195,10 +207,14 @@
     },
 
     "messages": {
+        "enter_contents": "Bitte geben Sie Inhalte ein",
+        "field_require": "Dieses Feld ist erforderlich",
+        "email_invalid": "E-Mail ist ungültig",
         "confirm_delete": "Möchten Sie dieses Bild wirklich löschen?",
         "file_2MB": "Die Dateigröße darf nicht größer als 2 MB sein",
         "image_width_1440": "Die Bildbreite muss mindestens 1440 Pixel betragen.",
         "image_width_1110": "Die Bildbreite muss mindestens 1110 Pixel betragen.",
+        "field_minimal_10_chars": "Dieses Feld muss mindestens 10 Zeichen lang sein",
         "warnnig": "Warnung",
         "success": "",
         "failed": ""
