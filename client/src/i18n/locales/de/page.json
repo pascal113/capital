@@ -6,27 +6,60 @@
         {
             "title": "Anschrift",
             "sub_title": [
-                "German Capital Pharma GmbH",
-                "Badstr. 20",
-                "13357 Berlin",
-                "Deutschland"
+                {
+                    "label" : "German Capital Pharma GmbH",
+                    "link": ""
+                },
+                {
+                    "label" : "Badstr. 20",
+                    "link": ""
+                },
+                {
+                    "label" : "13357 Berlin",
+                    "link": ""
+                },
+                {
+                    "label" : "Deutschland",
+                    "link": ""
+                }
             ]
         },
         {
             "title": "Rechtliches",
             "sub_title": [
-                "Datenschutzrichtlinien",
-                "Impressum"
+                {
+                    "label" : "Datenschutzrichtlinien",
+                    "link": ""
+                },
+                {
+                    "label" : "Impressum",
+                    "link": ""
+                }
             ]
         },
         {
             "title": "Dienstleistungen ",
             "sub_title": [
-                "Produktion",
-                "Einkauf",
-                "Nahrungsergänzungsmittel",
-                "Lagerung",
-                "Beratung"
+                {
+                    "label" : "Produktion",
+                    "link": "/production"
+                },
+                {
+                    "label" : "Einkauf",
+                    "link": "/logistics-purchasing"
+                },
+                {
+                    "label" : "Nahrungsergänzungsmittel",
+                    "link": "/dietary"
+                },
+                {
+                    "label" : "Lagerung",
+                    "link": "/logistics-storage"
+                },
+                {
+                    "label" : "Beratung",
+                    "link": "/advice"
+                }
             ]
         }
     ],

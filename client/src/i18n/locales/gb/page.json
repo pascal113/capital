@@ -6,27 +6,60 @@
         {
             "title": "Address",
             "sub_title": [
-                "German Capital Pharma GmbH",
-                "Badstr. 20",
-                "13357 Berlin",
-                "Deutschland"
+                {
+                    "label" : "German Capital Pharma GmbH",
+                    "link": ""
+                },
+                {
+                    "label" : "Badstr. 20",
+                    "link": ""
+                },
+                {
+                    "label" : "13357 Berlin",
+                    "link": ""
+                },
+                {
+                    "label" : "Deutschland",
+                    "link": ""
+                }
             ]
         },
         {
             "title": "Legal",
             "sub_title": [
-                "Privacy Policy",
-                "Imprint"
+                {
+                    "label" : "Privacy Policy",
+                    "link": ""
+                },
+                {
+                    "label" : "Imprint",
+                    "link": ""
+                }
             ]
         },
         {
             "title": "Services ",
             "sub_title": [
-                "Production",
-                "Procurement",
-                "Supplements",
-                "Storage",
-                "Consulting"
+                {
+                    "label" : "Production",
+                    "link": "/production"
+                },
+                {
+                    "label" : "Procurement",
+                    "link": "/logistics-purchasing"
+                },
+                {
+                    "label" : "Supplements",
+                    "link": "/dietary"
+                },
+                {
+                    "label" : "Storage",
+                    "link": "/logistics-storage"
+                },
+                {
+                    "label" : "Consulting",
+                    "link": "/advice"
+                }
             ]
         }
     ],

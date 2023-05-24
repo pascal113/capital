@@ -28,10 +28,18 @@ const Footer = () => {
                                             <ul>
                                                 {
                                                     sub_title.map((subitem, index) => {
+                                                        console.log('subitem', subitem);
                                                         return (
+                                                            subitem.link !== ''?(
+                                                            <Link to={subitem.link}>
+                                                                <li key={index}>
+                                                                    {subitem.label}
+                                                                </li>
+                                                            </Link>): (
                                                             <li key={index}>
-                                                                {subitem}
+                                                                {subitem.label}
                                                             </li>
+                                                            )
                                                         );
                                                     })
                                                 }
