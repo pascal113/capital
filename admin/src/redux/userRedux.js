@@ -60,9 +60,11 @@ const userSlice = createSlice({
     },
     changePasswordSuccess: (state, action) => {
       state.isFetching = false;
-      state.isAdmin = true;
-      state.token = action.payload.data.token;
-      localStorage.setItem("user", JSON.stringify({isAdmin: true, token: state.token}))
+      state.error = false;
+      //state.isAdmin = true;
+      //state.token = action.payload.data.token;
+      //localStorage.setItem("user", JSON.stringify({isAdmin: true, token: state.token}));
+      toast.success("change password success.");
     },
     changePasswordFailure: (state, action) => {
       state.isFetching = false;
