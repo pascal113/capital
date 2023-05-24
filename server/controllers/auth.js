@@ -1,5 +1,6 @@
 import User from "../models/user.js";
 import asyncHandler from 'express-async-handler';
+import bcrypt from 'bcryptjs';
 import { ERROR_USER_NOT_EXIST, ERROR_NOT_ADMIN, ERROR_DB_CONNECTION_ERROR, ERROR_INVALID_PASSWORD, ERROR_TOKEN_NOT_AUTH } from "../config/constant.js";
 import { responseClient, errorMessageGenerator } from "../utils/libs.js";
 import { generateAuthTokenByUser } from "../utils/generateToken.js";
@@ -93,6 +94,51 @@ const login = asyncHandler(async (req, res) => {
     }
 });
 
+const changePassword = asyncHandler(async (req, res) => {
+
+    try {
+        const {
+            confirm_password,
+            new_password,
+            old_password
+        } = req.body; 
+
+        console.log(req.body);
+        
+        const req_user = req.user;
+        console.log(req_user);
+        const email = req_user.email;
+        console.log(email);
+            
+        const user = await User.findOne({
+            email
+        });
+    
+        if (!user) {
+            return responseClient(res, 400, 3, errorMessageGenerator(ERROR_USER_NOT_EXIST));
+        }
+            
+        if (!user.isAdmin) {
+            return responseClient(res, 400, 3, errorMessageGenerator(ERROR_NOT_ADMIN));
+        }
+        
+        if (user && (await user.matchPassword(old_password))) { 
+            user.lastSeen = Date.now();
+            user.password = bcrypt.hashSync(new_password, 10);
+            const updatedUser = await user.save();
+         
+            responseClient(res, 200, 0, 'success', updatedUser);
+        } else {        
+            await user.save();
+            responseClient(res, 400, 3, errorMessageGenerator(ERROR_INVALID_PASSWORD));
+        }
+    } 
+    catch (error) {
+        console.log(error);
+        responseClient(res);
+    }
+});
+
 const logout = asyncHandler(async (req, res) => {
     // if (!req.user_id) {
     //     responseClient(res, 400, 3, errorMessageGenerator(ERROR_TOKEN_NOT_AUTH));
@@ -117,4 +163,4 @@ const check_auth = asyncHandler(async (req, res) => {
     });
 });
 
-export { login, logout, check_auth };
+export { login, changePassword, logout, check_auth };

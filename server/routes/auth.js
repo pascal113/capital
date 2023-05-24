@@ -1,11 +1,13 @@
 
 import express from 'express';
-import { login, logout, check_auth } from '../controllers/auth.js';
+import { authConfirm } from '../middlewares/auth.js';
+import { login, changePassword, logout, check_auth } from '../controllers/auth.js';
 
 const router = express.Router();
 
 router.post('/login', login);
-router.post('/logout', logout);
+router.post('/changePassword', authConfirm, changePassword);
+router.post('/logout', authConfirm, logout);
 router.post('/check-auth', check_auth);
 
 // router.post('/login', (req, res) => {
