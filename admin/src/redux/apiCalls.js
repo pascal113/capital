@@ -80,7 +80,7 @@ export const login = async (dispatch, user, history) => {
 export const logout = async (dispatch, history) => {
   dispatch(logoutStart());
   try {
-    const res = await publicRequest.post("/auth/logout");
+    const res = await userRequest.post("/auth/logout");
     if(res.data.code === 0){
       dispatch(logoutSuccess());
       history.push('/login');

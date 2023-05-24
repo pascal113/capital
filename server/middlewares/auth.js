@@ -2,8 +2,8 @@ import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 import asyncHandler from 'express-async-handler';
 import User from '../models/user.js';
-import { ERROR_TOKEN_EMPTY, ERROR_TOKEN_EXPIRED, ERROR_TOKEN_NOT_ADMIN, ERROR_TOKEN_NOT_AUTH } from '../config/constant.js';
-import { errorMessageGenerator } from '../utils/libs.js';
+import { ERROR_TOKEN_EMPTY, ERROR_TOKEN_EXPIRED, ERROR_NOT_ADMIN, ERROR_TOKEN_NOT_AUTH } from '../config/constant.js';
+import { responseClient, errorMessageGenerator } from '../utils/libs.js';
 dotenv.config();
 const env = process.env;
 const protect = asyncHandler(async (req, res, next) => {
@@ -52,11 +52,12 @@ const protect = asyncHandler(async (req, res, next) => {
   }
 });
 
-const auth = (req, res, next) => {
+const authConfirm = (req, res, next) => {
   const token = req.header("x-auth-token");
   console.log('auth ', token);
   if (!token)
-    return res.status(401).send("Access denied. Not authenticated...");
+    return responseClient(res, 401, 3, errorMessageGenerator(ERROR_TOKEN_EMPTY));
+
   try {
     const jwtSecretKey = env.JWT_SECRET;
     const decoded = jwt.verify(token, jwtSecretKey);
@@ -64,7 +65,7 @@ const auth = (req, res, next) => {
     req.user = decoded;
     next();
   } catch (ex) {
-    res.status(400).send("Invalid auth token...");
+    return responseClient(res, 401, 3, errorMessageGenerator(ERROR_TOKEN_NOT_AUTH));
   }
 };
 
@@ -86,4 +87,4 @@ const checkAdmin = asyncHandler(async (req, res, next) => {
   next();
 });
 
-export { checkAdmin, auth, protect };
+export { checkAdmin, authConfirm, protect };

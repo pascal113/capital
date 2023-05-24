@@ -27,7 +27,7 @@
 
 	"German Capital Pharma Landingpage": "German Capital Pharma Landingpage",
 	
-	"ERROR_TOKEN_NOT_ADMIN": "Your cannot log in as an admin.",
+	"ERROR_NOT_ADMIN": "Your cannot log in as an admin.",
 	"ERROR_TOKEN_NOT_AUTH": "Your login info has expeired.",
 	"ERROR_TOKEN_EMPTY": "Your login session has expired. Please login again.",
     "JOB_CREATED" : "New job created."
