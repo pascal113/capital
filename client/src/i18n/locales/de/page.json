@@ -50,7 +50,7 @@
                 },
                 {
                     "label" : "Nahrungsergänzungsmittel",
-                    "link": "/dietary"
+                    "link": ""
                 },
                 {
                     "label" : "Lagerung",
@@ -412,6 +412,7 @@
         "company_address": "Badstraße 20 13357",
         "company_city": "Berlin",
         "company_country": "Deutschland",
+        "company_address_2": "Am Wall 8 14979",
         "form_title": "Nehmen Sie Kontakt mit uns auf",
         "form_comment": "Mit * markierte Felder sind Pflichtfelder.",
         "form_department_label": "An welche Abteilung möchten Sie sich wenden?",

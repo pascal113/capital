@@ -38,12 +38,12 @@ export const menuItems = [
         descText: 'Logistik',
         descTextEn: 'Logistic'
       },
-      {
+      /*{
         url: '/dietary',
         imgUrl: '/images/menu/menu-page-2-3.png',
         descText: 'Nahrungsergänzungsmittel',
         descTextEn: 'Supplements'
-      },
+      },*/
       {
         url: '/advice',
         imgUrl: '/images/menu/menu-page-2-4.png',

@@ -55,47 +55,54 @@
 
 .contact_position {
     font-family: 'DIN Pro Bold', sans-serif;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    //justify-content: center;
     align-items: center;
     margin-top: 68px;
-    
 
-    .position_icon {
-        width: 33px;
-        height: 39px;
-        
-    }
+    .headquarters_info{
+        display: flex;
+        justify-content: flex-end;
 
-    .headquarters{
-        width: 149px;
-        height: 26px;
-        
-        font-style: normal;
-        font-weight: 700;
-        font-size: 20px;
-        line-height: 26px;
-        color: #585858;
+        .position_icon {
+            width: 33px;
+            height: 39px;
+            
+        }
+
+        .headquarters{
+            width: 149px;
+            height: 26px;
+            
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 26px;
+            color: #585858;
+        }
     }
     
     .position_address {
         text-align: left;
+        display: flex;
         
-        margin-left: 32px;        
-        
-        h4, p {
-            color: #585858;
-            font-style: normal;
-            font-weight: 700;
-            font-size: 16px;
-            line-height: 21px;
-            
+        .address_info{
+            margin-left: 32px;
+            h4, p {
+                color: #585858;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 21px;
+                
+            }
         }
     }
 }
 
 .contact_form_wrapper{
-    margin-top: 153px;
+    margin-top: 71px;
     margin-bottom: 550px;
     height: 579px;
     display: flex;

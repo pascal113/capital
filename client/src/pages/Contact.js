@@ -109,13 +109,24 @@ const Contact = () => {
                     <h1 className='contact_title'>{t('contact.title')}</h1>
                     <div className='contact_rectangle'></div>
                     <div className="contact_position">
+                        <div className='headquarters_info'>
                         <div className="position_icon"><img src="/images/pages/contact/position.png" alt="" /></div>
                         <div className='headquarters'>{t('contact.headquarters')}</div>
+                        </div>
+                        
                         <div className="position_address">
-                            <h4>{t('contact.company_name')}</h4>
-                            <p>{t('contact.company_address')}</p>
-                            <p>{t('contact.company_city')}</p>
-                            <p>{t('contact.company_country')}</p>
+                            <div className='address_info'>
+                                <h4>{t('contact.company_name')}</h4>
+                                <p>{t('contact.company_address')}</p>
+                                <p>{t('contact.company_city')}</p>
+                                <p>{t('contact.company_country')}</p>
+                            </div>
+                            <div className='address_info'>
+                                <h4>{t('contact.company_name')}</h4>
+                                <p>{t('contact.company_address_2')}</p>
+                                <p>{t('contact.company_city')}</p>
+                                <p>{t('contact.company_country')}</p>
+                            </div>
                         </div>
                         
                     </div>
