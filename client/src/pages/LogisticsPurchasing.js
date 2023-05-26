@@ -35,7 +35,7 @@ const LogisticsPurchasing = () => {
                         <img src="/images/pages/logistics/logistics-purchasing-top.png" alt="" />
                     </div>
                     <h1 className='logistics_purchasing_title'>{t('logistics.purchasing.title')}</h1>
-                    <p className='logistics_description'>{t('logistics.purchasing.description')}</p>
+                    <p className='logistics_purchasing_description'>{t('logistics.purchasing.description')}</p>
                     <div className='slider'>
                         <ImageSlider data={purchasingSliderData} />
                     </div>

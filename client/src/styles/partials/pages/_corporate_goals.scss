@@ -51,7 +51,7 @@
     font-family: 'DIN Pro Regular', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 25.1px;
     color: #585858;
     align-items: center;
@@ -92,15 +92,15 @@
     .border-box{
         position: relative;
         margin-left: 305px;
-        margin-top: 5px;
+        margin-top: 55px;
         max-width: 518px;
-        min-height: 407px;
+        min-height: 457px;
         box-sizing: border-box;
         border: 8px solid #D30000;
     }
 
     .paragraph {
-        padding-top: 62px;
+        padding-top: 82px;
         padding-left: 62px;
         max-width: 390px;
         font-family: 'DIN Pro Bold';
@@ -126,12 +126,12 @@
     .paragraph {
         max-width: 598px;
         margin-left: 56px;
-        margin-top: 40px;
+        margin-top: 60px;
         padding-right: 30px;
         font-family: 'DIN Pro Regular', sans-serif;
         font-style: normal;
         font-weight: 400;
-        font-size: 14px;
+        font-size: 16px;
         line-height: 25px;
         color: #585858;
         display: flex;
