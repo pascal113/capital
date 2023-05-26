@@ -81,7 +81,6 @@
             "subtitle": [
                 "Produktion",
                 "Logistik",
-                "Nahrungsergänzungsmittel",
                 "Beratung"
             ]
         },
@@ -426,6 +425,7 @@
         "company_address": "Badstraße 20 13357",
         "company_city": "Berlin",
         "company_country": "Deutschland",
+        "branch_company": "Betriebsstätte in Großbeeren",
         "company_address_2": "Am Wall 8 14979",
         "form_title": "Nehmen Sie Kontakt mit uns auf",
         "form_comment": "Mit * markierte Felder sind Pflichtfelder.",
