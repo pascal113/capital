@@ -152,7 +152,7 @@ const AboutPage = () => {
                                 <div className='job_type_select' >
                                     <CustomDropdown name='job_type_select' options={type_options} 
                                     onChange={(e) => {console.log(e.target.value)}} 
-                                    style={{width: '100%', padding: '8px 0px 5px 13px', fontSize: 14}} />
+                                    style={{width: '100%', padding: '8px 0px 5px 13px', fontSize: 16}} />
                                 </div>
                             </div>
 
@@ -161,7 +161,7 @@ const AboutPage = () => {
                                 <div className='location_select' >
                                     <CustomDropdown name='location_select' options={location_options} 
                                     onChange={(e) => {console.log(e.target.value)}} 
-                                    style={{width: '100%', padding: '8px 0px 5px 13px', fontSize: 14}} />
+                                    style={{width: '100%', padding: '8px 0px 5px 13px', fontSize: 16}} />
                                 </div>
                             </div>
 

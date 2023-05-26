@@ -109,6 +109,7 @@ const CompanyList = props => {
                 showFirstButton
                 showLastButton
                 classes={{ ul: classes.paginator }}
+                style={{ fontSize: '16px'}}
                 />
             </Box>
         </div>
