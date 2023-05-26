@@ -11,16 +11,6 @@ const AboutCompany = () => {
     const id_num = parseInt(id);
     const { t }  = useTranslation(['page']);
     const { curLanguage } = useContext(commonContext);
-
-    const imgViwerData = {
-        img: "/images/pages/about-us/about-company-top.png",
-        label: "HUMAN RECOURCES MANAGER",
-        textTop: '153px',
-        fontSize: '25px',
-        fontFamily: 'Din Pro Bold',
-        textColor: 'white',
-    };
-
     const jobsData = useSelector((state) => state.job.jobs);
     let aboutCompanyData = [];
 
@@ -35,7 +25,12 @@ const AboutCompany = () => {
         <>
             <section id="about_company" className="section">
                 <div className="container">
-                    <ImageViewer data={imgViwerData} />
+                    <ImageViewer 
+                        img="/images/pages/about-us/about-company-top.png"
+                        textTop="50%"
+                        fontSize="25px"
+                        label="HUMAN RESOURCES MANAGER" 
+                    />
                     <BreadCrumb />
                     <div className='about_company_wrapper'>
                         <h1 className='paragraph paragraph_text'>{aboutCompanyData.introduction}</h1>

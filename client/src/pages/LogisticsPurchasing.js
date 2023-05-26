@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import BreadCrumb from '../components/common/BreadCrumb'
 import ImageSlider from '../components/sliders/ImageSlider';
 import { useTranslation } from 'react-i18next';
+import ImageViewer from '../components/image/ImageViewer';
 
 const LogisticsPurchasing = () => {
     const { t }  = useTranslation(['page']);
@@ -23,9 +24,12 @@ const LogisticsPurchasing = () => {
         <>
             <section id="logistics_purchasing" className="section">
                 <div className="container">
-                    <div className='img_top'>
-                        <img src="/images/pages/logistics/logistics-top.png" alt="" />
-                    </div>
+                    <ImageViewer 
+                        img="/images/pages/logistics/logistics-top.png"
+                        textTop="60%"
+                        fontSize="25px"
+                        label={t('logistics.image_label')}
+                    />
                     <BreadCrumb detail_info={t('logistics.purchasing.breadcrumb')} />
                     <div className='img_map'>
                         <img src="/images/pages/logistics/logistics-purchasing-top.png" alt="" />
