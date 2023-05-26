@@ -5,22 +5,16 @@ import { useTranslation } from 'react-i18next';
 
 const ApplySuccess = () => {
     const { t }  = useTranslation(['page']);
-
-    const imgViwerData = {
-        img: "/images/pages/about-us/about-company-top.png",
-        label: "People are the power to success",
-        textTop: '153px',
-        fontSize: '30px',
-        fontFamily: 'Din Pro Bold',
-        textColor: 'white',
-    };
-
-
     return (
         <>
             <section id="apply" className="section">
                 <div className="container">
-                    <ImageViewer data={imgViwerData} />
+                    <ImageViewer 
+                        img="/images/pages/about-us/about-company-top.png"
+                        label="HUMAN RESOURCES MANAGER" 
+                        textTop="50%"
+                        fontSize="30px"
+                    />
                     <BreadCrumb />
                     <div className='apply_success_wrapper'>
                     <div className='send-image'>

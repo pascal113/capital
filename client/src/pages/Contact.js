@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { Link } from "react-router-dom";
 import BreadCrumb from '../components/common/BreadCrumb';
 import CustomDropdown from '../components/dropdown/CustomDropdown';
+import ImageViewer from '../components/image/ImageViewer';
 import styled, { css } from 'styled-components';
 import { TextField } from "@mui/material";
 import { useTranslation } from 'react-i18next';
@@ -104,7 +105,12 @@ const Contact = () => {
         <>
             <section id="contact" className="section">
                 <div className="container">
-                    <img src="/images/pages/contact/contact-top.png" alt="" />
+                    <ImageViewer 
+                        img="/images/pages/contact/contact-top.png"
+                        textTop="62%"
+                        fontSize="25px"
+                        label={t('contact.image_label')}
+                    />
                     <BreadCrumb />
                     <h1 className='contact_title'>{t('contact.title')}</h1>
                     <div className='contact_rectangle'></div>

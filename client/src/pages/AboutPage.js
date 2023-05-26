@@ -2,6 +2,7 @@ import { useEffect, useContext } from 'react';
 import BreadCrumb from '../components/common/BreadCrumb';
 import CustomDropdown from '../components/dropdown/CustomDropdown';
 import CustomMultiSelect from '../components/dropdown/CustomMultiSelect';
+import ImageViewer from '../components/image/ImageViewer';
 import CompanyList from '../components/list/CompanyList';
 import { useTranslation } from 'react-i18next';
 
@@ -136,7 +137,12 @@ const AboutPage = () => {
         <>
             <section id="about_us" className="section">
                 <div className="container">
-                    <img src="/images/pages/about-us/about-us-page-top.png" alt="" />
+                    <ImageViewer 
+                        img="/images/pages/about-us/about-us-page-top.png"
+                        textTop="65%"
+                        fontSize="25px"
+                        label="HUMAN RESOURCES MANAGER" 
+                    />
                     <BreadCrumb />
                     <div className='about_wrapper'>
                         <form className='search_form' onSubmit={handleSubmit} method="POST">

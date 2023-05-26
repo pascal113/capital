@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import BreadCrumb from '../components/common/BreadCrumb';
 import AdviceCard from '../components/advice/AdviceCard';
 import ImageSlider from '../components/sliders/ImageSlider';
+import ImageViewer from '../components/image/ImageViewer';
 import { useTranslation } from 'react-i18next';
 
 const Advice = () => {
@@ -23,7 +24,12 @@ const Advice = () => {
         <>
             <section id="advice" className="section">
                 <div className="container">
-                    <img src="/images/pages/advice/advice-top.png" alt="" />
+                    <ImageViewer 
+                        img="/images/pages/advice/advice-top.png"
+                        textTop="60%"
+                        fontSize="25px"
+                        label={t('advice.image_label')}
+                    />
                     <BreadCrumb />
                     <div className='advice_title'>
                         <h1>{t('advice.title')}</h1>

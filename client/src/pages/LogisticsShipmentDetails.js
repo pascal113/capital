@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import BreadCrumb from '../components/common/BreadCrumb'
 //import logisticsData from '../data/logisticsData';
 import { useTranslation } from 'react-i18next';
+import ImageViewer from '../components/image/ImageViewer';
 
 const LogisticsShipmentDetails = () => {
 
@@ -16,9 +17,12 @@ const LogisticsShipmentDetails = () => {
         <>
             <section id="logistics_shipment_details" className="section">
                 <div className="container">
-                    <div className='img_top'>
-                        <img src="/images/pages/logistics/logistics-top.png" alt="" />
-                    </div>
+                    <ImageViewer 
+                        img="/images/pages/logistics/logistics-top.png"
+                        textTop="60%"
+                        fontSize="25px"
+                        label={t('logistics.image_label')}
+                    />
                     <BreadCrumb detail_info={t('logistics.shipment.breadcrumb') + ` > ${id_num}`} />
                     {
                         shipmentData.length > 0 && (

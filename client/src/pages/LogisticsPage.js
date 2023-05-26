@@ -2,17 +2,23 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import BreadCrumb from '../components/common/BreadCrumb';
 import LogisticsCard from '../components/logistics/LogisticsCard';
+import ImageViewer from '../components/image/ImageViewer';
 import { useTranslation } from 'react-i18next';
 
 const LogisticsPage = () => {
     const { t }  = useTranslation(['page']);
     const cardData = t('logistics.cards', { returnObjects: true });
-    console.log('')
+
     return (
         <>
             <section id="logistics" className="section">
                 <div className="container">
-                    <img src="/images/pages/logistics/logistics-top.png" alt="" />
+                    <ImageViewer 
+                        img="/images/pages/logistics/logistics-top.png"
+                        textTop="60%"
+                        fontSize="25px"
+                        label={t('logistics.image_label')}
+                    />
                     <BreadCrumb />
                     <h1 className='logistics_title'>{t("logistics.title")}</h1>
                     <div className='logistics_rectangle'></div>

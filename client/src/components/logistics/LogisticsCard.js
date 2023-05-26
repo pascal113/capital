@@ -1,14 +1,19 @@
 import React from 'react';
-
+import ImageViewer from '../../components/image/ImageViewer';
 import { Link } from 'react-router-dom';
 
 const LogisticsCard = ({props}) => {
 
-    const { imgAddr, infoText, btnText, linkAddr } = props;
+    const { imgAddr, infoText, btnText, linkAddr, image_label } = props;
 
     return (
         <div className="logistics_card">
-            <img src={imgAddr} alt="logistics-img" />
+            <ImageViewer 
+                        img={imgAddr}
+                        textTop="130px"
+                        fontSize="20px"
+                        label={image_label}
+            />
             <h2 className='logistics_card_text'>
                 {infoText}
             </h2>

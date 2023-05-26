@@ -22,16 +22,6 @@ const ApplyPage = () => {
 
     const [selectedOption, setSelectedOption] = useState('option_yes');
     const [isChecked, setIsChecked] = useState(false);
-        
-    const imgViwerData = {
-        img: "/images/pages/about-us/about-company-top.png",
-        label: "People are the power to success",
-        textTop: '153px',
-        fontSize: '30px',
-        fontFamily: 'Din Pro Bold',
-        textColor: 'white',
-    };
-
     const dispatch = useDispatch();
 
     const handleCancel = e => {
@@ -105,7 +95,12 @@ const ApplyPage = () => {
         <>
             <section id="apply" className="section">
                 <div className="container">
-                    <ImageViewer data={imgViwerData} />
+                    <ImageViewer 
+                        img="/images/pages/about-us/about-company-top.png"
+                        textTop="50%"
+                        fontSize="30px"
+                        label="HUMAN RESOURCES MANAGER" 
+                    />
                     <BreadCrumb />
                     <div className='apply_wrapper'>
                         <div className='title'><h1>{t('apply.title')}</h1></div>

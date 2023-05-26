@@ -50,7 +50,7 @@
                 },
                 {
                     "label" : "Supplements",
-                    "link": "/dietary"
+                    "link": ""
                 },
                 {
                     "label" : "Storage",
@@ -99,12 +99,14 @@
     ],
     "breadcrumb": "Return",
     "company_profile": {
+        "image_label": "COMPANY PROFILE",
         "title": "GC Pharma GmbH",
         "p1": "GC Pharma is a leading international service and consulting company in the pharmaceutical sector, providing customized service packages for its outsourcing partners. Our clients and partners can benefit from a wide range of services, ranging from the development of active ingredients to development services for pre-formulated drugs, their registration and production, packaging and logistics.",
         
         "p2": "Our focus is on providing certified services and products through a customer-tailored process interface, all from a single source, thereby ensuring outstanding quality in every area. Together with our partners, suppliers, and manufacturers, we form a high-performance network that exports medications of the highest European quality, bringing us one step closer to realizing our dream of comprehensive health for all."
     },
     "corporate_goals": {
+        "image_label": "CORPORATE GOALS",
         "title": "Our goals: Health for life.",
         "p1_strong": "At GC Pharma, we have made it our mission to put people, their health, and well-being at the center of our actions. While achieving a state of good health is a relatively easily attainable goal in Europe, many other countries lack adequate medical care to enjoy good health.",
         
@@ -119,6 +121,7 @@
         "right_p2": "We aim to increase the quality of life for all people through prevention, healing, and relief, and we also strive to enable our high-quality standards in the pharmaceutical field to be transferred to other countries. Our calling is to ensure that health is not a privilege but is accessible to every person. With our promise of 'Made in Germany,' we guarantee that research, production, and quality assurance take place in Germany and meet our high German values. This commitment to the highest quality also applies to all of our traded goods."
     },
     "production" : {
+        "image_label": "PRODUCTION",
         "title": "Our services at a glance",
         "left_p1": "Together with our qualified partners in research and production, we can offer you a complete full-service for your products. ",
         "left_p2": "We are happy to assist you in formulating your own active ingredients or generics, advise you on the selection of suitable application forms for your patients, and of course, our partners are also happy to take on the entire production process for you. As the entire manufacturing process can take place in our partners' facilities, depending on the dosage form, in cleanrooms of purity class B (under laminar airflow A in B), with final sterilization by autoclave in the final container, you can rely on the highest pharmaceutical quality and hygiene standards in every respect. In addition to complying with the guidelines of the European Pharmacopoeia and the EU-GMP guidelines (Good Manufacturing Practices), the laboratories comply with numerous national and international standards and regulations that deal with the production process and the necessary facilities.",
@@ -193,6 +196,7 @@
         ]
     },
     "logistics": {
+        "image_label": "LOGISTICS",
         "title": "Our procurement and sales specialists can assist you quickly, competently, and reliably.",
         "description":"With our Europe-wide network of manufacturers, suppliers, and wholesalers, GC Pharma is able to meet the demand for almost all human pharmaceuticals approved in Europe within a very short time.",
         "slogan": "With our European network of manufacturers and suppliers, we are able to meet the demand for many human pharmaceuticals within a very short time.",
@@ -203,6 +207,7 @@
             {
                 "id": 1,
                 "imgAddr" : "/images/pages/logistics/logistics-card-1.png", 
+                "image_label": "WAREHOUSING",
                 "infoText" : "German Capital Pharma GmbH offers its customers in the areas of both human and veterinary medicinal products the highest quality storage services. Medicines and other medical products and preparations are stored at normal temperature (ambient, 15 to 25°C), refrigerated (including the cold chain at 2 to 8°C) and deep-frozen (-25 to -20°C) possible.",
                 "btnText" : "Continue reading",
                 "linkAddr" : "/logistics-storage"
@@ -210,6 +215,7 @@
             {
                 "id": 2,
                 "imgAddr" : "/images/pages/logistics/logistics-card-2.png", 
+                "image_label": "SHIPPING",
                 "infoText" : "German Capital Pharma GmbH offers its customers in the areas of both human and veterinary medicinal products the highest quality storage services. Medicines and other medical products and preparations are stored at normal temperature (ambient, 15 to 25°C), refrigerated (including the cold chain at 2 to 8°C) and deep-frozen (-25 to -20°C) possible.",
                 "btnText" : "Continue reading",
                 "linkAddr" : "/logistics-shipment"
@@ -217,6 +223,7 @@
             {
                 "id": 3,
                 "imgAddr" : "/images/pages/logistics/logistics-card-3.png", 
+                "image_label": "PROCUREMENT",
                 "infoText" : "Thanks to our Europe-wide network of manufacturers, suppliers and wholesalers, we at GC Pharma are able to cover the need for almost all human medicines approved in Europe within a very short time. Do you need finished medicinal products from the European Economic Area?",
                 "btnText" : "Continue reading",
                 "linkAddr" : "/logistics-purchasing"
@@ -300,7 +307,11 @@
             ]
         }
     },
+    "dietary": {
+        "image_label": "FOOD SUPPLEMENTS"
+    },
     "advice": {
+        "image_label": "CONSULTING",
         "title": "We at GC Pharma are happy to support and advise you on everything from the manufacture or purchase of medicines to marketing tailored to the target group.",
         "p1_strong": "No matter at which point in the development of a drug you want to get started, we have the right offer for you!",
         "p1_normal": "The health of the patient is the focus of all pharmaceutical work, in order to ensure this, drugs must meet a wide variety of rules and regulations. We at GC Pharma are actively committed to ensuring that people in other EU countries can also enjoy the high standards of our medicines. That is why we have included experts for the various import regulations of individual countries, especially those in the Middle East and North Africa, in our team. Talk to us, we look forward to advising you! The pharmaceutical and entrepreneurial experience of our experts at GC Pharma ensures that we always develop tailor-made concepts that actively advance you as a company and offer your patients the best possible quality and care. A team of IT management specialists, legal experts specializing in drug and corporate law, and marketing consultants is always at our side for this purpose.",
@@ -333,11 +344,13 @@
         ]
     },
     "job_posting": {
+        "image_label": "CURRENT JOB OPENINGS",
         "title": "GC Pharma GmbH as an employer",
         "description": "Our mindset of facing change processes unbiasedly and courageously has changed just as little as the central anchoring of the success factor “people“ in our entrepreneurial consciousness. Our employees are always the most important thing in our company, and not just because of their cleverness. What distinguishes the people at GC Pharma GmbH is an inimitable mixture of intuition, joy and enthusiasm.",
         "button_label": "EXPLORE 58 opportunities"
     },
     "about_us": {
+        "image_label": "CURRENT JOB OPENINGS",
         "form_search_label": "SEARCH",
         "form_type_label": "TYPE:",
         "form_location_label": "LOCATION:",
@@ -405,10 +418,12 @@
         ]
     },
     "contact": {
+        "image_label": "CONTACT",
         "title": "Any questions?",
         "headquarters": "HEADQUARTERS",
         "company_name": "German Capital Pharma GmbH",
         "company_address": "Badstr. 20 13357",
+        "company_address_2": "Am Wall 8 14979",
         "company_city": "Berlin",
         "company_country": "Germany",
         "form_title": "Feel free to contact us",
@@ -443,6 +458,7 @@
         "form_button_label": "Submit"
     },
     "about_company": {
+        "image_label": "HUMAN RESOURCES MANAGER",
         "introduction": "For our “TVöD“ team in the area of Content & Product Creation we are looking for Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
 
         "content": [
@@ -501,6 +517,7 @@
         "button_label": "APPLY NOW"
     },
     "apply":{
+        "image_label": "HUMAN RESOURCES MANAGER",
         "title": "HUMAN RESOURCES MANAGER (FULL-TIME)",
         "comment": "Please enter your personal information below.",
         "mandatory_placeholder": "Mandatory information",
@@ -534,6 +551,7 @@
         "submit_button": "Submit your application"
     },
     "apply_success": {
+        "image_label": "HUMAN RESOURCES MANAGER",
         "title": "Thank you for sending your application documents!",
         "comment": "We are pleased that you are interested in working in our company. After checking your documents, we will get in touch with you again. Until then we ask for your patience."
     }

@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import BreadCrumb from '../components/common/BreadCrumb';
 import Dosage from '../components/product/Dosage';
+import ImageViewer from '../components/image/ImageViewer';
 import { useTranslation } from 'react-i18next'
 
 const Production = () => {
@@ -15,7 +16,12 @@ const Production = () => {
         <>
             <section id="production" className="section">
                 <div className="container">
-                    <img src="/images/pages/production/production-top.png" alt="" />
+                    <ImageViewer 
+                        img="/images/pages/production/production-top.png"
+                        textTop="60%"
+                        fontSize="25px"
+                        label={t('production.image_label')}
+                    />
                     <BreadCrumb />
                     <h1 className='production_title'>{t("production.title")}</h1>
                     <div className='production_rectangle'></div>

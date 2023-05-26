@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import BreadCrumb from '../components/common/BreadCrumb';
+import ImageViewer from '../components/image/ImageViewer';
 import { useTranslation } from 'react-i18next'
 import i18n from "i18next";
 
@@ -10,7 +11,12 @@ const CompanyProfile = () => {
         <>
             <section id="company_profile" className="section">
                 <div className="container">
-                    <img src="/images/pages/company-profile-top.png" alt="" />
+                    <ImageViewer 
+                        img="/images/pages/company-profile-top.png"
+                        textTop="60%"
+                        fontSize="25px"
+                        label={t('company_profile.image_label')}
+                    />
                     <BreadCrumb />
                     <div className='company_profile_info_wrapper'>
                         <h1 className='company_profile_title'>{t("company_profile.title")}</h1>

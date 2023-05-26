@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import BreadCrumb from '../components/common/BreadCrumb'
 import ImageSlider from '../components/sliders/ImageSlider';
+import ImageViewer from '../components/image/ImageViewer';
 import { useTranslation } from 'react-i18next';
 
 const LogisticsStorage = () => {
@@ -12,9 +13,12 @@ const LogisticsStorage = () => {
         <>
             <section id="logistics_storage" className="section">
                 <div className="container">
-                    <div className='img_top'>
-                        <img src="/images/pages/logistics/logistics-top.png" alt="" />
-                    </div>
+                    <ImageViewer 
+                        img="/images/pages/logistics/logistics-top.png"
+                        textTop="60%"
+                        fontSize="25px"
+                        label={t('logistics.image_label')}
+                    />
                     <BreadCrumb detail_info={t('logistics.storage.breadcrumb')} />
                     <div className='storageContainer'>
                         <h1 className='logistics_storage_title'>{t('logistics.storage.title')}</h1>
