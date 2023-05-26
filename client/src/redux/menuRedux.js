@@ -42,9 +42,9 @@ const makeMenuItemData = (serverData) => {
     basic_data[1].submenu[1].descText = serverData[6].title_de;
     basic_data[1].submenu[1].descTextEn = serverData[6].title_gb;
 
-    basic_data[1].submenu[2].imgUrl = serverData[7].path;
-    basic_data[1].submenu[2].descText = serverData[7].title_de;
-    basic_data[1].submenu[2].descTextEn = serverData[7].title_gb;
+    basic_data[1].submenu[2].imgUrl = serverData[8].path;
+    basic_data[1].submenu[2].descText = serverData[8].title_de;
+    basic_data[1].submenu[2].descTextEn = serverData[8].title_gb;
 
     /*basic_data[1].submenu[3].imgUrl = serverData[8].path;
     basic_data[1].submenu[3].descText = serverData[8].title_de;

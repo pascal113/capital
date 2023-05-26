@@ -80,7 +80,6 @@
             "subtitle": [
                 "Production",
                 "Logistics",
-                "Supplements",
                 "Consulting"
             ]
         },
@@ -424,6 +423,7 @@
         "company_name": "German Capital Pharma GmbH",
         "company_address": "Badstr. 20 13357",
         "company_address_2": "Am Wall 8 14979",
+        "branch_company": "Branch Office in Großbeeren",
         "company_city": "Berlin",
         "company_country": "Germany",
         "form_title": "Feel free to contact us",
