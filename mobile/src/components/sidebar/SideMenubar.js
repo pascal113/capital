@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { menuItems } from '../../data/menuItems';
 import MenuItems from './MenuItems';
 
-const SideMenubar = () => {
+const SideMenubar = (props) => {
+
+  const { menuData } = props;
+  const menuItems = menuData;
 
   return (
     <nav>

@@ -1,14 +1,16 @@
-import { useState, useEffect, useRef, useContext } from 'react';
+import { useState, useEffect, useRef,useContext } from 'react';
 import Dropdown from './Dropdown';
 import { Link, useLocation } from 'react-router-dom';
 import menuContext from '../../contexts/menu/menuContext';
+import commonContext from '../../contexts/common/commonContext';
 import { useTranslation } from 'react-i18next'
 import i18n from "i18next";
 
-const MenuItems = ({ menu_index, submenu_index, items, depthLevel }) => {
-  const { t } = useTranslation(['page']);
+const MenuItems = ({ menu_index, submenu_index, items, depthLevel}) => {
+  const { t }  = useTranslation(['page']);
   const [dropdown, setDropdown] = useState(false);
   const { hoverItem } = useContext(menuContext);
+  const { curLanguage } = useContext(commonContext);
 
   let ref = useRef();
 
@@ -33,14 +35,23 @@ const MenuItems = ({ menu_index, submenu_index, items, depthLevel }) => {
 
   const changeIntroduceItem = (item) => {
 
-    if (item.imgUrl || item.descText) {
-      hoverItem({ 'imgUrl': item.imgUrl, 'descText': item.descText });
+    let value = curLanguage;
+    
+    if (value === 'DE') {
+      if(item.imgUrl || item.descText) {
+        hoverItem({'imgUrl': item.imgUrl,  'descText':item.descText});
+      }
+    }
+    else {
+      if(item.imgUrl || item.descTextEn) {
+        hoverItem({'imgUrl': item.imgUrl,  'descText':item.descTextEn});
+      }
     }
   };
 
   const onMouseEnter = () => {
     changeIntroduceItem(items);
-    window.innerWidth > 960 && setDropdown(true);
+    window.innerWidth > 960 && setDropdown(true);    
   };
 
   const onMouseLeave = () => {
@@ -82,7 +93,7 @@ const MenuItems = ({ menu_index, submenu_index, items, depthLevel }) => {
               <Link to={items.url}>{items.title}</Link>
             )}
 
-
+            
           </button>
           <Dropdown
             depthLevel={depthLevel}
@@ -93,6 +104,7 @@ const MenuItems = ({ menu_index, submenu_index, items, depthLevel }) => {
       ) : !items.url && items.submenu ? (
         <>
           <button
+            className='main_menu'
             type="button"
             aria-haspopup="menu"
             aria-expanded={dropdown ? 'true' : 'false'}
@@ -108,7 +120,7 @@ const MenuItems = ({ menu_index, submenu_index, items, depthLevel }) => {
           />
         </>
       ) : (
-        <Link to={items.url}>{t(`menu.${menu_index}.subtitle.${submenu_index}`)}</Link>
+          <Link to={items.url}>{t(`menu.${menu_index}.subtitle.${submenu_index}`)}</Link>
       )}
     </li>
   );

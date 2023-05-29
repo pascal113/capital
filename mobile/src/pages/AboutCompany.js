@@ -1,32 +1,41 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import BreadCrumb from '../components/common/BreadCrumb';
 import { Link, useParams } from "react-router-dom";
 import ImageViewer from '../components/image/ImageViewer';
-//import aboutCompanyData from '../data/aboutCompanyData';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from "react-redux";
+import commonContext from '../contexts/common/commonContext';
+import { Fade } from 'react-awesome-reveal';
 
 const AboutCompany = () => {
     const { id } = useParams();
     const id_num = parseInt(id);
-    const { t }  = useTranslation(['page']);
+    const { t } = useTranslation(['page']);
+    const { curLanguage } = useContext(commonContext);
+    const jobsData = useSelector((state) => state.job.jobs);
+    let aboutCompanyData = [];
 
-    const imgViwerData = {
-        img: "/images/pages/about-us/about-company-top.png",
-        label: "HUMAN RECOURCES MANAGER",
-        textTop: '105px',
-        fontSize: window.innerWidth <= 768 ? '12px' : '25px',
-        fontFamily: 'Din Pro Bold',
-        textColor: 'white',
-    };
-
-    const aboutCompanyData = t('about_company', {returnObjects: true});
+    if (curLanguage === 'GB') {
+        aboutCompanyData = jobsData[id_num].about_gb;
+    }
+    else if (curLanguage === 'DE') {
+        aboutCompanyData = jobsData[id_num].about_de;
+    }
 
     return (
         <>
             <section id="about_company" className="section">
                 <div className="container">
-                    <ImageViewer data={imgViwerData} />
+                    <Fade duration='1000' direction='left'>
+                        <ImageViewer
+                            img="/images/pages/about-us/about-company-top.png"
+                            textTop="50%"
+                            fontSize={window.innerWidth <= 768 ? '12px' : '25px'}
+                            label="HUMAN RESOURCES MANAGER"
+                        />
+                    </Fade>
                     <BreadCrumb />
+
                     <div className='about_company_wrapper'>
                         <h1 className='paragraph paragraph_text'>{aboutCompanyData.introduction}</h1>
                         {
@@ -36,13 +45,13 @@ const AboutCompany = () => {
                                         <h2 className='paragraph_text'>{contents.title}</h2>
                                         <h3 className='subtitle paragraph_text'>{contents.subtitle}</h3>
                                         <ul className='detail'>
-                                        {
-                                            contents.detail.map((item, index) => {
-                                                return (
-                                                <li key={index}><h4>{item}</h4></li>
-                                                );
-                                            })
-                                        }
+                                            {
+                                                contents.detail.map((item, index) => {
+                                                    return (
+                                                        <li key={index}><h4>{item}</h4></li>
+                                                    );
+                                                })
+                                            }
                                         </ul>
                                     </div>
                                 );

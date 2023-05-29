@@ -65,7 +65,7 @@
 
     .logistics_shipment_digit_box {
         width: 224px;
-            height: 213px;
+        height: 213px;
 
         display: flex;
         justify-content: center;
@@ -125,12 +125,11 @@
             position: relative;
 
             .img_top {
-                width: 1440px;
-                height: 235px;
+                width: 1920px;
             }
 
             h1 {
-                margin-top: 141px;
+                margin-top: 321px;
                 font-family: 'DIN Pro Bold', sans-serif;
                 font-style: normal;
                 font-weight: 700;
@@ -156,7 +155,7 @@
     .logistics_shipment_button_range {
         display: flex;
         justify-content: center;
-        margin-bottom: 372px;
+        margin-bottom: 475px;
     }
 
 
@@ -182,15 +181,12 @@
     .box1 {
         background: #9C0000;
     }
-
     .box2 {
         background: #AF0101;
     }
-
     .box3 {
         background: #C40101;
     }
-
     .box4 {
         background: #DC0202;
     }

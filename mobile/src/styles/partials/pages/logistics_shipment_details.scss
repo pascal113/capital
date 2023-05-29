@@ -138,12 +138,10 @@
             position: relative;
 
             .img_top {
-                width: 1440px;
-                height: 235px;
+                width: 1920px;
             }
 
             h1 {
-                margin-top: 141px;
                 font-family: 'DIN Pro Bold', sans-serif;
                 font-style: normal;
                 font-weight: 700;
@@ -157,11 +155,13 @@
 
     .logistics_shipment_details_wrapper {
         position: relative;
+        max-width: 1120px;
+        height: 768px;
         display: flex;
         justify-content: start;
-        width: 100%;
-        height: 580px;
-        margin-top: 228px;
+        margin-top: 322px;
+        margin-left: auto;
+        margin-right: auto;
 
         .logistics_shipment_dash_box {
             border: 3px dashed #9C0000;
@@ -191,35 +191,43 @@
         }
 
         .dash1 {
-            left: 283px;
+            left: 70px;
             width: 762px;
         }
 
-        .dash2,
-        .dash3,
-        .dash4 {
-            left: 269px;
+        .dash2 {
+            left: 65px;
             width: 775px;
         }
 
 
+        .dash3 {
+            left: 67px;
+            width: 775px;
+        }
+
+        .dash4 {
+            left: 68px;
+            width: 775px;
+        }
+
         .box1 {
-            margin-left: 213px;
+            margin-left: 0px;
             background: #9C0000;
         }
 
         .box2 {
-            margin-left: 204px;
+            margin-left: 0px;
             background: #AF0101;
         }
 
         .box3 {
-            margin-left: 202px;
+            margin-left: 0px;
             background: #C40101;
         }
 
         .box4 {
-            margin-left: 201px;
+            margin-left: 0px;
             background: #DC0202;
         }
 

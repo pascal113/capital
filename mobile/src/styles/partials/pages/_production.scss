@@ -42,10 +42,77 @@
                 .production_description {
                     margin-top: 38px;
                     width: 100%;
+                    position: relative;
 
                     img {
-                        width: 100%;
+                        width: 50%;
                         height: auto;
+                    }
+
+                    .desc_text1,
+                    .desc_text2,
+                    .desc_text3,
+                    .desc_text4,
+                    .desc_text5,
+                    .desc_text6,
+                    .desc_text7,
+                    .desc_text8 {
+                        position: absolute;
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 6px;
+                        line-height: 8px;
+                        text-align: right;
+
+                        color: #3E4347;
+                    }
+
+                    .desc_text1 {
+                        text-align: center;
+                        top: -21px;
+                        left: 41%;
+                    }
+
+                    .desc_text2 {
+                        text-align: left;
+                        top: 25px;
+                        right: 12%;
+                    }
+
+                    .desc_text3 {
+                        text-align: left;
+                        top: 68px;
+                        right: 7%;
+                    }
+
+                    .desc_text4 {
+                        text-align: left;
+                        top: 116px;
+                        right: 17%;
+                    }
+
+                    .desc_text5 {
+                        text-align: center;
+                        top: 157px;
+                        left: 43%;
+                    }
+
+                    .desc_text6 {
+                        text-align: right;
+                        top: 116px;
+                        left: 4%;
+                    }
+
+                    .desc_text7 {
+                        text-align: right;
+                        top: 74px;
+                        left: 4%;
+                    }
+
+                    .desc_text8 {
+                        text-align: right;
+                        top: 27px;
+                        left: 13%;
                     }
                 }
             }
@@ -120,12 +187,7 @@
             }
 
             .production_dosage {
-                margin-top: 73px;
-                font-style: normal;
-                font-weight: 700;
-                font-size: 12px;
-                line-height: 15px;
-                color: #585858;
+                display: none;
             }
         }
     }
@@ -136,12 +198,24 @@
         padding-bottom: 296px;
         max-width: 390px;
 
+        .production_dosage_title {
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 15px;
+            color: #585858;
+            padding-bottom: 80px;
+        }
+
         .production_dosage_curve_lines {
             position: absolute;
             right: -40px;
             margin-top: 75px;
             width: 216px;
             height: 1892px;
+
+            img {
+                height: 100%;
+            }
         }
 
         .production_dosage_container {
@@ -196,8 +270,7 @@
                 height: 685px;
             }
 
-            .production_dosage_column:nth-child(4) {
-            }
+            .production_dosage_column:nth-child(4) {}
 
             .production_dosage_column_box {
                 border-right: 1px solid #D30000;
@@ -232,14 +305,14 @@
     #production {
         padding-top: 0rem;
         @include centered;
-
+        
         .container {
             width: 100%;
             background-color: white;
-            text-align: center;
+            text-align:center;
             position: relative;
             overflow: hidden;
-
+    
             h1 {
                 margin-top: 156px;
                 font-style: normal;
@@ -249,20 +322,16 @@
                 text-align: center;
                 color: #585858;
             }
-
-            .mobile_image {
-                display: none;
-            }
         }
     }
-
-    .production_title {
+    
+    .production_title{
         width: 464px;
         height: 52px;
         margin: auto;
         font-family: 'DIN Pro Bold', sans-serif;
     }
-
+    
     .production_rectangle {
         margin-left: auto;
         margin-right: auto;
@@ -271,83 +340,166 @@
         height: 9px;
         background-color: #585858;
     }
-
+    
     .production_description {
         width: 823px;
         height: 462px;
         margin: auto;
         margin-top: 77px;
-    }
+        position: relative;
 
+        .description {
+            transition: transform 0.3s ease;
+        }
+
+        .description:hover {
+            cursor: pointer;
+            color: rgb(18, 18, 51);
+            transform: scale(1.1);
+        }
+
+        .desc_text1,
+        .desc_text2,
+        .desc_text3,
+        .desc_text4,
+        .desc_text5,
+        .desc_text6,
+        .desc_text7,
+        .desc_text8 {
+            position: absolute;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 18px;
+            text-align: right;
+
+            color: #3E4347;
+        }
+
+        .desc_text1 {
+            text-align: center;
+            top: -45px;
+            left: 41%;
+        }
+
+        .desc_text2 {
+            text-align: left;
+            top: 63px;
+            right: 9%;
+        }
+
+        .desc_text3 {
+            text-align: left;
+            top: 164px;
+            right: 4%;
+        }
+
+        .desc_text4 {
+            text-align: left;
+            top: 265px;
+            right: 14%;
+        }
+
+        .desc_text5 {
+            text-align: center;
+            top: 355px;
+            left: 42%;
+        }
+
+        .desc_text6 {
+            text-align: right;
+            top: 265px;
+            left: 0%;
+        }
+
+        .desc_text7 {
+            text-align: right;
+            top: 164px;
+            left: 0%;
+        }
+
+        .desc_text8 {
+            text-align: right;
+            top: 55px;
+            left: 10%;
+        }
+    }
+    
     .production_wrapper {
-        padding-top: 106px;
-        padding-bottom: 87px;
+        margin-top: 113px;
         display: grid;
         grid-template-columns: 50% auto;
         gap: 0rem;
-
+    
         @include devices(lg) {
             grid-template-columns: 1fr;
             gap: 0rem;
         }
-
+    
         .production_left_col {
-
-            height: 479px;
+            display: flex;
+            flex-direction: column;
+            height: 504px;
             background-color: #777978;
-
+            padding-left: 104px;
+            padding-right: 78px;
+        
             .paragraph {
-                margin-left: 79px;
+                max-width: 769px;
                 font-style: normal;
                 font-size: 14px;
                 color: #FFFFFF;
             }
-
-            .paragraph:nth-child(1) {
-                margin-top: 64px;
-                width: 595px;
+        
+            .paragraph:nth-child(1){
+                margin-top: 82px;
+                max-width: 769px;
                 font-weight: 700;
                 font-family: 'DIN Pro Bold';
                 line-height: 21px;
                 text-align: left;
                 padding-bottom: 2rem;
-
+                
             }
-
-            .paragraph:nth-child(2) {
-                width: 570px;
+        
+            .paragraph:nth-child(2){
+                max-width: 737px;
                 font-family: 'DIN Pro Regular';
                 font-weight: 400;
                 text-align: justify;
                 line-height: 24px;
             }
         }
-
+        
         .production_right_col {
-            height: 481px;
+            height: 504px;
+            
+            img {
+                height: 100%;
+                object-fit: cover;
+            }
         }
     }
-
-
-    .production_slogan {
-        width: 885px;
+    
+    
+    .production_slogan{
+        max-width: 885px;
         height: 126px;
         margin: auto;
+        margin-top: 137px;
         font-family: 'DIN Pro Bold';
         font-style: normal;
         font-weight: 700;
         font-size: 20px;
         line-height: 26px;
         text-align: center;
-
+    
         color: #D30000;
     }
-
-    .production_slogan_content {
-        margin-left: 191px;
-        margin-right: 200px;
-        display: flex;
-        justify-content: center;
+    
+    .production_slogan_content{
+        display: grid;
+        grid-template-columns: 50% 50%;
         gap: 37px;
         font-style: normal;
         font-weight: 400;
@@ -355,26 +507,25 @@
         line-height: 25px;
         color: #000000;
         text-align: justify;
-
+    
         p:nth-child(1) {
             font-family: 'DIN Pro Regular';
-            width: 100%;
-            justify-content: right;
+            max-width: 503px;
+            justify-self: end;
         }
-
         p:nth-child(2) {
             font-family: 'DIN Pro Regular';
-            width: 100%;
-            justify-content: left;
+            max-width: 509px;
+            justify-self: start;
         }
-
+        
     }
-
-
-    .production_dosage {
-        height: 45px;
-        margin-left: 191px;
+    
+    .production_dosage{
+        position: relative;
+        margin-left: 18%;
         margin-top: 6rem;
+        max-width: 1567px;
         font-family: 'DIN Pro Bold';
         font-style: normal;
         font-weight: 700;
@@ -382,29 +533,38 @@
         line-height: 26px;
         color: #585858;
         text-align: left;
-
-    }
-
-
-    .production_dosage_draw {
-        position: relative;
-        min-height: 770px;
-
-        .production_dosage_curve_lines {
+    
+        .production_dosage_title{
+            left: 7.3%;
             position: absolute;
-            left: 262px;
-            margin-top: 133px;
+            max-width: 558px;
+            height: 45px;
+            text-align: left;
         }
-
+        
+        .production_dosage_image{
+            position: absolute;
+            margin-left: 7.23%;
+    
+            img{
+                width: 1428px;
+                height: 389px;
+                overflow: hidden;
+            }
+        }
+    
         .production_dosage_container {
-            display: grid;
-            margin-left: 80px;
-            grid-template-columns: 317px 298px 316px 215px;
-
-            .production_dosage_column {
+            display: flex;
+            flex-direction: row;
+            flex-basis: 215px;
+            justify-content: start;
+            min-height: 870px;
+            margin-top: 77px;
+    
+            .production_dosage_column{
                 position: relative;
-
-                .subtitle {
+                
+                .subtitle{
                     text-align: left;
                     font-family: 'DIN Pro Bold';
                     font-style: normal;
@@ -414,89 +574,82 @@
                     color: #D30000;
                     margin-bottom: 35px;
                 }
-
+    
                 .dosage_image {
                     text-align: left;
                     background: transparent;
                     cursor: pointer;
                 }
             }
-
-            .production_dosage_column:nth-child(1) {
+    
+    
+            .production_dosage_column:nth-child(1){
+                margin-top: 45px;
+                width: 20%;
                 .dosage_image {
                     width: 159px;
-                    height: 150px;
-                    margin-left: 40px;
+                    height:150px;
                     margin-top: 87px;
                     margin-bottom: 63px;
                 }
-
-                .subtitle {
+                
+                .subtitle{
                     margin-left: 65px;
                 }
             }
-
-            .production_dosage_column:nth-child(2) {
-                margin-left: 60px;
-
+    
+            .production_dosage_column:nth-child(2){
+                width: 17%;
                 .dosage_image {
                     width: 173px;
                     height: 152px;
-                    margin-left: 0px;
-                    margin-top: 238px;
+                    margin-top: 265px;
                     margin-bottom: 55px;
-
                 }
-
-                .subtitle {
+                .subtitle{
                     margin-left: 24px;
                 }
             }
-
-            .production_dosage_column:nth-child(3) {
-                margin-left: 60px;
-
+            .production_dosage_column:nth-child(3){
+                margin-left: 30px;
+                width: 18%;
                 .dosage_image {
                     width: 159px;
                     height: 149px;
                     margin-left: 0px;
-                    margin-top: 125px;
+                    margin-top: 160px;
                     margin-bottom: 20px;
                 }
-
-                .subtitle {
+                .subtitle{
                     margin-left: 32px;
                 }
             }
-
-            .production_dosage_column:nth-child(4) {
-                margin-left: 25px;
-
+            .production_dosage_column:nth-child(4){
+                width: 16%;
                 .dosage_image {
                     width: 176px;
                     height: 168px;
                     margin-left: 0px;
-                    margin-top: 225px;
+                    margin-top: 256px;
                     margin-bottom: 20px;
                 }
-
-                .subtitle {
+                .subtitle{
                     margin-left: 10px;
                 }
             }
-
+    
             .production_dosage_column_box {
                 border-right: 1px solid #D30000;
             }
-
+    
             ul li {
                 text-align: left;
                 list-style: disc outside none;
                 color: #000000;
-
-                span {
+                
+                span{
                     line-height: 1.5rem !important;
-                    word-wrap: break-word;
+                    word-wrap:  break-word;
                     font-family: 'DIN Pro Regular';
                     font-style: normal;
                     font-weight: 400;
@@ -506,7 +659,10 @@
                     color: #000000;
                 }
             }
-
         }
+    }
+
+    .production_dosage_draw {
+        display: none;
     }
 }

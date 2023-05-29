@@ -76,12 +76,11 @@
             position: relative;
 
             .img_top {
-                width: 1440px;
-                height: 235px;
+                width: 1920px;
             }
 
             .img_map {
-                margin-top: 152px;
+                margin-top: 183px;
                 margin-bottom: 47px;
                 width: 100%;
                 height: 81px;
@@ -107,6 +106,19 @@
         margin: auto;
     }
 
+.logistics_purchasing_description{
+    font-family: 'DIN Pro Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: left;
+    color: #585858;
+    max-width: 763px;
+    height: 184px;
+    margin-top: 33px;
+    text-align: justify;
+}
     .logistics_description {
         font-family: 'DIN Pro Regular';
         font-style: normal;
@@ -115,13 +127,16 @@
         line-height: 24px;
         text-align: left;
         color: #585858;
-        width: 763px;
+        max-width: 763px;
         height: 184px;
         margin-top: 33px;
+        text-align: justify;
     }
 
 
     .slider {
-        margin-top: 395px;
+        margin-top: 185px;
     }
 }
+
+

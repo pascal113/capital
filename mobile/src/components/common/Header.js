@@ -51,7 +51,7 @@ const Header = () => {
                                 </div>                                
                             </div>
                             <div className="itemContainer">
-                                <Link to={isMenuPage?"/":"/menu"}>
+                                <Link to={isMenuPage?-1:"/menu"}>
                                     <div className="hamburger" onClick={()=>{setMenuOpen(!menuOpen); }}>
                                         <span className="line1"></span>
                                         <span className="line2"></span>

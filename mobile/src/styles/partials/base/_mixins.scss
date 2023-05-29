@@ -82,8 +82,14 @@
 
 @mixin devices($breakpoint) {
 
+    @if $breakpoint==xxl {
+        @media (max-width: 1439.98px) {
+            @content;
+        }
+    }
+
     @if $breakpoint==xl {
-        @media (max-width: 1399.98px) {
+        @media (max-width: 1279.98px) {
             @content;
         }
     }

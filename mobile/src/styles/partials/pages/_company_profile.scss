@@ -113,7 +113,6 @@
             overflow: hidden;
 
             h1 {
-                margin-top: 95px;
                 font-style: normal;
                 font-weight: bold;
                 font-size: 25px;
@@ -124,9 +123,13 @@
         }
     }
 
+    .company_profile_info_wrapper {
+        margin-top: 134px;
+    }
+
     .company_profile_title {
         width: 464px;
-        height: 52px;
+        height: 32px;
         margin: auto;
         font-family: 'DIN Pro Bold', sans-serif;
     }
@@ -134,33 +137,32 @@
     .company_profile_rectangle {
         margin-left: auto;
         margin-right: auto;
-        margin-top: 17px;
+        margin-top: 37px;
         width: 68px;
         height: 9px;
         background-color: #585858;
     }
 
-    .company_profile_description {
-        width: 765px;
-        margin: auto;
-        margin-top: 37px;
-        font-family: 'DIN Pro Bold', sans-serif;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 25px;
-        color: #585858;
-        display: flex;
-        align-items: center;
-        text-align: justify;
-    }
+.company_profile_description{
+    max-width: 765px;
+    margin: auto;
+    margin-top: 37px;
+    font-family: 'DIN Pro Bold', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    color: #585858;
+    display: flex;
+    align-items: center;
+    text-align: justify;
+}
 
     .company_profile_wrapper {
-        padding-top: 170px;
-        padding-bottom: 318px;
+        margin-top: 170px;
+        margin-bottom: 216px;
         display: grid;
         grid-template-columns: 50% 50%;
-        gap: 0rem;
 
         @include devices(lg) {
             grid-template-columns: 1fr;
@@ -168,40 +170,43 @@
         }
     }
 
-    .company_profile_left_col {
-        .paragraph {
-            width: 576px;
-            margin-top: 54px;
-            margin-left: 98px;
-            font-family: 'DIN Pro Regular', sans-serif;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 25px;
-            color: #585858;
-            display: flex;
-            align-items: center;
-            text-align: justify;
-
-        }
+.company_profile_left_col {
+    .paragraph {
+        max-width: 655px;
+        margin-top: 54px;
+        margin-left: 277px;
+        font-family: 'DIN Pro Regular', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 25px;
+        color: #585858;
+        display: flex;
+        align-items: center;
+        text-align: justify;
+        
     }
+}
 
     .company_profile_right_col {
-
-        img {
-            position: relative;
-            margin-top: 54px;
-            display: inline;
-            float: right;
-        }
+        margin-left: 102px;
 
         .border-box {
-            position: absolute;
-            width: 537px;
-            height: 433px;
-            right: -23px;
+            position: relative;
+            margin-left: 53px;
+            max-width: 537px;
+            min-height: 433px;
             box-sizing: border-box;
             border: 6px solid #777978;
+
+            img {
+                position: absolute;
+                left: -53px;
+                top: 54px;
+                width: 100%;
+                height: auto;
+            }
+
         }
     }
 }
