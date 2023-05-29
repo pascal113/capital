@@ -455,7 +455,9 @@
         "form_company_email_label": "E-mail Address",
         "form_company_email_placeholder": "E-mail Address*",
         "form_message_label": "Your message:",
-        "form_button_label": "Submit"
+        "form_button_label": "Submit",
+        "form_field_require": "This field is required",
+        "form_field_email": "This field must be in email format"
     },
     "about_company": {
         "image_label": "HUMAN RESOURCES MANAGER",
