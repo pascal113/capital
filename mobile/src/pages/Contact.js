@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
-import { Link } from "react-router-dom";
 import BreadCrumb from '../components/common/BreadCrumb';
 import CustomDropdown from '../components/dropdown/CustomDropdown';
 import ImageViewer from '../components/image/ImageViewer';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { TextField } from "@mui/material";
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from "react-redux";
 import { sendContactMail } from "../redux/apiCalls";
 import { Fade } from 'react-awesome-reveal';
+import { useForm, Controller } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as Yup from 'yup';
+
 
 const ValidationTextField = styled(TextField)({
     '& label.Mui-focused': {
@@ -60,43 +63,47 @@ const InputTextField = styled(TextField)({
 
 const Contact = () => {
     const { t } = useTranslation(['page']);
-    const [status, setStatus] = useState("Submit");
     const department_options = t('contact.form_department_options', { returnObjects: true });
 
     const dispatch = useDispatch();
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setStatus("Sending...");
+    const validationSchema = Yup.object().shape({
+        company_name: Yup.string()
+            .required('this field is required'),
+        company_phone: Yup.string()
+            .required('this field is required'),
+        company_address: Yup.string()
+            .required('this field is required'),
+        company_plz: Yup.string()
+            .required('this field is required'),
+        email: Yup.string()
+            .required('this field is required')
+            .email('This field must be in email format'),
+    });
 
-        const { department_select, company_name, phone_number, company_address, plz, email, message } = e.target.elements;
+    const {
+        register,
+        control,
+        handleSubmit,
+        formState: { errors }
+        } = useForm({
+        resolver: yupResolver(validationSchema)
+    });
+    
+    const onSubmit = (data, e) => {
+        e.preventDefault();
+        const { department_select, company_name, company_phone, company_address, company_plz, email, user_message } = e.target.elements;
         let params = {
             department: department_select.value,
             company_name: company_name.value,
-            company_phone: phone_number.value,
+            company_phone: company_phone.value,
             company_address: company_address.value,
-            company_plz: plz.value,
+            company_plz: company_plz.value,
             email: email.value,
-            user_message: message.value
+            user_message: user_message.value        
         };
-        console.log('value', params);
-
-        console.log('contact mail');
+        
         sendContactMail(params, dispatch);
-        // try {
-        //     let response = await fetch("http://localhost:5000/contact", {
-        //         method: "POST",
-        //         headers: {
-        //             "Content-Type": "application/json;charset=utf-8",
-        //         },
-        //         body: JSON.stringify(details),
-        //     });
-        //     setStatus("Submit");
-        //     let result = await response.json();
-        //     alert(result.status);
-        // } catch (error) {
-        //     console.log('Fetch error: ', error);
-        // }
     };
 
     return (
@@ -140,12 +147,12 @@ const Contact = () => {
                     </Fade>
                     <div className='contact_form_wrapper'>
                         <Fade duration='1000' direction='left'>
-                            <form className='contact_form' onSubmit={handleSubmit} method="POST">
+                            <form className='contact_form' onSubmit={handleSubmit(onSubmit)} method="POST">
                                 <div className='form_item_title'><span>{t('contact.form_title')}</span></div>
                                 <div className='form_item_comment'><span>{t('contact.form_comment')}</span></div>
                                 <div className='form_item_department'>
                                     <span className="label">{t('contact.form_department_label')}</span>
-                                    <CustomDropdown name='department_select' options={department_options} onChange={(e) => { console.log(e.target.value) }} style={{ width: '192px', padding: '7px 0px 7px 9px', fontSize: 12 }} />
+                                    <CustomDropdown name='department_select' options={department_options} onChange={(e) => {}} style={{ width: '192px', padding: '7px 0px 7px 9px', fontSize: 12 }} />
                                 </div>
                                 <div className='form_item_company'>
                                     <ValidationTextField
@@ -154,6 +161,10 @@ const Contact = () => {
                                         placeholder={t('contact.form_company_name_placeholder')}
                                         name="company_name"
                                         size="small"
+                                        autoComplete="company_name"
+                                        required
+                                        {...register('company_name')}
+                                        error={errors.company_name ? true : false}    
                                         sx={{
                                             width: { sm: 192, md: 300 },
 
@@ -163,8 +174,12 @@ const Contact = () => {
                                         label={t('contact.form_company_phone_label')}
                                         variant="outlined"
                                         placeholder={t('contact.form_company_phone_placeholder')}
-                                        name="phone_number"
+                                        name="company_phone"
                                         size="small"
+                                        autoComplete="company_phone"
+                                        required
+                                        {...register('company_phone')}
+                                        error={errors.company_phone ? true : false}    
                                         sx={{
                                             width: { sm: 192, md: 300 },
                                         }}
@@ -177,6 +192,10 @@ const Contact = () => {
                                         placeholder={t('contact.form_company_address_placeholder')}
                                         name="company_address"
                                         size="small"
+                                        autoComplete="company_address"
+                                        required
+                                        {...register('company_address')}
+                                        error={errors.company_address ? true : false}    
                                         sx={{
                                             width: { sm: 192, md: 398 },
                                         }}
@@ -185,8 +204,12 @@ const Contact = () => {
                                         label={t('contact.form_company_postcode_label')}
                                         variant="outlined"
                                         placeholder={t('contact.form_company_postcode_placeholder')}
-                                        name="plz"
+                                        name="company_plz"
                                         size="small"
+                                        autoComplete="company_plz"
+                                        required
+                                        {...register('company_plz')}
+                                        error={errors.company_plz ? true : false}
                                         sx={{
                                             width: { sm: 192, md: 398 },
                                         }}
@@ -199,6 +222,10 @@ const Contact = () => {
                                         placeholder={t('contact.form_company_email_placeholder')}
                                         name="email"
                                         size="small"
+                                        autoComplete="email"
+                                        required
+                                        {...register('email')}
+                                        error={errors.email ? true : false}
                                         sx={{
                                             width: { sm: 192, md: 398 },
                                         }}
@@ -208,7 +235,7 @@ const Contact = () => {
                                     <div className='label'>{t('contact.form_message_label')}</div>
                                     <div className='message'>
                                         <InputTextField
-                                            name="message"
+                                            name="user_message"
                                             rows={8}
                                             multiline
                                             size="small"

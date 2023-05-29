@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@hookform/resolvers": "^3.1.0",
     "@mui/icons-material": "^5.11.16",
     "@mui/lab": "^5.0.0-alpha.128",
     "@mui/material": "^5.12.2",
@@ -22,6 +23,7 @@
     "react-datepicker": "^4.11.0",
     "react-dom": "^18.2.0",
     "react-focus-lock": "^2.9.4",
+    "react-hook-form": "^7.44.2",
     "react-i18next": "^12.2.2",
     "react-icons": "^4.4.0",
     "react-material-toast": "^16.1.7",
@@ -32,7 +34,8 @@
     "sass": "^1.53.0",
     "styled-components": "^5.3.10",
     "swiper": "^8.3.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yup": "^1.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
