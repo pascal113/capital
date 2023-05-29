@@ -28,6 +28,11 @@ export const mailSlice = createSlice({
             state.error = true;
             toast.error("send mail failed");
         },
+        sendContactFailureWithMessage: (state, action) => {
+            state.isFetching = false;
+            state.error = true;
+            toast.error(`${action.payload.message}`);
+        },      
         sendJobStart: (state) => {
             state.isFetching = true;
             state.error = false;
@@ -48,6 +53,7 @@ export const {
     sendContactStart,
     sendContactSuccess,
     sendContactFailure,
+    sendContactFailureWithMessage,
     sendJobStart,
     sendJobSuccess,
     sendJobFailure
