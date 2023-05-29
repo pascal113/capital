@@ -82,7 +82,7 @@
             overflow: hidden;
 
             h1 {
-                margin-top: 145px;
+                margin-top: 172px;
                 font-style: normal;
                 font-weight: bold;
                 font-size: 25px;
@@ -109,21 +109,21 @@
         background-color: #585858;
     }
 
-    .job_postings_description {
-        width: 677px;
-        margin: auto;
-        margin-top: 42px;
-        margin-bottom: 128px;
-        font-family: 'DIN Pro Bold', sans-serif;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 25px;
-        color: #585858;
-        display: flex;
-        align-items: center;
-        text-align: justify;
-    }
+.job_postings_description{
+    width: 677px;
+    margin: auto;
+    margin-top: 42px;
+    margin-bottom: 90px;
+    font-family: 'DIN Pro Bold', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    color: #585858;
+    display: flex;
+    align-items: center;
+    text-align: justify;
+}
 
 
     .posting_button {
@@ -135,6 +135,6 @@
         line-height: 26px;
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: 231px;
+        margin-bottom: 171px;
     }
 }

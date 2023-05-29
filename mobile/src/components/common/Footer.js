@@ -30,32 +30,40 @@ const Footer = () => {
                                     </div>
                                 </div>
 
-                                {
-                                    t('footer', { returnObjects: true }).map((item, index) => {
-                                        const { title, sub_title } = item;
-                                        return (
-                                            <div className="foot_menu" key={index}>
-                                                <h4>{t(title)}</h4>
-                                                <ul>
-                                                    {
-                                                        sub_title.map((subitem, index) => {
-                                                            return (
+                            {
+                                t('footer', { returnObjects: true }).map((item, index) => {
+                                    const { title, sub_title } = item;
+                                    return (
+                                        <div className="foot_menu" key={index}>
+                                            <h4>{t(title)}</h4>
+                                            <ul>
+                                                {
+                                                    sub_title.map((subitem, index) => {
+                                                        console.log('subitem', subitem);
+                                                        return (
+                                                            subitem.link !== ''?(
+                                                            <Link to={subitem.link}>
                                                                 <li key={index}>
-                                                                    {subitem}
+                                                                    {subitem.label}
                                                                 </li>
-                                                            );
-                                                        })
-                                                    }
-                                                </ul>
-                                            </div>
-                                        );
-                                    })
-                                }
-                            </div>
+                                                            </Link>): (
+                                                            <li key={index}>
+                                                                {subitem.label}
+                                                            </li>
+                                                            )
+                                                        );
+                                                    })
+                                                }
+                                            </ul>
+                                        </div>
+                                    );
+                                })
+                            }
                         </div>
-                    </footer >
-                )
-            }
+                    </div>
+                </footer >
+            )
+        }
         </>
 
     );

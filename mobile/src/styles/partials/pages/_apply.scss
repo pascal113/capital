@@ -309,10 +309,14 @@
         }
     }
 
+
     .apply_wrapper {
-        width: 100%;
+        max-width: 1078px;
         height: 100%;
-        padding: 154px 170px 309px 170px;
+        //padding: 154px 170px 309px 170px;
+        margin: auto;
+        margin-top: 228px;
+        margin-bottom: 170px;
         color: #585858;
         text-align: left;
         font-family: 'Din Pro Bold';
@@ -381,7 +385,7 @@
                 border: 0.33px solid #585858;
             }
 
-            input:required:valid {
+            input:not([type="date"]):required:valid {
                 border: 0.33px solid #009220;
                 background: url(../../../../public/images/pages/about-us/check.svg) no-repeat 98% 50%;
             }
@@ -413,8 +417,7 @@
             input[type="file"] {
                 border: none;
                 outline: none;
-                border-bottom: 1px solid #ccc;
-                /* You can adjust the color and thickness of the outline */
+                border-bottom: 1px solid #ccc; /* You can adjust the color and thickness of the outline */
             }
 
             .apply-upload-section {

@@ -57,13 +57,12 @@
                 }
 
                 .advice_right_col {
-                    position: relative;
                     display: flex;
                     flex-direction: row;
                     justify-content: end;
                     width: 100%;
 
-                    .slider {
+                    .advice_slider {
                         position: absolute;
                         top: 36px;
                         right: 0px;
@@ -72,13 +71,14 @@
                         margin-top: 0px;
                         overflow: hidden;
 
-                        .imgContainer img {
+                        .swiper, .swiper-slide img {
                             width: 100%;
-                            height: 100%;
+                            height: 100%!important;
                         }
                     }
 
                     .border-box {
+                        position: relative;
                         width: 323px;
                         height: 416px;
                         box-sizing: border-box;
@@ -167,7 +167,7 @@
     }
 
     .advice_title {
-        margin-top: 146px;
+        margin-top: 247px;
         width: 867px;
         margin-left: auto;
         margin-right: auto;
@@ -192,31 +192,29 @@
     }
 
     .advice_wrapper {
-        padding-top: 155px;
-        padding-bottom: 146px;
         display: grid;
         grid-template-columns: 50% 50%;
-        gap: 0rem;
-
+        margin-top: 169px;
         @include devices(lg) {
             grid-template-columns: 1fr;
             gap: 0rem;
         }
     }
 
-    .advice_left_col {
-        .paragraph {
-            width: 576px;
-            margin-left: 98px;
-            font-family: 'DIN Pro Regular', sans-serif;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 25px;
-            color: #353535;
-            display: flex;
-            align-items: center;
-            text-align: justify;
+.advice_left_col {
+    margin-top: 105px;
+    margin-left: 287px;
+    .paragraph {
+        max-width: 627px;
+        font-family: 'DIN Pro Regular', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 25px;
+        color: #353535;
+        display: flex;
+        align-items: center;
+        text-align: justify;
 
             &:nth-child(1) {
                 margin-bottom: 1rem;
@@ -225,21 +223,23 @@
     }
 
     .advice_right_col {
-        .slider {
-            position: relative;
-            margin-top: 47px;
-            float: right;
-            width: 572px;
-            height: 471px;
-        }
+        margin-left: 78px;
 
         .border-box {
-            position: absolute;
-            width: 576px;
-            height: 572px;
-            right: -45px;
+            position: relative;
+            margin-left: 122px;
+            max-width: 576px;
+            min-height: 572px;
             box-sizing: border-box;
             border: 6px solid #D30000;
+        }
+
+        .advice_slider {
+            position: absolute;
+            left: -44px;
+            top: 47px;
+            width: 100%;
+            height: auto;
         }
     }
 
@@ -248,8 +248,8 @@
         justify-content: center;
 
     }
-
     .advice_services {
+        margin-top: 235px;
 
         .title {
             font-family: inherit;
@@ -267,30 +267,30 @@
             gap: 11px;
 
             margin-top: 40px;
-            margin-bottom: 100px;
+            margin-bottom: 368px;
 
             .advice_card {
                 width: 341px;
                 height: 180px;
 
-                .service_button {
-                    width: 341px;
-                    height: 59px;
-                    font-weight: 700;
-                    font-size: 15px;
-                    font-family: inherit;
-                }
+            .service_button{
+                width: 341px;
+                height: 59px;
+                font-weight: 700;
+                font-size: 16px;
+                font-family: inherit;
+            }
 
-                .service_content {
-                    margin-top: 18px;
-                    width: 100%;
-                    font-family: 'DIN Pro Regular', sans-serif;
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 12px;
-                    line-height: 18px;
-                    color: #585858;
-                    text-align: left;
+            .service_content{
+                margin-top:18px;
+                width: 100%;
+                font-family: 'DIN Pro Regular', sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 18px;
+                color: #585858;
+                text-align: left;
 
                     ul li {
                         gap: 1.2rem;

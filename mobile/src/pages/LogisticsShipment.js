@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import BreadCrumb from '../components/common/BreadCrumb'
 import { useTranslation } from 'react-i18next';
+import ImageViewer from '../components/image/ImageViewer';
+import { Fade } from 'react-awesome-reveal';
 
 const LogisticsShipment = () => {
     const { t } = useTranslation(['page']);
@@ -11,9 +13,14 @@ const LogisticsShipment = () => {
         <>
             <section id="logistics_shipment" className="section">
                 <div className="container">
-                    <div className='img_top'>
-                        <img src="/images/pages/logistics/logistics-top.png" alt="" />
-                    </div>
+                    <Fade duration='1000' direction='left'>
+                        <ImageViewer
+                            img="/images/pages/logistics/logistics-top.png"
+                            textTop="60%"
+                            fontSize={window.innerWidth <= 768 ? '12px' : '25px'}
+                            label={t('logistics.image_label')}
+                        />
+                    </Fade>
                     <BreadCrumb detail_info={t('logistics.shipment.breadcrumb')} />
                     <div className='logistics_shipment_info_wrapper'>
                         <h1 className='logistics_shipment_title'>{t('logistics.shipment.title')}</h1>

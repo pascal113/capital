@@ -96,17 +96,29 @@
 
         .container {
             width: 100%;
-            max-width: 100vw;
             min-width: 640px;
             position: relative;
         }
 
         .swiper-pagination {
-            bottom: 26.3%;
+            bottom: 25.7%;
+
+            @include devices(xxl) {
+                bottom: 18%;
+            }
+
+            @include devices(xl) {
+                bottom: 10%;
+            }
+
+            @include devices(lg) {
+                bottom: 0;
+            }
         }
 
         .home_wrapper {
             width: 100%;
+            height: 100%;
             //place-content: center;
             //place-items: center;
 
@@ -136,7 +148,7 @@
 
                     .hover_mark {
                         margin-left: 46.85%;
-                        margin-top: 8.2%;
+                        margin-top: 17%;
                     }
 
                     .hover_company_text {
@@ -149,7 +161,8 @@
                         margin-top: 19px;
                         margin-left: auto;
                         margin-right: auto;
-                        width: 615px;
+                        //width: 619px;
+                        width: 550px;
                         height: 4px;
                         background: #ffffff;
                     }

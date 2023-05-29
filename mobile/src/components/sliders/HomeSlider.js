@@ -11,7 +11,7 @@ import i18n from "i18next";
 const HomeSlider = (props) => {
     const { t }  = useTranslation(['page']);
     const { homeData } = props;
-    const sliderData = homeData.filter(item => item.id > 0);
+    const sliderData = homeData;
 
     return (
         <Swiper style={{
@@ -31,11 +31,11 @@ const HomeSlider = (props) => {
         >
             {
                 sliderData.map((item, i) => {
-                    const { id, image} = item;
+                    const { _id, path} = item;
 
                     return (
                         <SwiperSlide
-                            key={id}
+                            key={_id}
                             className={`wrapper home_wrapper`}
                         >
                             <div className='slider_hover_caption'>
@@ -54,7 +54,7 @@ const HomeSlider = (props) => {
                                 </div>
                             </div>
                             <figure className="slider_container">
-                                <img src={image} alt="sliders" />
+                                <img src={`${path}`} alt="sliders" />
                             </figure>
                         </SwiperSlide>
                     );
