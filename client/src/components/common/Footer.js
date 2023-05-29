@@ -28,7 +28,6 @@ const Footer = () => {
                                             <ul>
                                                 {
                                                     sub_title.map((subitem, index) => {
-                                                        console.log('subitem', subitem);
                                                         return (
                                                             subitem.link !== ''?(
                                                             <Link to={subitem.link}>

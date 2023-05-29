@@ -31,6 +31,7 @@ import {
   sendContactStart,
   sendContactSuccess,
   sendContactFailure,
+  sendContactFailureWithMessage,
   sendJobStart,
   sendJobSuccess,
   sendJobFailure
@@ -160,8 +161,6 @@ export const getFields = async (dispatch) => {
 export const sendContactMail = async (params, dispatch) => {
   dispatch(sendContactStart());
   try {
-    console.log('sendContactMail');
-    console.log(params);
     const res = await publicRequest.post(
       "/mail/contact", 
       params);
@@ -170,7 +169,11 @@ export const sendContactMail = async (params, dispatch) => {
       dispatch(sendContactSuccess());
     }
   } catch (err) {
-    dispatch(sendContactFailure());
+    if (err.response) {
+      dispatch(sendContactFailureWithMessage(err.response.data));
+    } else {
+      dispatch(sendContactFailure()); 
+    }    
   }
 };
 
