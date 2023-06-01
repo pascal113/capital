@@ -11,7 +11,7 @@ const JobPostings = () => {
         <>
             <section id="job_postings" className="section">
                 <div className="container">
-                    <Fade duration='1000' direction='left'>
+                    <Fade duration='3000' direction=''>
                         <ImageViewer
                             img="/images/pages/job-postings/job-postings-top.png"
                             textTop="65%"
@@ -21,7 +21,7 @@ const JobPostings = () => {
                     </Fade>
                     <BreadCrumb />
 
-                    <Fade duration='1000' direction='up'>
+                    <Fade duration='1000' direction='left'>
                         <div className='job_postings_info_wrapper'>
                             <h1 className='job_postings_title'>{t('job_posting.title')}</h1>
                             <div className='job_postings_rectangle'></div>

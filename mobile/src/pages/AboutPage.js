@@ -138,7 +138,7 @@ const AboutPage = () => {
         <>
             <section id="about_us" className="section">
                 <div className="container">
-                    <Fade duration='1000' direction='left'>
+                    <Fade duration='3000' direction=''>
                         <ImageViewer
                             img="/images/pages/about-us/about-us-page-top.png"
                             textTop="65%"
@@ -163,9 +163,9 @@ const AboutPage = () => {
                             <div className='form_location'>
                                 <p className='form_search_label'><span>{t('about_us.form_location_label')}</span></p>
                                 <div className='location_select' >
-                                    <CustomDropdown name='location_select' options={location_options} 
-                                    onChange={(e) => {console.log(e.target.value)}} 
-                                    style={{width: '100%', padding: '8px 0px 5px 13px', fontSize: 16}} />
+                                    <CustomDropdown name='location_select' options={location_options}
+                                        onChange={(e) => { console.log(e.target.value) }}
+                                        style={{ width: '100%', padding: '8px 0px 5px 13px', fontSize: 16 }} />
                                 </div>
                             </div>
 

@@ -12,7 +12,7 @@ const Dietary = () => {
         <>
             <section id="dietary" className="section">
                 <div className="container">
-                    <Fade duration='1000' direction='left'>
+                    <Fade duration='3000' direction=''>
                         <ImageViewer
                             img="/images/pages/dietary/dietary-top.png"
                             textTop="60%"

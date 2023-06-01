@@ -110,7 +110,7 @@ const Contact = () => {
         <>
             <section id="contact" className="section">
                 <div className="container">
-                    <Fade duration='1000' direction='left'>
+                    <Fade duration='3000' direction=''>
                         <ImageViewer
                             img="/images/pages/contact/contact-top.png"
                             textTop="62%"
@@ -119,7 +119,7 @@ const Contact = () => {
                         />
                     </Fade>
                     <BreadCrumb />
-                    <Fade duration='1000' direction='up'>
+                    <Fade duration='1000' direction='left'>
                         <div className='contact_info_wrapper'>
                             <h1 className='contact_title'>{t('contact.title')}</h1>
                             <div className='contact_rectangle'></div>
@@ -131,17 +131,19 @@ const Contact = () => {
                             <div className="position_icon"><img src="/images/pages/contact/position.png" alt="" /></div>
                             <div className='headquarters'>{t('contact.headquarters')}</div>
                             <div className="position_address">
-                                <h4>{t('contact.company_name')}</h4>
-                                <p>{t('contact.company_address')}</p>
-                                <p>{t('contact.company_city')}</p>
-                                <p>{t('contact.company_country')}</p>
-                            </div>
-                            <div className='address_info'>
-                                <h4>{t('contact.branch_company')}</h4>
-                                <h4>{t('contact.company_name')}</h4>
-                                <p>{t('contact.company_address_2')}</p>
-                                <p>{t('contact.company_city')}</p>
-                                <p>{t('contact.company_country')}</p>
+                                <div className='address_info'>
+                                    <h4>{t('contact.company_name')}</h4>
+                                    <p>{t('contact.company_address')}</p>
+                                    <p>{t('contact.company_city')}</p>
+                                    <p>{t('contact.company_country')}</p>
+                                </div>
+                                <div className='address_info'>
+                                    <h4>{t('contact.branch_company')}</h4>
+                                    <h4>{t('contact.company_name')}</h4>
+                                    <p>{t('contact.company_address_2')}</p>
+                                    <p>{t('contact.company_city')}</p>
+                                    <p>{t('contact.company_country')}</p>
+                                </div>
                             </div>
                         </div>
                     </Fade>

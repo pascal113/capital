@@ -96,7 +96,7 @@ const ApplyPage = () => {
         <>
             <section id="apply" className="section">
                 <div className="container">
-                    <Fade duration='1000' direction='left'>
+                    <Fade duration='3000' direction=''>
                         <ImageViewer
                             img="/images/pages/about-us/about-company-top.png"
                             textTop="50%"
@@ -107,7 +107,7 @@ const ApplyPage = () => {
                     <BreadCrumb />
 
                     <div className='apply_wrapper'>
-                        <Fade duration='1000' direction='up'>
+                        <Fade duration='1000' direction='left'>
                             <div className='title'><h1>{t('apply.title')}</h1></div>
                         </Fade>
                         <div className='comment'><span >{t('apply.comment')}</span></div>

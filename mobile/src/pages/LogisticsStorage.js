@@ -14,7 +14,7 @@ const LogisticsStorage = () => {
         <>
             <section id="logistics_storage" className="section">
                 <div className="container">
-                    <Fade duration='1000' direction='left'>
+                    <Fade duration='3000' direction=''>
                         <ImageViewer
                             img="/images/pages/logistics/logistics-top.png"
                             textTop="60%"
@@ -25,7 +25,7 @@ const LogisticsStorage = () => {
                     <BreadCrumb detail_info={t('logistics.storage.breadcrumb')} />
 
                     <div className='storageContainer'>
-                        <Fade duration='1000' direction='up'>
+                        <Fade duration='1000' direction='left'>
                             <div className='logistics_storage_info_wrapper'>
                                 <h1 className='logistics_storage_title'>{t('logistics.storage.title')}</h1>
                             </div>

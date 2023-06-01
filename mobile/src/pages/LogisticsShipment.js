@@ -13,7 +13,7 @@ const LogisticsShipment = () => {
         <>
             <section id="logistics_shipment" className="section">
                 <div className="container">
-                    <Fade duration='1000' direction='left'>
+                    <Fade duration='3000' direction=''>
                         <ImageViewer
                             img="/images/pages/logistics/logistics-top.png"
                             textTop="60%"

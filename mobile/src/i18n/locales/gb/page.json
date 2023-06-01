@@ -192,7 +192,17 @@
                     "pre-filled hypodermic syringes"
                 ]
             }
-        ]
+        ],
+        "description": {
+            "text1": "Execution of the approval procedure",
+            "text2": "Formulation of proprietary active ingredients or generics",
+            "text3": "Selection of suitable application forms",
+            "text4": "Manufacturing under the highest quality standards",
+            "text5": "Conducting clinical studies",
+            "text6": "Filling in blisters, cans, sachets, sticks, or bottles",
+            "text7": "Packaging in folding cartons",
+            "text8": "Creation of label designs, printing, and labeling"
+        }
     },
     "logistics": {
         "image_label": "LOGISTICS",
@@ -346,7 +356,7 @@
         "image_label": "CURRENT JOB OPENINGS",
         "title": "GC Pharma GmbH as an employer",
         "description": "Our mindset of facing change processes unbiasedly and courageously has changed just as little as the central anchoring of the success factor “people“ in our entrepreneurial consciousness. Our employees are always the most important thing in our company, and not just because of their cleverness. What distinguishes the people at GC Pharma GmbH is an inimitable mixture of intuition, joy and enthusiasm.",
-        "button_label": "EXPLORE 58 opportunities"
+        "button_label": "EXPLORE opportunities"
     },
     "about_us": {
         "image_label": "CURRENT JOB OPENINGS",

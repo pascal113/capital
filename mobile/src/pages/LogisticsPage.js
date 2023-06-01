@@ -14,7 +14,7 @@ const LogisticsPage = () => {
         <>
             <section id="logistics" className="section">
                 <div className="container">
-                    <Fade duration='1000' direction='left'>
+                    <Fade duration='3000' direction=''>
                         <ImageViewer
                             img="/images/pages/logistics/logistics-top.png"
                             textTop="60%"
@@ -24,7 +24,7 @@ const LogisticsPage = () => {
                     </Fade>
                     <BreadCrumb />
 
-                    <Fade duration='1000' direction='up'>
+                    <Fade duration='1000' direction='left'>
                         <div className='logistics_info_wrapper'>
                             <h1 className='logistics_title'>{t("logistics.title")}</h1>
                             <div className='logistics_rectangle'></div>

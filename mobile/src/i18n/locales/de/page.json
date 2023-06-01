@@ -193,7 +193,17 @@
                     "Vorgefüllte Injektionsspritzen"
                 ]
             }
-        ]
+        ],
+        "description": {
+            "text1": "Durchführung des Zulassungsprocederes",
+            "text2": "Formulierung eigener Wirkstoffe oder Generika",
+            "text3": "Auswahl der passenden Applikationsform",
+            "text4": "Herstellung unter höchsten Qualitätsstandards",
+            "text5": "Durchführung klinischer Studien",
+            "text6": "Abfüllung in Blister, Dosen, Sachets, Sticks oder Flaschen",
+            "text7": "Verpacken in Faltschachteln",
+            "text8": "Erstellen der Etikettendesigns, Druck und Etikettierung"
+        }
     },
     "logistics": {
         "image_label": "LOGISTIK",
@@ -347,7 +357,7 @@
         "image_label": "AKTUELLE STELLENAUSSCHREIBUNGEN",
         "title": "GC Pharma GmbH als Arbeitgeber",
         "description": "Unser Mindset, Veränderungsprozessen unvoreingenommen und mutig zu begegnen, hat sich ebenso wenig verändert, wie die zentrale Verankerung des Erfolgsfaktors „Mensch“ in unserem unternehmerischen Bewusstsein. Unsere Mitarbeiter:innen sind nicht nur wegen ihrer Cleverness stets das Wichtigste unseres Unternehmens. Was die Menschen in der GC Pharma GmbH auszeichnet, ist eine unnachahmliche Mischung aus Intuition, Freude und Begeisterung.",
-        "button_label": "58 STELLEN ERKUNDEN"
+        "button_label": "STELLEN ERKUNDEN"
     },
     "about_us": {
         "image_label": "AKTUELLE STELLENAUSSCHREIBUNGEN",

@@ -17,7 +17,7 @@ const Production = () => {
         <>
             <section id="production" className="section">
                 <div className="container">
-                    <Fade duration='1000' direction='left'>
+                    <Fade duration='3000' direction=''>
                         <ImageViewer
                             img="/images/pages/production/production-top.png"
                             textTop="60%"
@@ -28,20 +28,20 @@ const Production = () => {
                     <BreadCrumb />
 
                     <div className='production_info_wrapper'>
-                        <Fade duration='1000' direction='up'>
+                        <Fade duration='1000' direction='left'>
                             <h1 className='production_title'>{t("production.title")}</h1>
                             <div className='production_rectangle'></div>
                         </Fade>
                         <div className='production_description'>
                             <img src="/images/pages/production/production-description.png" alt="" />
-                            <p className='description desc_text1'>Durchführung des <br />Zulassungsprocederes</p>
-                            <p className='description desc_text2'>Formulierung eigener <br />Wirkstoffe oder Generika</p>
-                            <p className='description desc_text3'>Auswahl der passenden <br />Applikationsform</p>
-                            <p className='description desc_text4'>Herstellung unter <br />höchsten <br />Qualitätsstandards</p>
-                            <p className='description desc_text5'>Durchführung <br />klinischer Studien</p>
-                            <p className='description desc_text6'>Abfüllung in Blister, Dosen, Sachets, <br />Sticks oder Flaschen</p>
-                            <p className='description desc_text7'>Verpacken in Faltschachteln</p>
-                            <p className='description desc_text8'>Erstellen der <br />Etikettendesigns, Druck <br />und Etikettierung</p>
+                            <p className='description desc_text1'>{t("production.description.text1")}</p>
+                            <p className='description desc_text2'>{t("production.description.text2")}</p>
+                            <p className='description desc_text3'>{t("production.description.text3")}</p>
+                            <p className='description desc_text4'>{t("production.description.text4")}</p>
+                            <p className='description desc_text5'>{t("production.description.text5")}</p>
+                            <p className='description desc_text6'>{t("production.description.text6")}</p>
+                            <p className='description desc_text7'>{t("production.description.text7")}</p>
+                            <p className='description desc_text8'>{t("production.description.text8")}</p>
                         </div>
                     </div>
 

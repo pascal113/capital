@@ -12,7 +12,7 @@ const CorporateGols = () => {
         <>
             <section id="corporate_goals" className="section">
                 <div className="container">
-                    <Fade duration='1000' direction='left'>
+                    <Fade duration='3000' direction=''>
                         <ImageViewer
                             img="/images/pages/corporate-goals-top.png"
                             textTop="60%"
@@ -22,7 +22,7 @@ const CorporateGols = () => {
                     </Fade>
                     <BreadCrumb />
 
-                    <Fade duration='1000' direction='up'>
+                    <Fade duration='1000' direction='left'>
                         <div className='corporate_goals_info_wrapper'>
                             <h1 className='corporate_goals_title'>{t("corporate_goals.title")}</h1>
                             <div className='corporate_goals_rectangle'></div>
@@ -30,7 +30,7 @@ const CorporateGols = () => {
                         </div>
                     </Fade>
                     <div className="wrapper corporate_goals_wrapper">
-                        <Fade duration='1000' direction='left'>
+                        <Fade duration='1000' direction=''>
                             <div className="corporate_goals_left_col">
                                 <div className='border-box'>
                                     <p className='paragraph'>{t("corporate_goals.left_p1")}</p>

@@ -25,7 +25,7 @@ const Advice = () => {
         <>
             <section id="advice" className="section">
                 <div className="container">
-                    <Fade duration='1000' direction='left'>
+                    <Fade duration='3000' direction=''>
                         <ImageViewer
                             img="/images/pages/advice/advice-top.png"
                             textTop="60%"
@@ -35,7 +35,7 @@ const Advice = () => {
                     </Fade>
                     <BreadCrumb />
 
-                    <Fade duration='1000' direction='up'>
+                    <Fade duration='1000' direction='left'>
                         <div className='advice_info_wrapper'>
                             <h1 className='advice_title'>{t("advice.title")}</h1>
                             <div className='advice_rectangle'></div>

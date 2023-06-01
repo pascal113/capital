@@ -10,7 +10,7 @@ const ApplySuccess = () => {
         <>
             <section id="apply" className="section">
                 <div className="container">
-                    <Fade duration='1000' direction='left'>
+                    <Fade duration='3000' direction=''>
                         <ImageViewer
                             img="/images/pages/about-us/about-company-top.png"
                             label="HUMAN RESOURCES MANAGER"

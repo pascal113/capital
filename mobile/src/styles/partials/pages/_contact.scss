@@ -62,14 +62,16 @@
                 }
 
                 .position_address {
-                    h4,
-                    p {
-                        color: #585858;
-                        font-style: normal;
-                        font-weight: 700;
-                        font-size: 12px;
-                        line-height: 15px;
-                        text-align: center;
+                    text-align: center;
+
+                    .address_info{
+                        h4, p {
+                            color: #585858;
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 12px;
+                            line-height: 15px;                            
+                        }
                     }
                 }
             }
@@ -293,16 +295,18 @@
 
         .position_address {
             text-align: left;
-
-            margin-left: 32px;
-
-            h4, p {
-                color: #585858;
-                font-style: normal;
-                font-weight: 700;
-                font-size: 16px;
-                line-height: 21px;
-
+            display: flex;
+            
+            .address_info{
+                margin-left: 32px;
+                h4, p {
+                    color: #585858;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 16px;
+                    line-height: 21px;
+                    
+                }
             }
         }
     }

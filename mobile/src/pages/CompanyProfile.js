@@ -12,7 +12,7 @@ const CompanyProfile = () => {
         <>
             <section id="company_profile" className="section">
                 <div className="container">
-                    <Fade duration='1000' direction='left'>
+                    <Fade duration='3000' direction=''>
                         <ImageViewer
                             img="/images/pages/company-profile-top.png"
                             textTop="60%"
@@ -22,7 +22,7 @@ const CompanyProfile = () => {
                     </Fade>
                     <BreadCrumb />
 
-                    <Fade duration='1000' direction='up'>
+                    <Fade duration='1000' direction='left'>
                         <div className='company_profile_info_wrapper'>
                             <h1 className='company_profile_title'>{t("company_profile.title")}</h1>
                             <div className='company_profile_rectangle'></div>
@@ -30,18 +30,16 @@ const CompanyProfile = () => {
                         </div>
                     </Fade>
                     <div className="wrapper company_profile_wrapper">
-                        <Fade duration='1000' direction='left'>
-                            <div className="company_profile_left_col">
+                        <div className="company_profile_left_col">
+                            <Fade duration='1000' direction='left'>
                                 <p className='paragraph'>{t("company_profile.p2")}</p>
+                            </Fade>
+                        </div>
+                        <div className="company_profile_right_col">
+                            <div className='border-box'>
+                                <img src="/images/pages/company-profile-1.png" alt="" />
                             </div>
-                        </Fade>
-                        <Fade duration='1000' direction='right'>
-                            <div className="company_profile_right_col">
-                                <div className='border-box'>
-                                    <img src="/images/pages/company-profile-1.png" alt="" />
-                                </div>
-                            </div>
-                        </Fade>
+                        </div>
                     </div>
                 </div>
             </section>
