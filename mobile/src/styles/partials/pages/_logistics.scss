@@ -300,6 +300,10 @@
         margin: 161px 0 157px 0;
         text-align: center;
 
+        .mobile_img {
+            display: none;
+        }
+
         .logistics_slogan_content {
             position: absolute;
             max-width: 849px;
